@@ -5,11 +5,16 @@ lead: Nucleus has a command that sets all appropriate permissions for a group au
 adddocslink: true
 ---
 
+> This is one of two ways to assign permissions quickly. The alternative is using the role based permissions, [which are described here](roleperms.html).
+> **Do not use both.**
+
 The `/nucleus setupperms` subcommand allows server owners to grant the suggested permissions to groups, allowing for a quick
 setup of a server. This will grant permissions based on the version of the plugin you are running at the time and does not 
 automatically update permissions when Nucleus is upgraded.
 
 > Nucleus is **not a permissions management plugin**. Roles are simply a template you can apply to a permission group.
+>
+> If you are happy for Nucleus to use new recommended permissions when you update Nucleus, use the role based permissions instead.
 
 ## First Time Setup
 

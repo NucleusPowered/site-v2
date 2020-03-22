@@ -21,20 +21,8 @@ may provide.
 > Nucleus is **not** a permissions management plugin. To make use of permissions, you must install a separate permissions plugin. [Such plugins can be found on Ore, Sponge's plugin distribution platform.](https://ore.spongepowered.org)
 >
 > This documentation site provides sample permission management commands for some popular permissions plugins. The plugin that is displayed can be selected using the selector in the top right. We do not endorse any third party plugins.
-
-§
-
-## Avoid using the wildcard `*` if possible
-
-While the `*` permission is a temooting prospect, it does not work the same way as it did on Bukkit
-and Essentials. It will grant you everything, even things you may not be expecting, unlike on these
-legacy platforms. For example:
-
-* There is an AFK exemption permission, `nucleus.afk.exempt.toggle`, activated by `*` 
-* `nucleus.connectionmessages.disable` - give yourself `*` and you won't be broadcasted to the server
-  when you join or leave
-
-[For more information on why `*` is a bad idea, click here.](../nowildcard.html)
+>
+> **Do not use the `*` wildcard**. Although Nucleus now tries to act normally if you use it, weird things can happen and it may break other plugins, such as GriefDefender. [For more information on why `*` is a bad idea, click here.](../../nowildcard.html)
 
 ## Nucleus Permissions Quick Start
 
@@ -49,33 +37,17 @@ These roles are:
 * `OWNER` - permissions that can cause severe server damage and generally should only be used by those with ultimate authority
 * `NONE`  - permissions that are highly specialised, such as vanish on login, that should be decided on a case by case basis
 
-Nucleus provides two ways to set up our suggested permission sets based on these roles in conjunction with your permissions plugin,
-either through the `/nucleus setupperms` command, or the `nucleus.<role>` permissions, both of which are described below.
+Nucleus provides two ways to set up our suggested permission sets.
 
-### The `/nucleus setupperms` command
+### `/nucleus setupperms`
 
+The `/nucleus setupperms` command grants every permission in a role to a permission group. This is a manual process, any new permissions that are created via an upgrade to Nucleus will not be added automatically. 
 
+[Learn more about using `/nucleus setupperms`](../../howto/setupperms.html).
 
-### Role permissions (`nucleus.<role>`)
+### `nucleus.<role>` permissions
 
-The following permissions that automatically grants defaults:
+The `nucleus.<role>` permissions acts as a "super permission" for all permissions in a role. Any permissions granted (or revoked) explicitly will override the existence of this permission. However, any new permissions added to a role when Nucleus is upgraded **will be automatically given**
+to those with a specific role permission, thus role permissions, while easier than using `/nucleus setupperms`, can be dangerous to use if you do not know the risks. 
 
-* `nucleus.user` that acts as a "super permission" for any permission labelled as `USER` in the permission tables
-* `nucleus.mod` that acts as a "super permission" for any permission labelled as `MOD` in the permission tables
-* `nucleus.admin` that acts as a "super permission" for any permission labelled as `ADMIN` in the permission tables
-* `nucleus.owner` that acts as a "super permission" for any permission labelled as `OWNER` in the permission tables
-
-**These do not, and will never, override any explicit permission that has been set.**
-
-As an example, you give your moderators the `nucleus.mod` permission. This, for example, gives them permission to enter staff chat. However, maybe you don't want them to access this. If you set `nucleus.staffchat.base` as `false`, this will override `nucleus.mod`. The same can be said for parent permissions, if you set `nucleus.staffchat` to `false`, a check to `nucleus.staffchat.base` will return `false`, regardless of whether `nucleus.mod` is set.
-
-While this is cleaner than using `/nucleus setupperms`, you must be aware of the following:
-
-* These "role" permissions will _never_ be given by default by `setupperms`.
-* Any permissions added to Nucleus that fall into one of these roles **WILL** be granted by default if you have the role permission. **It is the responsibility of the server owner to check for any new features that may be added to these roles**.
-* `/nucleus setupperms` will continue to exist, and will **not** grant new permissions automatically if they are added in new releases (but will if
- you re-run the setupperms commands).
-
-If you want to use our suggested template and do not mind following our recommendations, use the role permissions. If you want to use our suggested template but **DO** want full control over what permissions you have, remain with `/nucleus setupperms`.
-
-If you do not want to use the role permissions, this can be turned off in the config by setting `core.enable-parent-perms` to `false` and reloading.
+[Learn more about using `nucleus.<role>` permissions](../../howto/roleperms.html). 

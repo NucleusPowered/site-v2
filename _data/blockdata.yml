@@ -26,8 +26,11 @@
       tagline: "Quick articles that resolve specific, common tasks"
       entries:
         - name: "Using /nucleus setupperms"
-          tagline: "Setting up Nucleus' recommended permissions automatically"
+          tagline: "One way to set up Nucleus' recommended permissions automatically"
           link: "howto/setupperms.html"
+        - name: "Using role permissions"
+          tagline: "Another way to set up Nucleus' recommended permissions automatically"
+          link: "howto/roleperms.html"
         - name: "Module Management"
           tagline: "Enabling and disabling modules"
           link: "howto/modules.html"
