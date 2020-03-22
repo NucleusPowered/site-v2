@@ -1,0 +1,80 @@
+---
+layout: default
+---
+{% assign data = site.data.tutorial | where: "name", page.steps | first %}
+{% assign pagename = page.path | split: "/" | last | split: "." | first %}
+{% assign active = 0 %}
+{% assign nextset = false %}
+<div class="how-to">
+    <div class="row">
+        <div class="col">
+            <h1 id="pageheader">{{ data.header }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9 col-xs-12">
+            <p class="lead">
+                {{ data.lead }}
+            </p>
+        </div>
+    </div>
+    <div class="row tutorials">
+        <!-- active, link, title -->
+        {% assign count = 1 %}
+        {% for entry in data.steps %}
+        {% if pagename == entry.link %}
+            {% assign active = count %}
+        {% elsif active == 0 %}
+            {% assign prev = entry %}
+        {% elsif nextset == false %}
+            {% assign next = entry %}
+            {% assign nextset = true %}
+        {% endif %}
+        <div class="tutorials-box col {% if pagename == entry.link %}active-step{% endif %}">
+            {{ count }}: <a href="{{entry.link}}.html">{{ entry.title }}</a>
+        </div>
+        {% assign count = count | plus: 1 %}
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-md-9 col-xs-12 firsth2nomargin">
+            {{ content }}
+        </div>
+        <div class="toc-l col no-gutter">
+            <div class="toc-wrap">
+                <h3><small>Page contents</small></h3>
+                {% include toc.html html=content h_min=2 class=toc-ul %}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-9 col-xs-12">
+            <hr class="black" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 col-xs-6 prev-tut">
+            {% if active != 1 %}
+                {% assign name = prev.title %}
+                {% assign link = prev.link %}
+            {% else %}
+                {% assign name = "Introduction" %}
+                {% assign link = "index" %}
+            {% endif %}
+            <a class="btn btn-lg btn-success" href="{{ link }}.html">
+                &lt; {{ name }}
+            </a>
+        </div>
+        <div class="col-md-3 hidden-sm-down">
+        </div>
+        <div class="col-md-3 col-xs-6 next-tut">
+            {% if next %}
+            <a class="btn btn-lg btn-success" href="{{ next.link }}.html">
+                {{ next.title }} &gt;
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>

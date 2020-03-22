@@ -1,0 +1,35 @@
+---
+layout: howto-notoc
+---
+{% assign data = site.data.blockdata | where: "name", page.steps | first %}
+
+<div class="row">
+    <div class="col">
+        <h1>{{ data.title }}</h1>
+        <p class="lead">{{ data.tagline }}</p>
+        {{ content }}
+    </div>
+</div>
+
+{% for o in data.categories %}
+<hr class="black" />
+<div class="row">
+    <div class="col">
+        <h2 class="notopmargin">{{ o.name }}</h2>
+        <p class="lead">{{ o.tagline }}</p>
+    </div>
+</div>
+
+<div class="row">
+    {% for p in o.entries %}
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <a href="{{ p.link }}">
+            <p class="link-lead">{{ p.name }}</p>
+        </a>
+        <p>{{ p.tagline }}</p>
+
+    </div>
+    {% endfor %}
+</div>
+
+{% endfor %}

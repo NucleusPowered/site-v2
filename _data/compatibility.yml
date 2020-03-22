@@ -1,0 +1,95 @@
+modules:
+  - 'chat'
+  - 'world'
+  - 'teleport'
+  - 'back'
+  - 'home'
+  - 'warp'
+mods:
+  - id: 'ftbutilities'
+    name: 'FTB Utilities'
+  - id: 'pjw'
+    name: 'ProjectWorlds'
+  - id: 'pjp'
+    name: 'ProjectPortals'
+  - id: 'ultimatecore'
+    name: 'Ultimate Core'
+  - id: 'topography'
+    name: 'Topography'
+  - id: 'simpletags'
+    name: 'Simple Tags'
+  - id: 'nucleus-mod' # not the correct ID but, meh.
+    name: 'Nucleus Mod'
+json:
+  last-update: "2019-09-05"
+  messages:
+    -  modid: 'nucleus-mod'
+       severity: 3
+       symptom: 'The Nucleus Forge core mod causes a Duplicate Mod ID error when used with the Nucleus Sponge plugin'
+       message: 'The Nucleus Core Mod uses the same mod ID as the Nucleus Sponge plugin. Forge will throw a Duplicate Mod ID error when trying to load this plugin with the Nucleus core mod.'
+       resolution: 'Do not use the Nucleus Core Mod. We will not change the Nucleus mod ID - it may break plugin compatibility and, honestly, we were first with it!'
+    -  modid: 'simpletags'
+       modules:
+         - 'chat'
+       severity: 3
+       symptom: 'Chat prefixes are not shown when using Simple Tags'
+       message: 'Simple Tags overrides the "header" section of the chat message on a late priority and will remove anything there, including Nucleus tags.'
+       resolution: 'Remove SimpleTags.'
+    -  modid: 'ftbutilities'
+       modules:
+         - 'chat'
+       severity: 2
+       symptom: 'Chat prefixes and formatting are not shown when using FTB Utilities'
+       message: 'FTB Utilities alters the chat and may override the Nucleus configuration.'
+       resolution: 'Disable FTB Utilities chat-override options, specifically the option "B:override_chat".'
+    -  modid: 'pjw'
+       modules:
+         - 'teleport'
+         - 'back'
+         - 'home'
+         - 'warp'
+         - 'spawn'
+       symptom: "Cross world teleports, such as those via warping or returning to spawn via command, might be canceled by ProjectWorlds with a no permissions message"
+       severity: 2
+       message: 'ProjectWorlds has world access permissions that can block cross world teleports.'
+       resolution: 'Grant users the ProjectWorlds world access permission, which is "pjw.worlds.<worldname>".'
+    -  modid: 'pjw'
+       modules:
+         - 'spawn'
+       symptom: "Nucleus' First Spawn point may not be honoured for new players when using ProjectWorlds"
+       severity: 2
+       message: "By default, ProjectWorlds will override Nucleus' first spawn mechanics."
+       resolution: 'Update to a ProjectWorlds build after 2nd September 2019, and set "options.first_join.enable" to "false".'
+    -  modid: 'pjw'
+       modules:
+         - 'world'
+       symptom: "The /world commands are not Nucleus commands when using ProjectWorlds"
+       severity: 0
+       message: 'ProjectWorlds is a world management plugin and takes over the /world command.'
+       resolution: 'Use /nworld for Nucleus management commands.'
+    -  modid: 'pjp'
+       modules:
+         - 'teleport'
+         - 'back'
+         - 'home'
+         - 'warp'
+       severity: 0
+       symptom: "ProjectPortals takes over some teleport related commands in non-default scenarios"
+       message: 'ProjectPortals may override some teleport related commands such as `/back`, `/warp` and `/home` if some of the ProjectPortals modules are enabled.'
+       resolution: 'Disable the module affecting the commands in PJP or prefix the command with "n", that is, "/back" -> "/nback".'
+    -  modid: 'ultimatecore'
+       severity: 2
+       symptom: "Some commands and features don't work together when using Ultimate Core"
+       message: 'UltimateCore is another essentials style plugin and may conflict with Nucleus.'
+       resolution: 'Remove either UltimateCore, or be extra careful and ensure that modules do not conflict.'
+    -  modid: 'topography'
+       modules:
+         - 'teleport'
+         - 'back'
+         - 'home'
+         - 'warp'
+         - 'spawn'
+       severity: 1
+       symptom: "Topography may block cross-world teleports"
+       message: 'Topography has the ability to take control of cross-world teleports in non-standard configurations. SkyFactory 4 has some worlds with this option enabled by default, which blocks the Nucleus teleport commands'
+       resolution: 'Check topography configuration files for any "captureTeleports" options and remove them.'

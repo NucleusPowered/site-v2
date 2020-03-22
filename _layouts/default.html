@@ -1,0 +1,89 @@
+<!doctype html>
+{% include base.html %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" />
+</head>
+<body>
+
+<nav class="navbar navbar-dark navbar-qs">
+    <div class="container">
+        <a href="{{ site.baseurl }}/" class="logo">
+        </a>
+        <a href="{{ site.baseurl }}/">Home</a>
+        <a href="{{ site.baseurl }}/docs">Docs</a>
+        <a href="https://ore.spongepowered.org/Nucleus/Nucleus">Download</a>
+        <a href="/">Discord</a>
+        <a href="/">Github</a>
+    </div>
+</nav>
+<div class="toplinesticky">
+<div class="beta">
+    <div class="container">
+        <div>
+            <strong>This site is a work in progress and is being designed for Nucleus v2!</strong> Some things might be missing or incomplete. <a href="https://nucleuspowered.org">Click here to return to the current website for Nucleus v1</a>.
+        </div>
+    </div>
+</div>
+{% if page.adddocslink %}
+<div class="container">
+    <div class="row">
+        <div class="col-9" style="padding-top: 10px;">
+            <a href="{{ site.baseurl }}/docs">&laquo;<span class="doclinksec"> Return to Documentation Home Page</span></a>
+            <span class="pageheadertop"> // {{ page.header }}</span>
+        </div>
+        <div class="col-3" style="padding-top: 10px; text-align: right;">
+            {% include permissiondropdown.html %}
+        </div>
+    </div>
+    <hr style="margin: 5px -15px; border-top-color: #999999;" />
+</div>
+{% endif %}
+</div>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col">
+            {{content}}
+        </div>
+
+    </div>
+</div>
+
+<footer id="footer">
+    <div class="container">
+        <div class="row" style="margin-bottom: 3px;">
+            <div id="qs-quote" class="col">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div style="float: left;">
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" style="line-height: 40px; padding-right: 10px;">
+                        <img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+                    </a>
+                </div>
+                &copy; Daniel Naylor &amp; contributors, 2016-2020. Website content is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>,
+                <strong>except</strong> for the Nucleus logo, where all rights are reserved. The Nucleus plugin is licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT licence</a>. <a href="{{ site.baseurl }}/codeofconduct.html">Code of Conduct</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- scripts -->
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="{{ site.baseurl }}/js/main.js"></script>
+<script src="{{ site.baseurl }}/js/modules.js"></script>
+</body>
+</html>

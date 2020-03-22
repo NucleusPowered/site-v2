@@ -1,0 +1,81 @@
+---
+layout: howto-notoc
+---
+{% assign all = site.data.compatibility %}
+{% assign modules = all.modules %}
+{% assign cn = 0 %}
+{% assign sev = -1 %}
+{% if modules contains page.moduleid %}
+    {% for w in all.json.messages %}
+        {% if w.modules contains page.moduleid %}
+            {% assign cn = cn | plus: 1 %}
+            {% if w.severity > sev %}
+                {% assign sev = w.severity %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+<div class="bg-colour" style="margin-top: 20px;">
+    <div style="margin-top: 10px;">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="nav-item active"><a class="nav-link active" href="#info" aria-controls="home" role="tab" data-toggle="tab">Module Information</a></li>
+            <li role="presentation" class="nav-item"><a class="nav-link" href="#compatibility" id="compat-click" aria-controls="profile" role="tab" data-toggle="tab">Compatibility <span class="badge">{{ cn }}</span></a></li>
+            <li role="presentation" class="nav-item"><a class="nav-link" href="#commands" aria-controls="profile" role="tab" data-toggle="tab">Commands</a></li>
+            <li role="presentation" class="nav-item"><a class="nav-link" href="#permissions" aria-controls="messages" role="tab" data-toggle="tab">Permissions</a></li>
+            <li role="presentation" class="nav-item"><a class="nav-link" href="#conf" aria-controls="config" role="tab" data-toggle="tab">Configuration</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active tcmargin" id="info">
+                {% if sev > 0 %}
+                    {% include issue.html s=sev r=true %}
+                    <div class="demargin">
+                        {{ content }}
+                    </div>
+                {% else %}
+                    {{content}}
+                {% endif %}
+            </div>
+            <div role="tabpanel" class="tab-pane tcmargin" id="compatibility">
+                <p>The following are incompatibilities that <em>may</em> occur with this module, along with how to resolve the problem.
+                    For the full mod/plugin incompatibility list, see <a href="{{ site.baseurl }}/docs/compatibility.html">the compatibility page</a>.</p>
+                {% if cn > 0 %}
+                {% include compatmeanings.html %}
+                {% assign m = all.json.messages | sort: "severity" | reverse %}
+                {% for w in m %}
+                    {% if w.modules contains page.moduleid %}
+                        {% include issue.html w=w s=w.severity %}
+                    {% endif %}
+                {% endfor %}
+                {% else %}
+                <p><em>No plugin incompatibilities have been reported.</em></p>
+                {% endif %}
+            </div>
+            <div role="tabpanel" class="tab-pane tcmargin" id="commands">
+                {% include modulecommands2.html %}
+            </div>
+            <div role="tabpanel" class="tab-pane" id="permissions">
+                {% include modulepermissions.html %}
+            </div>
+            <div role="tabpanel" class="tab-pane tcmargin" id="conf">
+                {% if site.data.conf[page.moduleid] %}
+                <em>The following configuration is the default for this module:</em>
+                <div class="card bg-light" style="margin-top: 5px;">
+                    <div class="card-body">
+                        <pre style="white-space: pre-wrap;">
+                            {{ site.data.conf[page.moduleid] | replace: '<', '&lt;' | replace: '>', '&gt;' | replace: '\n', '<br />' }}
+                        </pre>
+                    </div>
+                </div>
+                {% else %}
+                <em>There is no configuration for this module.</em>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{ site.baseurl }}/js/modules.js"></script>

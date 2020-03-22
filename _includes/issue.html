@@ -1,0 +1,63 @@
+{% case include.s %}
+{% when 3 %}
+{% assign sev = "bg-critical" %}
+{% assign type = "Critical" %}
+{% when 2 %}
+{% assign sev = "bg-major" %}
+{% assign type = "Major" %}
+{% when 1 %}
+{% assign sev = "bg-minor" %}
+{% assign type = "Minor" %}
+{% when 0 %}
+{% assign sev = "bg-infocompat" %}
+{% assign type = "Info" %}
+{% endcase %}
+
+{% if include.r %}
+
+<div class="container" style="margin-top: 10px;">
+    <div class="row">
+        <div class="w-100">
+            <div class="card w-100">
+                <div class="card-header compat-card {{ sev }}">
+                    <h4>Some mods or plugins may conflict with this module</h4>
+                </div>
+                <div class="card-body compat-card">
+                    The highest rating mod/plugin compatibility issue is rated <strong>{{ type | downcase }}</strong>.
+                    See <a data-activate="#compatibility" href="#compatibility">the compatibility tab</a> for more information.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% elsif include.s == include.w.severity %}
+{% assign mod = site.data.compatibility.mods | where: "id", include.w.modid | first %}
+{% assign modules = include.w.modules | join: ', ' %}
+
+<div class="compat-mod" data-mod="{{ include.w.modid }}" data-modules="{{ modules }}">
+    <div class="card">
+        <div class="card-header compat-card {{ sev }}">
+            <div class="row row-eq-height">
+                <div class="col-md-10 col-sm-9 col-xs-8">
+                    <div>
+                        <strong>Mod/Plugin:</strong> {{ mod.name }}. <strong>Affected Module(s):</strong> {{ modules | default: "all" }}.
+                    </div>
+                    <h4>{{ include.w.symptom }}</h4>
+                </div>
+                <div class="col-md-2 col-sm-3 col-xs-4 rtext">
+                    {{ type }}
+                </div>
+            </div>
+        </div>
+        <div class="card-body compat-card">
+            <p>
+                <strong>Reason: </strong> {{ include.w.message | replace: '<', '&lt;' | replace: '>', '&gt;' }}
+            </p>
+            <p>
+                <strong>Resolution: </strong> {{ include.w.resolution | replace: '<', '&lt;' | replace: '>', '&gt;' }}
+            </p>
+        </div>
+    </div>
+</div>
+{% endif %}

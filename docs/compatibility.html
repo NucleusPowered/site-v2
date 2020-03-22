@@ -1,0 +1,51 @@
+---
+layout: standardheadmd
+title: "- Compatibility"
+header: Nucleus Compatibility
+---
+
+{% assign all = site.data.compatibility %}
+{% assign modules = all.modules %}
+<div class="row">
+    <div class="col">
+        <p>
+            Unfortunately, not all plugins and mods are 100% compatible with Nucleus. This page lists some of the known
+            issues, and what you can do to work around the issues.
+        </p>
+        <p>
+            If you know of another incompatibility, please visit us on Discord and talk to us about it.
+        </p>
+        <p>
+            <em>This page was last updated {{ all.json.last-update | date: "%d %B %Y" }}</em>
+        </p>
+        {% include compatmeanings.html show=true %}
+    </div>
+</div>
+
+<div class="hidden row row-eq-height">
+    <div class="col-sm-12 filter">
+        <div class="form-inline">
+            <div class="form-group">
+                <span class="checkbox-inline bold">Modules: </span>
+            {% for mod in modules %}
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="{{ mod }}" value="{{ mod }}" checked="checked"> {{ mod }}
+                </label>
+            {% endfor %}
+            </div>
+            <div class="form-group">
+                <span class="checkbox-inline bold">Mods/Plugins: </span>
+            {% for mod in all.mods %}
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="{{ mod.id }}" value="{{ mod.id }}" checked="checked"> {{ mod.name }}
+                </label>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% assign m = all.json.messages | sort: "severity" | reverse %}
+{% for w in m %}
+{% include issue.html w=w s=w.severity %}
+{% endfor %}

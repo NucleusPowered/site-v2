@@ -1,0 +1,25 @@
+---
+layout: standardheadmd
+title: Documentation Centre
+header: Command Reference
+---
+<p>
+    If you're looking for the permissions reference, <a href="permissions.html">you can find it here</a>.<br />
+    If you're looking for the tabular command reference, <a href="commands.html">you can find it here</a>.
+</p>
+
+<form id="searchForm">
+    <div class="form-group">
+        <label class="sr-only" for="searchInput">Search</label>
+        <div class="input-group">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+            <input type="text" class="form-control" id="searchInput" placeholder="Search">
+        </div>
+    </div>
+</form>
+
+<div id="sort">
+    {% include modulecommands2.html %}
+</div>
+
+<script src="{{ site.baseurl }}/js/command2.js"></script>

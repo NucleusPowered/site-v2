@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{% assign data = site.data.tutorial | where: "name", page.steps | first %}
+<div class="how-to">
+    <div class="row">
+        <div class="col">
+            <h1 id="pageheader">{{ data.header }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9 col-xs-12">
+            <p class="lead">
+                {{ data.lead }}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9 col-xs-12 firsth2nomargin">
+            {{ content }}
+
+            <a class="btn btn-success btn-lg tutorial-start" href="{{ data.steps | map: "link" | first }}.html">
+                Start now: {{ data.steps | map: "title" | first }} &gt;
+            </a>
+
+            <h2>Tutorial Contents</h2>
+            <ol>
+                {% for entry in data.steps %}
+                <li><a href="{{entry.link}}.html">{{ entry.title }}</a></li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+</div>

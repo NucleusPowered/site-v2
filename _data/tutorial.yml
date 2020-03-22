@@ -1,0 +1,24 @@
+-
+  name: "first"
+  header: "Installing and Using Nucleus"
+  lead: "Learn how to obtain, install and configure Nucleus on your Sponge Server"
+  steps:
+  - link: install
+    title: Install
+  - link: configuration
+    title: Configure
+  - link: permissions
+    title: Permissions
+  - link: done
+    title: Done
+-
+  name: "commandconfig"
+  header: "Command Management"
+  lead: "Learn how to manage Nucleus commands, including aliases, cooldowns, warmups and costs."
+  steps:
+    - link: aliases
+      title: Aliases
+    - link: modifiers
+      title: Command Modifiers
+    - link: groupbased
+      title: Group/Player based modifiers
