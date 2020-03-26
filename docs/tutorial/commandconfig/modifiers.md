@@ -30,4 +30,12 @@ All current command modifiers cannot be negative.
 
 ## Exemptions
 
-Users can be set to be exempt from these modifiers using permissions. Such permissions can be seen next to the command [in the command reference](../../commands2.html).
+Users can be set to be exempt from these modifiers using permissions.
+
+In general, for a given command with a command key, the exemption permission take the form:
+
+* `nucleus.<command key>.exempt.cooldown` for cooldowns
+* `nucleus.<command key>.exempt.warmup` for warmup
+* `nucleus.<command key>.exempt.cost` for costs
+
+Specific permissions can be seen associated with the command [in the command reference](../../commands2.html).
