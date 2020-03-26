@@ -15,3 +15,7 @@ This tutorial will help you get set up with Nucleus.
 
 * A permissions plugin
   > The Nucleus team does not recommend any specific permission plugin. We suggest searching [Ore](https://ore.spongepowered.org) for such plugins.
+
+> Nucleus can be run without a permissions plugin, but if you decide not to use one, all commands will require OP status to execute.
+{:.bl.error}
+                         
