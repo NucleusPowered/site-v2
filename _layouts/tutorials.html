@@ -24,6 +24,7 @@ layout: default
         {% for entry in data.steps %}
         {% if pagename == entry.link %}
             {% assign active = count %}
+            <p id="title-message" hidden>{{ data.header }} - {{ count }}: {{ entry.title }}</p>
         {% elsif active == 0 %}
             {% assign prev = entry %}
         {% elsif nextset == false %}
@@ -78,3 +79,4 @@ layout: default
         </div>
     </div>
 </div>
+<script src="{{ site.base }}/js/tutorials.js"></script>
