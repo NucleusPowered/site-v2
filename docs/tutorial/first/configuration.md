@@ -24,7 +24,8 @@ The general Nucleus configuration can be found in `main.conf`. This file allows 
 
 > Be careful when altering anything in the `core` module configuration. Some of the options available are advanced options and could cause data loss if set incorrectly. Read the comments associated with the configuration carefully. 
 >
-> If you are unsure as to whether you need to change an option, [read the core module documentation](../../modules/core.html) or seek real-time support.   
+> If you are unsure as to whether you need to change an option, [read the core module documentation](../../modules/core.html) or seek real-time support.
+{:.bl.warn}   
 
 The first section in the configuration file allows you to enable or disable modules, turning on or off features. [Learn how to enable and disable modules here](../../howto/modules.html). 
 

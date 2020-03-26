@@ -18,7 +18,8 @@ Nucleus includes the SpongeAPI version in the filename, in the section between a
 
 Nucleus will not work with any Sponge servers that run SpongeAPI version 8 as it has not been released yet.
 
-> Do not use "experimental" builds of SpongeAPI 8 for Minecraft 1.12.2 servers. They will not work with most plugins. 
+> Do not use "experimental" builds of SpongeAPI 8 for Minecraft 1.12.2 servers. They will not work with most plugins.
+{:.bl.error} 
 
 ## Plugin/Mod Incompatibilities
 
