@@ -25,6 +25,9 @@
     - name: "How To"
       tagline: "Quick articles that resolve specific, common tasks"
       entries:
+        - name: "Migrating from Nucleus v1"
+          tagline: "Things you need to do when upgrading from v1 to v2."
+          link: "howto/migrate.html"
         - name: "Using /nucleus setupperms"
           tagline: "One way to set up Nucleus' recommended permissions automatically"
           link: "howto/setupperms.html"
