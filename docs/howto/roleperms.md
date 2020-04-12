@@ -1,5 +1,5 @@
 ---
-layout: howto
+layout: howto-notoc
 header: How to Use Role Based Permissions
 lead: Nucleus supports "role" based permissions that automatically inherit all recommended permissions
 adddocslink: true
