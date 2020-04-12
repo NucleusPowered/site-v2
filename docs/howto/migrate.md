@@ -18,9 +18,22 @@ instead, and uses the "group name" attached to this option to determine which gr
 The result is much faster performance, especially when optimised permission plugins, and more control over which group template a player has.  
 
 This is a great time to consider whether group templates can be simplified using Nucleus' ability to use multiple prefixes, suffixes, chat colours and name colours. 
-[Learn more about chat formatting here](chat.html)
+[Learn more about chat formatting here](chat.html).
+
+## `/list` groups no longer use permission groups
+
+Similarly, the `/list` command, one of the first that was added to Nucleus and also uses permission groups. Because `/list` checks groups of all players, it could
+be used to slow down a server maliciously. Some work into caching went on, however this was not an optimal solution.
+
+Nucleus now checks for the `nucleus.list.group` permission option/meta. This text is what is used for the groups as displayed in `/list`. As a result,
+the `playerinfo.list.list-grouping-by-permission.group-aliases` and `playerinfo.list.list-grouping-by-permission.use-aliases-only` no longer exists.
+The `nucleus.list.weight` option is no longer used either. 
+
+The result is simpler code, faster performance.
 
 ## Command Alias changes need re-applying
 
 All aliases that were disabled will be re-enabled as the format of `commands.conf` has changed slightly. Please review the commands config carefully, reapplying 
 changes that you may wish to keep.
+
+[Learn more about command management using the tutorial here](../tutorial/commandconfig).
