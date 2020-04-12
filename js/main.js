@@ -158,14 +158,16 @@ var d = (function() {
 
     var runScrollLogic = function() {
         var h = $("#pageheader");
-        if (h[0].getBoundingClientRect().top > 10 && $(".pageheadertop:hidden").length === 0) {
-            $(".pageheadertop").fadeOut(200, function() {
-                $(".doclinksec").fadeIn(200);
-            });
-        } else if (h[0].getBoundingClientRect().top <=10 && $(".pageheadertop:visible").length === 0) {
-            $(".doclinksec").fadeOut(200, function() {
-                $(".pageheadertop").fadeIn(200);
-            });
+        if (h.length !== 0) {
+            if (h[0].getBoundingClientRect().top > 10 && $(".pageheadertop:hidden").length === 0) {
+                $(".pageheadertop").fadeOut(200, function () {
+                    $(".doclinksec").fadeIn(200);
+                });
+            } else if (h[0].getBoundingClientRect().top <= 10 && $(".pageheadertop:visible").length === 0) {
+                $(".doclinksec").fadeOut(200, function () {
+                    $(".pageheadertop").fadeIn(200);
+                });
+            }
         }
     };
 
