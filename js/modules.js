@@ -42,7 +42,7 @@ var modulesJs = (function() {
 })();
 
 // On page complete.
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function(event) {
     modulesJs.init();
 });
 

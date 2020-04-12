@@ -16,10 +16,12 @@ Nucleus provides an enhanced version of the `/list` command that can be customis
 `playerinfo.list.group-by-permission-groups` is set to `true`, Nucleus will use the `nucleus.list.group` permission meta/option 
 to determine the name of the group they player should be displayed in.
 
-> For example, if players in the "mod" group should be displayed in a "Mod" group where the colour of the group is light blue,
-> set the `nucleus.list.group` option to `&bMod`. 
-
-{% include permissionblock.html cmdtype="groupOption" user="mod" option="nucleus.list.group" value="&bMod" %}
+<blockquote>
+For example, if players in the "mod" group should be displayed in a "Mod" group where the colour of the group is light blue,
+set the `nucleus.list.group` option to `&bMod`. A sample command is: 
+<br /><br />
+{% include permissionblock.html bypass-well="true" cmdtype="groupOption" user="mod" option="nucleus.list.group" value="&bMod" %}
+</blockquote>
 
 If the `nucleus.list.group` option is unset or empty, the text in  `playerinfo.list.default-group-name` will be used as the group name in the `/list`.
 
