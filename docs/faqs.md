@@ -1,127 +1,40 @@
 ---
-layout: standardheadmd
-title: '- FAQs'
+layout: howto
+title: 'FAQs'
 header: Nucleus Frequently Asked Questions
+lead: Answers to Frequently Asked Questions
+additionalcontainerclass: faq
 ---
 
-<style>
-h2 > a, h3 > a, h4 > a {
-    color: black;
-}
-</style>
+## About Nucleus
 
-This page lists some of the more frequently asked questions about the Nucleus Project, specifically the Essentials like plugin that we publish for Sponge servers.
+Nucleus is, quite simply, the Ultimate Essentials Plugin for Sponge! Nucleus was born to bring a modern, modular and feature-rich Essentials style plugin that makes Sponge a viable choice for all server owners to cover the basics, whether they be vanilla servers or modded servers. It lets you get on with making your server unique with a solid base you can trust!
 
-## Table of Contents
+If you want more information on Sponge, see their [website](https://spongepowered.org) and [documentation](https://docs.spongepowered.org).
 
-* TOC
-{:toc}
-
-<a class="anchor" id="about-nucleus"></a>
-
-## [About the Nucleus Project](#about-nucleus)
-
-<a class="anchor" id="what-is-nucleus"></a>
-
-### [What is Nucleus?](#what-is-nucleus)
+Come visit us on Discord - [click here and you’ll be with us in no time](https://discord.gg/A9QHG5H)!
  
-Nucleus is, quite simply, the Ultimate Essentials Plugin for Sponge! Nucleus was born to bring a modern, modular and feature-rich Essentials style plugin that
-makes Sponge a viable choice for all server owners to cover the basics, whether they be vanilla servers or modded servers. It lets you get on
-with making your server unique with a solid base you can trust! 
+Please, take the time to read the rest of this FAQ too.
 
-If you want more information on Sponge, see their [website](https://spongepowered.org) and [documentation](https://docs.spongepowered.org). 
+## General Setup
 
-<a class="anchor" id="what-do-they-publish"></a>
-
-### [What does the Nucleus Project publish?](#what-do-they-publish)
-
-* Nucleus: the main plugin. Most functionality is located in this plugin.
-* Nucleus Gluon: an optional plugin for Nucleus 0.24.0 and above, and PlaceholderAPI 3.6 and above, that allows for chat placeholders from both
-plugins to be used in... well, both plugins!
-* Nucleus Heisenberg: think Essentials GeoIP
-
-<a class="anchor" id="realtime-help"></a>
-
-### [So, can I get help in realtime? You said Discord...](#realtime-help)
-
-[You sure can get that help! Come visit us on Discord - click here and you'll be with us in no time!](https://discord.gg/A9QHG5H) 
-But please, take the time to read the rest of this FAQ too. 
-
-<a class="anchor" id="general-setup"></a>
-
-## [Nucleus: General Setup](#general-setup)
-
-<a class="anchor" id="essentials"></a>
-
-### [I've come from Essentials on Bukkit, can I migrate my data?](#essentials)
+### I've come from Essentials on Bukkit, can I migrate my data?
 
 No.
 
-<a class="anchor" id="datastore"></a>
-
-### [Can I use a database to store data?](#datastore)
+### Can I use a database to store data?
 
 Not yet, but it is being worked on.
 
-<a class="anchor" id="plugin-incompatibilities"></a>
-
-### [Are there any known plugin or mod incompatibilities with Nucleus?](#incompatibilities)
-
-Unfortunately so. Here are some plugins that are known to clash with Nucleus:
- 
-* **Any Essentials like** plugin is likely to take over commands that Nucleus would normally use. Avoid running more than one Essentials plugin at a time.
-* **ProjectWorlds** (PJW): PJW takes over the `/world` command, and has a different command setup to Nucleus. Nucleus can do most things that PJW does, 
-but if you decide you wish to use PJW and want to get to the Nucleus world command, you can use `/nworld` instead.
-* **ProjectPortals** (PJP): Older versions of PJP takes over the home, warp, back and teleportation commands. You can turn off these modules in PJP if 
-you would rather use Nucleus' versions. Never versions of PJP have these modules disabled.
-* **SimpleChat** and **SimpleTags**: These plugins have been known to hijack Nucleus' chat formatting - if you want chat channels, other plugins with Nucleus
-integration exist.
-* **FTB Utilities** tends to duplicate a player's name in the chat when a message is sent
-* **Topography** may cancel teleportation across worlds in favour of its own system. The `captureTeleports` options in particular cause issues, [see
-this comment on Github as to what happens](https://github.com/NucleusPowered/Nucleus/issues/1344#issuecomment-499848881)
-
-As we find more, we'll update this list.
-
-<a class="anchor" id="ftbu"></a>
-
-### [I'm using FTB and having issues with chat - names are being duplicated](#ftbu)
-
-If you are using FTB, FTB Utilities also tries to format the chat, with the result that player names appear twice. If you wish to use Nucleus' chat formatting, 
-you should turn off FTB Utilities handling. The ranks config file is in the `local` directory, set the following options to false:
-
-* `B:override_chat=false`
-* `B:override_commands=false`
-
-Then reload the FTB Utilities plugin or restart your server.
-
-<a class="anchor" id="lots-of-permissions"></a>
-
-### [There are a lot of permissions there, can I just give a permission wildcard?](#lots-of-permissions)
+### There are a lot of permissions there, can I just give a permission wildcard?
 
 Yeah, 1000 permission nodes can be daunting, and there is nothing stopping you, but we honestly recommend you do not. 
-If you do so, the following things will happen:
+Other plugins may also not function as intended, a good example is **GriefDefender**. **So, please, don't use the wildcard.**
 
-* You will not be able to go AFK (permission: `nucleus.afk.exempt.toggle`)
-* Logging in/out of your server will never generate a connection message (permission: `nucleus.connectionmessages.disable`)
-* From 1.2 - logging in to the server will cause you to vanish (permission: `nucleus.vanish.onlogin`)
-* From 1.3 - you'll give yourself the keep inventory permission (permission: `nucleus.inventory.keepondeath`)
+Instead, Nucleus offers a way to setup our suggested permission sets, that should get you off the ground. [You can learn
+more about how to set suggested permissions as part of our first time setup tutorial](tutorial/first/permissions.md).
 
-Other plugins may also not function as intended, a good example is **GriefPrevention**. **So, please, don't use the wildcard.**
-
-For more information on why this is bad, read [this article on why you shouldn't use it, including background information on what Bukkit did](nowildcard.html)
-
-Instead, Nucleus offers a way to setup our suggested permission sets, that should get you off the ground. [You can read more about it at this 
- documentation page](configuration/permissions.html), but the gist of it is that you should setup your user, mod and admin groups, then run the
- following command on each:
- 
- `/nucleus setupperms [USER|MOD|ADMIN] <groupname>`
-
-You can then tweak your permissions as you see fit. The permissions that get loaded with the `NONE` set are highly specialised, we do not
-recommend you actually grant these unless you are SURE you know what you are doing.
-
-<a class="anchor" id="what-defaults-give"></a>
-
-### [What do your defaults give?](#what-defaults-give)
+### What do your defaults give?
  
 * `USER` gives permissions to:
   * Use `/afk`, allowing themselves to be marked as AFK
@@ -137,7 +50,6 @@ recommend you actually grant these unless you are SURE you know what you are doi
   * Use `/realname` to find out what a player's IGN is from a nickname
   * Use `/list`
   * Use `/rules` 
-  * Use the server shop (`/itembuy` and `/itemsell`)
   * Warp to `/spawn` and `/firstspawn`
   * Use `/tpa`, accept and deny requests, and use `/tptoggle` to blanket deny requests.
   * Use `/warp` to teleport to any available warp point (but if enabled, only to those they are given explicit permissions for).
@@ -160,9 +72,7 @@ recommend you actually grant these unless you are SURE you know what you are doi
 
 As the `ADMIN` set spans about 900 permission nodes, please forgive me for not listing it all here!
 
-<a class="anchor" id="disable-modules"></a>
-
-### [Can you disable some of Nucleus' functionality?](#disable-modules)
+### Can you disable some of Nucleus' functionality?
 
 Yes! Nucleus has a system which wraps up the functions into units called "modules". So, if you have a better banning plugin, turn off the 
 ban module! Something else does chat? Turn off the chat module!
@@ -171,17 +81,14 @@ The modularisation of Nucleus allows for exciting plugin combinations
 
 To turn off a module, in `/config/nucleus/main.conf`, scroll to the `modules` section and set the module to `DISABLED`. Then restart your server.
 
-<a class="anchor" id="help-command"></a>
-
-### [I need help with the `/help` command!](#help-command)
+### I need help with the `/help` command!
 
 Nucleus does not touch the `/help` command. `/help` is a Sponge command - [please see the Sponge Docs for more information (and permissions)](https://docs.spongepowered.org/stable/en/server/spongineer/commands.html#sponge). 
 
-<a class="anchor" id="use-minecraft-command"></a>
+### I don't want your command taking over this Minecraft command! Can you stop that?
 
-### [I don't want your command taking over this Minecraft command! Can you stop that?](#use-minecraft-command)
-
-It's important to note that no minecraft command is actually turned off. To access a vanilla Minecraft command hidden by Nucleus, you can use `/minecraft:<command>`, such as
+It's important to note that no minecraft command is actually turned off. 
+To access a vanilla Minecraft command hidden by Nucleus, you can use `/minecraft:<command>`, such as
  `/minecraft:kill`.
 
 If you would rather have Minecraft use the command, but keep Nucleus' available, use Sponge's command alias feature. 
@@ -197,39 +104,20 @@ aliases {
 
 Nucleus' `kill` is then available through `/nucleus:kill`
  
-If you want to turn off Nucleus' command completely without turning off the whole module, you can turn it off in `commands.conf`.
-
-<a class="anchor" id="use-bungeecord-commands"></a>
-
-#### [I'm using a BungeeCord/Waterfall/Lillypad proxy, and this still doesn't work!](#use-bungeecord-commands)
-
-A BungeeCord plugin is probably taking over the command. The only thing you can do in this case is disable the command on your proxy,
-which might involve disabling the whole plugin.
-
-In these scenarios, you can still use `/nucleus:[command]`, `/n[command]` (replacing `[command]` with the name of the command),
- or if it has an alias, the alias.
-
-<a class="anchor" id="customisation"></a>
-
-## [Customisation](#customisation)
-
-<a class="anchor" id="warmups-cooldowns-costs"></a>
+If you want to turn off Nucleus' command completely without turning off the whole module, you can turn it off in `commands.conf`,
+[learn about how to do this in our commands configuration tutorial](tutorial/commandconfig).
 
 ### [I'd like some of my commands to have warmups, cooldowns or costs.](#warmups-cooldowns-costs)
 
-Most of Nucleus' commands support warmups, cooldowns or costs. All the settings are in the `/config/nucleus/commands.conf` file, [see
-our page on this for more information.](configuration/commands.html) 
+Most of Nucleus' commands support warmups, cooldowns or costs. All the settings are in the `/config/nucleus/commands.conf` 
+file for setting options on a global basis.  Note that you can either do this on a global basis by changing the `commands.conf`
+file, or on a per player/group basis using permission options.
 
-Note that you can either do this on a global basis by changing the `commands.conf` file, [or on a per
-player/group basis using permission options](configuration/commands.html#perplayer).
-
-<a class="anchor" id="connection-messages"></a>
+[Learn more about how to set warmups, cooldowns and costs in our tutorial](tutorial/commandconfig).
 
 ### [Can we change/remove the join/leave messages?](#connection-messages)
 
 Yes, you can. This is described in the [Connection Messages module documentation](modules/connection-messages.md).
-
-<a class="anchor" id="prefix-suffix"></a>
 
 ### [How do I set standard chat prefixes/suffixes?](#prefix-suffix)
 
@@ -242,8 +130,6 @@ _For a user_:
 
 _For a group_:
 {% include permissionblock.html cmdtype="groupPrefix,groupOption" user="[group]" option="prefix" value="[prefix]" %}
-
-<a class="anchor" id="home-count"></a>
 
 ### [How can I set the number of homes a player can have?](#home-count)
 
@@ -260,13 +146,22 @@ Consult your permission plugin on how to set this option, but for reference, com
 
 [You can read more about the home module here.](modules/home.html)
 
-<a class="anchor" id="troubleshooting"></a>
+## Common Issues
+{:.firsth2nomargin}
 
-## [Troubleshooting problems in game](#troubleshooting)
+### Are there any known plugin or mod incompatibilities with Nucleus?
 
-<a class="anchor" id="back-warp"></a>
+Unfortunately so. [See our list of compatibility issues on our compatibility page](compatibility.html). 
 
-### [Why is `/back` telling me there is nowhere to warp to?](#back-warp)
+### Using FTB Utilities - Chat Prefixes Aren't Showing 
+
+FTB Utilities tends to overwrite the chat formatting that Nucleus applies - it is particularly evident when the player 
+name in the chat is green when that player is OP.
+
+To disable the FTB Utilities chat formatting and restore Nucleus behaviour, look in the FTB Utilities configuration
+and set `B:override_chat` to `false` then reload the FTBU mod or restart the server.
+
+### Why is `/back` telling me there is nowhere to warp to?
 
 `/back` was designed to be more flexible than previous plugins, but that also means that configuring it can take a few more steps. If it
 isn't working, make sure you check the following:
@@ -276,7 +171,7 @@ isn't working, make sure you check the following:
 
 <a class="anchor" id="bed-spawn"></a>
 
-### [Players don't respawn next to their bed when they die!](#bed-spawn)
+### Players don't respawn next to their bed when they die!
 
 By default, Nucleus overrides this behaviour if you have custom spawn rules set. If you want bed spawns to override other
 respawn logic, set `spawn.affect-bed-spawn` to `false` and reload the config.
@@ -285,7 +180,7 @@ respawn logic, set `spawn.affect-bed-spawn` to `false` and reload the config.
 
 <a class="anchor" id="first-spawn-problems"></a>
 
-### [Why are players not spawning at the set spawn when they first log in?](#first-spawn-problems)
+### Why are players not spawning at the set spawn when they first log in?
 
 Minecraft has a special spawn logic for new players:
 
@@ -296,7 +191,7 @@ You can fix this by running `/gamerule spawnRadius 0` (shoutout to Karaga for di
 
 <a class="anchor" id="chat-messed-up"></a>
 
-### [My chat messages seem messed up, I set Nucleus' formatting options but it's not following them!](#chat-messed-up)
+### My chat messages seem messed up, I set Nucleus' formatting options but it's not following them!
  
 Have you got any chat management plugins installed? These plugins tend to override what Nucleus is doing, and while Nucleus tries to be
 as compatible as possible, some plugins do interfere, from duplicating sections to completely blowing away all of Nucleus' formatting.
@@ -306,18 +201,13 @@ and UltimateChat, to name some of the more popular plugins, do alter the chat an
 try to give you help in these scenarios, please bear in mind that anyone in the Nucleus Discord channel are there for Nucleus. That said,
 developers of some of these other plugins are also in our Discord channel and can help you directly too.
 
-<a class="anchor" id="world-pregen"></a>
-
-### [My server is _really_ slow when using `/rtp` or some other teleport to a place no player has gone before!](#world-pregen)
+### My server is _really_ slow when using `/rtp` or some other teleport to a place no player has gone before!
 
 Chunk generation is slow. A general recommendation by most of the community is to do what is known as "pre-generation" of your world. Pre-generation creates 
 chunks in your world before they are needed, so when someone _does_ reach that chunk, it just has to be loaded, rather than generated first.
 This, in general, offers a moderate performance gain, however, do be careful to not pregenerate a large world!
 
-Nucleus offers a way to do this in the `world` module. If you're running a 1.10.2 server, we recommend installing the 
-[Nucleus Mixins](configuration/mixins.html) plugin before attempting this, as this can provide moderate speedup of pre-generation.
-
-The command `/world border gen [-a] [--save <time>] [world]` allows you to pre generate
+Nucleus offers a way to do this in the `world` module. The command `/world border gen [-a] [--save <time>] [world]` allows you to pre generate
 up to your world border. We recommend setting your world border to be about a 4000 block diameter around your spawn point (using the command
 `/world border set 4000` when stood at the centre), and then running `/world border gen`. This will generate your world, using 80% of the tick
 time and save every 20 seconds.
@@ -334,9 +224,7 @@ Some configurations are:
 
 **We recommend you do this on a server with no players on!**
 
-<a class="anchor" id="command-error"></a>
-
-### [HELP! I have an error when I run a command! (AKA, making a good bug report!)](#command-error)
+### HELP! I have an error when I run a command! (AKA, making a good bug report!)
 
 If you get an error that states "An error occurred while running this command", or Nucleus does something weird when you perform an action, 
 please do the following (make sure you have console and filesystem access):
@@ -354,25 +242,3 @@ the issue hasn't been reported already.
 * Pastebin/Github Gist _both_ files, and create a new issue on GitHub explaining what you did to cause the error.
 
 That's it! The developers may ask for more information, they will direct you on how to get this info if it's needed.
-
-<a class="anchor" id="devs"></a>
-
-## [Developers](#devs)
-
-<a class="anchor" id="can-i-integrate"></a>
-
-### [Can I integrate with Nucleus?](#can-i-integrate)
-
-Absolutely, we'd love to have you on board. [We have JavaDocs for our API](https://jd.nucleuspowered.org), but if the API you want doesn't 
-exist, or you want help with the integration, the developers are frequently on Discord.
- 
-<a class="anchor" id="maven"></a>
- 
-### [Do you have a Maven/Gradle repo?](#maven)
-
-We certainly do! This information is posted on all feature release notes where the API will have changed.
-
-The repo is available at `https://repo.drnaylor.co.uk/artifactory/minecraft/`, you want the `nucleus-api` artifact, which contains the API
-interfaces we will keep stable.
-
-[You can also use JitPack](https://jitpack.io/#NucleusPowered/Nucleus) as your repo too, be sure to select the `nucleus-api` artifact.
