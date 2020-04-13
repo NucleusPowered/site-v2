@@ -258,6 +258,14 @@ div.command-usage > p {
     margin-left: -15px;
     padding-left: 15px;
     border-left: 1px solid #424242;
+    max-height: calc(100vh - 50px - 15px);
+    margin-bottom: 15px;
+}
+
+.toc-wrap-a {
+    display: block !important;
+    overflow-y: auto;
+    /* height: calc(100% - 15px) */
 }
 
 .toc-wrap ul {
@@ -323,8 +331,16 @@ pre.highlight {
     display: none;
 }
 
+h2.firsth2nomargin {
+    margin-bottom: 0;
+}
+
 .firsth2nomargin h2:first-child {
     margin-top: 0;
+}
+
+h3.smaller {
+    font-size: 24px;
 }
 
 /* Tutorials */
@@ -400,4 +416,8 @@ hr.black {
 .beta .container div {
     padding-left: 20px;
     background: url("../img/exclamation-triangle-fill.svg") left center no-repeat;
+}
+
+.additionalcontainerclass h3 {
+    font-size: 24px;
 }

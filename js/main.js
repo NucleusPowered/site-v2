@@ -1,5 +1,6 @@
 var d = (function() {
 
+    var cookieEntry = "v2-perm-type";
     var preferredPermission = "LuckPerms";
 
     // Permission command data
@@ -97,7 +98,7 @@ var d = (function() {
     };
 
     var onPermChangeClick = function(object, type) {
-        document.cookie = "perm-type=" + type;
+        document.cookie = cookieEntry + "=" + type + ";samesite=strict;path=/";
         recalcPermissionBoxes(object);
         $("#permswitchbtn").text("Permissions: " + type);
         $("a[data-permtype]").removeClass("active");
@@ -139,8 +140,8 @@ var d = (function() {
             while (c.charAt(0)==' ') {
                 c = c.substring(1);
             }
-            if (c.indexOf("perm-type=") == 0) {
-                return c.substring("perm-type=".length,c.length);
+            if (c.indexOf(cookieEntry + "=") == 0) {
+                return c.substring((cookieEntry + "=").length,c.length);
             }
         }
         return preferredPermission;
@@ -157,8 +158,9 @@ var d = (function() {
     };
 
     var runScrollLogic = function() {
-        var h = $("#pageheader");
+        let h = $("#pageheader");
         if (h.length !== 0) {
+            // Top banner
             if (h[0].getBoundingClientRect().top > 10 && $(".pageheadertop:hidden").length === 0) {
                 $(".pageheadertop").fadeOut(200, function () {
                     $(".doclinksec").fadeIn(200);
@@ -168,6 +170,35 @@ var d = (function() {
                     $(".pageheadertop").fadeIn(200);
                 });
             }
+        }
+
+        // Re-adjust size on right hand side.
+        let rhs = $(".toc-wrap");
+        if (rhs.length !== 0) {
+            // Get the top of the box
+            let parent = $(".toc-l");
+            let bounding = parent[0].getBoundingClientRect();
+            let bottom = bounding.bottom;
+            let top = bounding.top;
+            let cssTop = parseInt(rhs.css("top"), 10);
+            let txt;
+            let h3h = Math.ceil($(".toc-l h3")[0].getBoundingClientRect().height);
+            let tt = $(".toc-wrap-a");
+            if (bottom > (window.innerHeight || document.documentElement.clientHeight)) {
+                txt = "100vh";
+            } else {
+                txt = bottom.toString() + "px";
+            }
+            if (top > cssTop) {
+                rhs.css("max-height", "calc("  + txt + " - " + (top + 15) + "px)");
+                tt.css("max-height", "calc("  + txt + " - " + (top + 15 ) + "px - " + (h3h + 10) + "px)");
+            } else {
+                // bottom on screen
+                rhs.css("max-height", "calc(" + txt + " - " + (cssTop + 15) + "px");
+                tt.css("max-height", "calc(" + txt + " - " + (cssTop + 15) + "px - " + (h3h + 10) + "px)");
+            }
+
+           //.css("max-height", (t - h3h) + "px");
         }
     };
 
@@ -193,9 +224,10 @@ var d = (function() {
             var header = $(".toplinesticky");
             if (header.length > 0) {
                 runScrollLogic();
-                $(document).scroll(function(e) {
-                    runScrollLogic();
-                })
+                document.addEventListener(
+                    'scroll',
+                    function(e) { runScrollLogic(); },
+                    { passive: true });
             }
         }
     }

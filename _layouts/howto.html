@@ -17,7 +17,9 @@ layout: default
         <div class="toc-l col no-gutter">
             <div class="toc-wrap">
                 <h3><small>Page contents</small></h3>
-                {% include toc.html html=content h_min=2 class=toc-ul %}
+                <div class="toc-wrap-a">
+                    {% include toc.html html=content h_min=2 class=toc-ul %}
+                </div>
             </div>
         </div>
     </div>
