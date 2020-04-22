@@ -107,7 +107,7 @@ Nucleus' `kill` is then available through `/nucleus:kill`
 If you want to turn off Nucleus' command completely without turning off the whole module, you can turn it off in `commands.conf`,
 [learn about how to do this in our commands configuration tutorial](tutorial/commandconfig).
 
-### [I'd like some of my commands to have warmups, cooldowns or costs.](#warmups-cooldowns-costs)
+### I'd like some of my commands to have warmups, cooldowns or costs.
 
 Most of Nucleus' commands support warmups, cooldowns or costs. All the settings are in the `/config/nucleus/commands.conf` 
 file for setting options on a global basis.  Note that you can either do this on a global basis by changing the `commands.conf`
@@ -115,11 +115,11 @@ file, or on a per player/group basis using permission options.
 
 [Learn more about how to set warmups, cooldowns and costs in our tutorial](tutorial/commandconfig).
 
-### [Can we change/remove the join/leave messages?](#connection-messages)
+### Can we change/remove the join/leave messages?
 
 Yes, you can. This is described in the [Connection Messages module documentation](modules/connection-messages.md).
 
-### [How do I set standard chat prefixes/suffixes?](#prefix-suffix)
+### How do I set standard chat prefixes/suffixes?
 
 This is entirely dependent on your Permissions plugin. While Nucleus has a lot more to offer in terms of chat formatting, [and we
  recommend that you look at the chat module documentation pages](modules/chat.html), by default, Nucleus will display prefixes, display names and suffixes in the chat message. 
@@ -131,7 +131,7 @@ _For a user_:
 _For a group_:
 {% include permissionblock.html cmdtype="groupPrefix,groupOption" user="[group]" option="prefix" value="[prefix]" %}
 
-### [How can I set the number of homes a player can have?](#home-count)
+### How can I set the number of homes a player can have?
 
 This is implemented as the permission option/meta `home-count`, rather than a specific permission for performance reasons.
 Consult your permission plugin on how to set this option, but for reference, commands for popular permission managers are shown below:

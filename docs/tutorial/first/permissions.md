@@ -6,6 +6,9 @@ adddocslink: true
 steps: "first"
 ---
 
+> Nucleus is **not** a permissions management plugin. To make use of permissions, you must install a separate permissions plugin. [Such plugins can be found on Ore, Sponge's plugin distribution platform.](https://ore.spongepowered.org)
+{:.bl.warn}
+
 ## Setting Permissions
 
 Nucleus, as an Essentials like plugin for Sponge, contains a lot of commands and as a result,
@@ -18,8 +21,6 @@ If you want to set all permissions yourself, you can find a comprehensive list o
 look on our specific module pages, or use any verbose logging tool that your permissions plugin
 may provide.
 
-> Nucleus is **not** a permissions management plugin. To make use of permissions, you must install a separate permissions plugin. [Such plugins can be found on Ore, Sponge's plugin distribution platform.](https://ore.spongepowered.org)
->
 > This documentation site provides sample permission management commands for some popular permissions plugins. The plugin that is displayed can be selected using the selector in the top right. We do not endorse any third party plugins.
 
 > **Do not use the `*` wildcard**. Although Nucleus now tries to act normally if you use it, weird things can happen and it may break other plugins, such as GriefDefender. [For more information on why `*` is a bad idea, click here.](../../nowildcard.html)
