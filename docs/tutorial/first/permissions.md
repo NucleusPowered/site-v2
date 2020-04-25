@@ -26,6 +26,16 @@ may provide.
 > **Do not use the `*` wildcard**. Although Nucleus now tries to act normally if you use it, weird things can happen and it may break other plugins, such as GriefDefender. [For more information on why `*` is a bad idea, click here.](../../nowildcard.html)
 {:.bl.error}
 
+## Using Nucleus Without a Permissions Plugin
+
+> We do not recommend that you run Nucleus without a permission plugin.
+{:.bl.warn}
+
+If you do not wish to use a permission plugin, by default, Nucleus will only allow OPs to use any command. If you wish
+for non-OPs to be able to use the basic user focused commands, set `core.give-default-group-user-permissions` to
+`true` in `main.conf` and restart your server. The permissions that will be granted are those marked "USER" permissions
+on the [permissions reference](../../permissions.html).
+
 ## Nucleus Permissions Quick Start
 
 Every permission in Nucleus is internally assigned one of five roles, from the user role, permissions
