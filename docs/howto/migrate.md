@@ -7,6 +7,15 @@ adddocslink: true
 
 Nucleus v2 is a mostly automatic upgrade from Nucleus v1.14.x, however there are some changes that server owners must perform to ensure continuation of service.
 
+## The Warning and Server Shop modules have been removed
+
+The Warning module has an API that plugins can use to migrate Nucleus data. Otherwise, you will require new plugins to replace this functionality. 
+
+## Some functions of the Admin module have been migrated to new modules
+
+Experience related commands and functions are now in the `experience` module. Broadcasts are now in the `notification` module. Review whether you require these
+modules, and review any updated configuration.
+
 ## Chat Formatting groups no longer use permission groups
 
 In Nucleus v1, `chat.templates.group-templates` tried to use permission groups directly in order to determine which template to use. However, this was error prone
