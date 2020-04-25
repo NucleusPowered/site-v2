@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
+    <title>{{ page.title | default: "Nucleus" }}</title>
     <link rel="stylesheet" href="{{ site.baseurl }}/css/bootstrap.min.css" />
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" />
     <link rel="stylesheet" href="{{ site.baseurl }}/css/highlights.css" />
