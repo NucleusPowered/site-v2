@@ -22,10 +22,67 @@ the prefix based on group with the default settings, run:
 
 {% include permissionblock.html cmdtype="groupPrefix,groupOption" user="mod" option="prefix" value="&5[Mod]" %}
 
-## Customise Chat Format
+## Modifying the Chat Format 
 
-## Player Name/Chat Colours
+### Player Name/Chat Colours
 
+To give the player's name, or their chat, a default display colour, the "namecolour" and "chatcolour" permission options
+can be set. To give all mods dark purple names, a permission command you might use is: 
+
+{% include permissionblock.html cmdtype="groupPrefix,groupOption" user="mod" option="namecolour" value="5" %}
+
+Similarly, for light blue chat text for the admin group:
+
+{% include permissionblock.html cmdtype="groupPrefix,groupOption" user="admin" option="chatcolour" value="b" %}
+
+The supplied colours are the standard Minecraft formatting codes.
+
+### Player Name/Chat Styles
+
+Styles can also be set for the name and chat messages, using the "namestyle" and "chatstyle" permission options.
+These permission options can accept multiple styles which are comma separated. Both single character and named
+styles are accepted. To set the style as bold and italic, set the `chatstyle` option to `l,o` or `bold,italic`.
+
+If you were to add the italic and bold styles to the mod group, an example command to run would be:
+
+{% include permissionblock.html cmdtype="groupOption" user="mod" option="chatstyle" value="l,o" %}  
+
+or, for their name
+
+{% include permissionblock.html cmdtype="groupOption" user="mod" option="namestyle" value="l,o" %}
+
+The supplied styles are the standard Minecraft formatting codes.
+
+### Customising Chat Formats
+
+Nucleus enables rich customisation of chat formatting. The default template can be found at `chat.templates.default`,
+where the `prefix` key represents what appears before a message, and suffix representing what appears after.
+
+[The various default tokens that can be used in the format can be found here.](../links-and-tokens.html). Other plugins
+may add additional tokens. 
+
+### Adding Multiple Prefixes
+
+Nucleus can render _any_ permission option in the chat format. This can be useful if you have multiple permission tracks
+and want to show a prefix for each one - potentially saving server owners from creating multiple group templates. The chat
+token `{{o:[option]}}`, where `[option]` is defined on permission groups.
+
+If you wish to display a permission option named "prefix2", for example, add `{{o:prefix2}}` to the template in the
+prefix or suffix config option in the relevant `chat.templates` entry. If the option doesn't exist on a player's group,
+nothing will be displayed.
+
+### Group Templates
+
+For more complex customisations based on player group, Nucleus offers the ability to define alternative templates, in
+the `chat.templates.group-templates` config map. Templates can be defined with a group name specified as the key.
+
+> Unlike Essentials and Nucleus v1, Nucleus v2 reads the text in the permission option `nucleus.chat.group` 
+> to determine which group a player belongs in.  
+{:.bl.warn}
+
+If the permission option `nucleus.chat.group` for a player is not empty, Nucleus will try to read the template named
+the same as the option. That is, if the option value is "hello" for a player, Nucleus will try to read the template from 
+`chat.templates.group-templates.hello` when that player sends a message, falling back to the default.
 
 ## Troubleshooting
 
