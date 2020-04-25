@@ -65,9 +65,9 @@ may add additional tokens.
 
 Nucleus can render _any_ permission option in the chat format. This can be useful if you have multiple permission tracks
 and want to show a prefix for each one - potentially saving server owners from creating multiple group templates. The chat
-token `{{o:[option]}}`, where `[option]` is defined on permission groups.
+token {% raw %}`{{o:[option]}}`{% endraw %}, where `[option]` is defined on permission groups.
 
-If you wish to display a permission option named "prefix2", for example, add `{{o:prefix2}}` to the template in the
+If you wish to display a permission option named "prefix2", for example, add {% raw %}`{{o:prefix2}}`{% endraw %} to the template in the
 prefix or suffix config option in the relevant `chat.templates` entry. If the option doesn't exist on a player's group,
 nothing will be displayed.
 
