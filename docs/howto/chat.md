@@ -84,6 +84,10 @@ If the permission option `nucleus.chat.group` for a player is not empty, Nucleus
 the same as the option. That is, if the option value is "hello" for a player, Nucleus will try to read the template from 
 `chat.templates.group-templates.hello` when that player sends a message, falling back to the default.
 
+An example command to make the "mod" group use the "modtemplate" template would be:
+
+{% include permissionblock.html cmdtype="groupOption" user="mod" option="nucleus.chat.group" value="modtemplate" %}
+
 ## Troubleshooting
 
 There are a few reasons why Nucleus chat formatting may not be showing.
