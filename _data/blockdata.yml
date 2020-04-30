@@ -40,6 +40,9 @@
         - name: "Customising Player Chat"
           tagline: "Customise chat formatting on a per player, group and server-wide basis"
           link: "howto/chat.html"
+        - name: "First Join Kits and Spawns"
+          tagline: "Supporting new players with a first spawn location and an initial inventory"
+          link: "howto/firsttime.html"
     - name: "General Reference"
       tagline: "Lists of commands, permissions and placeholder tokens"
       entries:
