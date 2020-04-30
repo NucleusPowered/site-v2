@@ -18,8 +18,9 @@ In order to set the position where your new players spawn in, you will need to b
  `/setfirstspawn` when your player is standing at the spot here you wish for this spawn point to be. Your player's position
  and rotation will be saved, and new players will be sent to this spot when they log in for the first time.
 
-> It is **strongly** advised that if you use the first spawn mechanic that you also set the gamerule `spawnRadius` to  `0`, that is, run the command `/gamerule spawnRadius 0`.
-> This will ensure that new players spawn in any building that you may wish to place the first spawn point at, and not above it.
+> It is **strongly** advised that if you use the first spawn mechanic, you also set the gamerule `spawnRadius` to  `0` 
+> by running the command `/gamerule spawnRadius 0`.
+> This will ensure that new players spawn in any building, not above it.
 {:.bl.warn}
  
 Only one "first spawn point" may be active at any one time. If you wish to warp there in the future, run `/firstspawn`.
