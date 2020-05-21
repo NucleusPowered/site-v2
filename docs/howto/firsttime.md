@@ -29,7 +29,8 @@ run `/setfirstspawn del`.
 
 ## Creating an initial inventory using kits
 
-_Requires the [kit](../modules/kit.html) module to be enabled._
+_Requires the [kit](../modules/kit.html) module to be enabled. You may also want to read our tutorial on [how to create
+and manage kits](../tutorial/kit)._
 
 In Nucleus, first join kits **are just regular kits**. This means that creating a first join kit is done exactly the same
 way as standard kits. 
