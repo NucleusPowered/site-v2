@@ -22,3 +22,16 @@
       title: Command Modifiers
     - link: groupbased
       title: Group/Player based modifiers
+-
+  name: "kit"
+  header: "Creating and Managing Kits"
+  lead: "Learn how to create, redeem and manage kits"
+  steps:
+    - link: create
+      title: Creating Kits
+    - link: redeem
+      title: Viewing and Redeeming
+    - link: modify
+      title: Modifying Redemption
+    - link: commands
+      title: Commands on Kits

@@ -22,6 +22,9 @@
         - name: "Command Management"
           tagline: "Learn how to set cooldowns, warmups and costs on your commands"
           link: "tutorial/commandconfig"
+        - name: "Creating and Managing Kits"
+          tagline: "Learn how to create and manage kits"
+          link: "tutorial/kit"
     - name: "How To"
       tagline: "Quick articles that resolve specific, common tasks"
       entries:
