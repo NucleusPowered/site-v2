@@ -5,6 +5,11 @@ lead: Nucleus' Chat module can format chat messages to show player prefixes, ran
 adddocslink: true
 ---
 
+> While Nucleus' chat formatting generally works out of the box, some mods and plugins may overwrite Nucleus'
+> formatting with their own, including FTB Utilities. [See known compatibility problems with the chat module](../modules/chat.html#compatibility) 
+> for more information and how to remedy this. 
+{:.bl.warn}
+
 ## Default Chat Format
 
 By default, if the Nucleus chat module is enabled, Nucleus will format player chat messages in the following way:

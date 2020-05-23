@@ -29,6 +29,17 @@ The general Nucleus configuration can be found in `main.conf`. This file allows 
 
 The first section in the configuration file allows you to enable or disable modules, turning on or off features. [Learn how to enable and disable modules here](../../howto/modules.html). 
 
+### Using Nucleus with Server Panels
+
+> This is only necessary if you use a server panel. There is no need to do this if you use SSH and `screen` or `tmux` with your
+> server. 
+
+If you use a server panel, such as AMP or Multicraft, they tend to make the server run the command `/list` every 30 seconds or
+so to make sure their player list is up to date. However, as Nucleus replaces `/list`, this causes spam on the server and
+breaks these panels. 
+
+To fix this, set `playerinfo.list.server-panel-compatibility` in `main.conf` to `true`.  
+
 ## Command Configuration
 
 All commands in Nucleus can be enabled or disabled at a command level. Some commands can also have costs, warmups and cooldowns associated with them. The commands configuration file, `command.conf`, contains a list of all commands and related options that can be set on a per command basis. 
