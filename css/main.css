@@ -67,28 +67,29 @@ border-radius: .25rem;
 */
 
 blockquote.bl {
+    padding-top: 10px;
     background-repeat: no-repeat;
-    background-position: 5px 0;
+    background-position: 5px 5px;
     background-size: 32px;
     color: #000000;
     padding-left: 30px;
+    padding-right: 10px;
     font-weight: bold;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    margin-bottom: 5px;
     font-size: 16px;
     border-left: 0;
 }
 
-blockquote.bl.info {
-    background-image: url("../img/info-circle-fill.svg");
-}
-
 blockquote.bl.warn {
     background-image: url("../img/exclamation-triangle-fill.svg");
+    background-color: #fff9d7;
+    border-left: #ffdd00 3px solid;
 }
 
 blockquote.bl.error {
     background-image: url("../img/exclamation-circle-fill.svg");
+    background-color: #ffdcd3;
+    border-left: #e83f3f 3px solid;
 }
 
 blockquote.bl > p {
@@ -283,12 +284,6 @@ div.command-usage > p {
 
 .toc-wrap ul li {
     padding-bottom: 5px;
-}
-
-pre.highlight {
-    border: 1px solid #dee2e6 !important;
-    padding: 3px;
-    background-color: #f5f5f5;
 }
 
 .permissionblock {
