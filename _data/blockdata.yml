@@ -80,7 +80,7 @@
           tagline: "Banning players"
           link: "modules/ban.html"
         - name: "Chat"
-          tagline: "Server chant management"
+          tagline: "Server chat management"
           link: "modules/chat.html"
         - name: "Chat Logging"
           tagline: "Logging server chat to a separate file"
