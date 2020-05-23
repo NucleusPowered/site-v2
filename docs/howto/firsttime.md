@@ -38,7 +38,7 @@ way as standard kits.
 The simplest way to make your first join kit is to log on to the server, then:
  
  * Setup your inventory to **only** contain the items that you wish to give,
- * Run `/kit add [name]`, replacing `[name]` with the name you want to give your kit,
+ * Run `/kit create -c [name]`, replacing `[name]` with the name you want to give your kit,
  * Run `/kit setfirstjoin [name] true`, using the same name as you used in the previous step.
  
 That's it! The kit will now be given when a new player logs in. It is not redeemable more than once, and is not shown on
