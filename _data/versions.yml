@@ -12,3 +12,11 @@ prerelease:
     minor: 0
     patch: 0
     timestamp: 0
+legacy:
+  - version: 1.14.5
+    major: 1
+    minor: 14
+    patch: 5
+    timestamp: 0
+    ore: 'https://ore.spongepowered.org/Nucleus/Nucleus/versions/1.14.5-S7.1'
+    github: 'https://github.com/NucleusPowered/Nucleus/releases/tag/1.14.5'
