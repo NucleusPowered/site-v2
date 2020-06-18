@@ -48,6 +48,17 @@
     isExact: true
     notes: ''
 -   essentialsCommands:
+    - kill
+    - remove
+    - butcher
+    - killall
+    - mobkill
+    nucleusEquiv:
+    - kill
+    - nkill
+    isExact: false
+    notes: Nucleus supports killing entities using the Minecraft selectors.
+-   essentialsCommands:
     - sudo
     nucleusEquiv:
     - sudo
@@ -565,14 +576,6 @@
     - nmobspawn
     isExact: true
     notes: ''
--   essentialsCommands:
-    - mute
-    - silence
-    nucleusEquiv:
-    - mute
-    - nmute
-    isExact: false
-    notes: Unmuting a player should be done via the /unmute command.
 -   essentialsCommands:
     - nick
     - nickname
