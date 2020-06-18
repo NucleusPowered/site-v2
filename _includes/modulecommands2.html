@@ -27,7 +27,7 @@
     <div class="command-ext-description">
         {% if cmds.extendedDescription %}
         <p>
-            {{ cmds.extendedDescription | replace: '<', '&lt;' | replace: '>', '&gt;' | replace: '|br|', '<br />' }}
+            {{ cmds.extendedDescription | replace: '<', '&lt;' | replace: '>', '&gt;' | newline_to_br }}
         </p>
         {% endif %}
     </div>
