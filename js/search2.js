@@ -1,9 +1,17 @@
 const nucleusSearch = (function () {
 
+    const body = $("body");
+    const html = $("html");
+    const overlay = $("#searchoverlay");
+
     let searchData;
     let commandData;
     let tokenData;
     let lunrObject;
+
+    let timeout = null;
+
+    let init = false;
 
     const definition = {
         "module": "Module Reference",
@@ -25,15 +33,28 @@ const nucleusSearch = (function () {
 
     const clearSearch = function() {
         $("div[data-search-type] .search-results").html("");
-        $("div[data-search-type]").hide();
     };
+
+    const clearTimeoutIfExists = function() {
+        if (timeout !== null || timeout !== undefined) {
+            clearTimeout(timeout);
+        }
+    }
 
     // Create the search div
     const createSearchPanel = function() {
+        if (init) {
+            return;
+        }
+        init = true;
         // bind to the form
         $("form[data-search]").on("submit", function(event) {
             event.preventDefault();
             startSearch($("form[data-search] input[data-search]").val());
+        });
+        $("form[data-search] input[data-search]").on("input", function(event) {
+            clearTimeoutIfExists();
+            setTimeout(() => startSearch($("form[data-search] input[data-search]").val()), 500);
         });
         $.getJSON("/search.json").done(data => {
             searchData = data["standard"];
@@ -105,24 +126,60 @@ const nucleusSearch = (function () {
                     });
                 }
             })
-        }
+        };
+        clearSearch();
     };
 
     return {
-        init: function() {
-            createSearchPanel();
-        },
         open: function() {
-            createSearchPanel();
+            if (!this.isOpen()) {
+                createSearchPanel();
+                body.css("overflow-x", "hidden");
+                body.css("overflow-y", "hidden");
+                html.css("overflow-x", "hidden");
+                html.css("overflow-y", "hidden");
+                overlay.show();
+                $('#search-box').trigger("focus");
+            }
+        },
+        isOpen: function() {
+            return overlay.is(":visible");
         },
         search: function(searchTerm) {
+            open();
             startSearch(searchTerm);
         },
         close: function() {
-
+            if (this.isOpen()) {
+                overlay.hide();
+                body.css("overflow-x", "");
+                body.css("overflow-y", "");
+                html.css("overflow-x", "");
+                html.css("overflow-y", "");
+            }
         }
     }
 
 })();
 
-nucleusSearch.init();
+$(document).on("keydown", function(e) {
+    if (nucleusSearch.isOpen() && (e.key === "Escape" || e.key === "Esc")) {
+        nucleusSearch.close();
+        e.preventDefault();
+    } else if (!nucleusSearch.isOpen() && e.key === "s") {
+        nucleusSearch.open();
+        e.preventDefault();
+    }
+});
+
+$("a[data-search-activate]").on("click", function(event) {
+    event.preventDefault();
+    nucleusSearch.open();
+});
+
+$("#searchoverlay").on("click", function(event) {
+    if (event.target === this) {
+        event.preventDefault();
+        nucleusSearch.close();
+    }
+});
