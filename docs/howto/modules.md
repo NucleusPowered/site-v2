@@ -3,6 +3,7 @@ layout: howto-notoc
 header: How to Enable & Disable Modules
 lead: Nucleus allows you to select which functionality that the plugin will provide.
 adddocslink: true
+type: howto
 ---
 
 Nucleus is broken into multiple modules that can be enabled or disabled as required. Modules can be enabled/disabled in `main.conf`.

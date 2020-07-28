@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Notifications Module
 moduleid: notification
 modulename: Notifications
+type: module
 ---
 
 ## Introduction

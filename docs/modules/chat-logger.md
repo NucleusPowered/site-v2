@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Chat Logger Module
 moduleid: chatlogger
 modulename: Chat Logger
+type: module
 ---
 
 ## Introduction

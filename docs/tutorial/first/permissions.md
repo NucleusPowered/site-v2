@@ -3,7 +3,8 @@ layout: tutorials
 header: Installing and Using Nucleus
 lead: Learn how to obtain, install and configure Nucleus on your Sponge Server
 adddocslink: true
-steps: "first"
+steps: .*
+type: tutorial
 ---
 
 > Nucleus is **not** a permissions management plugin. To make use of permissions, you must install a separate permissions plugin. [Such plugins can be found on Ore, Sponge's plugin distribution platform.](https://ore.spongepowered.org)

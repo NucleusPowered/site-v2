@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Server Shop Module
 moduleid: server-shop
 modulename: Server Shop
+type: module
 ---
 
 <div class="panel panel-danger">

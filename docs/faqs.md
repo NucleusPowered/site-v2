@@ -4,6 +4,7 @@ title: 'FAQs'
 header: Nucleus Frequently Asked Questions
 lead: Answers to Frequently Asked Questions
 additionalcontainerclass: faq
+type: general
 ---
 
 ## About Nucleus

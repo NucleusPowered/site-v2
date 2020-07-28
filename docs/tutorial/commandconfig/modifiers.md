@@ -1,7 +1,8 @@
 ---
 layout: tutorials
 adddocslink: true
-steps: "commandconfig"
+steps: .*
+type: tutorial
 ---
 
 ## Command warmups, cooldowns and costs

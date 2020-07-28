@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Inventory Module
 moduleid: inventory
 modulename: Inventory
+type: module
 ---
 
 ## Introduction

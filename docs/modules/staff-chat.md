@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Staff Chat Module
 moduleid: staff-chat
 modulename: Staff Chat
+type: module
 ---
 
 ## Introduction

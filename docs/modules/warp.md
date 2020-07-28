@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Warp Module
 moduleid: warp
 modulename: Warp
+type: module
 ---
 
 ## Introduction

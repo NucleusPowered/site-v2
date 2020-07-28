@@ -1,7 +1,8 @@
 ---
 layout: tutorials
 adddocslink: true
-steps: "commandconfig"
+steps: .*
+type: tutorial
 ---
 
 ## Group based command modifiers

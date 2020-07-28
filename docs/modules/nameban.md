@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Name Ban Module
 moduleid: nameban
 modulename: Name Ban
+type: module
 ---
 
 ## Introduction

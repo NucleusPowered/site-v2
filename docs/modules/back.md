@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Back Module
 moduleid: back
 modulename: Back
+type: module
 ---
 
 ## Introduction

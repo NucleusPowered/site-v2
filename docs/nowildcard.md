@@ -2,6 +2,7 @@
 layout: standardheadmd
 title: Documentation Centre
 header: The Permissions Wildcard (And Why You Shouldn't Use It)
+type: general
 ---
 
 One of the biggest issues that we come across in the Nucleus discord is that people complain they vanish on login, or that they don't realise they are vanished and so no mob targets them. Another less common one is that sometimes admins realise that they can't go AFK, or that they keep their inventory on death.

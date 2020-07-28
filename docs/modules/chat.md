@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Chat Module
 moduleid: chat
 modulename: Chat
+type: module
 ---
 
 ## Introduction

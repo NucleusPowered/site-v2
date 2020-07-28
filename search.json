@@ -1,0 +1,43 @@
+---
+layout: minify
+# modules, commands, tutorials, howto, general
+---
+{
+  {% assign types = "module, tutorial, howto, general" | split: ", " -%}
+  {% for type in types -%}
+  {%- assign index = site.pages | where: "type", type -%}
+  "{{ type }}":
+  {
+    {% for page in index -%}
+    "{{ page.url }}":
+    {
+      "title": "{{ page.header | xml_escape }}",
+      "content": {{ page.content | strip_html | newline_to_br | replace: '<br />', ' '  | jsonify }},
+      "url": "{{ page.url | xml_escape }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  },
+  {% endfor %}
+  "command":
+  {
+    {% for command in site.data.commands -%}
+    "{{ command.commandName }}": {
+        "command": "{{ command.commandName }}",
+        "aliases": "{{command.aliases}}",
+        "usage": {{ command.usageString | newline_to_br | escape | strip | jsonify }},
+        {%- if command.permissionbase %}
+        "basePermission": "{{ command.permissionbase }}",
+        {%- else -%}
+        "basePermission": "none",
+        {% endif %}
+        "oneliner": "{{ command.oneLineDescription | escape | strip_html | strip_newlines }}"
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+   },
+   "token":
+   {
+      {% for token in site.data.tokens -%}
+      "{{ token.name }}": {{ token | jsonify }}{% unless forloop.last %},{% endunless %}
+      {% endfor -%}
+   }
+}

@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Connection Module
 moduleid: connection
 modulename: Connection
+type: module
 ---
 
 ## Introduction

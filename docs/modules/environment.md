@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Environment Module
 moduleid: environment
 modulename: Environment
+type: module
 ---
 
 ## Introduction

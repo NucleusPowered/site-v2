@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Jail Module
 moduleid: jail
 modulename: Jail
+type: module
 ---
 
 ## Introduction

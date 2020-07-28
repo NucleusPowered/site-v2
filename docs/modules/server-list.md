@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Server List Module
 moduleid: server-list
 modulename: Server List
+type: module
 ---
 
 ## Introduction

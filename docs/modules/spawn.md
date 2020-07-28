@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Spawn Module
 moduleid: spawn
 modulename: Spawn
+type: module
 ---
 
 ## Introduction

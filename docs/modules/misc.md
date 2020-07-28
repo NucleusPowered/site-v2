@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Miscellaneous Module
 moduleid: misc
 modulename: Miscellaneous
+type: module
 ---
 
 ## Introduction

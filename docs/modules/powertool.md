@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Powertool Module
 moduleid: powertool
 modulename: Powertool
+type: module
 ---
 
 ## Introduction

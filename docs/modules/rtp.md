@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Random Teleport Module
 moduleid: rtp
 modulename: Random Teleport
+type: module
 ---
 
 ## Introduction

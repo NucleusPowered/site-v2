@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Freeze Subject Module
 moduleid: freeze-subject
 modulename: Freeze Subject
+type: module
 ---
 
 ## Introduction

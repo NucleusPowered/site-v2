@@ -3,6 +3,7 @@ layout: howto
 header: How to manage First Time Join actions  
 lead: Nucleus supports both first time spawn and first join kits to allow you to aid all your new players. 
 adddocslink: true
+type: howto
 ---
 
 A popular task for nearly every Minecraft server is to provide new players something to get them started. For some servers, 

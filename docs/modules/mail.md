@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Mail Module
 moduleid: mail
 modulename: Mail
+type: module
 ---
 
 ## Introduction

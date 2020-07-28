@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Mob Module
 moduleid: mob
 modulename: Mob
+type: module
 ---
 
 ## Introduction

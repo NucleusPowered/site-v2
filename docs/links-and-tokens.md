@@ -2,6 +2,7 @@
 layout: standardheadmd
 title: Documentation Centre
 header: Links & Tokens
+type: general
 ---
 
 In several places in Nucleus, there is the option for links and chat placeholders (what we usually call _tokens_) to be used.

@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Home Module
 moduleid: home
 modulename: Home
+type: module
 ---
 
 ## Introduction

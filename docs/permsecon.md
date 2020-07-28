@@ -2,6 +2,7 @@
 layout: standardheadmd
 title: '- What Nucleus Isn''t'
 header: What Nucleus Isn't
+type: general
 ---
 
 Nucleus is a big beast. It contains most of the utilities that you could want so you can concentrate on making your server unique!

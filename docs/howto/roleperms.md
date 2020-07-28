@@ -3,6 +3,7 @@ layout: howto-notoc
 header: How to Use Role Based Permissions
 lead: Nucleus supports "role" based permissions that automatically inherit all recommended permissions
 adddocslink: true
+type: howto
 ---
 
 > This is one of two ways to assign permissions quickly. The alternative is using the `/nucleus setupperms`, [which is described here](setupperms.html).

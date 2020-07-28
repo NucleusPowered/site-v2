@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Rules Module
 moduleid: rules
 modulename: Rules
+type: module
 ---
 
 ## Introduction

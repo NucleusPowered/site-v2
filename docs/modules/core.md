@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Core Module
 moduleid: core
 modulename: Core
+type: module
 ---
 
 ## Introduction

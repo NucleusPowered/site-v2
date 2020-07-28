@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Protection Module
 moduleid: protection
 modulename: Protection
+type: module
 ---
 
 ## Introduction

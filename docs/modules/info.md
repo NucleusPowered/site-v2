@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Info Module
 moduleid: info
 modulename: Info
+type: module
 ---
 
 ## Introduction

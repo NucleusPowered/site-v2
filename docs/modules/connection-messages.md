@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Connection Messages Module
 moduleid: connection-messages
 modulename: Connection Messages
+type: module
 ---
 
 ## Introduction

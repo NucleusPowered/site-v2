@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Player Info Module
 moduleid: playerinfo
 modulename: Player Info
+type: module
 ---
 
 ## Introduction

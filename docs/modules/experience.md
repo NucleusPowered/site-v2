@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Experience Module
 moduleid: experience
 modulename: Experience
+type: module
 ---
 
 ## Introduction

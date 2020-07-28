@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Mute Module
 moduleid: mute
 modulename: Mute
+type: module
 ---
 
 ## Introduction

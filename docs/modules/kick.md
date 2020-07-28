@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Administration Module
 moduleid: kick
 modulename: Kick
+type: module
 ---
 
 ## Introduction

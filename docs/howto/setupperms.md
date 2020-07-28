@@ -3,6 +3,7 @@ layout: howto
 header: How to Use `/nucleus setupperms`
 lead: Nucleus has a command that sets all appropriate permissions for a group automatically.
 adddocslink: true
+type: howto
 ---
 
 > This is one of two ways to assign permissions quickly. The alternative is using the role based permissions, [which are described here](roleperms.html).

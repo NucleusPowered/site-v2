@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Command Spy Module
 moduleid: command-spy
 modulename: Command Spy
+type: module
 ---
 
 ## Introduction

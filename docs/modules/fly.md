@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Fly Module
 moduleid: fly
 modulename: Fly
+type: module
 ---
 
 ## Introduction

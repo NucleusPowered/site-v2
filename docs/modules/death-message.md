@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Death Message Module
 moduleid: death-message
 modulename: Death Message
+type: module
 ---
 
 ## Introduction

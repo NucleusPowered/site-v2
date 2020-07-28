@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Vanish Module
 moduleid: vanish
 modulename: Vanish
+type: module
 ---
 
 ## Introduction

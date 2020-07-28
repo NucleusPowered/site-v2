@@ -3,7 +3,8 @@ layout: tutorials
 header: Creating and Managing Kits
 lead: Learn how to create and manage kits
 adddocslink: true
-steps: "kit"
+steps: .*
+type: tutorial
 ---
 
 ## Creating Kits and Adding Items

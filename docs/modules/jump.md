@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Jump Module
 moduleid: jump
 modulename: Jump
+type: module
 ---
 
 ## Introduction

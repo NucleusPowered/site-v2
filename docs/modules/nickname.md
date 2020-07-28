@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Nickname Module
 moduleid: nickname
 modulename: Nickname
+type: module
 ---
 
 ## Introduction

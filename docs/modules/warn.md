@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Warnings Module
 moduleid: warn
 modulename: Warnings
+type: module
 ---
 
 ## Introduction

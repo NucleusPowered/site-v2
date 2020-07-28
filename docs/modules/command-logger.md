@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Command Logger Module
 moduleid: command-logger
 modulename: Command Logger
+type: module
 ---
 
 ## Introduction

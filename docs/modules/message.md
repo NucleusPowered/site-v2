@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Message Module
 moduleid: message
 modulename: Message
+type: module
 ---
 
 ## Introduction

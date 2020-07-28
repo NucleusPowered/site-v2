@@ -3,6 +3,7 @@ layout: howto
 header: Migrate from Nucleus v1
 lead: Nucleus v2 has many changes, a few of these may require action from users. 
 adddocslink: true
+type: howto
 ---
 
 Nucleus v2 is a mostly automatic upgrade from Nucleus v1.14.x, however there are some changes that server owners must perform to ensure continuation of service.

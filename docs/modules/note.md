@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Note Module
 moduleid: note
 modulename: Note
+type: module
 ---
 
 ## Introduction

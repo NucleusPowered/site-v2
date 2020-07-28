@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Ignore Module
 moduleid: ignore
 modulename: Ignore
+type: module
 ---
 
 ## Introduction

@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Administration Module
 moduleid: admin
 modulename: Administration
+type: module
 ---
 
 ## Introduction

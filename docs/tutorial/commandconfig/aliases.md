@@ -1,7 +1,8 @@
 ---
 layout: tutorials
 adddocslink: true
-steps: "commandconfig"
+steps: .*
+type: tutorial
 ---
 
 > The settings on this page cannot be applied while the server is running. You must restart the server to enact these changes. 

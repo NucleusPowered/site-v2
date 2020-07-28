@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Teleport Module
 moduleid: teleport
 modulename: Teleport
+type: module
 ---
 
 ## Introduction

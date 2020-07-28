@@ -4,6 +4,7 @@ title: Documentation Centre
 header: Fun Module
 moduleid: fun
 modulename: Fun
+type: module
 ---
 
 ## Introduction

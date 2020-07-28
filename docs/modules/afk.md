@@ -4,6 +4,7 @@ title: Documentation Centre
 header: AFK Module
 moduleid: afk
 modulename: AFK
+type: module
 ---
 
 ## Introduction

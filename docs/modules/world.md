@@ -4,6 +4,7 @@ title: Documentation Centre
 header: World Module
 moduleid: world
 modulename: World
+type: module
 ---
 
 ## Introduction
