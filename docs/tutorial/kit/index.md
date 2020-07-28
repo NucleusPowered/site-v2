@@ -3,7 +3,7 @@ layout: tutorials-title
 header: Creating and Managing Kits
 lead: Learn how to create and manage kits
 adddocslink: true
-steps: .*
+steps: kit
 type: tutorial
 ---
 

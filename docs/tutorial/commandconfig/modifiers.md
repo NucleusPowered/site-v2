@@ -1,7 +1,7 @@
 ---
 layout: tutorials
 adddocslink: true
-steps: .*
+steps: commandconfig
 type: tutorial
 ---
 

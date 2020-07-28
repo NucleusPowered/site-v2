@@ -3,7 +3,7 @@ layout: tutorials-title
 header: Installing and Using Nucleus
 lead: Learn how to obtain, install and configure Nucleus on your Sponge Server
 adddocslink: true
-steps: .*
+steps: commandconfig
 type: tutorial
 ---
 
