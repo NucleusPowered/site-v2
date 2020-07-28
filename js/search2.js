@@ -5,6 +5,13 @@ const nucleusSearch = (function () {
     let tokenData;
     let lunrObject;
 
+    const definition = {
+        "module": "Module Reference",
+        "general": "General Information",
+        "tutorial": "Tutorial",
+        "howto": "How To"
+    }
+
     const startSearch = function(input) {
         if (searchData === undefined || searchData === null) {
             return;
@@ -45,27 +52,46 @@ const nucleusSearch = (function () {
         targetDiv.html("");
 
         if (results.length) { // Are there any results?
-            let appendString = '<ul>';
-
+            let appendString = '';
             for (let i = 0; i < results.length; i++) {  // Iterate over the results
                 const item = searchData[results[i].ref];
-                appendString += '<li><a href="' + item.url + '"><h3>' + item.title + '</h3></a>';
-                appendString += '<p>' + item.content.substring(0, 150) + '...</p></li>';
+                appendString += renderStandardItem(item);
             }
-
-            appendString += "</ul>"
             targetDiv.html(appendString);
             targetDiv.show();
         } else {
             targetDiv.hide();
         }
+    };
+
+    const renderStandardItem = function(standardJsonItem) {
+        const type = standardJsonItem.type;
+        let element = '<div class="search-result-item ' + type + '">';
+        element += '<h3 class="search-result-header"><a href="' + standardJsonItem.url + '">' + standardJsonItem.title + '</a><small> - ' + definition[type] +'</small></h3>';
+        element += '<p class="search-result-url"><a href="' + standardJsonItem.url + '">' + standardJsonItem.url + '</a></p>';
+        let s = standardJsonItem.content.trimLeft();
+        if (s.startsWith("Introduction")) {
+            s = s.replace("Introduction", '').trimLeft();
+        }
+        if (s.length > 150) {
+            s = s.substring(0, 150) + '...';
+        }
+        element += '<p class="search-result-desc">' + s + '</p>';
+        element += "</div>";
+        return element;
     }
 
     const prepareSearch = function() {
         lunrObject = {
             "standard": lunr(function() {
-                this.field('title', {boost: 10});
-                this.field('keywords', {boost: 50});
+                this.field('title', {
+                    boost: 10,
+                    wildcard: lunr.Query.wildcard.LEADING | lunr.Query.wildcard.TRAILING
+                });
+                this.field('keywords', {
+                    boost: 50,
+                    wildcard: lunr.Query.wildcard.LEADING | lunr.Query.wildcard.TRAILING
+                });
                 this.field('content');
                 this.field('url');
 

@@ -118,6 +118,13 @@ blockquote.warning {
     background: url("../img/logo-white-named.svg") center center no-repeat;
 }
 
+.navbar-qs .search-icon {
+    border: 0;
+    padding-left: 32px;
+    height: 32px;
+    display: inline-block;
+    background: url("../img/search-white-2.svg") left center no-repeat;
+}
 
 #footer {
     width: 100%;
@@ -413,4 +420,19 @@ hr.black {
 
 .additionalcontainerclass h3 {
     font-size: 24px;
+}
+
+.search-result-header {
+    padding-bottom: 2px;
+    margin-bottom: 0;
+}
+
+.search-result-header > small {
+    color: #666666;
+}
+
+/* Search */
+
+.search-result-url > a {
+    color: darkgreen;
 }
