@@ -3,6 +3,7 @@ layout: howto
 header: How to Customise Player Chat Format
 lead: Nucleus' Chat module can format chat messages to show player prefixes, ranks and other contextual information.
 adddocslink: true
+keywords: chat template format
 type: howto
 ---
 

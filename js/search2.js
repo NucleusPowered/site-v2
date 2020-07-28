@@ -1,10 +1,16 @@
 const nucleusSearch = (function () {
 
-    let search = [];
+    let searchData;
+    let commandData;
+    let tokenData;
+    let lunrObject;
 
     const startSearch = function(input) {
+        if (searchData === undefined || searchData === null) {
+            return;
+        }
         if (input.length > 2) {
-            search.forEach(x => x(input));
+            executeSearch(input);
         } else {
             clearSearch();
         }
@@ -20,19 +26,46 @@ const nucleusSearch = (function () {
         // bind to the form
         $("form[data-search]").on("submit", function(event) {
             event.preventDefault();
-            console.log("submit " + $("form[data-search] input[data-search]").val())
             startSearch($("form[data-search] input[data-search]").val());
         });
-        $.getJSON("/search.json").done(prepareSearch);
+        $.getJSON("/search.json").done(data => {
+            searchData = data["standard"];
+            commandData = data["command"];
+            tokenData = data["token"];
+            prepareSearch(data);
+        }).fail(() => {
+            console.error("Could not download search JSON")
+        });
     };
 
-    const prepareSearch = function(data) {
+    const executeSearch = function(input) {
+        const results = lunrObject.standard.search(input);
+        const targetDiv = $("div.search-results");
+        // clear it.
+        targetDiv.html("");
 
-        const standardType = function(d, target) {
-            const searchData = d[target];
-            const type = target;
-            const lunrObject = lunr(function () {
+        if (results.length) { // Are there any results?
+            let appendString = '<ul>';
+
+            for (let i = 0; i < results.length; i++) {  // Iterate over the results
+                const item = searchData[results[i].ref];
+                appendString += '<li><a href="' + item.url + '"><h3>' + item.title + '</h3></a>';
+                appendString += '<p>' + item.content.substring(0, 150) + '...</p></li>';
+            }
+
+            appendString += "</ul>"
+            targetDiv.html(appendString);
+            targetDiv.show();
+        } else {
+            targetDiv.hide();
+        }
+    }
+
+    const prepareSearch = function() {
+        lunrObject = {
+            "standard": lunr(function() {
                 this.field('title', {boost: 10});
+                this.field('keywords', {boost: 50});
                 this.field('content');
                 this.field('url');
 
@@ -41,46 +74,12 @@ const nucleusSearch = (function () {
                         'id': key,
                         'title': searchData[key].title,
                         'content': searchData[key].content,
+                        'keywords': searchData[key].keywords,
                         'url': searchData[key].url
                     });
                 }
-            });
-
-            return function(input) {
-                const results = lunrObject.search(input);
-                const targetDiv = $("div[data-search-type=" + type +"] div.search-results");
-                // clear it.
-                targetDiv.html("");
-
-                if (results.length) { // Are there any results?
-                    let appendString = '<ul>';
-
-                    for (let i = 0; i < results.length; i++) {  // Iterate over the results
-                        const item = searchData[results[i].ref];
-                        appendString += '<li><a href="' + item.url + '"><h3>' + item.title + '</h3></a>';
-                        appendString += '<p>' + item.content.substring(0, 150) + '...</p></li>';
-                    }
-
-                    appendString += "</ul>"
-                    targetDiv.html(appendString);
-                    targetDiv.show();
-                } else {
-                    targetDiv.hide();
-                }
-            };
-        };
-
-        /*
-        const customType = function(lunrObject, target) {
-            return { "lunr": lunrObject, "render": target};
-        }*/
-
-        search.push(
-            standardType(data, "general"),
-            standardType(data, "tutorial"),
-            standardType(data, "howto"),
-            standardType(data, "module")
-        );
+            })
+        }
     };
 
     return {

@@ -1,27 +1,31 @@
 ---
-layout: minify
+# layout: minify
 # modules, commands, tutorials, howto, general
 ---
 {
   {% assign types = "module, tutorial, howto, general" | split: ", " -%}
+  "standard":
+  {
   {% for type in types -%}
   {%- assign index = site.pages | where: "type", type -%}
-  "{{ type }}":
-  {
     {% for page in index -%}
     "{{ page.url }}":
     {
       "title": "{{ page.header | xml_escape }}",
-      "content": {{ page.content | strip_html | newline_to_br | replace: '<br />', ' '  | jsonify }},
-      "url": "{{ page.url | xml_escape }}"
+      "content": {{ page.content | markdownify | strip_html | newline_to_br | replace: '<br />', ' '  | jsonify }},
+      "keywords": "{{ page.keywords | default: "" }}",
+      "url": "{{ page.url | xml_escape }}",
+      "type": "{{type}}"
     }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  },
+    {% endfor %}{% unless forloop.last %},{% endunless %}
   {% endfor %}
+  },
   "command":
   {
     {% for command in site.data.commands -%}
     "{{ command.commandName }}": {
+        "url": "/commands2.html#{{ command.commandName | replace: ' ', '-' }}",
+        "type": "command",
         "command": "{{ command.commandName }}",
         "aliases": "{{command.aliases}}",
         "usage": {{ command.usageString | newline_to_br | escape | strip | jsonify }},
@@ -30,14 +34,21 @@ layout: minify
         {%- else -%}
         "basePermission": "none",
         {% endif %}
-        "oneliner": "{{ command.oneLineDescription | escape | strip_html | strip_newlines }}"
-    }{% unless forloop.last %},{% endunless %}
+        "oneliner": {{ command.oneLineDescription | escape | strip_html | strip_newlines | jsonify }},
+        "extendedDescription": {{ command.extendedDescription | escape | strip_html | strip_newlines | jsonify }}
+        }{% unless forloop.last %},{% endunless %}
     {%- endfor -%}
    },
    "token":
    {
       {% for token in site.data.tokens -%}
-      "{{ token.name }}": {{ token | jsonify }}{% unless forloop.last %},{% endunless %}
+      "{{ token.name }}": {
+          "title": "{{ token.name | xml_escape }}",
+          "id": "{{ token.id | xml_escape }}",
+          "content": {{ token.description | escape | strip_html | strip_newlines | jsonify}},
+          "url": "/docs/links-and-tokens.html",
+          "type": "{{type}}"
+      }{% unless forloop.last %},{% endunless %}
       {% endfor -%}
    }
 }
