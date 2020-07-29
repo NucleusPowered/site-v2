@@ -835,7 +835,7 @@
     simpleUsage: ' /time [<world>]'
     context: time
 -   commandName: time set
-    aliases: timeset, time#settime, time#timeset
+    aliases: time set
     rootAliases: settime, nsettime, timeset, ntimeset
     defaultLevel: admin
     usageString: ' /time set [<world>] <time>'
@@ -1248,7 +1248,7 @@
     simpleUsage: ' /home [<home>]'
     context: home
 -   commandName: home delete
-    aliases: homedelete, homedel, home#deletehome, home#delhome
+    aliases: home delete, home del
     rootAliases: deletehome, ndeletehome, delhome, ndelhome
     defaultLevel: user
     usageString: ' /home delete <home>'
@@ -1273,7 +1273,7 @@
     simpleUsage: ' /home delete <home>'
     context: home delete
 -   commandName: home deleteother
-    aliases: homedeleteother, homedelother, home#deletehomeother, home#delhomeother
+    aliases: home deleteother, home delother
     rootAliases: deletehomeother, ndeletehomeother, delhomeother, ndelhomeother
     defaultLevel: admin
     usageString: ' /home deleteother <user> <home>'
@@ -1291,7 +1291,7 @@
     simpleUsage: ' /home deleteother <user> <home>'
     context: home deleteother
 -   commandName: home list
-    aliases: homelist, home#listhomes, home#homes
+    aliases: home list
     rootAliases: listhomes, nlisthomes, homes, nhomes
     defaultLevel: user
     usageString: ' /home list [<user>]'
@@ -1314,7 +1314,7 @@
     simpleUsage: ' /home list [<user>]'
     context: home list
 -   commandName: home other
-    aliases: homeother, home#homeother
+    aliases: home other
     rootAliases: homeother, nhomeother
     defaultLevel: staff
     usageString: ' /home other <user> <home>'
@@ -1344,7 +1344,7 @@
     simpleUsage: ' /home other <user> <home>'
     context: home other
 -   commandName: home set
-    aliases: homeset, home#homeset, home#sethome
+    aliases: home set
     rootAliases: homeset, nhomeset, sethome, nsethome
     defaultLevel: user
     usageString: ' /home set [-o|--overwrite] [<home>]'
@@ -1703,7 +1703,7 @@
     simpleUsage: ' /itemname '
     context: itemname
 -   commandName: itemname clear
-    aliases: itemnameclear, itemname#clearitemname, itemname#resetitemname
+    aliases: itemname clear
     rootAliases: clearitemname, nclearitemname, resetitemname, nresetitemname
     defaultLevel: admin
     usageString: ' /itemname clear '
@@ -1734,7 +1734,7 @@
     simpleUsage: ' /itemname clear '
     context: itemname clear
 -   commandName: itemname set
-    aliases: itemnameset, itemname#setitemname, itemname#renameitem
+    aliases: itemname set
     rootAliases: setitemname, nsetitemname, renameitem, nrenameitem
     defaultLevel: admin
     usageString: ' /itemname set <name…>'
@@ -2088,7 +2088,7 @@
     simpleUsage: ' /jails '
     context: jails
 -   commandName: jails delete
-    aliases: jailsdelete, jailsdel, jailsremove, jails#deljail, jails#rmjail, jails#deletejail
+    aliases: jails delete, jails del, jails remove
     rootAliases: deljail, ndeljail, rmjail, nrmjail, deletejail, ndeletejail
     defaultLevel: admin
     usageString: ' /jails delete <jail>'
@@ -2112,7 +2112,7 @@
     simpleUsage: ' /jails delete <jail>'
     context: jails delete
 -   commandName: jails set
-    aliases: jailsset, jails#setjail, jails#createjail
+    aliases: jails set
     rootAliases: setjail, nsetjail, createjail, ncreatejail
     defaultLevel: admin
     usageString: ' /jails set <jail>'
@@ -2385,7 +2385,7 @@
     simpleUsage: ' /kit <kit>'
     context: kit
 -   commandName: kit list
-    aliases: kitlist, kitls, kit#kits
+    aliases: kit list, kit ls
     rootAliases: kits, nkits
     defaultLevel: user
     usageString: ' /kit list '
@@ -2430,7 +2430,7 @@
     simpleUsage: ' /mail [<filters>*]'
     context: mail
 -   commandName: mail send
-    aliases: mailsend, mails, mail#sendmail
+    aliases: mail send, mail s
     rootAliases: sendmail, nsendmail
     defaultLevel: user
     usageString: ' /mail send <user> <message…>'
@@ -3042,19 +3042,41 @@
 -   commandName: mute
     aliases: mute
     defaultLevel: staff
-    usageString: ' /mute <user>'
-    oneLineDescription: Unmutes the specified player.
+    usageString: ' /mute <user> [<duration>] [<reason…>]'
+    oneLineDescription: Mutes the specified player.
     module: mute
-    permissionbase: nucleus.mute.unmute
+    permissionbase: nucleus.mute
     warmup: false
     cooldown: false
     cost: false
+    essentialsEquivalents:
+    - mute
+    - silence
+    isExactEssEquiv: false
+    essNotes: Unmuting a player should be done via the /unmute command.
     permissions:
-    -   permission: nucleus.mute.unmute
-        description: If set in config, this permission is required to unmute players.
+    -   permission: nucleus.mute.notify
+        description: Notifies the user about mutes when they occur.
         defaultLevel: staff
         module: mute
-    simpleUsage: ' /mute <user>'
+    -   permission: nucleus.mute.exempt.target
+        description: Exempts the user from being a target of the /mute command.
+        defaultLevel: staff
+        module: mute
+    -   permission: nucleus.mute.seemutedchat
+        description: If true and enabled in the config, players with this permission
+            will see chat from muted players.
+        defaultLevel: admin
+        module: mute
+    -   permission: nucleus.mute.base
+        description: Allows the user to run the command /mute
+        defaultLevel: staff
+        module: mute
+    -   permission: nucleus.mute.exempt.length
+        description: Allows the user to bypass the maximum mute length.
+        defaultLevel: admin
+        module: mute
+    simpleUsage: ' /mute <user> [<duration>] [<reason…>]'
     context: mute
 -   commandName: voice
     aliases: voice
@@ -4268,7 +4290,7 @@
     simpleUsage: ' /warp [[-y|-a|--accept] [-f|--force] ] [[<player>]] <warp>'
     context: warp
 -   commandName: warp delete
-    aliases: warpdelete, warpdel, warp#delwarp, warp#remwarp, warp#rmwarp
+    aliases: warp delete, warp del
     rootAliases: delwarp, ndelwarp, remwarp, nremwarp, rmwarp, nrmwarp
     defaultLevel: user
     usageString: ' /warp delete <warp>'
@@ -4292,7 +4314,7 @@
     simpleUsage: ' /warp delete <warp>'
     context: warp delete
 -   commandName: warp list
-    aliases: warplist, warp#warps
+    aliases: warp list
     rootAliases: warps, nwarps
     defaultLevel: user
     usageString: ' /warp list [-u] '
@@ -4310,7 +4332,7 @@
     simpleUsage: ' /warp list [-u] '
     context: warp list
 -   commandName: warp set
-    aliases: warpset, warp#setwarp, warp#warpset
+    aliases: warp set
     rootAliases: setwarp, nsetwarp, warpset, nwarpset
     defaultLevel: admin
     usageString: ' /warp set [-o] <warp>'
@@ -4378,7 +4400,7 @@
     simpleUsage: ' /world '
     context: world
 -   commandName: world list
-    aliases: worldlist, worldls, world#worlds
+    aliases: world list, world ls
     rootAliases: worlds, nworlds
     defaultLevel: admin
     usageString: ' /world list '

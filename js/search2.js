@@ -124,11 +124,9 @@ const nucleusSearch = (function () {
         const results =  lunrObject.command.query(function(q) {
             const tokenised = lunr.tokenizer(input);
             q.term(tokenised, {
-                fields: ["command", "aliases"],
-                boost: 40,
-                wildcard: lunr.Query.wildcard.LEADING | lunr.Query.wildcard.TRAILING,
-                presence: lunr.Query.presence.REQUIRED
+                wildcard: lunr.Query.wildcard.LEADING | lunr.Query.wildcard.TRAILING
             });
+            q.term(tokenised, { boost: 2 });
         });
         const targetDiv = $("div#commands-s");
         // clear it.
@@ -151,6 +149,9 @@ const nucleusSearch = (function () {
         let element = '<div class="search-result-item command-search">';
         element += '<h3 class="search-result-header"><a href="' + commandJsonItem.url + '">/' + commandJsonItem.command + '</a></h3>';
         element += '<p><strong>Aliases: </strong>' + commandJsonItem.aliases + '</p>';
+        if (commandJsonItem.rootAliases !== undefined && commandJsonItem.rootAliases.length > 0) {
+            element += '<p><strong>Root Aliases: </strong>' + commandJsonItem.rootAliases + '</p>';
+        }
         const usage = commandJsonItem.usage.split("<br />");
         element += '<p><strong>Usage: </strong><br />';
         for (let i = 0; i < usage.length; ++i) {
@@ -191,20 +192,13 @@ const nucleusSearch = (function () {
                 }
             }),
             "command": lunr(function() {
-                this.field('command');
-                this.field('aliases');
-                this.field('usage');
-                this.field('oneliner');
-                this.field('extendedDescription');
+                this.field('content');
 
                 for (let key in commandData) { // Add the data to lunr
+                    const data = commandData[key];
                     this.add({
                         'id': key,
-                        'command': commandData[key].command,
-                        'aliases': commandData[key].aliases,
-                        'usage': commandData[key].usage,
-                        'oneliner': commandData[key].oneliner,
-                        'extendedDescription': commandData[key].extendedDescription,
+                        'content': data.command + " " + data.aliases + " " + data.rootAliases
                     });
                 }
             })

@@ -28,6 +28,7 @@
         "type": "command",
         "command": "{{ command.commandName }}",
         "aliases": "{{command.aliases}}",
+        "rootAliases": "{{command.rootAliases}}",
         "usage": {{ command.simpleUsage | newline_to_br | escape | strip | jsonify }},
         {%- if command.permissionbase %}
         "basePermission": "{{ command.permissionbase }}",

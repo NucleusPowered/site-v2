@@ -34,15 +34,9 @@
     <div class="command-usage">
         {% assign al = (cmds.aliases | split: ', ') %}
         {% if al | size > 1 %}
-        {% assign sizeName = cmds.commandName | split: ' ' | size | minus: 1 %}
         <p>
             <strong>Aliases: </strong>
-            {% if sizeName == 0 %}
-            {% for a in al %} <code>{{ a }}</code>{% endfor %}
-            {% else %}
-            {% assign cmdBase = (cmds.commandName | truncatewords: sizeName, '') %}
-            {% for a in al %} <code>{{ cmdBase }} {{ a }}</code>{% endfor %}
-            {% endif %}
+            {% for a in al %} <code>/{{ a }}</code>{% unless forloop.last %},{% endunless %}{% endfor %}
         </p>
         {% endif %}
         {% assign rootal = (cmds.rootAliases | split: ', ') %}
