@@ -3,7 +3,7 @@
     <div id="searchcontainer" class="container">
         <div class="row">
             <div class="col">
-                <form class="form" data-search="true" action="/search.html" method="get">
+                <form autocomplete="off" class="form" data-search="true" method="get">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text"><img src="/img/search.svg" alt="Search" /></div>
@@ -20,9 +20,24 @@
         <div class="row" data-search-type="general">
             <div class="col">
                 <hr />
-                <div class="search-results">
+                <div id="search-result-loader">
                     <em>Downloading search database, this won't take long...</em>
                 </div>
+                <div id="search-result-container">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#pages">Pages <span id="pages-count" class="badge badge-pill badge-primary">0</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab"  href="#commands">Commands <span id="commands-count" class="badge badge-pill badge-primary">0</span></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="search-tab-content">
+                        <div class="search-results tab-pane show active" id="pages" role="tabpanel" aria-labelledby="home-tab"></div>
+                        <div class="search-results tab-pane" id="commands" role="tabpanel" aria-labelledby="profile-tab"></div>
+                    </div>
+                </div>
+
             </div>
         </div>
 

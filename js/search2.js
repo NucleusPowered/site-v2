@@ -32,7 +32,9 @@ const nucleusSearch = (function () {
     };
 
     const clearSearch = function() {
-        $("div[data-search-type] .search-results").html("");
+        $("div[data-search-type] .search-results").html("No results to show");
+        $('#search-result-loader').hide();
+        $('#search-result-container').show();
     };
 
     const clearTimeoutIfExists = function() {
@@ -68,10 +70,11 @@ const nucleusSearch = (function () {
 
     const executeSearch = function(input) {
         const results = lunrObject.standard.search(input);
-        const targetDiv = $("div.search-results");
+        const targetDiv = $("div#pages");
         // clear it.
         targetDiv.html("");
 
+        $('#pages-count').html(results.length.toString());
         if (results.length) { // Are there any results?
             let appendString = '';
             for (let i = 0; i < results.length; i++) {  // Iterate over the results
@@ -79,9 +82,8 @@ const nucleusSearch = (function () {
                 appendString += renderStandardItem(item);
             }
             targetDiv.html(appendString);
-            targetDiv.show();
         } else {
-            targetDiv.hide();
+            targetDiv.html("No results to show.");
         }
     };
 
@@ -128,6 +130,7 @@ const nucleusSearch = (function () {
             })
         };
         clearSearch();
+        $('#search-result-container > ul.nav-tabs').tab();
     };
 
     return {

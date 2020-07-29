@@ -447,8 +447,17 @@ hr.black {
     left: 0;
 }
 
+#search-result-container {
+    display: none;
+}
+
+#search-tab-content {
+    padding-top: 5px;
+}
+
 #searchcontainer {
     padding-top: 20px;
+    padding-bottom: 20px;
     margin-top: 50px;
     margin-bottom: 30px;
     background: white;
