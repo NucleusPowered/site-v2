@@ -2,6 +2,7 @@
 layout: tutorials
 adddocslink: true
 steps: commandconfig
+header: Command Aliases
 type: tutorial
 ---
 

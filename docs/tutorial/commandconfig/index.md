@@ -1,6 +1,6 @@
 ---
 layout: tutorials-title
-header: Installing and Using Nucleus
+header: Command Management Tutorial
 lead: Learn how to obtain, install and configure Nucleus on your Sponge Server
 adddocslink: true
 steps: commandconfig
