@@ -4,6 +4,9 @@ const nucleusSearch = (function () {
     const html = $("html");
     const overlay = $("#searchoverlay");
 
+    const commandsPill = $('#commands-count');
+    const searchPill = $('#pages-count');
+
     let searchData;
     let commandData;
     let tokenData;
@@ -25,7 +28,8 @@ const nucleusSearch = (function () {
             return;
         }
         if (input.length > 2) {
-            executeSearch(input);
+            executeStandardSearch(input);
+            executeCommandSearch(input);
         } else {
             clearSearch();
         }
@@ -35,6 +39,8 @@ const nucleusSearch = (function () {
         $("div[data-search-type] .search-results").html("No results to show");
         $('#search-result-loader').hide();
         $('#search-result-container').show();
+        commandsPill.html("-");
+        searchPill.html("-");
     };
 
     const clearTimeoutIfExists = function() {
@@ -68,13 +74,23 @@ const nucleusSearch = (function () {
         });
     };
 
-    const executeSearch = function(input) {
-        const results = lunrObject.standard.search(input);
+    const executeStandardSearch = function(input) {
+        const results =  lunrObject.standard.query(function(q) {
+            const tokenised = lunr.tokenizer(input);
+            q.term(tokenised, {
+                boost: 20,
+                presence: lunr.Query.presence.REQUIRED
+            });
+            q.term(tokenised, {
+                wildcard: lunr.Query.wildcard.LEADING | lunr.Query.wildcard.TRAILING,
+                presence: lunr.Query.presence.REQUIRED
+            });
+        });
         const targetDiv = $("div#pages");
         // clear it.
         targetDiv.html("");
 
-        $('#pages-count').html(results.length.toString());
+        searchPill.html(results.length.toString());
         if (results.length) { // Are there any results?
             let appendString = '';
             for (let i = 0; i < results.length; i++) {  // Iterate over the results
@@ -102,7 +118,53 @@ const nucleusSearch = (function () {
         element += '<p class="search-result-desc">' + s + '</p>';
         element += "</div>";
         return element;
-    }
+    };
+
+    const executeCommandSearch = function(input) {
+        const results =  lunrObject.command.query(function(q) {
+            const tokenised = lunr.tokenizer(input);
+            q.term(tokenised, {
+                fields: ["command", "aliases"],
+                boost: 40,
+                wildcard: lunr.Query.wildcard.LEADING | lunr.Query.wildcard.TRAILING,
+                presence: lunr.Query.presence.REQUIRED
+            });
+        });
+        const targetDiv = $("div#commands-s");
+        // clear it.
+        targetDiv.html("");
+
+        commandsPill.html(results.length.toString());
+        if (results.length) { // Are there any results?
+            let appendString = '';
+            for (let i = 0; i < results.length; i++) {  // Iterate over the results
+                const item = commandData[results[i].ref];
+                appendString += renderCommandItem(item);
+            }
+            targetDiv.html(appendString);
+        } else {
+            targetDiv.html("No results to show.");
+        }
+    };
+
+    const renderCommandItem = function(commandJsonItem) {
+        let element = '<div class="search-result-item command-search">';
+        element += '<h3 class="search-result-header"><a href="' + commandJsonItem.url + '">/' + commandJsonItem.command + '</a></h3>';
+        element += '<p><strong>Aliases: </strong>' + commandJsonItem.aliases + '</p>';
+        const usage = commandJsonItem.usage.split("<br />");
+        element += '<p><strong>Usage: </strong><br />';
+        for (let i = 0; i < usage.length; ++i) {
+            element += '<code>' + usage[i] + '</code>';
+            if (i + 1 !== usage.length) {
+                element += '<br />'
+            }
+        }
+        element += '</p>'
+        element += '<p><strong>Permission: </strong>' + commandJsonItem.basePermission + '</p>';
+        element += '<p><strong>Short Description: </strong>' + commandJsonItem.oneliner + '</p>';
+        element += "</div>";
+        return element;
+    };
 
     const prepareSearch = function() {
         lunrObject = {
@@ -125,6 +187,24 @@ const nucleusSearch = (function () {
                         'content': searchData[key].content,
                         'keywords': searchData[key].keywords,
                         'url': searchData[key].url
+                    });
+                }
+            }),
+            "command": lunr(function() {
+                this.field('command');
+                this.field('aliases');
+                this.field('usage');
+                this.field('oneliner');
+                this.field('extendedDescription');
+
+                for (let key in commandData) { // Add the data to lunr
+                    this.add({
+                        'id': key,
+                        'command': commandData[key].command,
+                        'aliases': commandData[key].aliases,
+                        'usage': commandData[key].usage,
+                        'oneliner': commandData[key].oneliner,
+                        'extendedDescription': commandData[key].extendedDescription,
                     });
                 }
             })

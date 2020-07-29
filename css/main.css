@@ -467,3 +467,12 @@ hr.black {
 .search-result-url > a {
     color: darkgreen;
 }
+
+.command-search p {
+    margin: 0;
+    padding-bottom: 0;
+}
+
+.search-result-item.command-search {
+    padding-bottom: 10px;
+}
