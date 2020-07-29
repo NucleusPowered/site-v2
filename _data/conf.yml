@@ -328,9 +328,10 @@ jail: "# The commands that players are allowed to execute in jail. Do not includ
     \ try much harder to disable player teleportation for players who are jailed.\n\
     prevent-teleport-when-jailed-aggressively=true\n# If true, then the permission\
     \ \"nucleus.jail.unjail\" is required to unjail players.\nrequire-separate-unjail-permission=false\n"
-message: "# The prefix to any message received via /helpop.\nhelpop-prefix=\"&7HelpOp:\
-    \ {{name}} &7> &r\"\n# The prefix for received messages. This is displayed to\
-    \ the receiever. Use {{from}} and {{to}} for the message sender/receiver, {{fromDisplay}}\
+message: "# If true, players can message themselves which may be useful for testing.\n\
+    can-message-self=false\n# The prefix to any message received via /helpop.\nhelpop-prefix=\"\
+    &7HelpOp: {{name}} &7> &r\"\n# The prefix for received messages. This is displayed\
+    \ to the receiever. Use {{from}} and {{to}} for the message sender/receiver, {{fromDisplay}}\
     \ or {{toDisplay}} for the display names.\nmsg-receiver-prefix=\"&7[{{fromDisplay}}&7\
     \ -> me]: &r\"\n# The prefix for sent messages. This is displayed to the sender.\
     \ Use {{from}} and {{to}} for the message sender/receiver, {{fromDisplay}} or\

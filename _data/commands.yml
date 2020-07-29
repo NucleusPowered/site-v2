@@ -66,6 +66,10 @@
         description: Allows the user to bypass the cost for /gamemode
         defaultLevel: admin
         module: admin
+    -   permission: nucleus.gamemode.others
+        description: Allows the user to change the gamemode for any user.
+        defaultLevel: admin
+        module: admin
     simpleUsage: ' /gamemode <player> game mode|game mode|'
     context: gamemode
 -   commandName: gma
@@ -386,6 +390,16 @@
         description: Allows the user to bypass the warmup for /back
         defaultLevel: admin
         module: back
+    -   permission: nucleus.back.exempt.samedimension
+        description: If granted, players can return across dimensions even when only-same-dimension
+            is enabled.
+        defaultLevel: staff
+        module: back
+    -   permission: nucleus.back.exempt.bordercheck
+        description: If granted, allows the user to the use "-b" flag to attempt to
+            warp outside of the border.
+        defaultLevel: admin
+        module: back
     -   permission: nucleus.back.exempt.cooldown
         description: Allows the user to bypass the cooldown for /back
         defaultLevel: admin
@@ -428,8 +442,20 @@
     isExactEssEquiv: true
     essNotes: ''
     permissions:
+    -   permission: nucleus.ban.notify
+        description: Notifies the user about bans when they occur.
+        defaultLevel: staff
+        module: ban
+    -   permission: nucleus.ban.offline
+        description: Allows the user to ban offline users.
+        defaultLevel: staff
+        module: ban
     -   permission: nucleus.ban.base
         description: Allows the user to run the command /ban
+        defaultLevel: staff
+        module: ban
+    -   permission: nucleus.ban.exempt.target
+        description: Exempts the user from being a target of the /ban command.
         defaultLevel: staff
         module: ban
     simpleUsage: ' /ban <user uuid>|<user>|<name> [<reason…>]'
@@ -466,8 +492,20 @@
     isExactEssEquiv: true
     essNotes: ''
     permissions:
+    -   permission: nucleus.tempban.offline
+        description: Allows the user to temp ban offline users.
+        defaultLevel: staff
+        module: ban
     -   permission: nucleus.tempban.base
         description: Allows the user to run the command /tempban
+        defaultLevel: staff
+        module: ban
+    -   permission: nucleus.tempban.exempt.target
+        description: Exempts the user from being a target of the /tempban command.
+        defaultLevel: staff
+        module: ban
+    -   permission: nucleus.tempban.exempt.length
+        description: Allows the user to bypass the maximum tempban length.
         defaultLevel: staff
         module: ban
     simpleUsage: ' /tempban <user> <duration> [<reason…>]'
@@ -610,6 +648,10 @@
         description: Allows the user to run the command /nuserprefs
         defaultLevel: user
         module: core
+    -   permission: nucleus.userprefs.others
+        description: Allows the user to target other players using the command "nuserprefs".
+        defaultLevel: admin
+        module: core
     simpleUsage: ' /nuserprefs [<user>] [<preference> [value]]'
     context: nuserprefs
 -   commandName: setnucleuslanguage
@@ -625,6 +667,10 @@
     cooldown: false
     cost: false
     permissions:
+    -   permission: nucleus.setnucleuslanguage.others
+        description: Allows the user to target other players using the command "setnucleuslanguage".
+        defaultLevel: admin
+        module: core
     -   permission: nucleus.userprefs.base
         description: Allows the user to run the command /nuserprefs
         defaultLevel: user
@@ -860,6 +906,10 @@
         description: Allows the user to bypass the cooldown for /weather
         defaultLevel: admin
         module: environment
+    -   permission: nucleus.weather.exempt.length
+        description: Allows the user to bypass the maximum weather length.
+        defaultLevel: admin
+        module: environment
     simpleUsage: ' /weather [<world>] <weather> [<duration>]'
     context: weather
 -   commandName: exp
@@ -911,6 +961,10 @@
         description: Allows the user to bypass the cooldown for /fly
         defaultLevel: admin
         module: fly
+    -   permission: nucleus.fly.others
+        description: Allows the user to target other players using the command "fly".
+        defaultLevel: admin
+        module: fly
     -   permission: nucleus.fly.base
         description: Allows the user to run the command /fly
         defaultLevel: admin
@@ -934,6 +988,10 @@
     permissions:
     -   permission: nucleus.freezeplayer.exempt.cooldown
         description: Allows the user to bypass the cooldown for /freezeplayer
+        defaultLevel: admin
+        module: freeze-subject
+    -   permission: nucleus.freezeplayer.others
+        description: Allows the user to target other players using the command "freezeplayer".
         defaultLevel: admin
         module: freeze-subject
     -   permission: nucleus.freezeplayer.exempt.warmup
@@ -966,6 +1024,10 @@
     isExactEssEquiv: true
     essNotes: ''
     permissions:
+    -   permission: nucleus.hat.others
+        description: Allows the user to target other players using the command "hat".
+        defaultLevel: admin
+        module: fun
     -   permission: nucleus.hat.base
         description: Allows the user to run the command /hat
         defaultLevel: admin
@@ -987,6 +1049,10 @@
     isExactEssEquiv: true
     essNotes: ''
     permissions:
+    -   permission: nucleus.ignite.others
+        description: Allows the user to target other players using the command "ignite".
+        defaultLevel: admin
+        module: fun
     -   permission: nucleus.ignite.exempt.cooldown
         description: Allows the user to bypass the cooldown for /ignite
         defaultLevel: admin
@@ -1037,6 +1103,10 @@
         description: Allows the user to bypass the cooldown for /kittycannon
         defaultLevel: admin
         module: fun
+    -   permission: nucleus.kittycannon.others
+        description: Allows the user to target other players using the command "kittycannon".
+        defaultLevel: admin
+        module: fun
     -   permission: nucleus.kittycannon.exempt.warmup
         description: Allows the user to bypass the warmup for /kittycannon
         defaultLevel: admin
@@ -1075,6 +1145,10 @@
         description: Allows the user to bypass the warmup for /lightning
         defaultLevel: admin
         module: fun
+    -   permission: nucleus.lightning.others
+        description: Allows the user to target other players using the command "lightning".
+        defaultLevel: admin
+        module: fun
     -   permission: nucleus.lightning.exempt.cost
         description: Allows the user to bypass the cost for /lightning
         defaultLevel: admin
@@ -1101,6 +1175,10 @@
     cooldown: true
     cost: true
     permissions:
+    -   permission: nucleus.rocket.others
+        description: Allows the user to target other players using the command "rocket".
+        defaultLevel: admin
+        module: fun
     -   permission: nucleus.rocket.exempt.warmup
         description: Allows the user to bypass the warmup for /rocket
         defaultLevel: admin
@@ -1148,6 +1226,11 @@
     permissions:
     -   permission: nucleus.home.exempt.cost
         description: Allows the user to bypass the cost for /home
+        defaultLevel: admin
+        module: home
+    -   permission: nucleus.home.exempt.samedimension
+        description: If granted, players can teleport across dimensions even when
+            only-same-dimension is enabled.
         defaultLevel: admin
         module: home
     -   permission: nucleus.home.exempt.cooldown
@@ -1220,6 +1303,10 @@
     cooldown: false
     cost: false
     permissions:
+    -   permission: nucleus.home.list.others
+        description: Allows the user to target other players using the command "{0}".
+        defaultLevel: admin
+        module: home
     -   permission: nucleus.home.list.base
         description: Allows the user to run the command /home list
         defaultLevel: user
@@ -1285,6 +1372,10 @@
         description: Allows the user to run the command /home set
         defaultLevel: user
         module: home
+    -   permission: nucleus.home.set.unlimited
+        description: Allows the user to have an unlimited number of homes.
+        defaultLevel: admin
+        module: home
     -   permission: nucleus.home.set.exempt.warmup
         description: Allows the user to bypass the warmup for /home set
         defaultLevel: admin
@@ -1310,6 +1401,10 @@
     isExactEssEquiv: true
     essNotes: ''
     permissions:
+    -   permission: nucleus.ignore.exempt.chat
+        description: Exempts the user from having their chat, messages and mail ignored.
+        defaultLevel: staff
+        module: ignore
     -   permission: nucleus.ignore.base
         description: Allows the user to run the command /ignore
         defaultLevel: user
@@ -1332,6 +1427,10 @@
         description: Allows the user to run the command /ignorelist
         defaultLevel: user
         module: ignore
+    -   permission: nucleus.ignorelist.others
+        description: Allows the user to target other players using the command "ignorelist".
+        defaultLevel: admin
+        module: ignore
     simpleUsage: ' /ignorelist [<user>]'
     context: ignorelist
 -   commandName: info
@@ -1353,6 +1452,11 @@
     isExactEssEquiv: true
     essNotes: ''
     permissions:
+    -   permission: nucleus.info.list
+        description: If granted, the player can run /info -l to see all the available
+            info sections.
+        defaultLevel: admin
+        module: info
     -   permission: nucleus.info.base
         description: Allows the user to run the command /info
         defaultLevel: user
@@ -1403,6 +1507,10 @@
         description: Allows the user to run the command /clear
         defaultLevel: admin
         module: inventory
+    -   permission: nucleus.clear.others
+        description: Allows the user to target other players using the command "clear".
+        defaultLevel: admin
+        module: inventory
     simpleUsage: ' /clear [-a|--all] [<user>]'
     context: clear
 -   commandName: enderchest
@@ -1432,8 +1540,24 @@
         description: Allows the user to bypass the warmup for /enderchest
         defaultLevel: admin
         module: inventory
+    -   permission: nucleus.enderchest.exempt.target
+        description: Prevents the player from being a target for /enderchest
+        defaultLevel: admin
+        module: inventory
+    -   permission: nucleus.enderchest.offline
+        description: Allows the user to inspect offline players' ender chests.
+        defaultLevel: admin
+        module: inventory
+    -   permission: nucleus.enderchest.modify
+        description: Allows the user to modify others' ender chests.
+        defaultLevel: admin
+        module: inventory
     -   permission: nucleus.enderchest.base
         description: Allows the user to run the command /enderchest
+        defaultLevel: admin
+        module: inventory
+    -   permission: nucleus.enderchest.others
+        description: Allows the user to target other players using the command "enderchest".
         defaultLevel: admin
         module: inventory
     -   permission: nucleus.enderchest.exempt.cost
@@ -1442,6 +1566,11 @@
         module: inventory
     -   permission: nucleus.enderchest.exempt.cooldown
         description: Allows the user to bypass the cooldown for /enderchest
+        defaultLevel: admin
+        module: inventory
+    -   permission: nucleus.enderchest.exempt.modify
+        description: Prevents the player from having their ender chest modified by
+            others.
         defaultLevel: admin
         module: inventory
     simpleUsage: ' /enderchest [<player>]'
@@ -1463,8 +1592,24 @@
     isExactEssEquiv: true
     essNotes: ''
     permissions:
+    -   permission: nucleus.invsee.exempt.interact
+        description: Prevents the player from having their inventory interacted with.
+        defaultLevel: admin
+        module: inventory
     -   permission: nucleus.invsee.base
         description: Allows the user to run the command /invsee
+        defaultLevel: admin
+        module: inventory
+    -   permission: nucleus.invsee.exempt.target
+        description: Prevents the player from being a target for /invsee.
+        defaultLevel: admin
+        module: inventory
+    -   permission: nucleus.invsee.modify
+        description: Allows the player to modify others' inventories.
+        defaultLevel: admin
+        module: inventory
+    -   permission: nucleus.invsee.offline
+        description: Allows the player to look at offline players' inventories.
         defaultLevel: admin
         module: inventory
     simpleUsage: ' /invsee <user>'
@@ -1488,6 +1633,15 @@
     permissions:
     -   permission: nucleus.god.base
         description: Allows the user to run the command /god
+        defaultLevel: admin
+        module: invulnerability
+    -   permission: nucleus.god.others
+        description: Allows the user to target other players using the command "god".
+        defaultLevel: admin
+        module: invulnerability
+    -   permission: nucleus.god.pvp.override
+        description: Allows the user to attack players when invulnerable, if the PvP
+            disable on invulnerability feature is set.
         defaultLevel: admin
         module: invulnerability
     simpleUsage: ' /god [<player>] [<true|false>]'
@@ -1518,6 +1672,11 @@
         module: item
     -   permission: nucleus.enchant.base
         description: Allows the user to run the command /enchant
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.enchant.unsafe
+        description: Allows setting enchantments and levels that are not ordinarily
+            available to the held item.
         defaultLevel: admin
         module: item
     -   permission: nucleus.enchant.exempt.warmup
@@ -1681,6 +1840,10 @@
         description: Allows the user to run the command /repair
         defaultLevel: admin
         module: item
+    -   permission: nucleus.repair.others
+        description: Allows the user to target other players using the command "repair".
+        defaultLevel: admin
+        module: item
     -   permission: nucleus.repair.exempt.cost
         description: Allows the user to bypass the cost for /repair
         defaultLevel: admin
@@ -1739,6 +1902,10 @@
     isExactEssEquiv: true
     essNotes: ''
     permissions:
+    -   permission: nucleus.skull.others
+        description: Allows the user to target other players using the command "skull".
+        defaultLevel: admin
+        module: item
     -   permission: nucleus.skull.exempt.cooldown
         description: Allows the user to bypass the cooldown for /skull
         defaultLevel: admin
@@ -1806,6 +1973,10 @@
         description: Allows the user to bypass the warmup for /unsignbook
         defaultLevel: admin
         module: item
+    -   permission: nucleus.unsignbook.others
+        description: Allows the user to target other players using the command "unsignbook".
+        defaultLevel: admin
+        module: item
     -   permission: nucleus.unsignbook.exempt.cooldown
         description: Allows the user to bypass the cooldown for /unsignbook
         defaultLevel: admin
@@ -1868,9 +2039,29 @@
     isExactEssEquiv: false
     essNotes: This command is not a toggle.
     permissions:
+    -   permission: nucleus.jail.teleportjailed
+        description: Allows the player to teleport jailed players.
+        defaultLevel: admin
+        module: jail
     -   permission: nucleus.jail.base
         description: Allows the user to run the command /jail
         defaultLevel: staff
+        module: jail
+    -   permission: nucleus.jail.offline
+        description: Allows the user to jail offline users.
+        defaultLevel: staff
+        module: jail
+    -   permission: nucleus.jail.teleporttojailed
+        description: Allows the player to teleport to jailed players.
+        defaultLevel: admin
+        module: jail
+    -   permission: nucleus.jail.notify
+        description: Notifies the user about jails when they occur.
+        defaultLevel: staff
+        module: jail
+    -   permission: nucleus.jail.exempt.target
+        description: Exempts the user from being jailed.
+        defaultLevel: admin
         module: jail
     simpleUsage: ' /jail <user> [<jail>] [<duration>] [<reason…>]'
     context: jail
@@ -2048,6 +2239,10 @@
         description: Allows the user to bypass the cooldown for /top
         defaultLevel: admin
         module: jump
+    -   permission: nucleus.top.others
+        description: Allows the user to target other players using the command "top".
+        defaultLevel: admin
+        module: jump
     -   permission: nucleus.top.exempt.cost
         description: Allows the user to bypass the cost for /top
         defaultLevel: admin
@@ -2107,8 +2302,16 @@
     isExactEssEquiv: true
     essNotes: ''
     permissions:
+    -   permission: nucleus.kick.exempt.target
+        description: Exempts the user from being a target of the /kick command.
+        defaultLevel: staff
+        module: kick
     -   permission: nucleus.kick.base
         description: Allows the user to run the command /kick
+        defaultLevel: staff
+        module: kick
+    -   permission: nucleus.kick.notify
+        description: Notifies the user about kicks when they occur.
         defaultLevel: staff
         module: kick
     simpleUsage: ' /kick <player> [<reason…>]'
@@ -2142,12 +2345,12 @@
     defaultLevel: user
     usageString: " /kit <kit>\n /kit give [-i|--ignore] <player> <kit>\n /kit set\
         \ <kit>\n /kit cost <kit> <cost>\n /kit hidden <kit> <true|false>\n /kit edit\
-        \ <kit>\n /kit setcooldown <kit> <duration>\n /kit list \n /kit command <kit>\n\
-        \ /kit remove <kit>\n /kit toggleredeemmessage <kit> <true|false>\n /kit view\
-        \ <kit>\n /kit reload \n /kit rename <kit> <target name>\n /kit autoredeem\
-        \ <kit> <true|false>\n /kit permissionbypass <kit> <true|false>\n /kit create\
-        \ [-c|--clone] <name>\n /kit resetusage <user> <kit>\n /kit onetime <kit>\
-        \ <true|false>\n /kit setfirstjoin <kit> [<true|false>]\n /kit info <kit>"
+        \ <kit>\n /kit list \n /kit command <kit>\n /kit remove <kit>\n /kit toggleredeemmessage\
+        \ <kit> <true|false>\n /kit view <kit>\n /kit reload \n /kit rename <kit>\
+        \ <target name>\n /kit autoredeem <kit> <true|false>\n /kit permissionbypass\
+        \ <kit> <true|false>\n /kit cooldown <kit> <duration>\n /kit create [-c|--clone]\
+        \ <name>\n /kit resetusage <user> <kit>\n /kit onetime <kit> <true|false>\n\
+        \ /kit setfirstjoin <kit> [<true|false>]\n /kit info <kit>"
     oneLineDescription: Redeems a kit.
     module: kit
     permissionbase: nucleus.kit
@@ -2159,12 +2362,24 @@
     isExactEssEquiv: false
     essNotes: '''/kit'' redeems, ''/kits'' lists.'
     permissions:
+    -   permission: nucleus.kit.exempt.cooldown
+        description: Allows the user to bypass kit cooldowns.
+        defaultLevel: admin
+        module: kit
     -   permission: nucleus.kit.base
         description: Allows the user to run the command /kit
         defaultLevel: user
         module: kit
+    -   permission: nucleus.kit.exempt.onetime
+        description: Allows the user to use one time kits multiple times.
+        defaultLevel: admin
+        module: kit
     -   permission: nucleus.kit.exempt.warmup
         description: Allows the user to bypass the warmup for /kit
+        defaultLevel: admin
+        module: kit
+    -   permission: nucleus.kit.exempt.cost
+        description: Allows the user to bypass paying the cost for any kit.
         defaultLevel: admin
         module: kit
     simpleUsage: ' /kit <kit>'
@@ -2184,6 +2399,10 @@
     -   permission: nucleus.kit.list.base
         description: Allows the user to run the command /kit list
         defaultLevel: user
+        module: kit
+    -   permission: nucleus.kit.showhidden
+        description: Shows the user hidden kits in /kits
+        defaultLevel: admin
         module: kit
     simpleUsage: ' /kit list '
     context: kit list
@@ -2253,6 +2472,10 @@
         description: Allows the user to bypass the warmup for /helpop
         defaultLevel: admin
         module: message
+    -   permission: nucleus.helpop.receive
+        description: Allows the user to receive message via /helpop
+        defaultLevel: staff
+        module: message
     -   permission: nucleus.helpop.exempt.cooldown
         description: Allows the user to bypass the cooldown for /helpop
         defaultLevel: admin
@@ -2286,6 +2509,10 @@
         description: Allows the user to bypass the cooldown for /reply
         defaultLevel: admin
         module: message
+    -   permission: nucleus.message.style
+        description: Allows user to use styles into messages.
+        defaultLevel: admin
+        module: message
     -   permission: nucleus.message.exempt.warmup
         description: Allows the user to bypass the warmup for /reply
         defaultLevel: admin
@@ -2297,6 +2524,14 @@
     -   permission: nucleus.message.base
         description: Allows the user to run the command /reply
         defaultLevel: user
+        module: message
+    -   permission: nucleus.message.colour
+        description: Allows user to type colours into messages.
+        defaultLevel: admin
+        module: message
+    -   permission: nucleus.message.url
+        description: Allows user to type clickable URLs into messages.
+        defaultLevel: admin
         module: message
     simpleUsage: ' /message <to>|<to> <message…>'
     context: message
@@ -2313,6 +2548,11 @@
     cooldown: false
     cost: false
     permissions:
+    -   permission: nucleus.msgtoggle.bypass
+        description: Allows the user to send a message to players that have set "/msgtoggle"
+            to false.
+        defaultLevel: admin
+        module: message
     -   permission: nucleus.msgtoggle.base
         description: Allows the user to run the command /msgtoggle
         defaultLevel: admin
@@ -2372,6 +2612,10 @@
         description: Allows the user to run the command /socialspy
         defaultLevel: staff
         module: message
+    -   permission: nucleus.socialspy.force
+        description: If granted, along with the "nucleus.socialspy.base" permission,
+            the target player cannot turn social spy off.
+        module: message
     simpleUsage: ' /socialspy [<true|false>]'
     context: socialspy
 -   commandName: blockinfo
@@ -2385,6 +2629,10 @@
     cooldown: false
     cost: false
     permissions:
+    -   permission: nucleus.blockinfo.extended
+        description: Displays properties and traits associated with the block.
+        defaultLevel: admin
+        module: misc
     -   permission: nucleus.blockinfo.base
         description: Allows the user to run the command /blockinfo
         defaultLevel: admin
@@ -2402,6 +2650,10 @@
     cooldown: false
     cost: false
     permissions:
+    -   permission: nucleus.entityinfo.extended
+        description: Displays data associated with the entity.
+        defaultLevel: admin
+        module: misc
     -   permission: nucleus.entityinfo.base
         description: Allows the user to run the command /entityinfo
         defaultLevel: admin
@@ -2421,6 +2673,10 @@
     permissions:
     -   permission: nucleus.extinguish.exempt.cooldown
         description: Allows the user to bypass the cooldown for /extinguish
+        defaultLevel: admin
+        module: misc
+    -   permission: nucleus.extinguish.others
+        description: Allows the user to target other players using the command "extinguish".
         defaultLevel: admin
         module: misc
     -   permission: nucleus.extinguish.exempt.cost
@@ -2465,6 +2721,10 @@
         description: Allows the user to bypass the warmup for /feed
         defaultLevel: admin
         module: misc
+    -   permission: nucleus.feed.others
+        description: Allows the user to target other players using the command "feed".
+        defaultLevel: admin
+        module: misc
     -   permission: nucleus.feed.base
         description: Allows the user to run the command /feed
         defaultLevel: admin
@@ -2486,6 +2746,10 @@
     isExactEssEquiv: true
     essNotes: ''
     permissions:
+    -   permission: nucleus.heal.others
+        description: Allows the user to target other players using the command "heal".
+        defaultLevel: admin
+        module: misc
     -   permission: nucleus.heal.exempt.cooldown
         description: Allows the user to bypass the cooldown for /heal
         defaultLevel: admin
@@ -2526,6 +2790,10 @@
         description: Allows the user to run the command /iteminfo
         defaultLevel: admin
         module: misc
+    -   permission: nucleus.iteminfo.extended
+        description: Displays data associated with the item.
+        defaultLevel: admin
+        module: misc
     simpleUsage: ' /iteminfo [-e|--extended] [<key>]'
     context: iteminfo
 -   commandName: ping
@@ -2547,6 +2815,10 @@
     permissions:
     -   permission: nucleus.ping.base
         description: Allows the user to run the command /ping
+        defaultLevel: admin
+        module: misc
+    -   permission: nucleus.ping.others
+        description: Allows the user to target other players using the command "ping".
         defaultLevel: admin
         module: misc
     simpleUsage: ' /ping [<player>]'
@@ -2623,8 +2895,17 @@
     essNotes: This command either uses your current state or a specified argument
         to determine whether to alter fly or walk speed.
     permissions:
+    -   permission: nucleus.speed.others
+        description: Allows the user to target other players using the command "speed".
+        defaultLevel: admin
+        module: misc
     -   permission: nucleus.speed.exempt.cooldown
         description: Allows the user to bypass the cooldown for /speed
+        defaultLevel: admin
+        module: misc
+    -   permission: nucleus.speed.exempt.max
+        description: Allows the user to specified a speed greater than the max speed
+            set in the config file.
         defaultLevel: admin
         module: misc
     -   permission: nucleus.speed.base
@@ -2694,6 +2975,10 @@
         description: Allows the user to run the command /spawnmob
         defaultLevel: admin
         module: mob
+    -   permission: nucleus.spawnmob.others
+        description: Allows the user to target other players using the command "spawnmob".
+        defaultLevel: admin
+        module: mob
     simpleUsage: ' /spawnmob [<player>] <mob> [<amount>]'
     context: spawnmob
 -   commandName: checkmute
@@ -2757,24 +3042,19 @@
 -   commandName: mute
     aliases: mute
     defaultLevel: staff
-    usageString: ' /mute <user> [<duration>] [<reason…>]'
-    oneLineDescription: Mutes the specified player.
+    usageString: ' /mute <user>'
+    oneLineDescription: Unmutes the specified player.
     module: mute
-    permissionbase: nucleus.mute
+    permissionbase: nucleus.mute.unmute
     warmup: false
     cooldown: false
     cost: false
-    essentialsEquivalents:
-    - mute
-    - silence
-    isExactEssEquiv: false
-    essNotes: Unmuting a player should be done via the /unmute command.
     permissions:
-    -   permission: nucleus.mute.base
-        description: Allows the user to run the command /mute
+    -   permission: nucleus.mute.unmute
+        description: If set in config, this permission is required to unmute players.
         defaultLevel: staff
         module: mute
-    simpleUsage: ' /mute <user> [<duration>] [<reason…>]'
+    simpleUsage: ' /mute <user>'
     context: mute
 -   commandName: voice
     aliases: voice
@@ -2872,12 +3152,25 @@
     isExactEssEquiv: false
     essNotes: To remove a nickname, use '/delnick'
     permissions:
+    -   permission: nucleus.nick.colour
+        description: Allows the user to colour their nickname.
+        defaultLevel: admin
+        module: nickname
     -   permission: nucleus.nick.exempt.cooldown
         description: Allows the user to bypass the cooldown for /nick
         defaultLevel: admin
         module: nickname
+    -   permission: nucleus.nick.others
+        description: Allows the user to target other players using the command "nick,
+            delnick".
+        defaultLevel: admin
+        module: nickname
     -   permission: nucleus.nick.exempt.warmup
         description: Allows the user to bypass the warmup for /nick
+        defaultLevel: admin
+        module: nickname
+    -   permission: nucleus.nick.style
+        description: Allows the user to style their nickname.
         defaultLevel: admin
         module: nickname
     -   permission: nucleus.nick.base
@@ -2960,6 +3253,10 @@
         description: Notifies the user about notes when they occur.
         defaultLevel: staff
         module: note
+    -   permission: nucleus.note.showonlogin
+        description: Allows user to see other users notes when they login.
+        defaultLevel: staff
+        module: note
     simpleUsage: ' /note <user> <message…>'
     context: note
 -   commandName: removenote
@@ -3028,6 +3325,10 @@
         description: Allows the user to run the command /basicsubtitle
         defaultLevel: admin
         module: notification
+    -   permission: nucleus.basicsubtitle.multiple
+        description: Allows the user to target multiple players with the command /basicsubtitle
+        defaultLevel: admin
+        module: notification
     simpleUsage: ' /basicsubtitle [-t <time>] [-i <fade in>] [-o <fade out>] [-p <player>]
         <message…>'
     context: basicsubtitle
@@ -3052,6 +3353,10 @@
     permissions:
     -   permission: nucleus.basictitle.base
         description: Allows the user to run the command /basictitle
+        defaultLevel: admin
+        module: notification
+    -   permission: nucleus.basictitle.multiple
+        description: Allows the user to target multiple players with the command /basictitle
         defaultLevel: admin
         module: notification
     simpleUsage: ' /basictitle [-t <time>] [-i <fade in>] [-o <fade out>] [-p <player>]
@@ -3140,6 +3445,10 @@
         description: Allows the user to bypass the warmup for /getpos
         defaultLevel: admin
         module: playerinfo
+    -   permission: nucleus.getpos.others
+        description: Allows the user to view the position of other players.
+        defaultLevel: staff
+        module: playerinfo
     simpleUsage: ' /getpos [<user>]'
     context: getpos
 -   commandName: list
@@ -3168,6 +3477,10 @@
     -   permission: nucleus.list.base
         description: Allows the user to run the command /list
         defaultLevel: user
+        module: playerinfo
+    -   permission: nucleus.list.seevanished
+        description: Allows the user to see vanished players in /list.
+        defaultLevel: admin
         module: playerinfo
     -   permission: nucleus.list.exempt.cost
         description: Allows the user to bypass the cost for /list
@@ -3229,6 +3542,47 @@
     permissions:
     -   permission: nucleus.seen.base
         description: Allows the user to run the command /seen
+        defaultLevel: admin
+        module: playerinfo
+    -   permission: nucleus.seen.extended.flying.canfly
+        description: Allows the executor to see if the player can fly by double jumping.
+        defaultLevel: admin
+        module: playerinfo
+    -   permission: nucleus.seen.extended.speed.walking
+        description: Allows the executor to see the current walking speed of the player.
+        defaultLevel: admin
+        module: playerinfo
+    -   permission: nucleus.seen.extended.location
+        description: Allows the executor to see the player's current location.
+        defaultLevel: admin
+        module: playerinfo
+    -   permission: nucleus.seen.extended.speed.flying
+        description: Allows the executor to see the current flying speed of the player.
+        defaultLevel: admin
+        module: playerinfo
+    -   permission: nucleus.seen.extended.lastplayed
+        description: Allows the executor to see the date when the player was last
+            on the server.
+        defaultLevel: admin
+        module: playerinfo
+    -   permission: nucleus.seen.extended.flying.isflying
+        description: Allows the executor to see if the player is flying.
+        defaultLevel: admin
+        module: playerinfo
+    -   permission: nucleus.seen.extended.uuid
+        description: Allows the executor to see the player's UUID.
+        defaultLevel: admin
+        module: playerinfo
+    -   permission: nucleus.seen.extended.firstplayed
+        description: Allows the executor to see when the player first joined the server.
+        defaultLevel: admin
+        module: playerinfo
+    -   permission: nucleus.seen.extended.gamemode
+        description: Allows the executor to see the player's current game mode.
+        defaultLevel: admin
+        module: playerinfo
+    -   permission: nucleus.seen.extended.ip
+        description: Allows the executor to see the player's IP.
         defaultLevel: admin
         module: playerinfo
     simpleUsage: ' /seen <user uuid>|<user>'
@@ -3294,6 +3648,16 @@
         module: rtp
     -   permission: nucleus.rtp.exempt.cooldown
         description: Allows the user to bypass the cooldown for /rtp
+        defaultLevel: admin
+        module: rtp
+    -   permission: nucleus.rtp.others
+        description: Allows the user to target other players using the command "rtp".
+        defaultLevel: admin
+        module: rtp
+    -   permission: nucleus.rtp.worlds
+        description: The base permission for per-world permission, if allowed in the
+            config. This permission can be suffixed with ".worldname" (in lowercase)
+            to allow for per-world rtp permissions.
         defaultLevel: admin
         module: rtp
     -   permission: nucleus.rtp.base
@@ -3430,8 +3794,16 @@
     isExactEssEquiv: true
     essNotes: ''
     permissions:
+    -   permission: nucleus.spawn.otherworlds
+        description: Allows the user to go to another world's spawnpoint.
+        defaultLevel: admin
+        module: spawn
     -   permission: nucleus.spawn.exempt.cost
         description: Allows the user to bypass the cost for /spawn
+        defaultLevel: admin
+        module: spawn
+    -   permission: nucleus.spawn.force
+        description: Allows the user to attempt to force teleportation to spawn.
         defaultLevel: admin
         module: spawn
     -   permission: nucleus.spawn.base
@@ -3483,7 +3855,7 @@
     simpleUsage: ' /toggleviewstaffchat [<true|false>]'
     context: toggleviewstaffchat
 -   commandName: teleport
-    aliases: teleport, $tp
+    aliases: teleport, tele, $tp
     defaultLevel: staff
     usageString: ' /teleport [-q <quiet>] [-f]  <player to warp to>|<player to warp>
         <player to warp to>|<offline player to warp to>'
@@ -3502,6 +3874,11 @@
     isExactEssEquiv: false
     essNotes: If you have permission, this will override '/tptoggle' automatically.
     permissions:
+    -   permission: nucleus.teleport.teleport.offline
+        description: Allows the user to teleport to the location of players who are
+            offline.
+        defaultLevel: admin
+        module: teleport
     -   permission: nucleus.teleport.teleport.exempt.cooldown
         description: Allows the user to bypass the cooldown for /teleport
         defaultLevel: admin
@@ -3513,6 +3890,20 @@
     -   permission: nucleus.teleport.teleport.base
         description: Allows the user to run the command /teleport
         defaultLevel: staff
+        module: teleport
+    -   permission: nucleus.teleport.tptoggle.exempt
+        description: Allows the user to teleport to anyone, regardless of whether
+            they have turned on /tptoggle protection.
+        defaultLevel: admin
+        module: teleport
+    -   permission: nucleus.teleport.teleport.others
+        description: Allows the user to target other players using the command "teleport".
+        defaultLevel: admin
+        module: teleport
+    -   permission: nucleus.teleport.teleport.quiet
+        description: Allows the user to use the "-q" flag to override whether to tell
+            the target player if a teleport is being performed.
+        defaultLevel: admin
         module: teleport
     -   permission: nucleus.teleport.teleport.exempt.cost
         description: Allows the user to bypass the cost for /teleport
@@ -3546,8 +3937,18 @@
         description: Allows the user to bypass the cost for /tpa
         defaultLevel: admin
         module: teleport
+    -   permission: nucleus.teleport.tpa.force
+        description: Allows the user to "force" teleport to a point, regardless of
+            whether it is safe to do so.
+        defaultLevel: admin
+        module: teleport
     -   permission: nucleus.teleport.tpa.exempt.warmup
         description: Allows the user to bypass the warmup for /tpa
+        defaultLevel: admin
+        module: teleport
+    -   permission: nucleus.teleport.tptoggle.exempt
+        description: Allows the user to teleport to anyone, regardless of whether
+            they have turned on /tptoggle protection.
         defaultLevel: admin
         module: teleport
     -   permission: nucleus.teleport.tpa.base
@@ -3622,8 +4023,18 @@
         description: Allows the user to bypass the cooldown for /tpahere
         defaultLevel: admin
         module: teleport
+    -   permission: nucleus.teleport.tptoggle.exempt
+        description: Allows the user to teleport to anyone, regardless of whether
+            they have turned on /tptoggle protection.
+        defaultLevel: admin
+        module: teleport
     -   permission: nucleus.teleport.tpahere.exempt.cost
         description: Allows the user to bypass the cost for /tpahere
+        defaultLevel: admin
+        module: teleport
+    -   permission: nucleus.teleport.tpahere.force
+        description: Allows the user to "force" teleport to a point, regardless of
+            whether it is safe to do so.
         defaultLevel: admin
         module: teleport
     -   permission: nucleus.teleport.tpahere.base
@@ -3696,6 +4107,16 @@
         description: Allows the user to run the command /tphere
         defaultLevel: admin
         module: teleport
+    -   permission: nucleus.teleport.tptoggle.exempt
+        description: Allows the user to teleport to anyone, regardless of whether
+            they have turned on /tptoggle protection.
+        defaultLevel: admin
+        module: teleport
+    -   permission: nucleus.teleport.tphere.offline
+        description: Allows the user to teleport players who are offline to their
+            current location on next login.
+        defaultLevel: admin
+        module: teleport
     simpleUsage: ' /tphere [-q|--quiet] <player>'
     context: tphere
 -   commandName: tppos
@@ -3719,8 +4140,17 @@
     isExactEssEquiv: true
     essNotes: ''
     permissions:
+    -   permission: nucleus.teleport.tppos.exempt.bordercheck
+        description: If granted, allows the user to the use "-b" flag to attempt to
+            warp outside of the border.
+        defaultLevel: admin
+        module: teleport
     -   permission: nucleus.teleport.tppos.base
         description: Allows the user to run the command /tppos
+        defaultLevel: admin
+        module: teleport
+    -   permission: nucleus.teleport.tppos.others
+        description: Allows the user to target other players using the command "tppos".
         defaultLevel: admin
         module: teleport
     simpleUsage: ' /tppos [-f|--force] [-b|--border] [-c|--chunk] [<player>] [<world>]
@@ -3745,6 +4175,11 @@
         description: Allows the user to run the command /tptoggle
         defaultLevel: user
         module: teleport
+    -   permission: nucleus.teleport.tptoggle.exempt
+        description: Allows the user to teleport to anyone, regardless of whether
+            they have turned on /tptoggle protection.
+        defaultLevel: admin
+        module: teleport
     simpleUsage: ' /tptoggle [<true|false>]'
     context: tptoggle
 -   commandName: vanish
@@ -3763,6 +4198,16 @@
     isExactEssEquiv: true
     essNotes: ''
     permissions:
+    -   permission: nucleus.vanish.see
+        description: If granted, and the version of Sponge/Nucleus supports this,
+            allows players to see other vanished players and tab their names in commands.
+        defaultLevel: admin
+        module: vanish
+    -   permission: nucleus.vanish.persist
+        description: If granted, the player is able to retain their vanish status
+            upon logout and login.
+        defaultLevel: admin
+        module: vanish
     -   permission: nucleus.vanish.base
         description: Allows the user to run the command /vanish
         defaultLevel: admin
@@ -3788,10 +4233,10 @@
     aliases: warp
     defaultLevel: user
     usageString: " /warp [[-y|-a|--accept] [-f|--force] ] [[<player>]] <warp>\n /warp\
-        \ set <warp>\n /warp cost <warp> <cost>\n /warp setcategory [-n|--new] [-r|--remove|--delete]\
-        \ <warp> [<warp category>]\n /warp list [-u] \n /warp category \n /warp delete\
-        \ <warp>\n /warp setdescription [-r|--remove|--delete] <warp> [<description…\
-        >]"
+        \ set [-o] <warp>\n /warp cost <warp> <cost>\n /warp setcategory [-n|--new]\
+        \ [-r|--remove|--delete] <warp> [<warp category>]\n /warp list [-u] \n /warp\
+        \ category \n /warp delete <warp>\n /warp setdescription [-r|--remove|--delete]\
+        \ <warp> [<description…>]"
     oneLineDescription: Teleport to the specified warp.
     module: warp
     permissionbase: nucleus.warp
@@ -3804,6 +4249,10 @@
     isExactEssEquiv: false
     essNotes: Use '/warp' for warping, '/warps' to list warps.
     permissions:
+    -   permission: nucleus.warp.others
+        description: Allows the user to target other players using the command "warp".
+        defaultLevel: admin
+        module: warp
     -   permission: nucleus.warp.exempt.cooldown
         description: Allows the user to bypass the cooldown for /warp
         defaultLevel: admin
@@ -3864,8 +4313,10 @@
     aliases: warpset, warp#setwarp, warp#warpset
     rootAliases: setwarp, nsetwarp, warpset, nwarpset
     defaultLevel: admin
-    usageString: ' /warp set <warp>'
+    usageString: ' /warp set [-o] <warp>'
     oneLineDescription: Sets a warp.
+    extendedDescription: If you have permissions to delete warps, you may use the
+        -o flag to overwrite an existing warp.
     module: warp
     permissionbase: nucleus.warp.set
     warmup: true
@@ -3893,7 +4344,7 @@
         description: Allows the user to bypass the warmup for /warp set
         defaultLevel: admin
         module: warp
-    simpleUsage: ' /warp set <warp>'
+    simpleUsage: ' /warp set [-o] <warp>'
     context: warp set
 -   commandName: world
     aliases: world, nworld, nucleusworld
@@ -3942,6 +4393,10 @@
     permissions:
     -   permission: nucleus.world.list.base
         description: Allows the user to run the command /world info
+        defaultLevel: admin
+        module: world
+    -   permission: nucleus.world.list.seed
+        description: Allows the user to see world seeds.
         defaultLevel: admin
         module: world
     simpleUsage: ' /world list '

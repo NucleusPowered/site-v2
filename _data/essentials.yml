@@ -48,17 +48,6 @@
     isExact: true
     notes: ''
 -   essentialsCommands:
-    - kill
-    - remove
-    - butcher
-    - killall
-    - mobkill
-    nucleusEquiv:
-    - kill
-    - nkill
-    isExact: false
-    notes: Nucleus supports killing entities using the Minecraft selectors.
--   essentialsCommands:
     - sudo
     nucleusEquiv:
     - sudo
@@ -678,6 +667,8 @@
     nucleusEquiv:
     - teleport
     - nteleport
+    - tele
+    - ntele
     - tp
     - ntp
     isExact: false

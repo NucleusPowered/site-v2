@@ -120,18 +120,6 @@
     description: Allows the user to run the command /blockinfo
     defaultLevel: admin
     module: misc
--   permission: nucleus.blockinfo.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /blockinfo
-    defaultLevel: admin
-    module: misc
--   permission: nucleus.blockinfo.exempt.cost
-    description: Allows the user to bypass the cost for /blockinfo
-    defaultLevel: admin
-    module: misc
--   permission: nucleus.blockinfo.exempt.warmup
-    description: Allows the user to bypass the warmup for /blockinfo
-    defaultLevel: admin
-    module: misc
 -   permission: nucleus.blockinfo.extended
     description: Displays properties and traits associated with the block.
     defaultLevel: admin
@@ -300,18 +288,6 @@
     module: inventory
 -   permission: nucleus.entityinfo.base
     description: Allows the user to run the command /entityinfo
-    defaultLevel: admin
-    module: misc
--   permission: nucleus.entityinfo.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /entityinfo
-    defaultLevel: admin
-    module: misc
--   permission: nucleus.entityinfo.exempt.cost
-    description: Allows the user to bypass the cost for /entityinfo
-    defaultLevel: admin
-    module: misc
--   permission: nucleus.entityinfo.exempt.warmup
-    description: Allows the user to bypass the warmup for /entityinfo
     defaultLevel: admin
     module: misc
 -   permission: nucleus.entityinfo.extended
@@ -706,7 +682,6 @@
     module: info
 -   permission: nucleus.inventory.keepondeath
     description: Causes the player to keep their inventory on death.
-    defaultLevel: admin
     module: inventory
 -   permission: nucleus.invsee.base
     description: Allows the user to run the command /invsee
@@ -730,18 +705,6 @@
     module: inventory
 -   permission: nucleus.iteminfo.base
     description: Allows the user to run the command /iteminfo
-    defaultLevel: admin
-    module: misc
--   permission: nucleus.iteminfo.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /iteminfo
-    defaultLevel: admin
-    module: misc
--   permission: nucleus.iteminfo.exempt.cost
-    description: Allows the user to bypass the cost for /iteminfo
-    defaultLevel: admin
-    module: misc
--   permission: nucleus.iteminfo.exempt.warmup
-    description: Allows the user to bypass the warmup for /iteminfo
     defaultLevel: admin
     module: misc
 -   permission: nucleus.iteminfo.extended
@@ -900,10 +863,6 @@
     description: Allows the user to bypass the warmup for /killentity
     defaultLevel: admin
     module: admin
--   permission: nucleus.kit.add.base
-    description: Allows the user to run the command /kit add
-    defaultLevel: admin
-    module: kit
 -   permission: nucleus.kit.autoredeem.base
     description: Allows the user to run the command /kit autoredeem
     defaultLevel: admin
@@ -1132,16 +1091,8 @@
     description: Allows the user to run the command /mail send
     defaultLevel: user
     module: mail
--   permission: nucleus.mail.send.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /mail send
-    defaultLevel: admin
-    module: mail
 -   permission: nucleus.mail.send.exempt.cost
     description: Allows the user to bypass the cost for /mail send
-    defaultLevel: admin
-    module: mail
--   permission: nucleus.mail.send.exempt.warmup
-    description: Allows the user to bypass the warmup for /mail send
     defaultLevel: admin
     module: mail
 -   permission: nucleus.me.base
@@ -1163,10 +1114,6 @@
 -   permission: nucleus.message.base
     description: Allows the user to run the command /reply
     defaultLevel: user
-    module: message
--   permission: nucleus.message.color
-    description: Allows user to type colors into messages.
-    defaultLevel: admin
     module: message
 -   permission: nucleus.message.colour
     description: Allows user to type colours into messages.
@@ -1288,10 +1235,6 @@
     module: playerinfo
 -   permission: nucleus.nick.base
     description: Allows the user to run the command /nick, delnick
-    defaultLevel: admin
-    module: nickname
--   permission: nucleus.nick.color
-    description: Allows the user to color their nickname.
     defaultLevel: admin
     module: nickname
 -   permission: nucleus.nick.colour
@@ -1420,18 +1363,6 @@
 -   permission: nucleus.realname.base
     description: Allows the user to run the command /realname
     defaultLevel: user
-    module: nickname
--   permission: nucleus.realname.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /realname
-    defaultLevel: admin
-    module: nickname
--   permission: nucleus.realname.exempt.cost
-    description: Allows the user to bypass the cost for /realname
-    defaultLevel: admin
-    module: nickname
--   permission: nucleus.realname.exempt.warmup
-    description: Allows the user to bypass the warmup for /realname
-    defaultLevel: admin
     module: nickname
 -   permission: nucleus.removenote.base
     description: Allows the user to run the command /removenote
@@ -1756,18 +1687,6 @@
     description: Allows the user to run the command /suicide
     defaultLevel: user
     module: misc
--   permission: nucleus.suicide.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /suicide
-    defaultLevel: admin
-    module: misc
--   permission: nucleus.suicide.exempt.cost
-    description: Allows the user to bypass the cost for /suicide
-    defaultLevel: admin
-    module: misc
--   permission: nucleus.suicide.exempt.warmup
-    description: Allows the user to bypass the warmup for /suicide
-    defaultLevel: admin
-    module: misc
 -   permission: nucleus.teleport.teleport.base
     description: Allows the user to run the command /teleport
     defaultLevel: staff
@@ -2059,10 +1978,6 @@
         players to see other vanished players and tab their names in commands.
     defaultLevel: admin
     module: vanish
--   permission: nucleus.vanishonlogin.base
-    description: Allows the user to run the command /vanishonlogin
-    defaultLevel: admin
-    module: vanish
 -   permission: nucleus.warp.base
     description: Allows the user to run the command /warp
     defaultLevel: user
@@ -2079,18 +1994,6 @@
     description: Allows the user to run the command /category displayname
     defaultLevel: admin
     module: warp
--   permission: nucleus.warp.category.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /warp category
-    defaultLevel: admin
-    module: warp
--   permission: nucleus.warp.category.exempt.cost
-    description: Allows the user to bypass the cost for /warp category
-    defaultLevel: admin
-    module: warp
--   permission: nucleus.warp.category.exempt.warmup
-    description: Allows the user to bypass the warmup for /warp category
-    defaultLevel: admin
-    module: warp
 -   permission: nucleus.warp.category.list.base
     description: Allows the user to run the command /category list
     defaultLevel: admin
@@ -2101,18 +2004,6 @@
     module: warp
 -   permission: nucleus.warp.delete.base
     description: Allows the user to run the command /warp delete
-    defaultLevel: admin
-    module: warp
--   permission: nucleus.warp.delete.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /warp delete
-    defaultLevel: admin
-    module: warp
--   permission: nucleus.warp.delete.exempt.cost
-    description: Allows the user to bypass the cost for /warp delete
-    defaultLevel: admin
-    module: warp
--   permission: nucleus.warp.delete.exempt.warmup
-    description: Allows the user to bypass the warmup for /warp delete
     defaultLevel: admin
     module: warp
 -   permission: nucleus.warp.exempt.cooldown
@@ -2130,18 +2021,6 @@
 -   permission: nucleus.warp.list.base
     description: Allows the user to run the command /warp list
     defaultLevel: user
-    module: warp
--   permission: nucleus.warp.list.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /warp list
-    defaultLevel: admin
-    module: warp
--   permission: nucleus.warp.list.exempt.cost
-    description: Allows the user to bypass the cost for /warp list
-    defaultLevel: admin
-    module: warp
--   permission: nucleus.warp.list.exempt.warmup
-    description: Allows the user to bypass the warmup for /warp list
-    defaultLevel: admin
     module: warp
 -   permission: nucleus.warp.others
     description: Allows the user to target other players using the command "warp".
@@ -2215,32 +2094,8 @@
     description: Allows the user to run the command /world border
     defaultLevel: admin
     module: world
--   permission: nucleus.world.border.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /world border
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.border.exempt.cost
-    description: Allows the user to bypass the cost for /world border
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.border.exempt.warmup
-    description: Allows the user to bypass the warmup for /world border
-    defaultLevel: admin
-    module: world
 -   permission: nucleus.world.border.gen.base
     description: Allows the user to run the command /border gen
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.border.gen.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /border gen
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.border.gen.exempt.cost
-    description: Allows the user to bypass the cost for /border gen
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.border.gen.exempt.warmup
-    description: Allows the user to bypass the warmup for /border gen
     defaultLevel: admin
     module: world
 -   permission: nucleus.world.border.gen.notify
@@ -2260,18 +2115,6 @@
     description: Allows the user to run the command /world create
     defaultLevel: admin
     module: world
--   permission: nucleus.world.create.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /world create
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.create.exempt.cost
-    description: Allows the user to bypass the cost for /world create
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.create.exempt.warmup
-    description: Allows the user to bypass the warmup for /world create
-    defaultLevel: admin
-    module: world
 -   permission: nucleus.world.delete.base
     description: Allows the user to run the command /world delete
     defaultLevel: admin
@@ -2282,18 +2125,6 @@
     module: world
 -   permission: nucleus.world.enable.base
     description: Allows the user to run the command /world enable
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /world
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.exempt.cost
-    description: Allows the user to bypass the cost for /world
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.exempt.warmup
-    description: Allows the user to bypass the warmup for /world
     defaultLevel: admin
     module: world
 -   permission: nucleus.world.force-gamemode.override
@@ -2311,18 +2142,6 @@
     module: world
 -   permission: nucleus.world.list.base
     description: Allows the user to run the command /world info
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.list.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /world info
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.list.exempt.cost
-    description: Allows the user to bypass the cost for /world info
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.list.exempt.warmup
-    description: Allows the user to bypass the warmup for /world info
     defaultLevel: admin
     module: world
 -   permission: nucleus.world.list.seed
@@ -2349,80 +2168,20 @@
     description: Allows the user to run the command /world sethardcore
     defaultLevel: admin
     module: world
--   permission: nucleus.world.sethardcore.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /world sethardcore
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.sethardcore.exempt.cost
-    description: Allows the user to bypass the cost for /world sethardcore
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.sethardcore.exempt.warmup
-    description: Allows the user to bypass the warmup for /world sethardcore
-    defaultLevel: admin
-    module: world
 -   permission: nucleus.world.setkeepspawnloaded.base
     description: Allows the user to run the command /world setkeepspawnloaded
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.setkeepspawnloaded.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /world setkeepspawnloaded
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.setkeepspawnloaded.exempt.cost
-    description: Allows the user to bypass the cost for /world setkeepspawnloaded
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.setkeepspawnloaded.exempt.warmup
-    description: Allows the user to bypass the warmup for /world setkeepspawnloaded
     defaultLevel: admin
     module: world
 -   permission: nucleus.world.setloadonstartup.base
     description: Allows the user to run the command /world setloadonstartup
     defaultLevel: admin
     module: world
--   permission: nucleus.world.setloadonstartup.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /world setloadonstartup
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.setloadonstartup.exempt.cost
-    description: Allows the user to bypass the cost for /world setloadonstartup
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.setloadonstartup.exempt.warmup
-    description: Allows the user to bypass the warmup for /world setloadonstartup
-    defaultLevel: admin
-    module: world
 -   permission: nucleus.world.setpvpenabled.base
     description: Allows the user to run the command /world setpvpenabled
     defaultLevel: admin
     module: world
--   permission: nucleus.world.setpvpenabled.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /world setpvpenabled
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.setpvpenabled.exempt.cost
-    description: Allows the user to bypass the cost for /world setpvpenabled
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.setpvpenabled.exempt.warmup
-    description: Allows the user to bypass the warmup for /world setpvpenabled
-    defaultLevel: admin
-    module: world
 -   permission: nucleus.world.setspawn.base
     description: Allows the user to run the command /world setspawn
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.setspawn.exempt.cooldown
-    description: Allows the user to bypass the cooldown for /world setspawn
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.setspawn.exempt.cost
-    description: Allows the user to bypass the cost for /world setspawn
-    defaultLevel: admin
-    module: world
--   permission: nucleus.world.setspawn.exempt.warmup
-    description: Allows the user to bypass the warmup for /world setspawn
     defaultLevel: admin
     module: world
 -   permission: nucleus.world.spawn.base

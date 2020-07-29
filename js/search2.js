@@ -166,7 +166,7 @@ $(document).on("keydown", function(e) {
     if (nucleusSearch.isOpen() && (e.key === "Escape" || e.key === "Esc")) {
         nucleusSearch.close();
         e.preventDefault();
-    } else if (!nucleusSearch.isOpen() && e.key === "s") {
+    } else if (!nucleusSearch.isOpen() && e.key === "s" && !($(e.target).is("input"))) {
         nucleusSearch.open();
         e.preventDefault();
     }
