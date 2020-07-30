@@ -58,7 +58,7 @@
         - name: "Permissions"
           tagline: "Nucleus Permissions"
           link: "permissions.html"
-        - name: "Chat Tokens"
+        - name: "Links &amp; Placeholders"
           tagline: "Links and Placeholders in Nucleus"
           link: "links-and-tokens.html"
         - name: "Essentials Command Equivalence"
