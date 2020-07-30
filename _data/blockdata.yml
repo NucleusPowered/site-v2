@@ -28,6 +28,9 @@
     - name: "How To"
       tagline: "Quick articles that resolve specific, common tasks"
       entries:
+        - name: "Choosing between Nucleus v1 and v2"
+          tagline: "Reasons why you might choose to use either v1 or v2."
+          link: "howto/version-choice.html"
         - name: "Migrating from Nucleus v1"
           tagline: "Things you need to do when upgrading from v1 to v2."
           link: "howto/migrate.html"
