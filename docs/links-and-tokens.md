@@ -1,13 +1,13 @@
 ---
 layout: standardheadmd
 title: Documentation Centre
-header: Links & Tokens
+header: Links & Placeholder Tokens
+lead: Learn how to define links and use placeholders in Nucleus.
 type: general
 ---
 
-In several places in Nucleus, there is the option for links and chat placeholders (what we usually call _tokens_) to be used.
-The most obvious places that they can be used is in the `motd.txt` and various info files, but other modules accept them,
-including broadcasts.
+In several places in Nucleus, there is the option for links and chat placeholders to be used. The most obvious places 
+that they can be used is in the `motd.txt` and various info files, but other modules accept them, including broadcasts.
 
 Modules will include a link to this page where the functionality is supported.
 
@@ -19,7 +19,11 @@ Links can be included in various text locations using limited markdown syntax.
 * `[Hello](http://nucleuspowered.org)` - creates a link titled `Hello` to `http://nucleuspowered.org`
 * `[Rules](/rules)` - creates a link titled `Rules` that will run `/rules` when clicked.
 
-## Tokens/Variables
+## Placeholder Tokens
+
+> Nucleus 2 **does not** support PlaceholderAPI, nor does it support Nucleus Gluon which enabled this bridge. This is because
+> Nucleus supports the new Sponge placeholder system introduced in Sponge API 7.3, we encourage other plugins to use Sponge's 
+> system too.
 
 The following tokens can be used in both the `motd` and `info` files, and will be replaced at runtime.
 
@@ -27,7 +31,13 @@ The following tokens can be used in both the `motd` and `info` files, and will b
 {% for token in com %}* `{% raw %}{{{% endraw %}{{ token.name }}{% raw %}}}{% endraw %}` - {{ token.description }}
 {% endfor %}
 
-## Token Modifiers
+### Using Tokens in Other Plugins
+
+These tokens can be used in other plugins that supports Sponge API 7.3's placeholder system, however, these tokens must be 
+prepended with `nucleus:` (so, `displayname` becomes `nucleus:displayname`). Consult the docs for other plugins for how to 
+specify these tokens in their plugin.
+
+### Token Modifiers
 
 Tokens support modifiers that control whether a space should be appended or prepended to the token output if the token
 exists.
