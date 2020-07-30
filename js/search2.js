@@ -108,14 +108,18 @@ const nucleusSearch = (function () {
         let element = '<div class="search-result-item ' + type + '">';
         element += '<h3 class="search-result-header"><a href="' + standardJsonItem.url + '">' + standardJsonItem.title + '</a><small> - ' + definition[type] +'</small></h3>';
         element += '<p class="search-result-url"><a href="' + standardJsonItem.url + '">' + standardJsonItem.url + '</a></p>';
-        let s = standardJsonItem.content.trimLeft();
-        if (s.startsWith("Introduction")) {
-            s = s.replace("Introduction", '').trimLeft();
+        if (standardJsonItem.lead.length > 0) {
+            element += '<p class="search-result-desc">' + standardJsonItem.lead + '</p>';
+        } else {
+            let s = standardJsonItem.content.trimLeft();
+            if (s.startsWith("Introduction")) {
+                s = s.replace("Introduction", '').trimLeft();
+            }
+            if (s.length > 150) {
+                s = s.substring(0, 150) + '...';
+            }
+            element += '<p class="search-result-desc">' + s + '</p>';
         }
-        if (s.length > 150) {
-            s = s.substring(0, 150) + '...';
-        }
-        element += '<p class="search-result-desc">' + s + '</p>';
         element += "</div>";
         return element;
     };
@@ -123,6 +127,11 @@ const nucleusSearch = (function () {
     const executeCommandSearch = function(input) {
         const results =  lunrObject.command.query(function(q) {
             const tokenised = lunr.tokenizer(input);
+            q.term(tokenised, {
+                fields: ["keywords"],
+                boost: 100,
+                wildcard: lunr.Query.wildcard.LEADING | lunr.Query.wildcard.TRAILING
+            });
             q.term(tokenised, {
                 wildcard: lunr.Query.wildcard.LEADING | lunr.Query.wildcard.TRAILING
             });
@@ -170,14 +179,13 @@ const nucleusSearch = (function () {
     const prepareSearch = function() {
         lunrObject = {
             "standard": lunr(function() {
-                this.field('title', {
-                    boost: 10,
-                    wildcard: lunr.Query.wildcard.LEADING | lunr.Query.wildcard.TRAILING
-                });
                 this.field('keywords', {
-                    boost: 50,
-                    wildcard: lunr.Query.wildcard.LEADING | lunr.Query.wildcard.TRAILING
+                    boost: 50
                 });
+                this.field('title', {
+                    boost: 5
+                });
+                this.field('lead');
                 this.field('content');
                 this.field('url');
 
@@ -185,6 +193,7 @@ const nucleusSearch = (function () {
                     this.add({
                         'id': key,
                         'title': searchData[key].title,
+                        'lead': searchData[key].lead,
                         'content': searchData[key].content,
                         'keywords': searchData[key].keywords,
                         'url': searchData[key].url

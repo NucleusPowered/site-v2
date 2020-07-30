@@ -12,6 +12,7 @@
     "{{ page.url }}":
     {
       "title": "{{ page.header | xml_escape }}",
+      "lead": "{{ page.lead | default: '' | xml_escape }}",
       "content": {{ page.content | markdownify | strip_html | newline_to_br | replace: '<br />', ' '  | jsonify }},
       "keywords": "{{ page.keywords | default: "" }}",
       "url": "{{ page.url | xml_escape }}",
