@@ -9,7 +9,7 @@ type: howto
 Nucleus is broken into multiple modules that can be enabled or disabled as required. Modules can be enabled/disabled in `main.conf`.
 
 > Unlike most other Nucleus configuration options, any changes to modules will not take effect until you restart your server. 
-{:.bl.info}
+{:.bl.warn}
 
 In the `main.conf` file, the section `-modules` will contain a list of modules to enable state pairs. For example, the `afk` module will generate an entry looking like the following:
 
