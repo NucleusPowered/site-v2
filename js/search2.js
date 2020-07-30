@@ -128,11 +128,6 @@ const nucleusSearch = (function () {
         const results =  lunrObject.command.query(function(q) {
             const tokenised = lunr.tokenizer(input);
             q.term(tokenised, {
-                fields: ["keywords"],
-                boost: 100,
-                wildcard: lunr.Query.wildcard.LEADING | lunr.Query.wildcard.TRAILING
-            });
-            q.term(tokenised, {
                 wildcard: lunr.Query.wildcard.LEADING | lunr.Query.wildcard.TRAILING
             });
             q.term(tokenised, { boost: 2 });
