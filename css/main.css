@@ -476,3 +476,20 @@ hr.black {
 .search-result-item.command-search {
     padding-bottom: 10px;
 }
+
+.titlelogo {
+    background: url("../img/nucleus-logo.svg") center left no-repeat;
+    min-height: 250px;
+}
+
+.title-heading {
+    text-align: center;
+    font-size: xx-large;
+    margin: 0;
+}
+
+.title-subheading {
+    text-align: center;
+    font-size: x-large;
+    margin: 0;
+}
