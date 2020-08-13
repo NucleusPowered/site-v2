@@ -493,3 +493,8 @@ hr.black {
     font-size: x-large;
     margin: 0;
 }
+
+.how-to img {
+    max-width: 100%;
+    border: 0;
+}

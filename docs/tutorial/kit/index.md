@@ -24,3 +24,6 @@ This tutorial will help you create and manage kits
 > Be very careful if you use the permissions suggested here. `nucleus.kit` includes the permission `nucleus.kit.command.add.base`, which allows you
 > to create commands on kits **that run as the server** and can allow an attacker to take control of your server. 
 {:.bl.warn}
+
+> If this tutorial does not answer all your questions about kits, you may find more information in the 
+> [kit module pages](../../modules/kit.html)

@@ -26,7 +26,7 @@ Nucleus v2 is stable, but not as well tested as v1.14.x. Therefore, you may wish
 
 Nucleus v2 uses the Sponge native placeholder system introduced in Sponge API 7.3. If your plugins have not migrated to API 7.3 and use the placeholder system and you wish to use them in Nucleus texts, wait until they upgrade to use the system in Sponge 7.3.
 
-## Use Nucleus v1.14.4 if you use warnings and/or the server shop and do not have an alternative
+## Use Nucleus v1.14.x if you use warnings and/or the server shop and do not have an alternative
 
 While they have not been supported for a while, the warnings and server shop modules have gone in version 2. 
 

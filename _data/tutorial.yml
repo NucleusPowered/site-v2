@@ -35,3 +35,14 @@
       title: Modifying Redemption
     - link: commands
       title: Kit Commands
+-
+  name: "warp"
+  header: "Creating and Managing Warps"
+  lead: "Learn how to create and manage warps"
+  steps:
+    - link: create
+      title: Creating and Deleting Warps
+    - link: permissions
+      title: Setting Permissions
+    - link: categories
+      title: Using Warp Categories

@@ -25,6 +25,9 @@
         - name: "Creating and Managing Kits"
           tagline: "Learn how to create and manage kits"
           link: "tutorial/kit"
+        - name: "Creating and Managing Warps"
+          tagline: "Learn how to create and manage warps"
+          link: "tutorial/warp"
     - name: "How To"
       tagline: "Quick articles that resolve specific, common tasks"
       entries:
