@@ -13,7 +13,7 @@ Sponge Servers all depend on a specific SpongeAPI version. The SpongeAPI version
 
 > SpongeForge and SpongeVanilla for Minecraft 1.12.2 use SpongeAPI version 7.
 
-Nucleus includes the SpongeAPI version in the filename. Current builds of Nucleus require servers that use SpongeAPI 7.2 or any newer version of SpongeAPI 7.
+Nucleus includes the SpongeAPI version in the filename. Current builds of Nucleus require servers that use SpongeAPI 7.3 or any newer version of SpongeAPI 7.
 
 > **Example**: Nucleus 2.0.0 for Minecraft 1.12.2 has the filename `Nucleus-2.0.0-MC1.12.2-SpongeAPI7.3-plugin`. You can use this plugin with SpongeAPI 7.3 or later SpongeAPI 7 builds, but not SpongeAPI 8, 7.0, 7.1 or 7.2.
 
