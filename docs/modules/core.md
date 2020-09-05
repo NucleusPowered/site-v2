@@ -21,4 +21,4 @@ Note that changing module and command enabling statuses will not take effect unt
 
 ## Setting up default permissions
 
-See [our guide here](../configuration/permissions.html)
+[See the Installation and Configuration tutorial step here](../tutorial/first/permissions.html)
