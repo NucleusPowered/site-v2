@@ -222,10 +222,57 @@
 -   commandName: kill
     aliases: kill
     defaultLevel: admin
-    usageString: ' /kill [-r <radius>] [-w <world>] <type>*'
+    usageString: ' /kill <subject>'
     oneLineDescription: Kill the specified player(s) and/or entities.
     module: admin
     permissionbase: nucleus.kill
+    warmup: true
+    cooldown: true
+    cost: true
+    essentialsEquivalents:
+    - kill
+    - remove
+    - butcher
+    - killall
+    - mobkill
+    isExactEssEquiv: false
+    essNotes: Nucleus supports killing entities using the Minecraft selectors.
+    permissions:
+    -   permission: nucleus.kill.exempt.warmup
+        description: Allows the user to bypass the warmup for /kill
+        defaultLevel: admin
+        module: admin
+    -   permission: nucleus.kill.exempt.cost
+        description: Allows the user to bypass the cost for /kill
+        defaultLevel: admin
+        module: admin
+    -   permission: nucleus.kill.exempt.cooldown
+        description: Allows the user to bypass the cooldown for /kill
+        defaultLevel: admin
+        module: admin
+    -   permission: nucleus.kill.base
+        description: Allows the user to run the command /kill
+        defaultLevel: admin
+        module: admin
+    simpleUsage: ' /kill <subject>'
+    context: kill
+-   commandName: killentity
+    aliases: killentity
+    defaultLevel: admin
+    usageString: ' /killentity [-r <r>] [-w <w>] <type>*'
+    oneLineDescription: Kills the specified entities.
+    extendedDescription: |-
+        The entities that can be killed are:
+
+        - "armorstand"
+        - "monster"/"hostile"
+        - "passive"/"animal"
+        - "player"
+        - "item"
+
+        Multiple types can be selected at once. A world can be specified using -w, *or* a radius can be specified using -r. Both are optional.
+    module: admin
+    permissionbase: nucleus.killentity
     warmup: true
     cooldown: true
     cost: true
@@ -234,20 +281,20 @@
         description: Allows the user to bypass the cost for /killentity
         defaultLevel: admin
         module: admin
-    -   permission: nucleus.killentity.exempt.cooldown
-        description: Allows the user to bypass the cooldown for /killentity
+    -   permission: nucleus.killentity.base
+        description: Allows the user to run the command /killentity
         defaultLevel: admin
         module: admin
-    -   permission: nucleus.kill.base
-        description: Allows the user to run the command /kill
+    -   permission: nucleus.killentity.exempt.cooldown
+        description: Allows the user to bypass the cooldown for /killentity
         defaultLevel: admin
         module: admin
     -   permission: nucleus.killentity.exempt.warmup
         description: Allows the user to bypass the warmup for /killentity
         defaultLevel: admin
         module: admin
-    simpleUsage: ' /kill [-r <radius>] [-w <world>] <type>*'
-    context: kill
+    simpleUsage: ' /killentity [-r <r>] [-w <w>] <type>*'
+    context: killentity
 -   commandName: stop
     aliases: stop
     defaultLevel: admin
@@ -368,7 +415,7 @@
 -   commandName: back
     aliases: back, return
     defaultLevel: admin
-    usageString: ' /back [-b|--border] [-f|--force] '
+    usageString: ' /back [-b|--border <b>] [-f|--force <f>] '
     oneLineDescription: Allows a user to return to their last place before death or
         warp.
     module: back
@@ -408,7 +455,7 @@
         description: Allows the user to bypass the cost for /back
         defaultLevel: admin
         module: back
-    simpleUsage: ' /back [-b|--border] [-f|--force] '
+    simpleUsage: ' /back [-b|--border <b>] [-f|--force <f>] '
     context: back
 -   commandName: clearback
     aliases: clearback
@@ -605,9 +652,9 @@
 -   commandName: nucleus
     aliases: nucleus
     defaultLevel: admin
-    usageString: " /nucleus \n /nucleus setupperms -g [-y]|[-r|--reset] [-i|--inherit]\
-        \ <Nucleus Role> <Permission Group>\n /nucleus debug \n /nucleus reload \n\
-        \ /nucleus resetuser [-a|--all] <user>|<UUID>\n /nucleus getuser <UUID>|<name>\n\
+    usageString: " /nucleus \n /nucleus setupperms -g [-y]|[-r|--reset <r>] [-i|--inherit\
+        \ <i>] <Nucleus Role> <Permission Group>\n /nucleus debug \n /nucleus reload\
+        \ \n /nucleus resetuser [-a|--all <a>] <user>|<UUID>\n /nucleus getuser <UUID>|<name>\n\
         \ /nucleus docgen \n /nucleus save \n /nucleus printperms \n /nucleus nucleus\
         \ \n /nucleus compatibility \n /nucleus info \n /nucleus rebuildusercache "
     oneLineDescription: Displays Nucleus version and module information.
@@ -680,7 +727,7 @@
 -   commandName: update-messages
     aliases: update-messages
     defaultLevel: admin
-    usageString: ' /update-messages [-y] '
+    usageString: ' /update-messages [-y <y>] '
     oneLineDescription: Scans the messages file for keys that might not include all
         the required tokens and replaces them with the standard translation.
     module: core
@@ -693,7 +740,7 @@
         description: Allows the user to run the command /nucleus update-messages
         defaultLevel: admin
         module: core
-    simpleUsage: ' /update-messages [-y] '
+    simpleUsage: ' /update-messages [-y <y>] '
     context: update-messages
 -   commandName: anvil
     aliases: anvil
@@ -1074,8 +1121,8 @@
 -   commandName: kittycannon
     aliases: kittycannon, kc
     defaultLevel: admin
-    usageString: ' /kittycannon [-f|--fire] [-d|--damageentities] [-b|--breakblocks]
-        [<player>]'
+    usageString: ' /kittycannon [-f|--fire <f>] [-d|--damageentities <d>] [-b|--breakblocks
+        <b>] [<player>]'
     oneLineDescription: Fire exploding cats from your person.
     extendedDescription: |-
         Ocelots will be fired from the target person, which explode within a short amount of time. The following flags are available (subject to permission):
@@ -1111,8 +1158,8 @@
         description: Allows the user to bypass the warmup for /kittycannon
         defaultLevel: admin
         module: fun
-    simpleUsage: ' /kittycannon [-f|--fire] [-d|--damageentities] [-b|--breakblocks]
-        [<player>]'
+    simpleUsage: ' /kittycannon [-f|--fire <f>] [-d|--damageentities <d>] [-b|--breakblocks
+        <b>] [<player>]'
     context: kittycannon
 -   commandName: lightning
     aliases: lightning, strike, smite, thor, shock
@@ -1158,8 +1205,8 @@
 -   commandName: rocket
     aliases: rocket
     defaultLevel: admin
-    usageString: ' /rocket [-g|-g] [-h|--hard] [-s|--silent] [-e|--explosion] [-v|--velocity
-        <velocity>] <player>'
+    usageString: ' /rocket [-g|-g <g>] [-h|--hard <h>] [-s|--silent <s>] [-e|--explosion
+        <e>] [-v|--velocity <v>] <player>'
     oneLineDescription: Fires a player upwards like a rocket.
     extendedDescription: |-
         The rocket does not actually fire a rocket, but sets a player's velocity upwards to a specific value. The default is 2. There are many flags:
@@ -1195,8 +1242,8 @@
         description: Allows the user to bypass the cooldown for /rocket
         defaultLevel: admin
         module: fun
-    simpleUsage: ' /rocket [-g|-g] [-h|--hard] [-s|--silent] [-e|--explosion] [-v|--velocity
-        <velocity>] <player>'
+    simpleUsage: ' /rocket [-g|-g <g>] [-h|--hard <h>] [-s|--silent <s>] [-e|--explosion
+        <e>] [-v|--velocity <v>] <player>'
     context: rocket
 -   commandName: home
     aliases: home
@@ -1204,7 +1251,7 @@
     usageString: |4-
          /home [<home>]
          /home other <user> <home>
-         /home set [-o|--overwrite] [<home>]
+         /home set [-o|--overwrite <o>] [<home>]
          /home deleteother <user> <home>
          /home limit [<user>]
          /home list [<user>]
@@ -1347,7 +1394,7 @@
     aliases: home set
     rootAliases: homeset, nhomeset, sethome, nsethome
     defaultLevel: user
-    usageString: ' /home set [-o|--overwrite] [<home>]'
+    usageString: ' /home set [-o|--overwrite <o>] [<home>]'
     oneLineDescription: Sets a home with the specified name.
     extendedDescription: |-
         This command allows players to specify a "personal warp", which is termed a "home". By default, all players get one home, which can be controlled by assigning a number to the permission option "home-count", of being giving the permission "nucleus.home.set.unlimited" for unlimited homes.
@@ -1384,7 +1431,7 @@
         description: Allows the user to bypass the cooldown for /home set
         defaultLevel: admin
         module: home
-    simpleUsage: ' /home set [-o|--overwrite] [<home>]'
+    simpleUsage: ' /home set [-o|--overwrite <o>] [<home>]'
     context: home set
 -   commandName: ignore
     aliases: ignore
@@ -1436,7 +1483,7 @@
 -   commandName: info
     aliases: info, einfo
     defaultLevel: user
-    usageString: ' /info [-l|--list] [<section>]'
+    usageString: ' /info [-l|--list <l>] [<section>]'
     oneLineDescription: Get server information.
     module: info
     permissionbase: nucleus.info
@@ -1461,7 +1508,7 @@
         description: Allows the user to run the command /info
         defaultLevel: user
         module: info
-    simpleUsage: ' /info [-l|--list] [<section>]'
+    simpleUsage: ' /info [-l|--list <l>] [<section>]'
     context: info
 -   commandName: motd
     aliases: motd
@@ -1488,7 +1535,7 @@
 -   commandName: clear
     aliases: clear, clearinv, clearinventory, ci, clearinvent
     defaultLevel: admin
-    usageString: ' /clear [-a|--all] [<user>]'
+    usageString: ' /clear [-a|--all <a>] [<user>]'
     oneLineDescription: Clears a player's inventory.
     module: inventory
     permissionbase: nucleus.clear
@@ -1511,7 +1558,7 @@
         description: Allows the user to target other players using the command "clear".
         defaultLevel: admin
         module: inventory
-    simpleUsage: ' /clear [-a|--all] [<user>]'
+    simpleUsage: ' /clear [-a|--all <a>] [<user>]'
     context: clear
 -   commandName: enderchest
     aliases: enderchest, ec, echest
@@ -1649,7 +1696,8 @@
 -   commandName: enchant
     aliases: enchant, enchantment
     defaultLevel: admin
-    usageString: ' /enchant <enchantment> level(0 to 32767) [-u|--unsafe] [-o|--overwrite] '
+    usageString: ' /enchant <enchantment> level(0 to 32767) [-u|--unsafe <u>] [-o|--overwrite
+        <o>] '
     oneLineDescription: Allows the user to enchant items.
     module: item
     permissionbase: nucleus.enchant
@@ -1683,7 +1731,8 @@
         description: Allows the user to bypass the warmup for /enchant
         defaultLevel: admin
         module: item
-    simpleUsage: ' /enchant <enchantment> level(0 to 32767) [-u|--unsafe] [-o|--overwrite] '
+    simpleUsage: ' /enchant <enchantment> level(0 to 32767) [-u|--unsafe <u>] [-o|--overwrite
+        <o>] '
     context: enchant
 -   commandName: itemname
     aliases: itemname
@@ -1818,8 +1867,8 @@
 -   commandName: repair
     aliases: repair, mend, fix
     defaultLevel: admin
-    usageString: ' /repair [-a|--all] [-o|--offhand] [-m|--mainhand] [-h|--hotbar]
-        [-e|--equip] '
+    usageString: ' /repair [-a|--all <a>] [-o|--offhand <o>] [-m|--mainhand <m>] [-h|--hotbar
+        <h>] [-e|--equip <e>] '
     oneLineDescription: Repairs item in hand.
     module: item
     permissionbase: nucleus.repair
@@ -1852,8 +1901,8 @@
         description: Allows the user to bypass the cooldown for /repair
         defaultLevel: admin
         module: item
-    simpleUsage: ' /repair [-a|--all] [-o|--offhand] [-m|--mainhand] [-h|--hotbar]
-        [-e|--equip] '
+    simpleUsage: ' /repair [-a|--all <a>] [-o|--offhand <o>] [-m|--mainhand <m>] [-h|--hotbar
+        <h>] [-e|--equip <e>] '
     context: repair
 -   commandName: showitemattributes
     aliases: showitemattributes, showattributes
@@ -2223,7 +2272,7 @@
 -   commandName: top
     aliases: top, tosurface, totop
     defaultLevel: admin
-    usageString: ' /top [-f] [<player>]'
+    usageString: ' /top [-f <f>] [<player>]'
     oneLineDescription: Teleports the user (or target player) to the surface.
     extendedDescription: By default, /top will not teleport a player into an unsafe
         situation. This might result in moving slightly in the x or z directions,
@@ -2255,7 +2304,7 @@
         description: Allows the user to bypass the warmup for /top
         defaultLevel: admin
         module: jump
-    simpleUsage: ' /top [-f] [<player>]'
+    simpleUsage: ' /top [-f <f>] [<player>]'
     context: top
 -   commandName: unstuck
     aliases: unstuck
@@ -2319,7 +2368,7 @@
 -   commandName: kickall
     aliases: kickall
     defaultLevel: staff
-    usageString: ' /kickall [-w|-f] [<reason…>]'
+    usageString: ' /kickall [-w|-f <w>] [<reason…>]'
     oneLineDescription: Kicks all players, optionally turning the whitelist on.
     extendedDescription: If the command is executed by a player on the server, the
         executing player will not be kicked. To turn the whitelist on when kicking
@@ -2338,19 +2387,20 @@
         description: Allows the user to run the command /kickall
         defaultLevel: staff
         module: kick
-    simpleUsage: ' /kickall [-w|-f] [<reason…>]'
+    simpleUsage: ' /kickall [-w|-f <w>] [<reason…>]'
     context: kickall
 -   commandName: kit
     aliases: kit
     defaultLevel: user
-    usageString: " /kit <kit>\n /kit give [-i|--ignore] <player> <kit>\n /kit set\
-        \ <kit>\n /kit cost <kit> <cost>\n /kit hidden <kit> <true|false>\n /kit edit\
-        \ <kit>\n /kit list \n /kit command <kit>\n /kit remove <kit>\n /kit toggleredeemmessage\
-        \ <kit> <true|false>\n /kit view <kit>\n /kit reload \n /kit rename <kit>\
-        \ <target name>\n /kit autoredeem <kit> <true|false>\n /kit permissionbypass\
-        \ <kit> <true|false>\n /kit cooldown <kit> <duration>\n /kit create [-c|--clone]\
-        \ <name>\n /kit resetusage <user> <kit>\n /kit onetime <kit> <true|false>\n\
-        \ /kit setfirstjoin <kit> [<true|false>]\n /kit info <kit>"
+    usageString: " /kit <kit>\n /kit give [-i|--ignore <i>] <player> <kit>\n /kit\
+        \ set <kit>\n /kit cost <kit> <cost>\n /kit hidden <kit> <true|false>\n /kit\
+        \ edit <kit>\n /kit list \n /kit command <kit>\n /kit remove <kit>\n /kit\
+        \ toggleredeemmessage <kit> <true|false>\n /kit view <kit>\n /kit reload \n\
+        \ /kit rename <kit> <target name>\n /kit autoredeem <kit> <true|false>\n /kit\
+        \ permissionbypass <kit> <true|false>\n /kit cooldown <kit> <duration>\n /kit\
+        \ create [-c|--clone <c>] <name>\n /kit resetusage <user> <kit>\n /kit onetime\
+        \ <kit> <true|false>\n /kit setfirstjoin <kit> [<true|false>]\n /kit info\
+        \ <kit>"
     oneLineDescription: Redeems a kit.
     module: kit
     permissionbase: nucleus.kit
@@ -2621,7 +2671,7 @@
 -   commandName: blockinfo
     aliases: blockinfo
     defaultLevel: admin
-    usageString: ' /blockinfo [-e|--extended] [<location>]'
+    usageString: ' /blockinfo [-e|--extended <e>] [<location>]'
     oneLineDescription: Get information about the block you are currently facing.
     module: misc
     permissionbase: nucleus.blockinfo
@@ -2637,12 +2687,12 @@
         description: Allows the user to run the command /blockinfo
         defaultLevel: admin
         module: misc
-    simpleUsage: ' /blockinfo [-e|--extended] [<location>]'
+    simpleUsage: ' /blockinfo [-e|--extended <e>] [<location>]'
     context: blockinfo
 -   commandName: entityinfo
     aliases: entityinfo
     defaultLevel: admin
-    usageString: ' /entityinfo [-e|--extended] '
+    usageString: ' /entityinfo [-e|--extended <e>] '
     oneLineDescription: Get information about the entity you are currently facing.
     module: misc
     permissionbase: nucleus.entityinfo
@@ -2658,7 +2708,7 @@
         description: Allows the user to run the command /entityinfo
         defaultLevel: admin
         module: misc
-    simpleUsage: ' /entityinfo [-e|--extended] '
+    simpleUsage: ' /entityinfo [-e|--extended <e>] '
     context: entityinfo
 -   commandName: extinguish
     aliases: extinguish, ext
@@ -2771,7 +2821,7 @@
 -   commandName: iteminfo
     aliases: iteminfo, itemdb
     defaultLevel: admin
-    usageString: ' /iteminfo [-e|--extended] [<key>]'
+    usageString: ' /iteminfo [-e|--extended <e>] [<key>]'
     oneLineDescription: Get information about the item you are currently holding.
     module: misc
     permissionbase: nucleus.iteminfo
@@ -2794,7 +2844,7 @@
         description: Displays data associated with the item.
         defaultLevel: admin
         module: misc
-    simpleUsage: ' /iteminfo [-e|--extended] [<key>]'
+    simpleUsage: ' /iteminfo [-e|--extended <e>] [<key>]'
     context: iteminfo
 -   commandName: ping
     aliases: ping
@@ -2826,7 +2876,7 @@
 -   commandName: serverstat
     aliases: serverstat, uptime
     defaultLevel: admin
-    usageString: ' /serverstat [-c|-s|--compact|--summary] '
+    usageString: ' /serverstat [-c|-s|--compact|--summary <c>] '
     oneLineDescription: Displays server runtime statistics.
     extendedDescription: This command displays information about the server, the JVM,
         and each world.
@@ -2850,7 +2900,7 @@
         description: Allows the user to run the command /serverstat
         defaultLevel: admin
         module: misc
-    simpleUsage: ' /serverstat [-c|-s|--compact|--summary] '
+    simpleUsage: ' /serverstat [-c|-s|--compact|--summary <c>] '
     context: serverstat
 -   commandName: servertime
     aliases: servertime, realtime
@@ -3042,41 +3092,19 @@
 -   commandName: mute
     aliases: mute
     defaultLevel: staff
-    usageString: ' /mute <user> [<duration>] [<reason…>]'
-    oneLineDescription: Mutes the specified player.
+    usageString: ' /mute <user>'
+    oneLineDescription: Unmutes the specified player.
     module: mute
-    permissionbase: nucleus.mute
+    permissionbase: nucleus.mute.unmute
     warmup: false
     cooldown: false
     cost: false
-    essentialsEquivalents:
-    - mute
-    - silence
-    isExactEssEquiv: false
-    essNotes: Unmuting a player should be done via the /unmute command.
     permissions:
-    -   permission: nucleus.mute.notify
-        description: Notifies the user about mutes when they occur.
+    -   permission: nucleus.mute.unmute
+        description: If set in config, this permission is required to unmute players.
         defaultLevel: staff
         module: mute
-    -   permission: nucleus.mute.exempt.target
-        description: Exempts the user from being a target of the /mute command.
-        defaultLevel: staff
-        module: mute
-    -   permission: nucleus.mute.seemutedchat
-        description: If true and enabled in the config, players with this permission
-            will see chat from muted players.
-        defaultLevel: admin
-        module: mute
-    -   permission: nucleus.mute.base
-        description: Allows the user to run the command /mute
-        defaultLevel: staff
-        module: mute
-    -   permission: nucleus.mute.exempt.length
-        description: Allows the user to bypass the maximum mute length.
-        defaultLevel: admin
-        module: mute
-    simpleUsage: ' /mute <user> [<duration>] [<reason…>]'
+    simpleUsage: ' /mute <user>'
     context: mute
 -   commandName: voice
     aliases: voice
@@ -3301,8 +3329,7 @@
 -   commandName: basicactionbar
     aliases: basicactionbar
     defaultLevel: admin
-    usageString: ' /basicactionbar [-t <time>] [-i <fade in>] [-o <fade out>] [-p
-        <player>] <message…>'
+    usageString: ' /basicactionbar [-t <t>] [-i <i>] [-o <o>] [-p <p>] <message…>'
     oneLineDescription: Send an "Action Bar" message to players.
     extendedDescription: |-
         A message will be sent to the action bar of targeted players. Selectors may be used to target multiple players. The following flags are available:
@@ -3321,14 +3348,12 @@
         description: Allows the user to run the command /basicactionbar
         defaultLevel: admin
         module: notification
-    simpleUsage: ' /basicactionbar [-t <time>] [-i <fade in>] [-o <fade out>] [-p
-        <player>] <message…>'
+    simpleUsage: ' /basicactionbar [-t <t>] [-i <i>] [-o <o>] [-p <p>] <message…>'
     context: basicactionbar
 -   commandName: basicsubtitle
     aliases: basicsubtitle
     defaultLevel: admin
-    usageString: ' /basicsubtitle [-t <time>] [-i <fade in>] [-o <fade out>] [-p <player>]
-        <message…>'
+    usageString: ' /basicsubtitle [-t <t>] [-i <i>] [-o <o>] [-p <p>] <message…>'
     oneLineDescription: Send a Subtitle message to players.
     extendedDescription: |-
         A subtitle message will be sent to the targeted players. Selectors may be used to target multiple players. The following flags are available:
@@ -3351,14 +3376,12 @@
         description: Allows the user to target multiple players with the command /basicsubtitle
         defaultLevel: admin
         module: notification
-    simpleUsage: ' /basicsubtitle [-t <time>] [-i <fade in>] [-o <fade out>] [-p <player>]
-        <message…>'
+    simpleUsage: ' /basicsubtitle [-t <t>] [-i <i>] [-o <o>] [-p <p>] <message…>'
     context: basicsubtitle
 -   commandName: basictitle
     aliases: basictitle
     defaultLevel: admin
-    usageString: ' /basictitle [-t <time>] [-i <fade in>] [-o <fade out>] [-p <player>]
-        <message…>'
+    usageString: ' /basictitle [-t <t>] [-i <i>] [-o <o>] [-p <p>] <message…>'
     oneLineDescription: Send a Title message to players.
     extendedDescription: |-
         A title message will be sent to the targeted players. Selectors may be used to target multiple players. The following flags areavailable:
@@ -3381,8 +3404,7 @@
         description: Allows the user to target multiple players with the command /basictitle
         defaultLevel: admin
         module: notification
-    simpleUsage: ' /basictitle [-t <time>] [-i <fade in>] [-o <fade out>] [-p <player>]
-        <message…>'
+    simpleUsage: ' /basictitle [-t <t>] [-i <i>] [-o <o>] [-p <p>] <message…>'
     context: basictitle
 -   commandName: broadcast
     aliases: broadcast, bcast, bc
@@ -3712,9 +3734,8 @@
 -   commandName: serverlist
     aliases: serverlist, sl
     defaultLevel: admin
-    usageString: " /serverlist [-m|--messages] [-w|--whitelist] \n /serverlist message\
-        \ [-r|--remove] [-l|--line line(1 to 2)] [-t|--time <duration>] [<message…\
-        >]"
+    usageString: " /serverlist [-m|--messages <m>] [-w|--whitelist <w>] \n /serverlist\
+        \ message [-r|--remove <r>] [-l|--line <l>] [-t|--time <t>] [<message…>]"
     oneLineDescription: Provides functions for modifying the server list.
     module: server-list
     permissionbase: nucleus.serverlist
@@ -3726,7 +3747,7 @@
         description: Allows the user to run the command /serverlist
         defaultLevel: admin
         module: server-list
-    simpleUsage: ' /serverlist [-m|--messages] [-w|--whitelist] '
+    simpleUsage: ' /serverlist [-m|--messages <m>] [-w|--whitelist <w>] '
     context: serverlist
 -   commandName: firstspawn
     aliases: firstspawn
@@ -3799,7 +3820,7 @@
     aliases: spawn
     defaultLevel: user
     usageString: |4-
-         /spawn [-f|--force] <world>
+         /spawn [-f|--force <f>] [<world>]
          /spawn other <user> [<world>]
     oneLineDescription: Warp to a world spawn point.
     extendedDescription: If the global spawn world is set in the configuration, then
@@ -3840,7 +3861,7 @@
         description: Allows the user to bypass the warmup for /spawn
         defaultLevel: admin
         module: spawn
-    simpleUsage: ' /spawn [-f|--force] <world>'
+    simpleUsage: ' /spawn [-f|--force <f>] [<world>]'
     context: spawn
 -   commandName: staffchat
     aliases: staffchat, sc, a
@@ -3879,7 +3900,7 @@
 -   commandName: teleport
     aliases: teleport, tele, $tp
     defaultLevel: staff
-    usageString: ' /teleport [-q <quiet>] [-f]  <player to warp to>|<player to warp>
+    usageString: ' /teleport [-q <q>] [-f <f>]  <player to warp to>|<player to warp>
         <player to warp to>|<offline player to warp to>'
     oneLineDescription: Teleports one player to another's location.
     module: teleport
@@ -3931,13 +3952,13 @@
         description: Allows the user to bypass the cost for /teleport
         defaultLevel: admin
         module: teleport
-    simpleUsage: ' /teleport [-q <quiet>] [-f]  <player to warp to>|<player to warp>
+    simpleUsage: ' /teleport [-q <q>] [-f <f>]  <player to warp to>|<player to warp>
         <player to warp to>|<offline player to warp to>'
     context: teleport
 -   commandName: tpa
     aliases: tpa, teleportask, call, tpask
     defaultLevel: user
-    usageString: ' /tpa [-f] <player>'
+    usageString: ' /tpa [-f <f>] <player>'
     oneLineDescription: Send a request to a player to ask for you to teleport to them.
     module: teleport
     permissionbase: nucleus.teleport.tpa
@@ -3977,12 +3998,12 @@
         description: Allows the user to run the command /tpa
         defaultLevel: user
         module: teleport
-    simpleUsage: ' /tpa [-f] <player>'
+    simpleUsage: ' /tpa [-f <f>] <player>'
     context: tpa
 -   commandName: tpaall
     aliases: tpaall, tpaskall
     defaultLevel: admin
-    usageString: ' /tpaall [-f] '
+    usageString: ' /tpaall [-f <f>] '
     oneLineDescription: Request all players on the server to teleport to your location.
     module: teleport
     permissionbase: nucleus.teleport.tpaall
@@ -3998,7 +4019,7 @@
         description: Allows the user to run the command /tpaall
         defaultLevel: admin
         module: teleport
-    simpleUsage: ' /tpaall [-f] '
+    simpleUsage: ' /tpaall [-f <f>] '
     context: tpaall
 -   commandName: tpaccept
     aliases: tpaccept, teleportaccept, tpyes
@@ -4025,7 +4046,7 @@
 -   commandName: tpahere
     aliases: tpahere, tpaskhere, teleportaskhere
     defaultLevel: staff
-    usageString: ' /tpahere [-f] <player>'
+    usageString: ' /tpahere [-f <f>] <player>'
     oneLineDescription: Send a request to a player to ask them to teleport to you.
     module: teleport
     permissionbase: nucleus.teleport.tpahere
@@ -4063,12 +4084,12 @@
         description: Allows the user to run the command /tpahere
         defaultLevel: staff
         module: teleport
-    simpleUsage: ' /tpahere [-f] <player>'
+    simpleUsage: ' /tpahere [-f <f>] <player>'
     context: tpahere
 -   commandName: tpall
     aliases: tpall, tpallhere
     defaultLevel: admin
-    usageString: ' /tpall [-f] '
+    usageString: ' /tpall [-f <f>] '
     oneLineDescription: Forcefully teleport all players on the server to your location.
     module: teleport
     permissionbase: nucleus.teleport.tpall
@@ -4084,7 +4105,7 @@
         description: Allows the user to run the command /tpall
         defaultLevel: admin
         module: teleport
-    simpleUsage: ' /tpall [-f] '
+    simpleUsage: ' /tpall [-f <f>] '
     context: tpall
 -   commandName: tpdeny
     aliases: tpdeny, teleportdeny, tpno
@@ -4111,7 +4132,7 @@
 -   commandName: tphere
     aliases: tphere, tph
     defaultLevel: admin
-    usageString: ' /tphere [-q|--quiet] <player>'
+    usageString: ' /tphere [-q|--quiet <q>] <player>'
     oneLineDescription: Teleports a player to your location.
     module: teleport
     permissionbase: nucleus.teleport.tphere
@@ -4139,13 +4160,13 @@
             current location on next login.
         defaultLevel: admin
         module: teleport
-    simpleUsage: ' /tphere [-q|--quiet] <player>'
+    simpleUsage: ' /tphere [-q|--quiet <q>] <player>'
     context: tphere
 -   commandName: tppos
     aliases: tppos
     defaultLevel: admin
-    usageString: ' /tppos [-f|--force] [-b|--border] [-c|--chunk] [<player>] [<world>]
-        <x y z>'
+    usageString: ' /tppos [-f|--force <f>] [-b|--border <b>] [-c|--chunk <c>] [<player>]
+        [<world>] <x y z>'
     oneLineDescription: Teleport to the specified location.
     extendedDescription: |-
         The tppos command supports three flags:
@@ -4175,8 +4196,8 @@
         description: Allows the user to target other players using the command "tppos".
         defaultLevel: admin
         module: teleport
-    simpleUsage: ' /tppos [-f|--force] [-b|--border] [-c|--chunk] [<player>] [<world>]
-        <x y z>'
+    simpleUsage: ' /tppos [-f|--force <f>] [-b|--border <b>] [-c|--chunk <c>] [<player>]
+        [<world>] <x y z>'
     context: tppos
 -   commandName: tptoggle
     aliases: tptoggle
@@ -4254,11 +4275,11 @@
 -   commandName: warp
     aliases: warp
     defaultLevel: user
-    usageString: " /warp [[-y|-a|--accept] [-f|--force] ] [[<player>]] <warp>\n /warp\
-        \ set [-o] <warp>\n /warp cost <warp> <cost>\n /warp setcategory [-n|--new]\
-        \ [-r|--remove|--delete] <warp> [<warp category>]\n /warp list [-u] \n /warp\
-        \ category \n /warp delete <warp>\n /warp setdescription [-r|--remove|--delete]\
-        \ <warp> [<description…>]"
+    usageString: " /warp [[-y|-a|--accept <y>] [-f|--force <f>] ] [[<player>]] <warp>\n\
+        \ /warp set [-o <o>] <warp>\n /warp cost <warp> <cost>\n /warp setcategory\
+        \ [-n|--new <n>] [-r|--remove|--delete <r>] <warp> [<warp category>]\n /warp\
+        \ list [-u <u>] \n /warp category \n /warp delete <warp>\n /warp setdescription\
+        \ [-r|--remove|--delete <r>] <warp> [<description…>]"
     oneLineDescription: Teleport to the specified warp.
     module: warp
     permissionbase: nucleus.warp
@@ -4287,7 +4308,7 @@
         description: Allows the user to bypass the warmup for /warp
         defaultLevel: admin
         module: warp
-    simpleUsage: ' /warp [[-y|-a|--accept] [-f|--force] ] [[<player>]] <warp>'
+    simpleUsage: ' /warp [[-y|-a|--accept <y>] [-f|--force <f>] ] [[<player>]] <warp>'
     context: warp
 -   commandName: warp delete
     aliases: warp delete, warp del
@@ -4317,7 +4338,7 @@
     aliases: warp list
     rootAliases: warps, nwarps
     defaultLevel: user
-    usageString: ' /warp list [-u] '
+    usageString: ' /warp list [-u <u>] '
     oneLineDescription: Lists all warps on the server.
     module: warp
     permissionbase: nucleus.warp.list
@@ -4329,13 +4350,13 @@
         description: Allows the user to run the command /warp list
         defaultLevel: user
         module: warp
-    simpleUsage: ' /warp list [-u] '
+    simpleUsage: ' /warp list [-u <u>] '
     context: warp list
 -   commandName: warp set
     aliases: warp set
     rootAliases: setwarp, nsetwarp, warpset, nwarpset
     defaultLevel: admin
-    usageString: ' /warp set [-o] <warp>'
+    usageString: ' /warp set [-o <o>] <warp>'
     oneLineDescription: Sets a warp.
     extendedDescription: If you have permissions to delete warps, you may use the
         -o flag to overwrite an existing warp.
@@ -4366,7 +4387,7 @@
         description: Allows the user to bypass the warmup for /warp set
         defaultLevel: admin
         module: warp
-    simpleUsage: ' /warp set [-o] <warp>'
+    simpleUsage: ' /warp set [-o <o>] <warp>'
     context: warp set
 -   commandName: world
     aliases: world, nworld, nucleusworld
@@ -4377,15 +4398,15 @@
         \ teleport <world> [<player>]\n /world setpvpenabled [<world>] <true|false>\n\
         \ /world sethardcore [<world>] <true|false>\n /world modifiers \n /world list\
         \ \n /world delete <world>\n /world setspawn [<world> <x> <y> <z>]\n /world\
-        \ presets \n /world spawn \n /world gamerule [<world>]\n /world load [-e|--enable]\
-        \ <world>\n /world rename <world> <new name>\n /world enable <world>\n /world\
-        \ disable <world>\n /world clone <world> <new name>\n /world generators \n\
-        \ /world unload [-t|--transfer <transferWorld>] [-d|--disable] <world>\n /world\
-        \ create [-p|--preset <preset>] [-b|--bonuschest <b>] [-i] [--gm|--gamemode\
-        \ game mode] [-s|--seed <seed>] [-k|--keepspawnloaded <k>] [-n|--nostructures]\
-        \ [-l|--loadonstartup <l>] [-g|--generator <generator>] [-d|--dimension <dimension>]\
-        \ [--di|--difficulty <difficulty>] [-m|--modifier <modifier>] [-c|--allowcommands\
-        \ <c>] <name>\n /world info <world>"
+        \ presets \n /world spawn \n /world gamerule [<world>]\n /world load [-e|--enable\
+        \ <e>] <world>\n /world rename <world> <new name>\n /world enable <world>\n\
+        \ /world disable <world>\n /world clone <world> <new name>\n /world generators\
+        \ \n /world unload [-t|--transfer <t>] [-d|--disable <d>] <world>\n /world\
+        \ create [-p|--preset <p>] [-b|--bonuschest <b>] [-i <i>] [--gm|--gamemode\
+        \ <gm>] [-s|--seed <s>] [-k|--keepspawnloaded <k>] [-n|--nostructures <n>]\
+        \ [-l|--loadonstartup <l>] [-g|--generator <g>] [-d|--dimension <d>] [--di|--difficulty\
+        \ <di>] [-m|--modifier <m>] [-c|--allowcommands <c>] <name>\n /world info\
+        \ <world>"
     oneLineDescription: Parent command for all other world commands.
     module: world
     permissionbase: nucleus.world
