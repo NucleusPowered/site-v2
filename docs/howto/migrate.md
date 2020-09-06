@@ -47,3 +47,10 @@ All aliases that were disabled will be re-enabled as the format of `commands.con
 changes that you may wish to keep.
 
 [Learn more about command management using the tutorial here](../tutorial/commandconfig).
+
+## The `warps.separate-permissions` config option no longer exists
+
+To grant users warp permission, they must have the specific permission `nucleus.warps.[warpname]` where `[warpname]` is the name of the warp (in lower case).
+If you want a user to have access to all warps, provide the `nucleus.warps` permission.
+
+[Learn more about warps using the tutorial here](../tutorial/warp) 
