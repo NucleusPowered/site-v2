@@ -54,7 +54,8 @@ var d = (function() {
         "The time-traveling is just too dangerous. Better that I devote myself to study the other great mystery of the universe: Nucleus!", // Back to the Future: Part II
         "PRAISE NUCLEUS", // Guild Wars 2, Path of Fire (everyone seems to praise Joko)
         "For the glory of Nucleus", // NieR Automata
-        "With-Nucleus-by-my-side" // Final Fantasy X, there is a moment where Tidus says "with Yuna by my side" rather quickly...
+        "With-Nucleus-by-my-side", // Final Fantasy X, there is a moment where Tidus says "with Yuna by my side" rather quickly...
+        "To right the countless wrongs of our days, we shine this light of true redemption, that this place may become as paradise. Oh, what a wonderful Nucleus such would be..." // The World Ends With You
     ];
 
     var recalcPermissionBoxes = function(objectToUse) {
