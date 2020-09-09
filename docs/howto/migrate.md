@@ -6,6 +6,8 @@ adddocslink: true
 type: howto
 ---
 
+_Updated 9th September 2020_
+
 Nucleus v2 is a mostly automatic upgrade from Nucleus v1.14.x, however there are some changes that server owners must perform to ensure continuation of service.
 
 ## The Warning and Server Shop modules have been removed
@@ -54,3 +56,17 @@ To grant users warp permission, they must have the specific permission `nucleus.
 If you want a user to have access to all warps, provide the `nucleus.warps` permission.
 
 [Learn more about warps using the tutorial here](../tutorial/warp) 
+
+## The `admin.separate-gamemode-permissions` config option no longer exists
+
+To grant users the ability to switch to a specific gamemode, they must have the specific permission `nucleus.gamemode.modes.[gamemode]`,
+where `[gamemode]` is the gamemode that the player is allowed to switch to. The default gamemode permissions are:
+
+* `nucleus.gamemode.modes.survival`
+* `nucleus.gamemode.modes.creative`
+* `nucleus.gamemode.modes.adventure`
+* `nucleus.gamemode.modes.spectator`
+
+This is in addition to the standard `/gamemode` command permission `nucleus.gamemode.base`.
+
+If you want your users to be able to access all game modes, grant the permission `nucleus.gamemode.modes`

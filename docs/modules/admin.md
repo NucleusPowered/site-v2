@@ -22,7 +22,8 @@ Not all administrative commands are contained in the admin module, some have the
 
 Broadcasts are now in the [Notifications Module](notification.html)
 
-## `/gamemode` configuration
+## `/gamemode` extra permissions
 
-The setting `separate-gamemode-permissions` can be set to `true` to tell the `/gm` command requires an extra permission to change to the target gamemode - 
-the permission is of the form `nucleus.gamemode.modes.<gamemode>`.
+As well as the standard permissions, `/gm` command requires an extra permission to change to the target gamemode - 
+the permission is of the form `nucleus.gamemode.modes.<gamemode>`. To allow someone to switch to all gamemodes, give
+them the permission `nucleus.gamemode.modes`.
