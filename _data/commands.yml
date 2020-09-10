@@ -50,12 +50,28 @@
     isExactEssEquiv: false
     essNotes: /gm does not toggle between survival and creative, use /gmt for that
     permissions:
+    -   permission: nucleus.gamemode.modes.spectator
+        description: Allows the user to change a target's gamemode to spectator.
+        defaultLevel: admin
+        module: admin
+    -   permission: nucleus.gamemode.modes.survival
+        description: Allows the user to change a target's gamemode to survival.
+        defaultLevel: admin
+        module: admin
     -   permission: nucleus.gamemode.base
         description: Allows the user to run the command /gamemode
         defaultLevel: admin
         module: admin
     -   permission: nucleus.gamemode.exempt.warmup
         description: Allows the user to bypass the warmup for /gamemode
+        defaultLevel: admin
+        module: admin
+    -   permission: nucleus.gamemode.modes.creative
+        description: Allows the user to change a target's gamemode to creative.
+        defaultLevel: admin
+        module: admin
+    -   permission: nucleus.gamemode.modes.adventure
+        description: Allows the user to change a target's gamemode to adventure.
         defaultLevel: admin
         module: admin
     -   permission: nucleus.gamemode.exempt.cooldown
@@ -72,6 +88,47 @@
         module: admin
     simpleUsage: ' /gamemode <player> game mode|game mode|'
     context: gamemode
+-   commandName: gamemode gmt
+    aliases: gamemode gmt
+    defaultLevel: admin
+    usageString: ' /gamemode gmt '
+    oneLineDescription: Toggles your game mode between survival and creative.
+    module: admin
+    permissionbase: nucleus.gamemode
+    warmup: true
+    cooldown: true
+    cost: true
+    essentialsEquivalents:
+    - gmt
+    isExactEssEquiv: true
+    essNotes: ''
+    permissions:
+    -   permission: nucleus.gamemode.modes.spectator
+        description: Allows the user to change a target's gamemode to spectator.
+        defaultLevel: admin
+        module: admin
+    -   permission: nucleus.gamemode.base
+        description: Allows the user to run the command /gamemode
+        defaultLevel: admin
+        module: admin
+    -   permission: nucleus.gamemode.exempt.warmup
+        description: Allows the user to bypass the warmup for /gamemode
+        defaultLevel: admin
+        module: admin
+    -   permission: nucleus.gamemode.modes.creative
+        description: Allows the user to change a target's gamemode to creative.
+        defaultLevel: admin
+        module: admin
+    -   permission: nucleus.gamemode.exempt.cooldown
+        description: Allows the user to bypass the cooldown for /gamemode
+        defaultLevel: admin
+        module: admin
+    -   permission: nucleus.gamemode.exempt.cost
+        description: Allows the user to bypass the cost for /gamemode
+        defaultLevel: admin
+        module: admin
+    simpleUsage: ' /gamemode gmt '
+    context: gamemode gmt
 -   commandName: gma
     aliases: gma, adventure
     defaultLevel: admin
@@ -672,6 +729,290 @@
         module: core
     simpleUsage: ' /nucleus '
     context: nucleus
+-   commandName: nucleus compatibility
+    aliases: nucleus compatibility, nucleus compat
+    defaultLevel: admin
+    usageString: ' /nucleus compatibility '
+    oneLineDescription: Lists any compatibility issues that have been detected.
+    module: core
+    permissionbase: nucleus.nucleus.compatibility
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.nucleus.compatibility.base
+        description: Allows the user to run the command /nucleus compatibility
+        defaultLevel: admin
+        module: core
+    simpleUsage: ' /nucleus compatibility '
+    context: nucleus compatibility
+-   commandName: nucleus debug
+    aliases: nucleus debug
+    defaultLevel: admin
+    usageString: " /nucleus debug \n /nucleus debug verifycmds \n /nucleus debug getuuids\
+        \ <user>\n /nucleus debug refreshuniquevisitors "
+    oneLineDescription: Utilities to support debugging server issues.
+    module: core
+    permissionbase: nucleus.nucleus.debug
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.nucleus.debug.base
+        description: Allows the user to run the command /nucleus debug
+        defaultLevel: admin
+        module: core
+    simpleUsage: ' /nucleus debug '
+    context: nucleus debug
+-   commandName: nucleus debug getuuids
+    aliases: nucleus debug getuuids
+    defaultLevel: admin
+    usageString: ' /nucleus debug getuuids <user>'
+    oneLineDescription: Gets all UUIDs that appear to be registered to a username.
+    module: core
+    permissionbase: nucleus.nucleus.debug.getuuids
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.nucleus.debug.getuuids.base
+        description: Allows the user to run the command /debug getuuids
+        defaultLevel: admin
+        module: core
+    simpleUsage: ' /nucleus debug getuuids <user>'
+    context: nucleus debug getuuids
+-   commandName: nucleus debug refreshuniquevisitors
+    aliases: nucleus debug refreshuniquevisitors
+    defaultLevel: admin
+    usageString: ' /nucleus debug refreshuniquevisitors '
+    oneLineDescription: Refreshes the {{uniquecount}} token, in case it's out of sync.
+    module: core
+    permissionbase: nucleus.nucleus.debug.refreshuniquevisitors
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.nucleus.debug.refreshuniquevisitors.base
+        description: Allows the user to run the command /debug refreshuniquevisitors
+        defaultLevel: admin
+        module: core
+    simpleUsage: ' /nucleus debug refreshuniquevisitors '
+    context: nucleus debug refreshuniquevisitors
+-   commandName: nucleus debug verifycmds
+    aliases: nucleus debug verifycmds
+    defaultLevel: admin
+    usageString: ' /nucleus debug verifycmds '
+    oneLineDescription: Verifies that all command keys are set correctly
+    module: core
+    permissionbase: nucleus.nucleus.debug.verifycmds
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.nucleus.debug.verifycmds
+        description: Allows the user to run the command /nucleus debug verify-cmds
+        defaultLevel: admin
+        module: core
+    simpleUsage: ' /nucleus debug verifycmds '
+    context: nucleus debug verifycmds
+-   commandName: nucleus docgen
+    aliases: nucleus docgen
+    usageString: ' /nucleus docgen '
+    oneLineDescription: Generates Nucleus documentation data files
+    module: core
+    permissionbase: nucleus.nucleus.docgen
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.nucleus.docgen.base
+        description: Allows the user to run the command /docgen
+        module: core
+    simpleUsage: ' /nucleus docgen '
+    context: nucleus docgen
+-   commandName: nucleus getuser
+    aliases: nucleus getuser
+    usageString: ' /nucleus getuser <UUID>|<name>'
+    oneLineDescription: Gets or refreshes a user's entry in the username cache.
+    extendedDescription: Occasionally, the Minecraft username cache gets out of sync
+        with the rest of the system, and some commands that require a user fail. This
+        command allows you to request updated information about a user from Mojang's
+        server (via either a UUID or a current user name) and adds them to the cache.
+    module: core
+    permissionbase: nucleus.nucleus.getuser
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.nucleus.getuser.base
+        description: Allows the user to run the command /nucleus getuser
+        module: core
+    simpleUsage: ' /nucleus getuser <UUID>|<name>'
+    context: nucleus getuser
+-   commandName: nucleus info
+    aliases: nucleus info
+    defaultLevel: admin
+    usageString: ' /nucleus info '
+    oneLineDescription: Creates a file in the server root directory containing information
+        about the server and Nucleus environment.
+    module: core
+    permissionbase: nucleus.nucleus.info
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.nucleus.info.base
+        description: Allows the user to run the command /nucleus info
+        defaultLevel: admin
+        module: core
+    simpleUsage: ' /nucleus info '
+    context: nucleus info
+-   commandName: nucleus nucleus
+    aliases: nucleus nucleus
+    defaultLevel: admin
+    usageString: ' /nucleus nucleus '
+    oneLineDescription: Clears the in-memory cache of users who have logged on in
+        the past session, forcing Nucleus to read the data files on their next login.
+    module: core
+    permissionbase: nucleus.nucleus.clearcache
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.nucleus.clearcache.base
+        description: Allows the user to run the command /nucleus clearcache
+        defaultLevel: admin
+        module: core
+    simpleUsage: ' /nucleus nucleus '
+    context: nucleus nucleus
+-   commandName: nucleus printperms
+    aliases: nucleus printperms
+    defaultLevel: admin
+    usageString: ' /nucleus printperms '
+    oneLineDescription: Prints all permissions registered in Nucleus.
+    module: core
+    permissionbase: nucleus.nucleus.printperms
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.nucleus.printperms.base
+        description: Allows the user to run the command /nucleus printperms
+        defaultLevel: admin
+        module: core
+    simpleUsage: ' /nucleus printperms '
+    context: nucleus printperms
+-   commandName: nucleus rebuildusercache
+    aliases: nucleus rebuildusercache
+    defaultLevel: admin
+    usageString: ' /nucleus rebuildusercache '
+    oneLineDescription: Rebuild the Nucleus user cache.
+    extendedDescription: Some operations that we might want to do might want to look
+        at offline and online players, but unfortunately, as we store things as separate
+        user files, it would take a lot of processing to get some simple data. The
+        cache copies this all into one place. However, there is a chance it'll go
+        stale, this command asks Nucleus to rebuild the cache.
+    module: core
+    permissionbase: nucleus.nucleus.rebuildusercache
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.nucleus.rebuildusercache.base
+        description: Allows the user to run the command /nucleus rebuildusercache
+        defaultLevel: admin
+        module: core
+    simpleUsage: ' /nucleus rebuildusercache '
+    context: nucleus rebuildusercache
+-   commandName: nucleus reload
+    aliases: nucleus reload
+    defaultLevel: admin
+    usageString: ' /nucleus reload '
+    oneLineDescription: Reloads Nucleus' configuration files.
+    extendedDescription: |-
+        This command will reload everything EXCEPT whether modules and/or commands are enabled.
+        A restart of the entire server is required for these two actions to take effect.
+    module: core
+    permissionbase: nucleus.nucleus.reload
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.nucleus.reload.base
+        description: Allows the user to run the command /nucleus reload
+        defaultLevel: admin
+        module: core
+    simpleUsage: ' /nucleus reload '
+    context: nucleus reload
+-   commandName: nucleus resetuser
+    aliases: nucleus resetuser
+    defaultLevel: admin
+    usageString: ' /nucleus resetuser [-a|--all <a>] <user>|<UUID>'
+    oneLineDescription: Deletes all data in Nucleus, and optionally, Minecraft, for
+        a player.
+    extendedDescription: "This can be useful to clear out everything Nucleus knows\
+        \ about a player. However, if you want to delete Minecraft data, pass the\
+        \ \"-a\" flag. \n\nThis will not delete data stored by other plugins about\
+        \ this player."
+    module: core
+    permissionbase: nucleus.nucleus.resetuser
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.nucleus.resetuser.base
+        description: Allows the user to run the command /nucleus resetuser
+        defaultLevel: admin
+        module: core
+    simpleUsage: ' /nucleus resetuser [-a|--all <a>] <user>|<UUID>'
+    context: nucleus resetuser
+-   commandName: nucleus save
+    aliases: nucleus save
+    defaultLevel: admin
+    usageString: ' /nucleus save '
+    oneLineDescription: Saves all files.
+    module: core
+    permissionbase: nucleus.nucleus.save
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.nucleus.save.base
+        description: Allows the user to run the command /nucleus save
+        defaultLevel: admin
+        module: core
+    simpleUsage: ' /nucleus save '
+    context: nucleus save
+-   commandName: nucleus setupperms
+    aliases: nucleus setupperms, nucleus setperms
+    defaultLevel: admin
+    usageString: ' /nucleus setupperms -g [-y]|[-r|--reset <r>] [-i|--inherit <i>]
+        <Nucleus Role> <Permission Group>'
+    oneLineDescription: Allows the user to add the recommended permissions for either
+        USER, MOD or ADMIN roles to a specified group.
+    extendedDescription: "There are three flags for this command: \n\n* -r: if set,\
+        \ all Nucleus permissions will be set regardless of whether they have been\
+        \ set before. Else, only those that the permissions plugindoes not report\
+        \ have been set are set will be set to true.\n* -i: Apply the perms from the\
+        \ selected role and lower to this group (so, if ADMIN is selected, MOD and\
+        \ USER perms will be applied to the group too).\n* -g: Create \"admin\" and\
+        \ \"mod\" groups, setup inheritance, and apply default permissions (should\
+        \ only be used for new servers).\n* \"-g -y\": Bypasses the info given by\
+        \ `-g` on its own.\n\nThe permissions that are applied will be added to the\
+        \ console."
+    module: core
+    permissionbase: nucleus.nucleus.setupperms
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.nucleus.setupperms.base
+        description: Allows the user to run the command /nucleus setupperms
+        defaultLevel: admin
+        module: core
+    simpleUsage: ' /nucleus setupperms -g [-y]|[-r|--reset <r>] [-i|--inherit <i>]
+        <Nucleus Role> <Permission Group>'
+    context: nucleus setupperms
 -   commandName: nuserprefs
     aliases: nuserprefs, userprefs
     defaultLevel: user
@@ -985,6 +1326,67 @@
         module: experience
     simpleUsage: ' /exp [<player>]'
     context: exp
+-   commandName: exp give
+    aliases: exp give
+    defaultLevel: admin
+    usageString: ' /exp give [<player>] <level>|<experience>'
+    oneLineDescription: Gives experience to the specified player.
+    extendedDescription: If you want to add raw experience, just add the number as
+        an argument. If you want to add a specific number of levels, the argument
+        can be of the form "L30" or "30L" (assuming you want to give 30 levels).
+    module: experience
+    permissionbase: nucleus.exp.give
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.exp.give.base
+        description: Allows the user to run the command /exp give
+        defaultLevel: admin
+        module: experience
+    simpleUsage: ' /exp give [<player>] <level>|<experience>'
+    context: exp give
+-   commandName: exp set
+    aliases: exp set
+    defaultLevel: admin
+    usageString: ' /exp set [<player>] <level>|<experience>'
+    oneLineDescription: Sets the specified player's experience.
+    extendedDescription: If you want to set experience points, just add the number
+        as an argument. If you want to set a specific number of levels, the argument
+        can be of the form "L30" or "30L" (assuming you want to set at 30 levels).
+    module: experience
+    permissionbase: nucleus.exp.set
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.exp.set.base
+        description: Allows the user to run the command /exp set
+        defaultLevel: admin
+        module: experience
+    simpleUsage: ' /exp set [<player>] <level>|<experience>'
+    context: exp set
+-   commandName: exp take
+    aliases: exp take
+    defaultLevel: admin
+    usageString: ' /exp take [<player>] <level>|<experience>'
+    oneLineDescription: Removes experience from the specified player.
+    extendedDescription: |-
+        If you want to remove raw experience, just add the number as an argument. If you want to remove a specific number of levels, the argument can be of the form "L30" or "30L" (assuming you want to take 30 levels).
+
+        Trying to take more experience than the player has will just zero their experience.
+    module: experience
+    permissionbase: nucleus.exp.take
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.exp.take.base
+        description: Allows the user to run the command /exp take
+        defaultLevel: admin
+        module: experience
+    simpleUsage: ' /exp take [<player>] <level>|<experience>'
+    context: exp take
 -   commandName: fly
     aliases: fly
     defaultLevel: admin
@@ -1337,6 +1739,27 @@
         module: home
     simpleUsage: ' /home deleteother <user> <home>'
     context: home deleteother
+-   commandName: home limit
+    aliases: home limit
+    defaultLevel: user
+    usageString: ' /home limit [<user>]'
+    oneLineDescription: Display the number of homes you (or another player) can set.
+    module: home
+    permissionbase: nucleus.home.limit
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.home.limit.base
+        description: Allows the user to run the command /home limit
+        defaultLevel: user
+        module: home
+    -   permission: nucleus.home.limit.others
+        description: Allows the user to target other players using the command "limit".
+        defaultLevel: admin
+        module: home
+    simpleUsage: ' /home limit [<user>]'
+    context: home limit
 -   commandName: home list
     aliases: home list
     rootAliases: listhomes, nlisthomes, homes, nhomes
@@ -1831,6 +2254,184 @@
         module: item
     simpleUsage: ' /lore '
     context: lore
+-   commandName: lore add
+    aliases: lore add
+    defaultLevel: admin
+    usageString: ' /lore add <lore…>'
+    oneLineDescription: Adds a new line to the lore on the current item in the hand.
+    module: item
+    permissionbase: nucleus.lore.set
+    warmup: true
+    cooldown: true
+    cost: true
+    permissions:
+    -   permission: nucleus.lore.set.base
+        description: Allows the user to run the command /lore insert
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.lore.set.exempt.warmup
+        description: Allows the user to bypass the warmup for /lore insert
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.lore.set.exempt.cooldown
+        description: Allows the user to bypass the cooldown for /lore insert
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.lore.set.exempt.cost
+        description: Allows the user to bypass the cost for /lore insert
+        defaultLevel: admin
+        module: item
+    simpleUsage: ' /lore add <lore…>'
+    context: lore add
+-   commandName: lore clear
+    aliases: lore clear
+    defaultLevel: admin
+    usageString: ' /lore clear '
+    oneLineDescription: Clears the lore on the current item in the hand.
+    module: item
+    permissionbase: nucleus.lore.set
+    warmup: true
+    cooldown: true
+    cost: true
+    permissions:
+    -   permission: nucleus.lore.set.base
+        description: Allows the user to run the command /lore insert
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.lore.set.exempt.warmup
+        description: Allows the user to bypass the warmup for /lore insert
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.lore.set.exempt.cooldown
+        description: Allows the user to bypass the cooldown for /lore insert
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.lore.set.exempt.cost
+        description: Allows the user to bypass the cost for /lore insert
+        defaultLevel: admin
+        module: item
+    simpleUsage: ' /lore clear '
+    context: lore clear
+-   commandName: lore delete
+    aliases: lore delete
+    defaultLevel: admin
+    usageString: ' /lore delete <line>'
+    oneLineDescription: Deletes a line of the lore on the current item in the hand
+        at a specific line.
+    module: item
+    permissionbase: nucleus.lore.set
+    warmup: true
+    cooldown: true
+    cost: true
+    permissions:
+    -   permission: nucleus.lore.set.base
+        description: Allows the user to run the command /lore insert
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.lore.set.exempt.warmup
+        description: Allows the user to bypass the warmup for /lore insert
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.lore.set.exempt.cooldown
+        description: Allows the user to bypass the cooldown for /lore insert
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.lore.set.exempt.cost
+        description: Allows the user to bypass the cost for /lore insert
+        defaultLevel: admin
+        module: item
+    simpleUsage: ' /lore delete <line>'
+    context: lore delete
+-   commandName: lore edit
+    aliases: lore edit
+    defaultLevel: admin
+    usageString: ' /lore edit <line> <lore…>'
+    oneLineDescription: Edits the lore on the current item in the hand at a specific
+        line.
+    module: item
+    permissionbase: nucleus.lore.set
+    warmup: true
+    cooldown: true
+    cost: true
+    permissions:
+    -   permission: nucleus.lore.set.base
+        description: Allows the user to run the command /lore insert
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.lore.set.exempt.warmup
+        description: Allows the user to bypass the warmup for /lore insert
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.lore.set.exempt.cooldown
+        description: Allows the user to bypass the cooldown for /lore insert
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.lore.set.exempt.cost
+        description: Allows the user to bypass the cost for /lore insert
+        defaultLevel: admin
+        module: item
+    simpleUsage: ' /lore edit <line> <lore…>'
+    context: lore edit
+-   commandName: lore insert
+    aliases: lore insert
+    defaultLevel: admin
+    usageString: ' /lore insert <line> <lore…>'
+    oneLineDescription: Inserts a new line to the lore on the current item in the
+        hand at a specific line.
+    module: item
+    permissionbase: nucleus.lore.set
+    warmup: true
+    cooldown: true
+    cost: true
+    permissions:
+    -   permission: nucleus.lore.set.base
+        description: Allows the user to run the command /lore insert
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.lore.set.exempt.warmup
+        description: Allows the user to bypass the warmup for /lore insert
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.lore.set.exempt.cooldown
+        description: Allows the user to bypass the cooldown for /lore insert
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.lore.set.exempt.cost
+        description: Allows the user to bypass the cost for /lore insert
+        defaultLevel: admin
+        module: item
+    simpleUsage: ' /lore insert <line> <lore…>'
+    context: lore insert
+-   commandName: lore set
+    aliases: lore set
+    defaultLevel: admin
+    usageString: ' /lore set <lore…>'
+    oneLineDescription: Sets the lore on the current item in the hand. The current
+        lore is replaced.
+    module: item
+    permissionbase: nucleus.lore.set
+    warmup: true
+    cooldown: true
+    cost: true
+    permissions:
+    -   permission: nucleus.lore.set.base
+        description: Allows the user to run the command /lore insert
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.lore.set.exempt.warmup
+        description: Allows the user to bypass the warmup for /lore insert
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.lore.set.exempt.cooldown
+        description: Allows the user to bypass the cooldown for /lore insert
+        defaultLevel: admin
+        module: item
+    -   permission: nucleus.lore.set.exempt.cost
+        description: Allows the user to bypass the cost for /lore insert
+        defaultLevel: admin
+        module: item
+    simpleUsage: ' /lore set <lore…>'
+    context: lore set
 -   commandName: more
     aliases: more, stack
     defaultLevel: admin
@@ -2183,6 +2784,23 @@
         module: jail
     simpleUsage: ' /jails set <jail>'
     context: jails set
+-   commandName: jails tp
+    aliases: jails tp
+    defaultLevel: staff
+    usageString: ' /jails tp <jail>'
+    oneLineDescription: Warp to a jail.
+    module: jail
+    permissionbase: nucleus.jail.tp
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.jail.tp.base
+        description: Allows the user to run the command /jails tp
+        defaultLevel: staff
+        module: jail
+    simpleUsage: ' /jails tp <jail>'
+    context: jails tp
 -   commandName: unjail
     aliases: unjail
     defaultLevel: staff
@@ -2434,6 +3052,249 @@
         module: kit
     simpleUsage: ' /kit <kit>'
     context: kit
+-   commandName: kit autoredeem
+    aliases: kit autoredeem
+    defaultLevel: admin
+    usageString: ' /kit autoredeem <kit> <true|false>'
+    oneLineDescription: Sets or unsets a kit to auto redeem on login.
+    extendedDescription: A kit set to automatically redeem will be given to a player
+        when they login if they are currently eligible to redeem the kit using "/kit
+        name".
+    module: kit
+    permissionbase: nucleus.kit.autoredeem
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.autoredeem.base
+        description: Allows the user to run the command /kit autoredeem
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit autoredeem <kit> <true|false>'
+    context: kit autoredeem
+-   commandName: kit command
+    aliases: kit command, kit commands
+    defaultLevel: admin
+    usageString: |4-
+         /kit command <kit>
+         /kit command add <kit> <command…>
+         /kit command clear <kit>
+         /kit command remove <kit> <index>|<command…>
+    oneLineDescription: Lists the commands associated with a kit.
+    extendedDescription: Commands are executed as the SERVER. This could allow players
+        that get access to this command to cause serious havoc. Please only give edit
+        and add commands to TRUSTED players.
+    module: kit
+    permissionbase: nucleus.kit.command
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.command.base
+        description: Allows the user to run the command /kit command
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit command <kit>'
+    context: kit command
+-   commandName: kit command add
+    aliases: kit command add, kit command +
+    defaultLevel: admin
+    usageString: ' /kit command add <kit> <command…>'
+    oneLineDescription: Adds a command to the specified kit.
+    module: kit
+    permissionbase: nucleus.kit.command.add
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.command.add.base
+        description: Allows the user to run the command /command add
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit command add <kit> <command…>'
+    context: kit command add
+-   commandName: kit command clear
+    aliases: kit command clear
+    defaultLevel: admin
+    usageString: ' /kit command clear <kit>'
+    oneLineDescription: Removes all commands from the specified kit.
+    module: kit
+    permissionbase: nucleus.kit.command.remove
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.command.remove.base
+        description: Allows the user to run the command /command clear
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit command clear <kit>'
+    context: kit command clear
+-   commandName: kit command remove
+    aliases: kit command remove, kit command del, kit command -
+    defaultLevel: admin
+    usageString: ' /kit command remove <kit> <index>|<command…>'
+    oneLineDescription: Removes a command from the specified kit.
+    extendedDescription: |-
+        There are two ways to specify which command to remove:
+
+        * via. index, where the index is the number displayed in "/kit command <kit>"
+        * via. command, where you can specify the entire command to remove.
+
+        If you are playing on the server, it might be easier to use the click interface in "/kit command" or "/kit command edit"
+    module: kit
+    permissionbase: nucleus.kit.command.remove
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.command.remove.base
+        description: Allows the user to run the command /command clear
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit command remove <kit> <index>|<command…>'
+    context: kit command remove
+-   commandName: kit cooldown
+    aliases: kit cooldown, kit setcooldown, kit setinterval
+    defaultLevel: admin
+    usageString: ' /kit cooldown <kit> <duration>'
+    oneLineDescription: Sets the cooldown on a kit.
+    extendedDescription: The cooldown must be specified in the form 1w1d1h1m1s, where
+        1 hour 5 minutes would be "1h5m".
+    module: kit
+    permissionbase: nucleus.kit.setcooldown
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.setcooldown.base
+        description: Allows the user to run the command /kit setcooldown
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit cooldown <kit> <duration>'
+    context: kit cooldown
+-   commandName: kit cost
+    aliases: kit cost, kit setcost
+    defaultLevel: admin
+    usageString: ' /kit cost <kit> <cost>'
+    oneLineDescription: Sets the cost for a kit.
+    module: kit
+    permissionbase: nucleus.kit.cost
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.cost.base
+        description: Allows the user to run the command /kit cost
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit cost <kit> <cost>'
+    context: kit cost
+-   commandName: kit create
+    aliases: kit create, kit add
+    defaultLevel: admin
+    usageString: ' /kit create [-c|--clone <c>] <name>'
+    oneLineDescription: Opens a chest window and lets you create a kit through the
+        Minecraft inventory interface.
+    extendedDescription: |-
+        This command opens a GUI and allows you to use the standard Minecraft inventory GUI to create the named kit. Any items placed in the kit will be returned to you when you close the GUI, and the kit will be created.
+
+        If you want to create a kit by taking a snapshot of your inventory, add the flag "-c" to your command.
+
+        The kit can be updated using the /kit edit or /kit set commands, depending on whether you want to use a GUI to edit the kit, or replace the kit with a new copy of your inventory.
+    module: kit
+    permissionbase: nucleus.kit.create
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.create.base
+        description: Allows the user to run the command /kit create
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit create [-c|--clone <c>] <name>'
+    context: kit create
+-   commandName: kit edit
+    aliases: kit edit, kit ed
+    defaultLevel: admin
+    usageString: ' /kit edit <kit>'
+    oneLineDescription: Opens a GUI for editing kit contents.
+    extendedDescription: "This command opens a GUI and allows you to use the standard\
+        \ Minecraft inventory GUI to edit the named kit. \n\nSee /kit set if you want\
+        \ to update the kit by taking a snapshot of your inventory. See /firstjoinkit\
+        \ edit if you want edit the initial inventory of new players."
+    module: kit
+    permissionbase: nucleus.kit.edit
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.edit.base
+        description: Allows the user to run the command /kit edit
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit edit <kit>'
+    context: kit edit
+-   commandName: kit give
+    aliases: kit give
+    defaultLevel: admin
+    usageString: ' /kit give [-i|--ignore <i>] <player> <kit>'
+    oneLineDescription: Redeems a kit on the specified player.
+    extendedDescription: |-
+        Allows you to redeem the contents of a kit on another player. By default, this command will normally NOT redeem a kit on a player would not normally be able to redeem the kit. It will also  mark the kit as redeemed on the target player - however, it will never charge them.
+
+        This behaviour can be overridden using the "-i" flag, which will ignore all cooldowns, and will not mark that the kit has been redeemed.
+    module: kit
+    permissionbase: nucleus.kit.give
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.give.overridecheck
+        description: Allows the user to grant kits to those who would not ordinarily
+            be able to obtain a kit using the -i flag.
+        defaultLevel: admin
+        module: kit
+    -   permission: nucleus.kit.give.base
+        description: Allows the user to run the command /kit give
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit give [-i|--ignore <i>] <player> <kit>'
+    context: kit give
+-   commandName: kit hidden
+    aliases: kit hidden
+    defaultLevel: admin
+    usageString: ' /kit hidden <kit> <true|false>'
+    oneLineDescription: Sets whether a kit is displayed in the kit list.
+    module: kit
+    permissionbase: nucleus.kit.hidden
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.hidden.base
+        description: Allows the user to run the command /kit hidden
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit hidden <kit> <true|false>'
+    context: kit hidden
+-   commandName: kit info
+    aliases: kit info
+    defaultLevel: admin
+    usageString: ' /kit info <kit>'
+    oneLineDescription: Lists information about the kit.
+    module: kit
+    permissionbase: nucleus.kit.info
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.info.base
+        description: Allows the user to run the command /kit info
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit info <kit>'
+    context: kit info
 -   commandName: kit list
     aliases: kit list, kit ls
     rootAliases: kits, nkits
@@ -2456,6 +3317,187 @@
         module: kit
     simpleUsage: ' /kit list '
     context: kit list
+-   commandName: kit onetime
+    aliases: kit onetime, kit setonetime
+    defaultLevel: admin
+    usageString: ' /kit onetime <kit> <true|false>'
+    oneLineDescription: Sets or unsets a kit as a one time use kit.
+    extendedDescription: A one time use kit is exactly that, a kit that may be used
+        only once. If you wish to give a kit to a player upon joining for the first
+        time, consider using "/firstjoinkit" instead.
+    module: kit
+    permissionbase: nucleus.kit.onetime
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.onetime.base
+        description: Allows the user to run the command /kit onetime
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit onetime <kit> <true|false>'
+    context: kit onetime
+-   commandName: kit permissionbypass
+    aliases: kit permissionbypass
+    defaultLevel: admin
+    usageString: ' /kit permissionbypass <kit> <true|false>'
+    oneLineDescription: Sets whether a separate permission is required to redeem a
+        kit, if separate permissions is enabled in the config.
+    module: kit
+    permissionbase: nucleus.kit.permissionbypass
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.permissionbypass.base
+        description: Allows the user to run the command /kit permissionbypass
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit permissionbypass <kit> <true|false>'
+    context: kit permissionbypass
+-   commandName: kit reload
+    aliases: kit reload
+    defaultLevel: admin
+    usageString: ' /kit reload '
+    oneLineDescription: Discards cached kit information and reloads data from persistence.
+    module: kit
+    permissionbase: nucleus.kit.reload
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.reload.base
+        description: Allows the user to run the command /kit reload
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit reload '
+    context: kit reload
+-   commandName: kit remove
+    aliases: kit remove, kit del, kit delete
+    defaultLevel: admin
+    usageString: ' /kit remove <kit>'
+    oneLineDescription: Deletes a kit.
+    module: kit
+    permissionbase: nucleus.kit.remove
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.remove.base
+        description: Allows the user to run the command /kit remove
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit remove <kit>'
+    context: kit remove
+-   commandName: kit rename
+    aliases: kit rename
+    defaultLevel: admin
+    usageString: ' /kit rename <kit> <target name>'
+    oneLineDescription: Renames a kit
+    module: kit
+    permissionbase: nucleus.kit.rename
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.rename.base
+        description: Allows the user to run the command /kit rename
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit rename <kit> <target name>'
+    context: kit rename
+-   commandName: kit resetusage
+    aliases: kit resetusage, kit reset
+    defaultLevel: admin
+    usageString: ' /kit resetusage <user> <kit>'
+    oneLineDescription: Resets a player's usage of a kit, allowing them to redeem
+        the kit again immediately.
+    module: kit
+    permissionbase: nucleus.kit.resetusage
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.resetusage.base
+        description: Allows the user to run the command /kit resetusage
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit resetusage <user> <kit>'
+    context: kit resetusage
+-   commandName: kit set
+    aliases: kit set, kit update, kit setFromInventory
+    defaultLevel: admin
+    usageString: ' /kit set <kit>'
+    oneLineDescription: Sets the items in a kit to your current inventory.
+    extendedDescription: |-
+        This command takes a snapshot of your inventory (excluding your armor) and updates the contents of the named kit with it.
+
+        See also /kit edit if you want to edit a kit via a GUI.
+    module: kit
+    permissionbase: nucleus.kit.set
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.set.base
+        description: Allows the user to run the command /kit set
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit set <kit>'
+    context: kit set
+-   commandName: kit setfirstjoin
+    aliases: kit setfirstjoin, kit firstjoin
+    defaultLevel: admin
+    usageString: ' /kit setfirstjoin <kit> [<true|false>]'
+    oneLineDescription: Sets up a kit so it gets redeemed for every new player that
+        joins the server.
+    module: kit
+    permissionbase: nucleus.kit.setfirstjoin
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.setfirstjoin.base
+        description: Allows the user to run the command /kit setfirstjoin
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit setfirstjoin <kit> [<true|false>]'
+    context: kit setfirstjoin
+-   commandName: kit toggleredeemmessage
+    aliases: kit toggleredeemmessage, kit togglemessage
+    defaultLevel: admin
+    usageString: ' /kit toggleredeemmessage <kit> <true|false>'
+    oneLineDescription: Sets or unsets whether redeeming a kit will notify the target
+        user.
+    module: kit
+    permissionbase: nucleus.kit.toggleredeemmessage
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.toggleredeemmessage.base
+        description: Allows the user to run the command /kit toggleredeemmessage
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit toggleredeemmessage <kit> <true|false>'
+    context: kit toggleredeemmessage
+-   commandName: kit view
+    aliases: kit view
+    defaultLevel: admin
+    usageString: ' /kit view <kit>'
+    oneLineDescription: View the contents of a kit.
+    module: kit
+    permissionbase: nucleus.kit.view
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.kit.view.base
+        description: Allows the user to run the command /kit view
+        defaultLevel: admin
+        module: kit
+    simpleUsage: ' /kit view <kit>'
+    context: kit view
 -   commandName: mail
     aliases: mail, email
     defaultLevel: user
@@ -2479,6 +3521,40 @@
         module: mail
     simpleUsage: ' /mail [<filters>*]'
     context: mail
+-   commandName: mail clear
+    aliases: mail clear
+    defaultLevel: user
+    usageString: ' /mail clear '
+    oneLineDescription: Clears all mail in your inbox.
+    module: mail
+    permissionbase: nucleus.mail
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.mail.base
+        description: Allows the user to run the command /mail clear
+        defaultLevel: user
+        module: mail
+    simpleUsage: ' /mail clear '
+    context: mail clear
+-   commandName: mail other
+    aliases: mail other, mail o
+    defaultLevel: admin
+    usageString: ' /mail other <user> [<filters>*]'
+    oneLineDescription: Read others' mail.
+    module: mail
+    permissionbase: nucleus.mail.other
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.mail.other.base
+        description: Allows the user to run the command /mail other
+        defaultLevel: admin
+        module: mail
+    simpleUsage: ' /mail other <user> [<filters>*]'
+    context: mail other
 -   commandName: mail send
     aliases: mail send, mail s
     rootAliases: sendmail, nsendmail
@@ -3202,10 +4278,6 @@
     isExactEssEquiv: false
     essNotes: To remove a nickname, use '/delnick'
     permissions:
-    -   permission: nucleus.nick.colour
-        description: Allows the user to colour their nickname.
-        defaultLevel: admin
-        module: nickname
     -   permission: nucleus.nick.exempt.cooldown
         description: Allows the user to bypass the cooldown for /nick
         defaultLevel: admin
@@ -3217,10 +4289,6 @@
         module: nickname
     -   permission: nucleus.nick.exempt.warmup
         description: Allows the user to bypass the warmup for /nick
-        defaultLevel: admin
-        module: nickname
-    -   permission: nucleus.nick.style
-        description: Allows the user to style their nickname.
         defaultLevel: admin
         module: nickname
     -   permission: nucleus.nick.base
@@ -3653,6 +4721,40 @@
         module: powertool
     simpleUsage: ' /powertool [<command…>]'
     context: powertool
+-   commandName: powertool delete
+    aliases: powertool delete, powertool del, powertool rm, powertool remove
+    defaultLevel: admin
+    usageString: ' /powertool delete '
+    oneLineDescription: Removes any powertool bindings to the item in hand.
+    module: powertool
+    permissionbase: nucleus.powertool
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.powertool.base
+        description: Allows the user to run the command /powertool
+        defaultLevel: admin
+        module: powertool
+    simpleUsage: ' /powertool delete '
+    context: powertool delete
+-   commandName: powertool list
+    aliases: powertool list, powertool ls
+    defaultLevel: admin
+    usageString: ' /powertool list '
+    oneLineDescription: Lists all current powertools that the user has.
+    module: powertool
+    permissionbase: nucleus.powertool
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.powertool.base
+        description: Allows the user to run the command /powertool
+        defaultLevel: admin
+        module: powertool
+    simpleUsage: ' /powertool list '
+    context: powertool list
 -   commandName: toggle
     aliases: toggle
     defaultLevel: admin
@@ -3749,6 +4851,26 @@
         module: server-list
     simpleUsage: ' /serverlist [-m|--messages <m>] [-w|--whitelist <w>] '
     context: serverlist
+-   commandName: serverlist message
+    aliases: serverlist message, serverlist m
+    defaultLevel: admin
+    usageString: ' /serverlist message [-r|--remove <r>] [-l|--line <l>] [-t|--time
+        <t>] [<message…>]'
+    oneLineDescription: Allows for temporary modification of the server list MOTD,
+        on a timed basis.
+    module: server-list
+    permissionbase: nucleus.serverlist.message
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.serverlist.message.base
+        description: Allows the user to run the command /serverlist message
+        defaultLevel: admin
+        module: server-list
+    simpleUsage: ' /serverlist message [-r|--remove <r>] [-l|--line <l>] [-t|--time
+        <t>] [<message…>]'
+    context: serverlist message
 -   commandName: firstspawn
     aliases: firstspawn
     defaultLevel: user
@@ -3795,6 +4917,23 @@
         module: spawn
     simpleUsage: ' /setfirstspawn '
     context: setfirstspawn
+-   commandName: setfirstspawn del
+    aliases: setfirstspawn del, setfirstspawn rm
+    defaultLevel: admin
+    usageString: ' /setfirstspawn del '
+    oneLineDescription: Removes the new player spawn point.
+    module: spawn
+    permissionbase: nucleus.firstspawn.remove
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.firstspawn.remove.base
+        description: Allows the user to run the command /setfirstspawn del
+        defaultLevel: admin
+        module: spawn
+    simpleUsage: ' /setfirstspawn del '
+    context: setfirstspawn del
 -   commandName: setspawn
     aliases: setspawn
     defaultLevel: admin
@@ -3863,6 +5002,31 @@
         module: spawn
     simpleUsage: ' /spawn [-f|--force <f>] [<world>]'
     context: spawn
+-   commandName: spawn other
+    aliases: spawn other
+    defaultLevel: admin
+    usageString: ' /spawn other <user> [<world>]'
+    oneLineDescription: Warp another player to a world spawn point.
+    extendedDescription: This works in a similar way to the /spawn command, though
+        the command may be used against offline players if the calling entity has
+        permission. If the player is offline, the system will warp them prior to joining
+        the world on next login.
+    module: spawn
+    permissionbase: nucleus.spawn.other
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.spawn.other.offline
+        description: Allows the user to send a player to spawn on their next login.
+        defaultLevel: admin
+        module: spawn
+    -   permission: nucleus.spawn.other.base
+        description: Allows the user to run the command /spawn other
+        defaultLevel: admin
+        module: spawn
+    simpleUsage: ' /spawn other <user> [<world>]'
+    context: spawn other
 -   commandName: staffchat
     aliases: staffchat, sc, a
     defaultLevel: staff
@@ -4310,6 +5474,128 @@
         module: warp
     simpleUsage: ' /warp [[-y|-a|--accept <y>] [-f|--force <f>] ] [[<player>]] <warp>'
     context: warp
+-   commandName: warp category
+    aliases: warp category
+    defaultLevel: admin
+    usageString: " /warp category \n /warp category removedescription <warp category>\n\
+        \ /warp category removedisplayname <warp category>\n /warp category setdisplayname\
+        \ <warp category> <display name>\n /warp category list \n /warp category setdescription\
+        \ <warp category> <description…>"
+    oneLineDescription: Base command for category management.
+    module: warp
+    permissionbase: nucleus.warp.category
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.warp.category.base
+        description: Allows the user to run the command /warp category
+        defaultLevel: admin
+        module: warp
+    simpleUsage: ' /warp category '
+    context: warp category
+-   commandName: warp category list
+    aliases: warp category list
+    defaultLevel: admin
+    usageString: ' /warp category list '
+    oneLineDescription: Lists all the warp categories in use on the server.
+    module: warp
+    permissionbase: nucleus.warp.category.list
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.warp.category.list.base
+        description: Allows the user to run the command /category list
+        defaultLevel: admin
+        module: warp
+    simpleUsage: ' /warp category list '
+    context: warp category list
+-   commandName: warp category removedescription
+    aliases: warp category removedescription
+    defaultLevel: admin
+    usageString: ' /warp category removedescription <warp category>'
+    oneLineDescription: Removes the description for a category.
+    module: warp
+    permissionbase: nucleus.warp.category.description
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.warp.category.description.base
+        description: Allows the user to run the command /category description
+        defaultLevel: admin
+        module: warp
+    simpleUsage: ' /warp category removedescription <warp category>'
+    context: warp category removedescription
+-   commandName: warp category removedisplayname
+    aliases: warp category removedisplayname
+    defaultLevel: admin
+    usageString: ' /warp category removedisplayname <warp category>'
+    oneLineDescription: Removes the display name for a category.
+    module: warp
+    permissionbase: nucleus.warp.category.displayname
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.warp.category.displayname.base
+        description: Allows the user to run the command /category displayname
+        defaultLevel: admin
+        module: warp
+    simpleUsage: ' /warp category removedisplayname <warp category>'
+    context: warp category removedisplayname
+-   commandName: warp category setdescription
+    aliases: warp category setdescription
+    defaultLevel: admin
+    usageString: ' /warp category setdescription <warp category> <description…>'
+    oneLineDescription: Sets the description for a category.
+    module: warp
+    permissionbase: nucleus.warp.category.description
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.warp.category.description.base
+        description: Allows the user to run the command /category description
+        defaultLevel: admin
+        module: warp
+    simpleUsage: ' /warp category setdescription <warp category> <description…>'
+    context: warp category setdescription
+-   commandName: warp category setdisplayname
+    aliases: warp category setdisplayname
+    defaultLevel: admin
+    usageString: ' /warp category setdisplayname <warp category> <display name>'
+    oneLineDescription: Sets a display name for a category.
+    module: warp
+    permissionbase: nucleus.warp.category.displayname
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.warp.category.displayname.base
+        description: Allows the user to run the command /category displayname
+        defaultLevel: admin
+        module: warp
+    simpleUsage: ' /warp category setdisplayname <warp category> <display name>'
+    context: warp category setdisplayname
+-   commandName: warp cost
+    aliases: warp cost, warp setcost
+    defaultLevel: admin
+    usageString: ' /warp cost <warp> <cost>'
+    oneLineDescription: Set the cost of the specified warp.
+    module: warp
+    permissionbase: nucleus.warp.cost
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.warp.cost.base
+        description: Allows the user to run the command /warp cost
+        defaultLevel: admin
+        module: warp
+    simpleUsage: ' /warp cost <warp> <cost>'
+    context: warp cost
 -   commandName: warp delete
     aliases: warp delete, warp del
     rootAliases: delwarp, ndelwarp, remwarp, nremwarp, rmwarp, nrmwarp
@@ -4389,6 +5675,48 @@
         module: warp
     simpleUsage: ' /warp set [-o <o>] <warp>'
     context: warp set
+-   commandName: warp setcategory
+    aliases: warp setcategory
+    defaultLevel: admin
+    usageString: ' /warp setcategory [-n|--new <n>] [-r|--remove|--delete <r>] <warp>
+        [<warp category>]'
+    oneLineDescription: Sets the category of a warp for display in /warp list.
+    extendedDescription: |-
+        Warp categories allow server owners to organise their warps into categories in /warp list - which are case sensitive.
+
+        There are two important flags to be aware of:
+        * -n/--new: This command will only let you create a category if you specify this flag. This is to ensure that if a category does exist but with a different case, this may catch it.
+        * -r/--remove: Remove the category on the warp, move it back to the default "Uncategorised" group.
+    module: warp
+    permissionbase: nucleus.warp.setcategory
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.warp.setcategory.base
+        description: Allows the user to run the command /warp setcategory
+        defaultLevel: admin
+        module: warp
+    simpleUsage: ' /warp setcategory [-n|--new <n>] [-r|--remove|--delete <r>] <warp>
+        [<warp category>]'
+    context: warp setcategory
+-   commandName: warp setdescription
+    aliases: warp setdescription
+    defaultLevel: admin
+    usageString: ' /warp setdescription [-r|--remove|--delete <r>] <warp> [<description…>]'
+    oneLineDescription: Sets or removes (with -r) the description for the warp.
+    module: warp
+    permissionbase: nucleus.warp.setdescription
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.warp.setdescription.base
+        description: Allows the user to run the command /warp setdescription
+        defaultLevel: admin
+        module: warp
+    simpleUsage: ' /warp setdescription [-r|--remove|--delete <r>] <warp> [<description…>]'
+    context: warp setdescription
 -   commandName: world
     aliases: world, nworld, nucleusworld
     defaultLevel: admin
@@ -4420,6 +5748,309 @@
         module: world
     simpleUsage: ' /world '
     context: world
+-   commandName: world border
+    aliases: world border
+    defaultLevel: admin
+    usageString: |4-
+         /world border [<world>]
+         /world border gen [-a <a>] [-r <r>] [-f|--frequency <f>] [-t|--tickpercent <t>] [--save <save>] [<world>]
+         /world border set [<world>] <x> <z> <diameter> [<delay>]|<diameter> [<delay>]
+         /world border reset [<world>]
+         /world border cancelgen [<world>]
+    oneLineDescription: Parent command for world border commands.
+    module: world
+    permissionbase: nucleus.world.border
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.border.base
+        description: Allows the user to run the command /world border
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world border [<world>]'
+    context: world border
+-   commandName: world border cancelgen
+    aliases: world border cancelgen
+    defaultLevel: admin
+    usageString: ' /world border cancelgen [<world>]'
+    oneLineDescription: Cancels any current world border generation.
+    module: world
+    permissionbase: nucleus.world.border.gen
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.border.gen.base
+        description: Allows the user to run the command /border gen
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world border cancelgen [<world>]'
+    context: world border cancelgen
+-   commandName: world border gen
+    aliases: world border gen, world border genchunks, world border generatechunks,
+        world border chunkgen
+    defaultLevel: admin
+    usageString: ' /world border gen [-a <a>] [-r <r>] [-f|--frequency <f>] [-t|--tickpercent
+        <t>] [--save <save>] [<world>]'
+    oneLineDescription: Generates chunks up to the world border.
+    extendedDescription: |-
+        When invoked, Nucleus will start generating chunks up to the world border. During this time, the server will be susceptible to reduced performance.
+
+        There are a few flags you can use:
+
+        * -a - aggressive mode, turns off memory checks
+        * -r - restart pregeneration if the server is restarted (use with caution, does not disable if the pregen causes the crash)
+        * -t [1-100] - the percentage of a tick to use when generating, defaults to 80% (90% with aggressive mode)
+        * -f [1-100] - the number of ticks to wait after a generation to perform the next generation - defaults to Sponge default (3 in aggressive mode)
+        * --save [timespan] - frequency to peform a save at, defaults to 20 seconds (30 seconds with aggressive mode)
+
+        If you want to maximise generation, run "/world border gen -a -t 100 -f 1", but be prepared for lag!
+    module: world
+    permissionbase: nucleus.world.border.gen
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.border.gen.notify
+        description: If granted and enhanced generation is being used, these players
+            are notified of progress to the generation.
+        defaultLevel: admin
+        module: world
+    -   permission: nucleus.world.border.gen.base
+        description: Allows the user to run the command /border gen
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world border gen [-a <a>] [-r <r>] [-f|--frequency <f>] [-t|--tickpercent
+        <t>] [--save <save>] [<world>]'
+    context: world border gen
+-   commandName: world border reset
+    aliases: world border reset
+    defaultLevel: admin
+    usageString: ' /world border reset [<world>]'
+    oneLineDescription: Resets the world border to the default width.
+    module: world
+    permissionbase: nucleus.world.border.set
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.border.set.base
+        description: Allows the user to run the command /border set
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world border reset [<world>]'
+    context: world border reset
+-   commandName: world border set
+    aliases: world border set
+    defaultLevel: admin
+    usageString: ' /world border set [<world>] <x> <z> <diameter> [<delay>]|<diameter>
+        [<delay>]'
+    oneLineDescription: Sets the world border.
+    module: world
+    permissionbase: nucleus.world.border.set
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.border.set.base
+        description: Allows the user to run the command /border set
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world border set [<world>] <x> <z> <diameter> [<delay>]|<diameter>
+        [<delay>]'
+    context: world border set
+-   commandName: world clone
+    aliases: world clone, world copy
+    defaultLevel: admin
+    usageString: ' /world clone <world> <new name>'
+    oneLineDescription: Clones an existing world and registers it
+    module: world
+    permissionbase: nucleus.world.clone
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.clone.base
+        description: Allows the user to run the command /world clone
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world clone <world> <new name>'
+    context: world clone
+-   commandName: world create
+    aliases: world create
+    defaultLevel: admin
+    usageString: ' /world create [-p|--preset <p>] [-b|--bonuschest <b>] [-i <i>]
+        [--gm|--gamemode <gm>] [-s|--seed <s>] [-k|--keepspawnloaded <k>] [-n|--nostructures
+        <n>] [-l|--loadonstartup <l>] [-g|--generator <g>] [-d|--dimension <d>] [--di|--difficulty
+        <di>] [-m|--modifier <m>] [-c|--allowcommands <c>] <name>'
+    oneLineDescription: Creates a world with the specified name and options.
+    extendedDescription: "Creates a game world with the provided name, required. All\
+        \ other options in this command are optional, and are specified by flags.\
+        \ Each flag requires an argument after their names. These flags are:\n\n*\
+        \ -d/--dimension <dimension>: the dimension to use as a base world type. Defaults\
+        \ to the overworld.\n* -g/--generator <generator>: the world generator to\
+        \ use. Defaults to the default generator.\n* -m/--modifier <modifier>: a world\
+        \ generator modifier to use. Can be specified multiple times for multiple\
+        \ modifiers.\n* --di/--difficulty <difficulty>: the initial world difficulty.\
+        \ Defaults to normal.\n* --gm/--gamemode <gamemode>: the default game mode\
+        \ for players in the world. Defaults to survival.\n* -s/--seed <seed>: The\
+        \ seed to use to generate the world. If not specified, a random seed will\
+        \ be used.\n* -i: Indicates that this world might exist and can be imported.\n\
+        * -n/--nostructures: If specified, will not generate structures in the world\
+        \ \n* -l/--loadonstartup <true|false>: If false, the world will not be loaded\
+        \ on startup. Defaults to true. \n* -k/--keepspawnloaded <true|false>: If\
+        \ false, the spawn will not be kept loaded. Defaults to true.\n* -c/--allowcommands\
+        \ <true|false>: If false, commands will not be allowed on the world. Defaults\
+        \ to true.\n* -b/--bonuschest <true|false>: If false, the bonus chests will\
+        \ not be generated. Defaults to true.\n\nYou can also use a preset, using\
+        \ the flag \"-p <preset>\". Available presets can be found by running \"/world\
+        \ presets\"\n\nThe difficulty, the game mode, load on startup and keep spawn\
+        \ loaded properties can be changed after the world is generated."
+    module: world
+    permissionbase: nucleus.world.create
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.create.base
+        description: Allows the user to run the command /world create
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world create [-p|--preset <p>] [-b|--bonuschest <b>] [-i <i>]
+        [--gm|--gamemode <gm>] [-s|--seed <s>] [-k|--keepspawnloaded <k>] [-n|--nostructures
+        <n>] [-l|--loadonstartup <l>] [-g|--generator <g>] [-d|--dimension <d>] [--di|--difficulty
+        <di>] [-m|--modifier <m>] [-c|--allowcommands <c>] <name>'
+    context: world create
+-   commandName: world delete
+    aliases: world delete, world del
+    defaultLevel: admin
+    usageString: ' /world delete <world>'
+    oneLineDescription: Deletes a world from the disc.
+    extendedDescription: |-
+        This command irreversibly removes a world that has been unloaded and disabled from the disc. Before removal, the file path will be shown to be checked before the removal is confirmed and completed.
+        It is vitally important to note that once the world is deleted, it cannot be recovered.
+    module: world
+    permissionbase: nucleus.world.delete
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.delete.base
+        description: Allows the user to run the command /world delete
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world delete <world>'
+    context: world delete
+-   commandName: world disable
+    aliases: world disable, world dis
+    defaultLevel: admin
+    usageString: ' /world disable <world>'
+    oneLineDescription: Disables a world that is unloaded, preventing it from being
+        loaded in future.
+    extendedDescription: Disabling a world prevents a world from being loaded, however,
+        if a world is currently loaded, it will not be unloaded, and so will not be
+        fully disabled until it is unloaded.
+    module: world
+    permissionbase: nucleus.world.disable
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.disable.base
+        description: Allows the user to run the command /world disable
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world disable <world>'
+    context: world disable
+-   commandName: world enable
+    aliases: world enable, world en
+    defaultLevel: admin
+    usageString: ' /world enable <world>'
+    oneLineDescription: Enables a world, allowing it to be loaded on demand.
+    module: world
+    permissionbase: nucleus.world.enable
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.enable.base
+        description: Allows the user to run the command /world enable
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world enable <world>'
+    context: world enable
+-   commandName: world gamerule
+    aliases: world gamerule
+    defaultLevel: admin
+    usageString: |4-
+         /world gamerule [<world>]
+         /world gamerule set [<world>] <gamerule> <value>
+    oneLineDescription: Displays a world's game rules.
+    module: world
+    permissionbase: nucleus.world.gamerule
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.gamerule.base
+        description: Allows the user to run the command /world gamerule
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world gamerule [<world>]'
+    context: world gamerule
+-   commandName: world gamerule set
+    aliases: world gamerule set
+    defaultLevel: admin
+    usageString: ' /world gamerule set [<world>] <gamerule> <value>'
+    oneLineDescription: Sets the specified world's game rule.
+    module: world
+    permissionbase: nucleus.world.gamerule.set
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.gamerule.set.base
+        description: Allows the user to run the command /gamerule set
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world gamerule set [<world>] <gamerule> <value>'
+    context: world gamerule set
+-   commandName: world generators
+    aliases: world generators, world listgenerators
+    defaultLevel: admin
+    usageString: ' /world generators '
+    oneLineDescription: Shows available generators for use when creating a world.
+    module: world
+    permissionbase: nucleus.world.create
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.create.base
+        description: Allows the user to run the command /world create
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world generators '
+    context: world generators
+-   commandName: world info
+    aliases: world info
+    defaultLevel: admin
+    usageString: ' /world info <world>'
+    oneLineDescription: Displays information about one world.
+    extendedDescription: This is otherwise identical to "/world list".
+    module: world
+    permissionbase: nucleus.world.list
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.list.base
+        description: Allows the user to run the command /world info
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world info <world>'
+    context: world info
 -   commandName: world list
     aliases: world list, world ls
     rootAliases: worlds, nworlds
@@ -4444,3 +6075,292 @@
         module: world
     simpleUsage: ' /world list '
     context: world list
+-   commandName: world load
+    aliases: world load
+    defaultLevel: admin
+    usageString: ' /world load [-e|--enable <e>] <world>'
+    oneLineDescription: Loads a world that is currently unloaded.
+    extendedDescription: The command will refuse to load a disabled world unless the
+        "-e" flag is specified and you have permission to run the "/world enable"
+        command.
+    module: world
+    permissionbase: nucleus.world.load
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.load.base
+        description: Allows the user to run the command /world load
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world load [-e|--enable <e>] <world>'
+    context: world load
+-   commandName: world modifiers
+    aliases: world modifiers, world listmodifiers
+    defaultLevel: admin
+    usageString: ' /world modifiers '
+    oneLineDescription: Shows available modifiers for use when creating a world.
+    module: world
+    permissionbase: nucleus.world.create
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.create.base
+        description: Allows the user to run the command /world create
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world modifiers '
+    context: world modifiers
+-   commandName: world presets
+    aliases: world presets, world listpresets
+    defaultLevel: admin
+    usageString: ' /world presets '
+    oneLineDescription: Shows available presets for use when creating a world.
+    module: world
+    permissionbase: nucleus.world.create
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.create.base
+        description: Allows the user to run the command /world create
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world presets '
+    context: world presets
+-   commandName: world rename
+    aliases: world rename
+    defaultLevel: admin
+    usageString: ' /world rename <world> <new name>'
+    oneLineDescription: Allows you to rename and unloaded world.
+    extendedDescription: It is important to note that the world in question MUST be
+        unloaded. If you cannot unload the world, consider stopping your server and
+        renaming the world using an NBT editor on the world dat file.
+    module: world
+    permissionbase: nucleus.world.rename
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.rename.base
+        description: Allows the user to run the command /world rename
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world rename <world> <new name>'
+    context: world rename
+-   commandName: world setdifficulty
+    aliases: world setdifficulty, world difficulty
+    defaultLevel: admin
+    usageString: ' /world setdifficulty <difficulty> [<world>]'
+    oneLineDescription: Sets the difficulty of a world.
+    module: world
+    permissionbase: nucleus.world.setdifficulty
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.setdifficulty.base
+        description: Allows the user to run the command /world setdifficulty
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world setdifficulty <difficulty> [<world>]'
+    context: world setdifficulty
+-   commandName: world setgamemode
+    aliases: world setgamemode, world setgm, world gamemode, world gm
+    defaultLevel: admin
+    usageString: ' /world setgamemode game mode [<world>]'
+    oneLineDescription: Sets the gamemode of a world.
+    module: world
+    permissionbase: nucleus.world.setgamemode
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.force-gamemode.override
+        description: If granted and the Nucleus per-world gamemodes are enforced,
+            the player will not have their gamemode changed.
+        defaultLevel: admin
+        module: world
+    -   permission: nucleus.world.setgamemode.base
+        description: Allows the user to run the command /world setgamemode
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world setgamemode game mode [<world>]'
+    context: world setgamemode
+-   commandName: world sethardcore
+    aliases: world sethardcore
+    defaultLevel: admin
+    usageString: ' /world sethardcore [<world>] <true|false>'
+    oneLineDescription: Sets whether a world has hardcore mode enabled.
+    module: world
+    permissionbase: nucleus.world.sethardcore
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.sethardcore.base
+        description: Allows the user to run the command /world sethardcore
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world sethardcore [<world>] <true|false>'
+    context: world sethardcore
+-   commandName: world setkeepspawnloaded
+    aliases: world setkeepspawnloaded
+    defaultLevel: admin
+    usageString: ' /world setkeepspawnloaded [<world>] <true|false>'
+    oneLineDescription: Sets whether a world will keep the chunks around it's spawn
+        point loaded.
+    module: world
+    permissionbase: nucleus.world.setkeepspawnloaded
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.setkeepspawnloaded.base
+        description: Allows the user to run the command /world setkeepspawnloaded
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world setkeepspawnloaded [<world>] <true|false>'
+    context: world setkeepspawnloaded
+-   commandName: world setloadonstartup
+    aliases: world setloadonstartup
+    defaultLevel: admin
+    usageString: ' /world setloadonstartup [<world>] <true|false>'
+    oneLineDescription: Sets whether a world will load on startup.
+    module: world
+    permissionbase: nucleus.world.setloadonstartup
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.setloadonstartup.base
+        description: Allows the user to run the command /world setloadonstartup
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world setloadonstartup [<world>] <true|false>'
+    context: world setloadonstartup
+-   commandName: world setpvpenabled
+    aliases: world setpvpenabled, world setpvp
+    defaultLevel: admin
+    usageString: ' /world setpvpenabled [<world>] <true|false>'
+    oneLineDescription: Sets whether a world has PVP enabled.
+    module: world
+    permissionbase: nucleus.world.setpvpenabled
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.setpvpenabled.base
+        description: Allows the user to run the command /world setpvpenabled
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world setpvpenabled [<world>] <true|false>'
+    context: world setpvpenabled
+-   commandName: world setspawn
+    aliases: world setspawn
+    defaultLevel: admin
+    usageString: ' /world setspawn [<world> <x> <y> <z>]'
+    oneLineDescription: Sets the spawn point of a world.
+    module: world
+    permissionbase: nucleus.world.setspawn
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.setspawn.base
+        description: Allows the user to run the command /world setspawn
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world setspawn [<world> <x> <y> <z>]'
+    context: world setspawn
+-   commandName: world spawn
+    aliases: world spawn
+    defaultLevel: admin
+    usageString: ' /world spawn '
+    oneLineDescription: Teleports to world spawn.
+    module: world
+    permissionbase: nucleus.world.spawn
+    warmup: true
+    cooldown: true
+    cost: true
+    permissions:
+    -   permission: nucleus.world.spawn.exempt.cooldown
+        description: Allows the user to bypass the cooldown for /world spawn
+        defaultLevel: admin
+        module: world
+    -   permission: nucleus.world.spawn.exempt.warmup
+        description: Allows the user to bypass the warmup for /world spawn
+        defaultLevel: admin
+        module: world
+    -   permission: nucleus.world.spawn.exempt.cost
+        description: Allows the user to bypass the cost for /world spawn
+        defaultLevel: admin
+        module: world
+    -   permission: nucleus.world.spawn.base
+        description: Allows the user to run the command /world spawn
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world spawn '
+    context: world spawn
+-   commandName: world teleport
+    aliases: world teleport, world tp
+    defaultLevel: admin
+    usageString: ' /world teleport <world> [<player>]'
+    oneLineDescription: Teleports you, or another player, to the specified world.
+    extendedDescription: This command will teleport the target player to the target
+        world provided it is enabled. It will not enable a disabled world.
+    module: world
+    permissionbase: nucleus.world.teleport
+    warmup: true
+    cooldown: true
+    cost: true
+    essentialsEquivalents:
+    - world
+    isExactEssEquiv: true
+    essNotes: The world command in Essentials was just a warp command.
+    permissions:
+    -   permission: nucleus.world.teleport.exempt.cost
+        description: Allows the user to bypass the cost for /world teleport
+        defaultLevel: admin
+        module: world
+    -   permission: nucleus.world.teleport.exempt.cooldown
+        description: Allows the user to bypass the cooldown for /world teleport
+        defaultLevel: admin
+        module: world
+    -   permission: nucleus.world.teleport.others
+        description: Allows the user to teleport other players to other worlds.
+        defaultLevel: admin
+        module: world
+    -   permission: nucleus.world.teleport.base
+        description: Allows the user to run the command /world teleport
+        defaultLevel: admin
+        module: world
+    -   permission: nucleus.world.teleport.exempt.warmup
+        description: Allows the user to bypass the warmup for /world teleport
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world teleport <world> [<player>]'
+    context: world teleport
+-   commandName: world unload
+    aliases: world unload
+    defaultLevel: admin
+    usageString: ' /world unload [-t|--transfer <t>] [-d|--disable <d>] <world>'
+    oneLineDescription: Unloads a world that is currently loaded.
+    extendedDescription: Unloads the specified world, and optionally disables it.
+        Simply unloading a world does not make is inaccessible, as it will remain
+        enabled, which will cause the world to load when someone tries to connect
+        to it. To disable the world at the same time as unloading it, add the "-d"
+        flag to the command.
+    module: world
+    permissionbase: nucleus.world.unload
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.world.unload.base
+        description: Allows the user to run the command /world unload
+        defaultLevel: admin
+        module: world
+    simpleUsage: ' /world unload [-t|--transfer <t>] [-d|--disable <d>] <world>'
+    context: world unload

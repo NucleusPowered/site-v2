@@ -18,6 +18,11 @@
     isExact: false
     notes: /gm does not toggle between survival and creative, use /gmt for that
 -   essentialsCommands:
+    - gmt
+    nucleusEquiv: []
+    isExact: true
+    notes: ''
+-   essentialsCommands:
     - gma
     - adventure
     nucleusEquiv:
@@ -818,3 +823,8 @@
     - nwarpset
     isExact: true
     notes: ''
+-   essentialsCommands:
+    - world
+    nucleusEquiv: []
+    isExact: true
+    notes: The world command in Essentials was just a warp command.

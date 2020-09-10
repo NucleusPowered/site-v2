@@ -1237,10 +1237,6 @@
     description: Allows the user to run the command /nick, delnick
     defaultLevel: admin
     module: nickname
--   permission: nucleus.nick.colour
-    description: Allows the user to colour their nickname.
-    defaultLevel: admin
-    module: nickname
 -   permission: nucleus.nick.exempt.cooldown
     description: Allows the user to bypass the cooldown for /nick
     defaultLevel: admin
@@ -1256,10 +1252,6 @@
 -   permission: nucleus.nick.others
     description: Allows the user to target other players using the command "nick,
         delnick".
-    defaultLevel: admin
-    module: nickname
--   permission: nucleus.nick.style
-    description: Allows the user to style their nickname.
     defaultLevel: admin
     module: nickname
 -   permission: nucleus.note.base
