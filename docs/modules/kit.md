@@ -13,16 +13,16 @@ Kits are sets of items that can be given out to players when a command is run. K
 using permissions, and can be set to only be redeemable once per set time frame. You can also create a kit that is given to
 every new player - what we call the "first join kit".
 
-## Per-warp permissions
+## Per-kit permissions
 
-**Nucleus assigns a permission for each warp. Users MUST have the permission for the SPECIFIC warp to view and use a warp,
+**Nucleus assigns a permission for each kit. Users MUST have the permission for the SPECIFIC kit to view and use a kit,
 as well as the general permission to perform an action.** 
 
-Each warp will be assigned the permission `nucleus.warps.[warp name]` (where `[warp name]` is replaced with the name of your warp **lowercase**).
-The player will be required to have before using it. You will also need to ensure they have access to the warp command
-if that it how you want them to use the warps - `nucleus.warp.base`.
+Each warp will be assigned the permission `nucleus.kits.[kit name]` (where `[kit name]` is replaced with the name of your kit **lowercase**).
+The player will be required to have before using it. You will also need to ensure they have access to the kit command
+if that it how you want them to use the kits - `nucleus.kits.base`.
 
-For example, if you have the warp `warp1`, a user will need both `nucleus.warps.warp1` and `nucleus.warp.base` permissions.
+For example, if you have the kit `kit1`, a user will need both `nucleus.kits.kit1` and `nucleus.kit.base` permissions.
 
 ## Using a kit
 
