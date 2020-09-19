@@ -6,7 +6,7 @@ adddocslink: true
 type: howto
 ---
 
-_Updated 9th September 2020_
+_Updated 20th September 2020_
 
 Nucleus v2 is a mostly automatic upgrade from Nucleus v1.14.x, however there are some changes that server owners must perform to ensure continuation of service.
 
@@ -49,6 +49,11 @@ All aliases that were disabled will be re-enabled as the format of `commands.con
 changes that you may wish to keep.
 
 [Learn more about command management using the tutorial here](../tutorial/commandconfig).
+
+## The `/tp` alias now defaults to Minecraft's command, not Nucleus'
+
+This is to aid in mod compatibility. `/teleport` is still taken by Nucleus by default. If you wish `/tp` to be handled by Nucleus, set the alias to true in 
+`commands.conf`, as suggested in the above note.
 
 ## The `warps.separate-permissions` config option no longer exists
 
