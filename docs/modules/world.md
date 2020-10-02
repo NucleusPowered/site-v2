@@ -76,7 +76,7 @@ border from the old one, defaulting to 0 - instantaneous change.
 
 ## Pre-Generating Chunks
 
-For more information on _why_ you should do this, [see this entry in the FAQs.](../faqs.html#world-pregen)
+For more information on _why_ you should do this and how to do this in more detail, [see our How To page.](../howto/pregen.html)
 
 To pre-generate chunks in the world, run the command `/world border gen [world]`, where the world is optional if you are a player in a world. 
 Sponge will start pre-generating chunks. If you wish to stop the pre-generation early, use `/world border cancelgen [world]`. 

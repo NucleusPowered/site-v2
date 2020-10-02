@@ -52,6 +52,9 @@
         - name: "First Join Kits and Spawns"
           tagline: "Supporting new players with a first spawn location and an initial inventory"
           link: "howto/firsttime.html"
+        - name: "World Pre-Generation"
+          tagline: "Pre-generating chunks on the world to improve server performance"
+          link: "howto/pregen.html"
     - name: "General Reference"
       tagline: "Lists of commands, permissions and placeholder tokens"
       entries:
