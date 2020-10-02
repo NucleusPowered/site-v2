@@ -14,16 +14,16 @@ type: howto
 One of the biggest bottlenecks in vanilla Minecraft is generation of new chunks. Chunk generation is _slow_. When a player
 travels somewhere and loads a new chunk in, Minecraft checks the drive to see if a chunk already exists. If so, fine, load 
 the data and send it to the client! This loading process is actually quite slow, but we can speed that up by ensuring we are
-using SSDs to store our game data, and not slower hard drives.
+using SSDs to store our game data and not slower hard drives.
  
 However, if it doesn't exist, Minecraft has to work out what the new terrain will look like and create it. This does not 
 have anything to do with the type of storage you use, this is purely CPU bound, and this is an expensive process. If 
-you have many chunks being loaded by a fast moving player every tick, this can easily eat up your performance and your
+you have many chunks loaded by a fast moving player every tick, this can easily eat up your performance, and your
 server will lag as a result.
 
 To get around this, we recommend performing **chunk pre-generation**. While we cannot get away from having to generate
-chunks, we can control when this is done. Ideally, pre-generation would happen before you open a server to the public,
-but you can pre-generate your world while players are playing on it, but lag should be expected as a result.
+chunks, we can control when this is done. Ideally, pre-generation would happen before you open a server to the public.
+You can pre-generate your world while players are playing on it, however, you should expect server lag as a result.
 
 ## Deciding what to pre-generate
 
