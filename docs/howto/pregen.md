@@ -1,6 +1,6 @@
 ---
 layout: howto
-header: How to Pre-Generate worlds
+header: How to Pre-Generate Worlds
 lead: Learn how to help server performance by pre-generating worlds
 adddocslink: true
 keywords: pregen chunks world
