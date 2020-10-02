@@ -4168,19 +4168,41 @@
 -   commandName: mute
     aliases: mute
     defaultLevel: staff
-    usageString: ' /mute <user>'
-    oneLineDescription: Unmutes the specified player.
+    usageString: ' /mute <user> [<duration>] [<reason…>]'
+    oneLineDescription: Mutes the specified player.
     module: mute
-    permissionbase: nucleus.mute.unmute
+    permissionbase: nucleus.mute
     warmup: false
     cooldown: false
     cost: false
+    essentialsEquivalents:
+    - mute
+    - silence
+    isExactEssEquiv: false
+    essNotes: Unmuting a player should be done via the /unmute command.
     permissions:
-    -   permission: nucleus.mute.unmute
-        description: If set in config, this permission is required to unmute players.
+    -   permission: nucleus.mute.notify
+        description: Notifies the user about mutes when they occur.
         defaultLevel: staff
         module: mute
-    simpleUsage: ' /mute <user>'
+    -   permission: nucleus.mute.exempt.target
+        description: Exempts the user from being a target of the /mute command.
+        defaultLevel: staff
+        module: mute
+    -   permission: nucleus.mute.seemutedchat
+        description: If true and enabled in the config, players with this permission
+            will see chat from muted players.
+        defaultLevel: admin
+        module: mute
+    -   permission: nucleus.mute.base
+        description: Allows the user to run the command /mute
+        defaultLevel: staff
+        module: mute
+    -   permission: nucleus.mute.exempt.length
+        description: Allows the user to bypass the maximum mute length.
+        defaultLevel: admin
+        module: mute
+    simpleUsage: ' /mute <user> [<duration>] [<reason…>]'
     context: mute
 -   commandName: voice
     aliases: voice
@@ -5753,7 +5775,7 @@
     defaultLevel: admin
     usageString: |4-
          /world border [<world>]
-         /world border gen [-a <a>] [-r <r>] [-f|--frequency <f>] [-t|--tickpercent <t>] [--save <save>] [<world>]
+         /world border gen [-r|--restart <r>] [-f|--frequency <f>] [-u|--ultra-aggressive <u>] [-t|--tickpercent <t>] [--save <save>] [-a|--aggressive <a>] [<world>]
          /world border set [<world>] <x> <z> <diameter> [<delay>]|<diameter> [<delay>]
          /world border reset [<world>]
          /world border cancelgen [<world>]
@@ -5791,21 +5813,22 @@
     aliases: world border gen, world border genchunks, world border generatechunks,
         world border chunkgen
     defaultLevel: admin
-    usageString: ' /world border gen [-a <a>] [-r <r>] [-f|--frequency <f>] [-t|--tickpercent
-        <t>] [--save <save>] [<world>]'
+    usageString: ' /world border gen [-r|--restart <r>] [-f|--frequency <f>] [-u|--ultra-aggressive
+        <u>] [-t|--tickpercent <t>] [--save <save>] [-a|--aggressive <a>] [<world>]'
     oneLineDescription: Generates chunks up to the world border.
     extendedDescription: |-
         When invoked, Nucleus will start generating chunks up to the world border. During this time, the server will be susceptible to reduced performance.
 
         There are a few flags you can use:
 
-        * -a - aggressive mode, turns off memory checks
-        * -r - restart pregeneration if the server is restarted (use with caution, does not disable if the pregen causes the crash)
-        * -t [1-100] - the percentage of a tick to use when generating, defaults to 80% (90% with aggressive mode)
-        * -f [1-100] - the number of ticks to wait after a generation to perform the next generation - defaults to Sponge default (3 in aggressive mode)
-        * --save [timespan] - frequency to peform a save at, defaults to 20 seconds (30 seconds with aggressive mode)
+        * -a - aggressive mode, turns off memory checks, saves less often, uses every three ticks (instead of four) to generate
+        * -u - ultra-aggressive mode, turns off memory checks, saves every 2 minutes, uses every tick to generate
+        * -r - restart pre-generation if the server is restarted (use with caution, does not disable if the pre-gen causes the crash)
+        * -t [1-100] - the percentage of a tick to use when generating, defaults to 80% (90% with aggressive mode, 95% with ultra aggressive mode)
+        * -f [1-100] - the number of ticks to wait after a generation to perform the next generation - defaults to Sponge default (3 in aggressive mode, 1 in ultra aggressive mode)
+        * --save [timespan] - frequency to peform a save at, defaults to 20 seconds (30 seconds with aggressive mode, 120 for ultra aggressive)
 
-        If you want to maximise generation, run "/world border gen -a -t 100 -f 1", but be prepared for lag!
+        If you want to maximise generation, run "/world border gen -u -t 100 -f 1", but be prepared for lag!
     module: world
     permissionbase: nucleus.world.border.gen
     warmup: false
@@ -5821,8 +5844,8 @@
         description: Allows the user to run the command /border gen
         defaultLevel: admin
         module: world
-    simpleUsage: ' /world border gen [-a <a>] [-r <r>] [-f|--frequency <f>] [-t|--tickpercent
-        <t>] [--save <save>] [<world>]'
+    simpleUsage: ' /world border gen [-r|--restart <r>] [-f|--frequency <f>] [-u|--ultra-aggressive
+        <u>] [-t|--tickpercent <t>] [--save <save>] [-a|--aggressive <a>] [<world>]'
     context: world border gen
 -   commandName: world border reset
     aliases: world border reset

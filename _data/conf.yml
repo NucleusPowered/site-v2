@@ -529,14 +529,16 @@ spawn: "# If true, if a respawn would be back to a bed, Nucleus will override th
     \ false, sends them to the world spawn.\n    on-spawn-command=false\n    # The\
     \ name of the world to use as the server spawn. If this is invalid, the default\
     \ world is used instead.\n    target-spawn-world=world\n}\n# If true, players\
-    \ will be sent to the default world spawn on login, unless they are sent to the\
-    \ first login spawn, or they have the \"nucleus.spawn.exempt.login\" permission.\n\
-    spawn-on-login=false\n# If \"spawn-on-login\" is true, if a player logs in and\
-    \ is on any of the worlds listed here, they will NOT be redirected to the spawn\
-    \ point.\n# \n# This supports both world names and world UUIDs.\nspawn-on-login-exempt-worlds=[]\n\
-    # If true, using /spawn will attempt to find a safe place. If false, the teleportation\
-    \ will always directly send the player to the location with no safety checks.\n\
-    use-safe-spawn=true\n"
+    \ require the permission \"nucleus.spawn.worlds.<worldname>\" to spawn in a specific\
+    \ world, where worldname is the name of the world in lowercase.\nper-world-permissions=false\n\
+    # If true, players will be sent to the default world spawn on login, unless they\
+    \ are sent to the first login spawn, or they have the \"nucleus.spawn.exempt.login\"\
+    \ permission.\nspawn-on-login=false\n# If \"spawn-on-login\" is true, if a player\
+    \ logs in and is on any of the worlds listed here, they will NOT be redirected\
+    \ to the spawn point.\n# \n# This supports both world names and world UUIDs.\n\
+    spawn-on-login-exempt-worlds=[]\n# If true, using /spawn will attempt to find\
+    \ a safe place. If false, the teleportation will always directly send the player\
+    \ to the location with no safety checks.\nuse-safe-spawn=true\n"
 kick: "# If \"use-permission-level\" is true, players can only kick players that have\
     \ a lower permission level than themselves.\n# \n# The permission level for kicking\
     \ is specified by adding the \"nucleus.kick.level\" permission option/meta to\

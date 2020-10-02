@@ -582,6 +582,14 @@
     isExact: true
     notes: ''
 -   essentialsCommands:
+    - mute
+    - silence
+    nucleusEquiv:
+    - mute
+    - nmute
+    isExact: false
+    notes: Unmuting a player should be done via the /unmute command.
+-   essentialsCommands:
     - nick
     - nickname
     nucleusEquiv:
