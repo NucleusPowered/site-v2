@@ -435,11 +435,16 @@ rtp: "# The number of times to try to find a safe teleport spot when using /rtp 
     \ in which case they will give you an ID to use here.\n        default-method=\"\
     nucleus:default\"\n        maximum-y=255\n        min-radius=0\n        minimum-y=0\n\
     \        radius=30000\n    }\n}\n"
-core: "# If true, if you log in and have the \"wildcard\" permission (either * or\
-    \ 'nucleus'), you will be warned of the potential issues caused by the wildcard.\
-    \ If you use the wildcard and are happy with this, set this to false.\ncheck-for-wildcard=true\n\
-    # If set, this command will be suggested if a player clicks on the user name in\
-    \ chat in templated messages. Use {{player}} to indicate the player name.\ncommand-on-name-click=\"\
+core: "# If true, if a player joins and Nucleus thinks they are a new player, Nucleus\
+    \ will check Sponge's \"first date played\" data on this player before performing\
+    \ first join tasks on them, only treating the player as a new player if Sponge\
+    \ hasn't seen them before.\n# \n# If false, Nucleus will make that determination\
+    \ on its own.\ncheck-first-date-played-on-first-joined=true\n# If true, if you\
+    \ log in and have the \"wildcard\" permission (either * or 'nucleus'), you will\
+    \ be warned of the potential issues caused by the wildcard. If you use the wildcard\
+    \ and are happy with this, set this to false.\ncheck-for-wildcard=true\n# If set,\
+    \ this command will be suggested if a player clicks on the user name in chat in\
+    \ templated messages. Use {{player}} to indicate the player name.\ncommand-on-name-click=\"\
     /msg {{subject}}\"\n# If true, commands executed by the console can affect players\
     \ that normally have an exempt permission against the command.\nconsole-overrides-exemptions=true\n\
     # Specifies the path to save nucleus data files in. By default, files are saved\

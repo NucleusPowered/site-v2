@@ -709,11 +709,12 @@
 -   commandName: nucleus
     aliases: nucleus
     defaultLevel: admin
-    usageString: " /nucleus \n /nucleus setupperms -g [-y]|[-r|--reset <r>] [-i|--inherit\
-        \ <i>] <Nucleus Role> <Permission Group>\n /nucleus debug \n /nucleus reload\
-        \ \n /nucleus resetuser [-a|--all <a>] <user>|<UUID>\n /nucleus getuser <UUID>|<name>\n\
-        \ /nucleus docgen \n /nucleus save \n /nucleus printperms \n /nucleus nucleus\
-        \ \n /nucleus compatibility \n /nucleus info \n /nucleus rebuildusercache "
+    usageString: " /nucleus \n /nucleus debug \n /nucleus save \n /nucleus nucleus\
+        \ \n /nucleus setupperms -g [-y]|[-r|--reset <r>] [-i|--inherit <i>] <Nucleus\
+        \ Role> <Permission Group>\n /nucleus reload \n /nucleus resetuser [-a|--all\
+        \ <a>] <user>|<UUID>\n /nucleus getuser <UUID>|<name>\n /nucleus resetfirstjoin\
+        \ <user>\n /nucleus docgen \n /nucleus printperms \n /nucleus compatibility\
+        \ \n /nucleus info \n /nucleus rebuildusercache "
     oneLineDescription: Displays Nucleus version and module information.
     extendedDescription: The Nucleus command allows access to sub commands that administer
         the entire plugin.
@@ -944,6 +945,25 @@
         module: core
     simpleUsage: ' /nucleus reload '
     context: nucleus reload
+-   commandName: nucleus resetfirstjoin
+    aliases: nucleus resetfirstjoin
+    usageString: ' /nucleus resetfirstjoin <user>'
+    oneLineDescription: Resets a user's first join status.
+    extendedDescription: If this is run, the player it targets will be treated has
+        having joined the server for the first time the next timethey log in. Players
+        with the permission "nucleus.nucleus.firstjoin.exempt" will never be treated
+        as a new player.
+    module: core
+    permissionbase: nucleus.nucleus.resetfirstjoin
+    warmup: false
+    cooldown: false
+    cost: false
+    permissions:
+    -   permission: nucleus.nucleus.resetfirstjoin.base
+        description: Allows the user to run the command /resetfirstjoin
+        module: core
+    simpleUsage: ' /nucleus resetfirstjoin <user>'
+    context: nucleus resetfirstjoin
 -   commandName: nucleus resetuser
     aliases: nucleus resetuser
     defaultLevel: admin
@@ -4168,41 +4188,19 @@
 -   commandName: mute
     aliases: mute
     defaultLevel: staff
-    usageString: ' /mute <user> [<duration>] [<reason…>]'
-    oneLineDescription: Mutes the specified player.
+    usageString: ' /mute <user>'
+    oneLineDescription: Unmutes the specified player.
     module: mute
-    permissionbase: nucleus.mute
+    permissionbase: nucleus.mute.unmute
     warmup: false
     cooldown: false
     cost: false
-    essentialsEquivalents:
-    - mute
-    - silence
-    isExactEssEquiv: false
-    essNotes: Unmuting a player should be done via the /unmute command.
     permissions:
-    -   permission: nucleus.mute.notify
-        description: Notifies the user about mutes when they occur.
+    -   permission: nucleus.mute.unmute
+        description: If set in config, this permission is required to unmute players.
         defaultLevel: staff
         module: mute
-    -   permission: nucleus.mute.exempt.target
-        description: Exempts the user from being a target of the /mute command.
-        defaultLevel: staff
-        module: mute
-    -   permission: nucleus.mute.seemutedchat
-        description: If true and enabled in the config, players with this permission
-            will see chat from muted players.
-        defaultLevel: admin
-        module: mute
-    -   permission: nucleus.mute.base
-        description: Allows the user to run the command /mute
-        defaultLevel: staff
-        module: mute
-    -   permission: nucleus.mute.exempt.length
-        description: Allows the user to bypass the maximum mute length.
-        defaultLevel: admin
-        module: mute
-    simpleUsage: ' /mute <user> [<duration>] [<reason…>]'
+    simpleUsage: ' /mute <user>'
     context: mute
 -   commandName: voice
     aliases: voice
@@ -5621,11 +5619,11 @@
 -   commandName: warp delete
     aliases: warp delete, warp del
     rootAliases: delwarp, ndelwarp, remwarp, nremwarp, rmwarp, nrmwarp
-    defaultLevel: user
+    defaultLevel: admin
     usageString: ' /warp delete <warp>'
     oneLineDescription: Lists all warps on the server.
     module: warp
-    permissionbase: nucleus.warp.list
+    permissionbase: nucleus.warp.delete
     warmup: false
     cooldown: false
     cost: false
@@ -5636,9 +5634,9 @@
     isExactEssEquiv: true
     essNotes: ''
     permissions:
-    -   permission: nucleus.warp.list.base
-        description: Allows the user to run the command /warp list
-        defaultLevel: user
+    -   permission: nucleus.warp.delete.base
+        description: Allows the user to run the command /warp delete
+        defaultLevel: admin
         module: warp
     simpleUsage: ' /warp delete <warp>'
     context: warp delete

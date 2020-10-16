@@ -1297,6 +1297,10 @@
 -   permission: nucleus.nucleus.docgen.base
     description: Allows the user to run the command /docgen
     module: core
+-   permission: nucleus.nucleus.firstjoin.exempt
+    description: Ensures that the player with this permission is never treated as
+        a first time joiner, even if their data file is removed.
+    module: core
 -   permission: nucleus.nucleus.getuser.base
     description: Allows the user to run the command /nucleus getuser
     module: core
@@ -1315,6 +1319,9 @@
 -   permission: nucleus.nucleus.reload.base
     description: Allows the user to run the command /nucleus reload
     defaultLevel: admin
+    module: core
+-   permission: nucleus.nucleus.resetfirstjoin.base
+    description: Allows the user to run the command /resetfirstjoin
     module: core
 -   permission: nucleus.nucleus.resetuser.base
     description: Allows the user to run the command /nucleus resetuser
