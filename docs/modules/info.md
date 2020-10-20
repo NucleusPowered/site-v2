@@ -21,7 +21,7 @@ prefixed with an ampersand (`&`), and will convert URLs automatically where it s
 To update the file, simply edit the file, Nucleus will pick up the updated contents automatically. If you want a different (or no) title for the MOTD,
 this can be changed in the `main.conf` file, see `info.motd-title`.
 
-The MOTD supports links and placeholder tokens, see [this page to see how tokens and links can be created.](../configuration/links-and-tokens.html)
+The MOTD supports links and placeholder tokens, see [this page to see how tokens and links can be created.](../links-and-tokens.html)
 
 ## Server Info files
 
