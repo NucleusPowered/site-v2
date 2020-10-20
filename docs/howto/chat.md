@@ -36,11 +36,11 @@ the prefix based on group with the default settings, run:
 To give the player's name, or their chat, a default display colour, the "namecolour" and "chatcolour" permission options
 can be set. To give all mods dark purple names, a permission command you might use is: 
 
-{% include permissionblock.html cmdtype="groupPrefix,groupOption" user="mod" option="namecolour" value="5" %}
+{% include permissionblock.html cmdtype="groupOption" user="mod" option="namecolour" value="5" %}
 
 Similarly, for light blue chat text for the admin group:
 
-{% include permissionblock.html cmdtype="groupPrefix,groupOption" user="admin" option="chatcolour" value="b" %}
+{% include permissionblock.html cmdtype="groupOption" user="admin" option="chatcolour" value="b" %}
 
 The supplied colours are the standard Minecraft formatting codes.
 
