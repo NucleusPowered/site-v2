@@ -4188,7 +4188,46 @@
 -   commandName: mute
     aliases: mute
     defaultLevel: staff
-    usageString: ' /mute <user>'
+    usageString: ' /mute <user> [<duration>] [<reason…>]'
+    oneLineDescription: Mutes the specified player.
+    module: mute
+    permissionbase: nucleus.mute
+    warmup: false
+    cooldown: false
+    cost: false
+    essentialsEquivalents:
+    - mute
+    - silence
+    isExactEssEquiv: false
+    essNotes: Unmuting a player should be done via the /unmute command.
+    permissions:
+    -   permission: nucleus.mute.notify
+        description: Notifies the user about mutes when they occur.
+        defaultLevel: staff
+        module: mute
+    -   permission: nucleus.mute.exempt.target
+        description: Exempts the user from being a target of the /mute command.
+        defaultLevel: staff
+        module: mute
+    -   permission: nucleus.mute.seemutedchat
+        description: If true and enabled in the config, players with this permission
+            will see chat from muted players.
+        defaultLevel: admin
+        module: mute
+    -   permission: nucleus.mute.base
+        description: Allows the user to run the command /mute
+        defaultLevel: staff
+        module: mute
+    -   permission: nucleus.mute.exempt.length
+        description: Allows the user to bypass the maximum mute length.
+        defaultLevel: admin
+        module: mute
+    simpleUsage: ' /mute <user> [<duration>] [<reason…>]'
+    context: mute
+-   commandName: unmute
+    aliases: unmute
+    defaultLevel: staff
+    usageString: ' /unmute <user>'
     oneLineDescription: Unmutes the specified player.
     module: mute
     permissionbase: nucleus.mute.unmute
@@ -4200,8 +4239,8 @@
         description: If set in config, this permission is required to unmute players.
         defaultLevel: staff
         module: mute
-    simpleUsage: ' /mute <user>'
-    context: mute
+    simpleUsage: ' /unmute <user>'
+    context: unmute
 -   commandName: voice
     aliases: voice
     defaultLevel: admin
