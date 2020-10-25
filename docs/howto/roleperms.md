@@ -24,6 +24,11 @@ The following permissions automatically grant role defaults:
 
 **These do not, and will never, override any explicit permission that has been set.**
 
+> The owner, admin and mod permissions **do not** inherit other roles. To grant all permissions up to an including the owner
+> roles, you must grant **all** of the roles above.
+>
+> For example, granting `nucleus.owner` only grants the permissions marked  as owner, not admin, mod or user permissions.
+
 As an example, you give your moderators the `nucleus.mod` permission. This, for example, gives them permission to enter staff chat. However, maybe you don't want them to access this. If you set `nucleus.staffchat.base` as `false`, this will override `nucleus.mod`. The same can be said for parent permissions, if you set `nucleus.staffchat` to `false`, a check to `nucleus.staffchat.base` will return `false`, regardless of whether `nucleus.mod` is set.
 
 While this is cleaner than using `/nucleus setupperms`, you must be aware of the following:
