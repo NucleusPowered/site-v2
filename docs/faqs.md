@@ -33,7 +33,7 @@ Yeah, 1000 permission nodes can be daunting, and there is nothing stopping you, 
 Other plugins may also not function as intended, a good example is **GriefDefender**. **So, please, don't use the wildcard.**
 
 Instead, Nucleus offers a way to setup our suggested permission sets, that should get you off the ground. [You can learn
-more about how to set suggested permissions as part of our first time setup tutorial](tutorial/first/permissions.md).
+more about how to set suggested permissions as part of our first time setup tutorial](tutorial/first/permissions.html).
 
 ### What do your defaults give?
  
