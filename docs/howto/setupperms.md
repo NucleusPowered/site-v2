@@ -19,7 +19,8 @@ automatically update permissions when Nucleus is upgraded.
 
 ## First Time Setup
 
-### If you have setup your permission groups
+> If you have not created permission groups with your permissions plugin yet, do so before continuing. Consult your 
+> permissions' plugin documentation on how to do this.
 
 In general, you will already have the permission groups created in your permission plugin. To add the suggested permissions
 to the group, run:
@@ -51,13 +52,6 @@ As an example, to add `ADMIN`, `MOD` and `USER` permissions to the `administrato
 ```
 
 We recommend that you use permission group inheritance rather than this method, however.
-
-### If you have yet to set up permission groups
-
-While we generally suggest you set up your permission groups yourself to get yourself familiar with how your permissions plugin works, 
-Nucleus can create a `default`, `mod`, `admin` and `owner` group with the recommended Nucleus permissions ready to go.  
-
-To do so, run `/nucleus setupperms -g` and follow the prompts. 
 
 ## Updating Permissions After Nucleus Upgrade
 
