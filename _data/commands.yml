@@ -1,5 +1,5 @@
 -   commandName: blockzap
-    aliases: blockzap, zapblock
+    aliases: ' blockzap, zapblock'
     defaultLevel: ADMIN
     usageString: ' /blockzap <location>'
     oneLineDescription: Sets the target block to air.
@@ -35,7 +35,7 @@
     simpleUsage: ' /blockzap <location>'
     context: blockzap
 -   commandName: gamemode
-    aliases: gamemode, gm
+    aliases: ' gamemode, gm'
     defaultLevel: ADMIN
     usageString: " /gamemode <player> game mode|game mode|\n /gamemode gmt "
     oneLineDescription: Sets a player's game mode.
@@ -89,7 +89,7 @@
     simpleUsage: ' /gamemode <player> game mode|game mode|'
     context: gamemode
 -   commandName: gamemode gmt
-    aliases: gamemode gmt
+    aliases: ' gamemode gmt'
     defaultLevel: ADMIN
     usageString: ' /gamemode gmt '
     oneLineDescription: Toggles your game mode between survival and creative.
@@ -130,7 +130,7 @@
     simpleUsage: ' /gamemode gmt '
     context: gamemode gmt
 -   commandName: gma
-    aliases: gma, adventure
+    aliases: ' gma, adventure'
     defaultLevel: ADMIN
     usageString: ' /gma '
     oneLineDescription: Toggles your game mode to adventure.
@@ -168,7 +168,7 @@
     simpleUsage: ' /gma '
     context: gma
 -   commandName: gmc
-    aliases: gmc, creative
+    aliases: ' gmc, creative'
     defaultLevel: ADMIN
     usageString: ' /gmc '
     oneLineDescription: Toggles your game mode to creative.
@@ -206,7 +206,7 @@
     simpleUsage: ' /gmc '
     context: gmc
 -   commandName: gms
-    aliases: gms, survival
+    aliases: ' gms, survival'
     defaultLevel: ADMIN
     usageString: ' /gms '
     oneLineDescription: Toggles your game mode to survival.
@@ -244,7 +244,7 @@
     simpleUsage: ' /gms '
     context: gms
 -   commandName: gmsp
-    aliases: gmsp, spectator
+    aliases: ' gmsp, spectator'
     defaultLevel: ADMIN
     usageString: ' /gmsp '
     oneLineDescription: Toggles your game mode to spectator.
@@ -277,7 +277,7 @@
     simpleUsage: ' /gmsp '
     context: gmsp
 -   commandName: kill
-    aliases: kill
+    aliases: ' kill'
     defaultLevel: ADMIN
     usageString: ' /kill <subject>'
     oneLineDescription: Kill the specified player(s) and/or entities.
@@ -314,7 +314,7 @@
     simpleUsage: ' /kill <subject>'
     context: kill
 -   commandName: killentity
-    aliases: killentity
+    aliases: ' killentity'
     defaultLevel: ADMIN
     usageString: ' /killentity [-r <r>] [-w <w>] <type>*'
     oneLineDescription: Kills the specified entities.
@@ -353,7 +353,7 @@
     simpleUsage: ' /killentity [-r <r>] [-w <w>] <type>*'
     context: killentity
 -   commandName: stop
-    aliases: stop
+    aliases: ' stop'
     defaultLevel: ADMIN
     usageString: ' /stop [<message…>]'
     oneLineDescription: Stops the server.
@@ -370,7 +370,7 @@
     simpleUsage: ' /stop [<message…>]'
     context: stop
 -   commandName: sudo
-    aliases: sudo
+    aliases: ' sudo'
     defaultLevel: ADMIN
     usageString: ' /sudo <player> <command…>'
     oneLineDescription: Forces a player to run a command.
@@ -391,7 +391,7 @@
     simpleUsage: ' /sudo <player> <command…>'
     context: sudo
 -   commandName: tellplain
-    aliases: tellplain, plaintell, ptell
+    aliases: ' tellplain, plaintell, ptell'
     defaultLevel: ADMIN
     usageString: ' /tellplain <player|-> <message…>'
     oneLineDescription: Allows the user to send a message to a player without prefixes
@@ -411,7 +411,7 @@
     simpleUsage: ' /tellplain <player|-> <message…>'
     context: tellplain
 -   commandName: afk
-    aliases: afk, away
+    aliases: ' afk, away'
     defaultLevel: USER
     usageString: ' /afk '
     oneLineDescription: Toggles the player's AFK state.
@@ -433,7 +433,7 @@
     simpleUsage: ' /afk '
     context: afk
 -   commandName: afkkick
-    aliases: afkkick, kickafk
+    aliases: ' afkkick, kickafk'
     defaultLevel: ADMIN
     usageString: ' /afkkick [<reason…>]'
     oneLineDescription: Kicks all currently AFK players.
@@ -451,7 +451,7 @@
     simpleUsage: ' /afkkick [<reason…>]'
     context: afkkick
 -   commandName: afkrefresh
-    aliases: afkrefresh
+    aliases: ' afkrefresh'
     defaultLevel: ADMIN
     usageString: ' /afkrefresh '
     oneLineDescription: Invalidates the AFK permission cache.
@@ -470,7 +470,7 @@
     simpleUsage: ' /afkrefresh '
     context: afkrefresh
 -   commandName: back
-    aliases: back, return
+    aliases: ' back, return'
     defaultLevel: ADMIN
     usageString: ' /back [-b|--border <b>] [-f|--force <f>] '
     oneLineDescription: Allows a user to return to their last place before death or
@@ -515,7 +515,7 @@
     simpleUsage: ' /back [-b|--border <b>] [-f|--force <f>] '
     context: back
 -   commandName: clearback
-    aliases: clearback
+    aliases: ' clearback'
     defaultLevel: ADMIN
     usageString: ' /clearback [<user>]'
     oneLineDescription: Allows a user to clear another user's current "back" position.
@@ -532,7 +532,7 @@
     simpleUsage: ' /clearback [<user>]'
     context: clearback
 -   commandName: ban
-    aliases: ban
+    aliases: ' ban'
     defaultLevel: MOD
     usageString: ' /ban <user uuid>|<user>|<name> [<reason…>]'
     oneLineDescription: Bans a player.
@@ -565,7 +565,7 @@
     simpleUsage: ' /ban <user uuid>|<user>|<name> [<reason…>]'
     context: ban
 -   commandName: checkban
-    aliases: checkban
+    aliases: ' checkban'
     defaultLevel: MOD
     usageString: ' /checkban <user uuid>|<user>'
     oneLineDescription: Checks the ban status for a player.
@@ -582,7 +582,7 @@
     simpleUsage: ' /checkban <user uuid>|<user>'
     context: checkban
 -   commandName: tempban
-    aliases: tempban
+    aliases: ' tempban'
     defaultLevel: MOD
     usageString: ' /tempban <user> <duration> [<reason…>]'
     oneLineDescription: Temporarily bans a player.
@@ -615,7 +615,7 @@
     simpleUsage: ' /tempban <user> <duration> [<reason…>]'
     context: tempban
 -   commandName: unban
-    aliases: unban, pardon
+    aliases: ' unban, pardon'
     defaultLevel: MOD
     usageString: ' /unban <user uuid>|<user>'
     oneLineDescription: Unbans a player.
@@ -637,7 +637,7 @@
     simpleUsage: ' /unban <user uuid>|<user>'
     context: unban
 -   commandName: me
-    aliases: me, action
+    aliases: ' me, action'
     defaultLevel: USER
     usageString: ' /me <message…>'
     oneLineDescription: Formats the next chat message as an action, using the format
@@ -673,7 +673,7 @@
     simpleUsage: ' /me <message…>'
     context: me
 -   commandName: commandspy
-    aliases: commandspy
+    aliases: ' commandspy'
     defaultLevel: ADMIN
     usageString: ' /commandspy [<true|false>]'
     oneLineDescription: Enables or disables seeing commands that others have run.
@@ -690,7 +690,7 @@
     simpleUsage: ' /commandspy [<true|false>]'
     context: commandspy
 -   commandName: commandinfo
-    aliases: commandinfo
+    aliases: ' commandinfo'
     defaultLevel: ADMIN
     usageString: ' /commandinfo <command>'
     oneLineDescription: Returns information about a command
@@ -707,7 +707,7 @@
     simpleUsage: ' /commandinfo <command>'
     context: commandinfo
 -   commandName: nucleus
-    aliases: nucleus
+    aliases: ' nucleus'
     defaultLevel: ADMIN
     usageString: " /nucleus \n /nucleus debug \n /nucleus save \n /nucleus nucleus\
         \ \n /nucleus setupperms [-r|--reset <r>] [-i|--inherit <i>] <Nucleus Role>\
@@ -731,7 +731,7 @@
     simpleUsage: ' /nucleus '
     context: nucleus
 -   commandName: nucleus compatibility
-    aliases: nucleus compatibility, nucleus compat
+    aliases: ' nucleus compatibility, nucleus compat'
     defaultLevel: ADMIN
     usageString: ' /nucleus compatibility '
     oneLineDescription: Lists any compatibility issues that have been detected.
@@ -748,7 +748,7 @@
     simpleUsage: ' /nucleus compatibility '
     context: nucleus compatibility
 -   commandName: nucleus debug
-    aliases: nucleus debug
+    aliases: ' nucleus debug'
     defaultLevel: ADMIN
     usageString: " /nucleus debug \n /nucleus debug verifycmds \n /nucleus debug getuuids\
         \ <user>\n /nucleus debug refreshuniquevisitors "
@@ -766,7 +766,7 @@
     simpleUsage: ' /nucleus debug '
     context: nucleus debug
 -   commandName: nucleus debug getuuids
-    aliases: nucleus debug getuuids
+    aliases: ' nucleus debug getuuids'
     defaultLevel: ADMIN
     usageString: ' /nucleus debug getuuids <user>'
     oneLineDescription: Gets all UUIDs that appear to be registered to a username.
@@ -783,7 +783,7 @@
     simpleUsage: ' /nucleus debug getuuids <user>'
     context: nucleus debug getuuids
 -   commandName: nucleus debug refreshuniquevisitors
-    aliases: nucleus debug refreshuniquevisitors
+    aliases: ' nucleus debug refreshuniquevisitors'
     defaultLevel: ADMIN
     usageString: ' /nucleus debug refreshuniquevisitors '
     oneLineDescription: Refreshes the {{uniquecount}} token, in case it's out of sync.
@@ -800,7 +800,7 @@
     simpleUsage: ' /nucleus debug refreshuniquevisitors '
     context: nucleus debug refreshuniquevisitors
 -   commandName: nucleus debug verifycmds
-    aliases: nucleus debug verifycmds
+    aliases: ' nucleus debug verifycmds'
     defaultLevel: ADMIN
     usageString: ' /nucleus debug verifycmds '
     oneLineDescription: Verifies that all command keys are set correctly
@@ -817,7 +817,7 @@
     simpleUsage: ' /nucleus debug verifycmds '
     context: nucleus debug verifycmds
 -   commandName: nucleus docgen
-    aliases: nucleus docgen
+    aliases: ' nucleus docgen'
     defaultLevel: NONE
     usageString: ' /nucleus docgen '
     oneLineDescription: Generates Nucleus documentation data files
@@ -834,7 +834,7 @@
     simpleUsage: ' /nucleus docgen '
     context: nucleus docgen
 -   commandName: nucleus getuser
-    aliases: nucleus getuser
+    aliases: ' nucleus getuser'
     defaultLevel: NONE
     usageString: ' /nucleus getuser <UUID>|<name>'
     oneLineDescription: Gets or refreshes a user's entry in the username cache.
@@ -855,7 +855,7 @@
     simpleUsage: ' /nucleus getuser <UUID>|<name>'
     context: nucleus getuser
 -   commandName: nucleus info
-    aliases: nucleus info
+    aliases: ' nucleus info'
     defaultLevel: OWNER
     usageString: ' /nucleus info '
     oneLineDescription: Creates a file in the server root directory containing information
@@ -873,7 +873,7 @@
     simpleUsage: ' /nucleus info '
     context: nucleus info
 -   commandName: nucleus nucleus
-    aliases: nucleus nucleus
+    aliases: ' nucleus nucleus'
     defaultLevel: ADMIN
     usageString: ' /nucleus nucleus '
     oneLineDescription: Clears the in-memory cache of users who have logged on in
@@ -891,7 +891,7 @@
     simpleUsage: ' /nucleus nucleus '
     context: nucleus nucleus
 -   commandName: nucleus printperms
-    aliases: nucleus printperms
+    aliases: ' nucleus printperms'
     defaultLevel: ADMIN
     usageString: ' /nucleus printperms '
     oneLineDescription: Prints all permissions registered in Nucleus.
@@ -908,7 +908,7 @@
     simpleUsage: ' /nucleus printperms '
     context: nucleus printperms
 -   commandName: nucleus rebuildusercache
-    aliases: nucleus rebuildusercache
+    aliases: ' nucleus rebuildusercache'
     defaultLevel: OWNER
     usageString: ' /nucleus rebuildusercache '
     oneLineDescription: Rebuild the Nucleus user cache.
@@ -930,7 +930,7 @@
     simpleUsage: ' /nucleus rebuildusercache '
     context: nucleus rebuildusercache
 -   commandName: nucleus reload
-    aliases: nucleus reload
+    aliases: ' nucleus reload'
     defaultLevel: ADMIN
     usageString: ' /nucleus reload '
     oneLineDescription: Reloads Nucleus' configuration files.
@@ -950,7 +950,7 @@
     simpleUsage: ' /nucleus reload '
     context: nucleus reload
 -   commandName: nucleus resetfirstjoin
-    aliases: nucleus resetfirstjoin
+    aliases: ' nucleus resetfirstjoin'
     defaultLevel: NONE
     usageString: ' /nucleus resetfirstjoin <user>'
     oneLineDescription: Resets a user's first join status.
@@ -971,7 +971,7 @@
     simpleUsage: ' /nucleus resetfirstjoin <user>'
     context: nucleus resetfirstjoin
 -   commandName: nucleus resetuser
-    aliases: nucleus resetuser
+    aliases: ' nucleus resetuser'
     defaultLevel: OWNER
     usageString: ' /nucleus resetuser [-a|--all <a>] <user>|<UUID>'
     oneLineDescription: Deletes all data in Nucleus, and optionally, Minecraft, for
@@ -993,7 +993,7 @@
     simpleUsage: ' /nucleus resetuser [-a|--all <a>] <user>|<UUID>'
     context: nucleus resetuser
 -   commandName: nucleus save
-    aliases: nucleus save
+    aliases: ' nucleus save'
     defaultLevel: ADMIN
     usageString: ' /nucleus save '
     oneLineDescription: Saves all files.
@@ -1010,7 +1010,7 @@
     simpleUsage: ' /nucleus save '
     context: nucleus save
 -   commandName: nucleus setupperms
-    aliases: nucleus setupperms, nucleus setperms
+    aliases: ' nucleus setupperms, nucleus setperms'
     defaultLevel: OWNER
     usageString: ' /nucleus setupperms [-r|--reset <r>] [-i|--inherit <i>] <Nucleus
         Role> <Permission Group>'
@@ -1040,7 +1040,7 @@
         Role> <Permission Group>'
     context: nucleus setupperms
 -   commandName: nuserprefs
-    aliases: nuserprefs, userprefs
+    aliases: ' nuserprefs, userprefs'
     defaultLevel: USER
     usageString: ' /nuserprefs [<user>] [<preference> [value]]'
     oneLineDescription: Gets and sets Nucleus user preferences.
@@ -1069,7 +1069,7 @@
     simpleUsage: ' /nuserprefs [<user>] [<preference> [value]]'
     context: nuserprefs
 -   commandName: setnucleuslanguage
-    aliases: setnucleuslanguage, setnuclang
+    aliases: ' setnucleuslanguage, setnuclang'
     defaultLevel: USER
     usageString: ' /setnucleuslanguage [<user>] <locale>'
     oneLineDescription: Sets the Nucleus language for self or a given player.
@@ -1092,7 +1092,7 @@
     simpleUsage: ' /setnucleuslanguage [<user>] <locale>'
     context: setnucleuslanguage
 -   commandName: update-messages
-    aliases: update-messages
+    aliases: ' update-messages'
     defaultLevel: OWNER
     usageString: ' /update-messages [-y <y>] '
     oneLineDescription: Scans the messages file for keys that might not include all
@@ -1110,7 +1110,7 @@
     simpleUsage: ' /update-messages [-y <y>] '
     context: update-messages
 -   commandName: anvil
-    aliases: anvil
+    aliases: ' anvil'
     defaultLevel: ADMIN
     usageString: ' /anvil '
     oneLineDescription: Opens an anvil window so users can repair and rename items.
@@ -1139,7 +1139,7 @@
     simpleUsage: ' /anvil '
     context: anvil
 -   commandName: enchantingtable
-    aliases: enchantingtable, enchanttable, etable
+    aliases: ' enchantingtable, enchanttable, etable'
     defaultLevel: ADMIN
     usageString: ' /enchantingtable '
     oneLineDescription: Opens an enchanting table window so users can enchant items.
@@ -1168,7 +1168,7 @@
     simpleUsage: ' /enchantingtable '
     context: enchantingtable
 -   commandName: workbench
-    aliases: workbench, wb, craft
+    aliases: ' workbench, wb, craft'
     defaultLevel: ADMIN
     usageString: ' /workbench '
     oneLineDescription: Opens a crafting table window so users can craft.
@@ -1197,7 +1197,7 @@
     simpleUsage: ' /workbench '
     context: workbench
 -   commandName: lockweather
-    aliases: lockweather, killweather
+    aliases: ' lockweather, killweather'
     defaultLevel: ADMIN
     usageString: ' /lockweather [<world>] [<true|false>]'
     oneLineDescription: Locks the weather on the specified world.
@@ -1214,7 +1214,7 @@
     simpleUsage: ' /lockweather [<world>] [<true|false>]'
     context: lockweather
 -   commandName: time
-    aliases: time
+    aliases: ' time'
     defaultLevel: USER
     usageString: |4-
          /time [<world>]
@@ -1249,7 +1249,7 @@
     simpleUsage: ' /time [<world>]'
     context: time
 -   commandName: time set
-    aliases: time set
+    aliases: ' time set'
     rootAliases: settime, nsettime, timeset, ntimeset
     defaultLevel: ADMIN
     usageString: ' /time set [<world>] <time>'
@@ -1285,7 +1285,7 @@
     simpleUsage: ' /time set [<world>] <time>'
     context: time set
 -   commandName: weather
-    aliases: weather
+    aliases: ' weather'
     defaultLevel: ADMIN
     usageString: ' /weather [<world>] <weather> [<duration>]'
     oneLineDescription: Sets the weather on the specified world.
@@ -1327,7 +1327,7 @@
     simpleUsage: ' /weather [<world>] <weather> [<duration>]'
     context: weather
 -   commandName: exp
-    aliases: exp, experience, xp
+    aliases: ' exp, experience, xp'
     defaultLevel: ADMIN
     usageString: |4-
          /exp [<player>]
@@ -1353,7 +1353,7 @@
     simpleUsage: ' /exp [<player>]'
     context: exp
 -   commandName: exp give
-    aliases: exp give
+    aliases: ' exp give'
     defaultLevel: ADMIN
     usageString: ' /exp give [<player>] <level>|<experience>'
     oneLineDescription: Gives experience to the specified player.
@@ -1373,7 +1373,7 @@
     simpleUsage: ' /exp give [<player>] <level>|<experience>'
     context: exp give
 -   commandName: exp set
-    aliases: exp set
+    aliases: ' exp set'
     defaultLevel: ADMIN
     usageString: ' /exp set [<player>] <level>|<experience>'
     oneLineDescription: Sets the specified player's experience.
@@ -1393,7 +1393,7 @@
     simpleUsage: ' /exp set [<player>] <level>|<experience>'
     context: exp set
 -   commandName: exp take
-    aliases: exp take
+    aliases: ' exp take'
     defaultLevel: ADMIN
     usageString: ' /exp take [<player>] <level>|<experience>'
     oneLineDescription: Removes experience from the specified player.
@@ -1414,7 +1414,7 @@
     simpleUsage: ' /exp take [<player>] <level>|<experience>'
     context: exp take
 -   commandName: fly
-    aliases: fly
+    aliases: ' fly'
     defaultLevel: ADMIN
     usageString: ' /fly [<player>] [<true|false>]'
     oneLineDescription: Set specified player's fly mode.
@@ -1451,7 +1451,7 @@
     simpleUsage: ' /fly [<player>] [<true|false>]'
     context: fly
 -   commandName: freezeplayer
-    aliases: freezeplayer, freeze
+    aliases: ' freezeplayer, freeze'
     defaultLevel: ADMIN
     usageString: ' /freezeplayer [<user>] [<true|false>]'
     oneLineDescription: Freezes a player in place.
@@ -1484,7 +1484,7 @@
     simpleUsage: ' /freezeplayer [<user>] [<true|false>]'
     context: freezeplayer
 -   commandName: hat
-    aliases: hat, head
+    aliases: ' hat, head'
     defaultLevel: ADMIN
     usageString: ' /hat [<player>]'
     oneLineDescription: Puts the item in the player's hand on their head as a helmet.
@@ -1510,7 +1510,7 @@
     simpleUsage: ' /hat [<player>]'
     context: hat
 -   commandName: ignite
-    aliases: ignite, burn
+    aliases: ' ignite, burn'
     defaultLevel: ADMIN
     usageString: ' /ignite [<player>] <ticks>'
     oneLineDescription: Sets the specified player on fire.
@@ -1547,7 +1547,7 @@
     simpleUsage: ' /ignite [<player>] <ticks>'
     context: ignite
 -   commandName: kittycannon
-    aliases: kittycannon, kc
+    aliases: ' kittycannon, kc'
     defaultLevel: ADMIN
     usageString: ' /kittycannon [-f|--fire <f>] [-d|--damageentities <d>] [-b|--breakblocks
         <b>] [<player>]'
@@ -1590,7 +1590,7 @@
         <b>] [<player>]'
     context: kittycannon
 -   commandName: lightning
-    aliases: lightning, strike, smite, thor, shock
+    aliases: ' lightning, strike, smite, thor, shock'
     defaultLevel: ADMIN
     usageString: ' /lightning [<subject>]'
     oneLineDescription: Strikes a position or player with a lightning bolt.
@@ -1631,7 +1631,7 @@
     simpleUsage: ' /lightning [<subject>]'
     context: lightning
 -   commandName: rocket
-    aliases: rocket
+    aliases: ' rocket'
     defaultLevel: ADMIN
     usageString: ' /rocket [-g|-g <g>] [-h|--hard <h>] [-s|--silent <s>] [-e|--explosion
         <e>] [-v|--velocity <v>] <player>'
@@ -1674,7 +1674,7 @@
         <e>] [-v|--velocity <v>] <player>'
     context: rocket
 -   commandName: home
-    aliases: home
+    aliases: ' home'
     defaultLevel: USER
     usageString: |4-
          /home [<home>]
@@ -1723,7 +1723,7 @@
     simpleUsage: ' /home [<home>]'
     context: home
 -   commandName: home delete
-    aliases: home delete, home del
+    aliases: ' home delete, home del'
     rootAliases: deletehome, ndeletehome, delhome, ndelhome
     defaultLevel: USER
     usageString: ' /home delete <home>'
@@ -1748,7 +1748,7 @@
     simpleUsage: ' /home delete <home>'
     context: home delete
 -   commandName: home deleteother
-    aliases: home deleteother, home delother
+    aliases: ' home deleteother, home delother'
     rootAliases: deletehomeother, ndeletehomeother, delhomeother, ndelhomeother
     defaultLevel: ADMIN
     usageString: ' /home deleteother <user> <home>'
@@ -1766,7 +1766,7 @@
     simpleUsage: ' /home deleteother <user> <home>'
     context: home deleteother
 -   commandName: home limit
-    aliases: home limit
+    aliases: ' home limit'
     defaultLevel: USER
     usageString: ' /home limit [<user>]'
     oneLineDescription: Display the number of homes you (or another player) can set.
@@ -1787,7 +1787,7 @@
     simpleUsage: ' /home limit [<user>]'
     context: home limit
 -   commandName: home list
-    aliases: home list
+    aliases: ' home list'
     rootAliases: listhomes, nlisthomes, homes, nhomes
     defaultLevel: USER
     usageString: ' /home list [<user>]'
@@ -1810,7 +1810,7 @@
     simpleUsage: ' /home list [<user>]'
     context: home list
 -   commandName: home other
-    aliases: home other
+    aliases: ' home other'
     rootAliases: homeother, nhomeother
     defaultLevel: MOD
     usageString: ' /home other <user> <home>'
@@ -1840,7 +1840,7 @@
     simpleUsage: ' /home other <user> <home>'
     context: home other
 -   commandName: home set
-    aliases: home set
+    aliases: ' home set'
     rootAliases: homeset, nhomeset, sethome, nsethome
     defaultLevel: USER
     usageString: ' /home set [-o|--overwrite <o>] [<home>]'
@@ -1883,7 +1883,7 @@
     simpleUsage: ' /home set [-o|--overwrite <o>] [<home>]'
     context: home set
 -   commandName: ignore
-    aliases: ignore
+    aliases: ' ignore'
     defaultLevel: USER
     usageString: ' /ignore <user> [<true|false>]'
     oneLineDescription: Toggles ignoring of all chat messages.
@@ -1908,7 +1908,7 @@
     simpleUsage: ' /ignore <user> [<true|false>]'
     context: ignore
 -   commandName: ignorelist
-    aliases: ignorelist, listignore, ignored
+    aliases: ' ignorelist, listignore, ignored'
     defaultLevel: USER
     usageString: ' /ignorelist [<user>]'
     oneLineDescription: Shows the names of players that are currently being ignored
@@ -1930,7 +1930,7 @@
     simpleUsage: ' /ignorelist [<user>]'
     context: ignorelist
 -   commandName: info
-    aliases: info, einfo
+    aliases: ' info, einfo'
     defaultLevel: USER
     usageString: ' /info [-l|--list <l>] [<section>]'
     oneLineDescription: Get server information.
@@ -1960,7 +1960,7 @@
     simpleUsage: ' /info [-l|--list <l>] [<section>]'
     context: info
 -   commandName: motd
-    aliases: motd
+    aliases: ' motd'
     defaultLevel: USER
     usageString: ' /motd '
     oneLineDescription: Allows the user to view the server MOTD, as defined in the
@@ -1982,7 +1982,7 @@
     simpleUsage: ' /motd '
     context: motd
 -   commandName: clear
-    aliases: clear, clearinv, clearinventory, ci, clearinvent
+    aliases: ' clear, clearinv, clearinventory, ci, clearinvent'
     defaultLevel: ADMIN
     usageString: ' /clear [-a|--all <a>] [<user>]'
     oneLineDescription: Clears a player's inventory.
@@ -2010,7 +2010,7 @@
     simpleUsage: ' /clear [-a|--all <a>] [<user>]'
     context: clear
 -   commandName: enderchest
-    aliases: enderchest, ec, echest
+    aliases: ' enderchest, ec, echest'
     defaultLevel: ADMIN
     usageString: ' /enderchest [<player>]'
     oneLineDescription: Allows the user to inspect their (or another player's) ender
@@ -2072,7 +2072,7 @@
     simpleUsage: ' /enderchest [<player>]'
     context: enderchest
 -   commandName: invsee
-    aliases: invsee
+    aliases: ' invsee'
     defaultLevel: ADMIN
     usageString: ' /invsee <user>'
     oneLineDescription: Allows the user to inspect a target's inventory.
@@ -2111,7 +2111,7 @@
     simpleUsage: ' /invsee <user>'
     context: invsee
 -   commandName: god
-    aliases: god, invuln, invulnerability
+    aliases: ' god, invuln, invulnerability'
     defaultLevel: ADMIN
     usageString: ' /god [<player>] [<true|false>]'
     oneLineDescription: Set specified player's invulnerability status.
@@ -2143,7 +2143,7 @@
     simpleUsage: ' /god [<player>] [<true|false>]'
     context: god
 -   commandName: enchant
-    aliases: enchant, enchantment
+    aliases: ' enchant, enchantment'
     defaultLevel: ADMIN
     usageString: ' /enchant <enchantment> level(0 to 32767) [-u|--unsafe <u>] [-o|--overwrite
         <o>] '
@@ -2184,7 +2184,7 @@
         <o>] '
     context: enchant
 -   commandName: itemname
-    aliases: itemname
+    aliases: ' itemname'
     defaultLevel: ADMIN
     usageString: " /itemname \n /itemname set <name…>\n /itemname clear "
     oneLineDescription: Base command for Item Name related actions.
@@ -2201,7 +2201,7 @@
     simpleUsage: ' /itemname '
     context: itemname
 -   commandName: itemname clear
-    aliases: itemname clear
+    aliases: ' itemname clear'
     rootAliases: clearitemname, nclearitemname, resetitemname, nresetitemname
     defaultLevel: ADMIN
     usageString: ' /itemname clear '
@@ -2232,7 +2232,7 @@
     simpleUsage: ' /itemname clear '
     context: itemname clear
 -   commandName: itemname set
-    aliases: itemname set
+    aliases: ' itemname set'
     rootAliases: setitemname, nsetitemname, renameitem, nrenameitem
     defaultLevel: ADMIN
     usageString: ' /itemname set <name…>'
@@ -2263,7 +2263,7 @@
     simpleUsage: ' /itemname set <name…>'
     context: itemname set
 -   commandName: lore
-    aliases: lore
+    aliases: ' lore'
     defaultLevel: ADMIN
     usageString: " /lore \n /lore add <lore…>\n /lore set <lore…>\n /lore edit <line>\
         \ <lore…>\n /lore clear \n /lore insert <line> <lore…>\n /lore delete <line>"
@@ -2281,7 +2281,7 @@
     simpleUsage: ' /lore '
     context: lore
 -   commandName: lore add
-    aliases: lore add
+    aliases: ' lore add'
     defaultLevel: ADMIN
     usageString: ' /lore add <lore…>'
     oneLineDescription: Adds a new line to the lore on the current item in the hand.
@@ -2310,7 +2310,7 @@
     simpleUsage: ' /lore add <lore…>'
     context: lore add
 -   commandName: lore clear
-    aliases: lore clear
+    aliases: ' lore clear'
     defaultLevel: ADMIN
     usageString: ' /lore clear '
     oneLineDescription: Clears the lore on the current item in the hand.
@@ -2339,7 +2339,7 @@
     simpleUsage: ' /lore clear '
     context: lore clear
 -   commandName: lore delete
-    aliases: lore delete
+    aliases: ' lore delete'
     defaultLevel: ADMIN
     usageString: ' /lore delete <line>'
     oneLineDescription: Deletes a line of the lore on the current item in the hand
@@ -2369,7 +2369,7 @@
     simpleUsage: ' /lore delete <line>'
     context: lore delete
 -   commandName: lore edit
-    aliases: lore edit
+    aliases: ' lore edit'
     defaultLevel: ADMIN
     usageString: ' /lore edit <line> <lore…>'
     oneLineDescription: Edits the lore on the current item in the hand at a specific
@@ -2399,7 +2399,7 @@
     simpleUsage: ' /lore edit <line> <lore…>'
     context: lore edit
 -   commandName: lore insert
-    aliases: lore insert
+    aliases: ' lore insert'
     defaultLevel: ADMIN
     usageString: ' /lore insert <line> <lore…>'
     oneLineDescription: Inserts a new line to the lore on the current item in the
@@ -2429,7 +2429,7 @@
     simpleUsage: ' /lore insert <line> <lore…>'
     context: lore insert
 -   commandName: lore set
-    aliases: lore set
+    aliases: ' lore set'
     defaultLevel: ADMIN
     usageString: ' /lore set <lore…>'
     oneLineDescription: Sets the lore on the current item in the hand. The current
@@ -2459,7 +2459,7 @@
     simpleUsage: ' /lore set <lore…>'
     context: lore set
 -   commandName: more
-    aliases: more, stack
+    aliases: ' more, stack'
     defaultLevel: ADMIN
     usageString: ' /more '
     oneLineDescription: Sets item in hand to a full stack.
@@ -2492,7 +2492,7 @@
     simpleUsage: ' /more '
     context: more
 -   commandName: repair
-    aliases: repair, mend, fix
+    aliases: ' repair, mend, fix'
     defaultLevel: ADMIN
     usageString: ' /repair [-a|--all <a>] [-o|--offhand <o>] [-m|--mainhand <m>] [-h|--hotbar
         <h>] [-e|--equip <e>] '
@@ -2532,7 +2532,7 @@
         <h>] [-e|--equip <e>] '
     context: repair
 -   commandName: showitemattributes
-    aliases: showitemattributes, showattributes
+    aliases: ' showitemattributes, showattributes'
     defaultLevel: ADMIN
     usageString: ' /showitemattributes [<true|false>]'
     oneLineDescription: Shows or hides item attributes on item hover.
@@ -2561,7 +2561,7 @@
     simpleUsage: ' /showitemattributes [<true|false>]'
     context: showitemattributes
 -   commandName: skull
-    aliases: skull
+    aliases: ' skull'
     defaultLevel: ADMIN
     usageString: ' /skull [<user>] [<amount>]'
     oneLineDescription: Spawns in copies of the specified player's skull (or your
@@ -2601,7 +2601,7 @@
     simpleUsage: ' /skull [<user>] [<amount>]'
     context: skull
 -   commandName: trash
-    aliases: trash
+    aliases: ' trash'
     defaultLevel: USER
     usageString: ' /trash '
     oneLineDescription: Opens an inventory window which acts as a disposal unit, deleting
@@ -2631,7 +2631,7 @@
     simpleUsage: ' /trash '
     context: trash
 -   commandName: unsignbook
-    aliases: unsignbook, unsign
+    aliases: ' unsignbook, unsign'
     defaultLevel: ADMIN
     usageString: ' /unsignbook [<player>]'
     oneLineDescription: Makes the book in the target player's hand writable again.
@@ -2664,7 +2664,7 @@
     simpleUsage: ' /unsignbook [<player>]'
     context: unsignbook
 -   commandName: checkjail
-    aliases: checkjail
+    aliases: ' checkjail'
     defaultLevel: MOD
     usageString: ' /checkjail <user/UUID>|<user/UUID>'
     oneLineDescription: Checks if a player is jailed.
@@ -2681,7 +2681,7 @@
     simpleUsage: ' /checkjail <user/UUID>|<user/UUID>'
     context: checkjail
 -   commandName: checkjailed
-    aliases: checkjailed
+    aliases: ' checkjailed'
     defaultLevel: ADMIN
     usageString: ' /checkjailed [<jail>]'
     oneLineDescription: Returns a list of currently jailed players, optionally in
@@ -2699,7 +2699,7 @@
     simpleUsage: ' /checkjailed [<jail>]'
     context: checkjailed
 -   commandName: jail
-    aliases: jail
+    aliases: ' jail'
     defaultLevel: MOD
     usageString: ' /jail <user> [<jail>] [<duration>] [<reason…>]'
     oneLineDescription: Jails a player.
@@ -2742,7 +2742,7 @@
     simpleUsage: ' /jail <user> [<jail>] [<duration>] [<reason…>]'
     context: jail
 -   commandName: jails
-    aliases: jails
+    aliases: ' jails'
     defaultLevel: MOD
     usageString: " /jails \n /jails set <jail>\n /jails tp <jail>\n /jails delete\
         \ <jail>"
@@ -2764,7 +2764,7 @@
     simpleUsage: ' /jails '
     context: jails
 -   commandName: jails delete
-    aliases: jails delete, jails del, jails remove
+    aliases: ' jails delete, jails del, jails remove'
     rootAliases: deljail, ndeljail, rmjail, nrmjail, deletejail, ndeletejail
     defaultLevel: ADMIN
     usageString: ' /jails delete <jail>'
@@ -2788,7 +2788,7 @@
     simpleUsage: ' /jails delete <jail>'
     context: jails delete
 -   commandName: jails set
-    aliases: jails set
+    aliases: ' jails set'
     rootAliases: setjail, nsetjail, createjail, ncreatejail
     defaultLevel: ADMIN
     usageString: ' /jails set <jail>'
@@ -2811,7 +2811,7 @@
     simpleUsage: ' /jails set <jail>'
     context: jails set
 -   commandName: jails tp
-    aliases: jails tp
+    aliases: ' jails tp'
     defaultLevel: MOD
     usageString: ' /jails tp <jail>'
     oneLineDescription: Warp to a jail.
@@ -2828,7 +2828,7 @@
     simpleUsage: ' /jails tp <jail>'
     context: jails tp
 -   commandName: unjail
-    aliases: unjail
+    aliases: ' unjail'
     defaultLevel: MOD
     usageString: ' /unjail <user>'
     oneLineDescription: Unjails a player.
@@ -2849,7 +2849,7 @@
     simpleUsage: ' /unjail <user>'
     context: unjail
 -   commandName: jump
-    aliases: jump, j, jmp
+    aliases: ' jump, j, jmp'
     defaultLevel: ADMIN
     usageString: ' /jump '
     oneLineDescription: Perform a short range "jump" to the block they are looking
@@ -2885,7 +2885,7 @@
     simpleUsage: ' /jump '
     context: jump
 -   commandName: thru
-    aliases: thru, through
+    aliases: ' thru, through'
     defaultLevel: ADMIN
     usageString: ' /thru '
     oneLineDescription: Teleport to the other side of a wall.
@@ -2914,7 +2914,7 @@
     simpleUsage: ' /thru '
     context: thru
 -   commandName: top
-    aliases: top, tosurface, totop
+    aliases: ' top, tosurface, totop'
     defaultLevel: ADMIN
     usageString: ' /top [-f <f>] [<player>]'
     oneLineDescription: Teleports the user (or target player) to the surface.
@@ -2951,7 +2951,7 @@
     simpleUsage: ' /top [-f <f>] [<player>]'
     context: top
 -   commandName: unstuck
-    aliases: unstuck
+    aliases: ' unstuck'
     defaultLevel: ADMIN
     usageString: ' /unstuck '
     oneLineDescription: Attempts to nudge players by one block to unstick them, if
@@ -2981,7 +2981,7 @@
     simpleUsage: ' /unstuck '
     context: unstuck
 -   commandName: kick
-    aliases: kick
+    aliases: ' kick'
     defaultLevel: MOD
     usageString: ' /kick <player> [<reason…>]'
     oneLineDescription: Kicks a player
@@ -3010,7 +3010,7 @@
     simpleUsage: ' /kick <player> [<reason…>]'
     context: kick
 -   commandName: kickall
-    aliases: kickall
+    aliases: ' kickall'
     defaultLevel: MOD
     usageString: ' /kickall [-w|-f <w>] [<reason…>]'
     oneLineDescription: Kicks all players, optionally turning the whitelist on.
@@ -3034,7 +3034,7 @@
     simpleUsage: ' /kickall [-w|-f <w>] [<reason…>]'
     context: kickall
 -   commandName: kit
-    aliases: kit
+    aliases: ' kit'
     defaultLevel: USER
     usageString: " /kit <kit>\n /kit give [-i|--ignore <i>] <player> <kit>\n /kit\
         \ set <kit>\n /kit cost <kit> <cost>\n /kit hidden <kit> <true|false>\n /kit\
@@ -3079,7 +3079,7 @@
     simpleUsage: ' /kit <kit>'
     context: kit
 -   commandName: kit autoredeem
-    aliases: kit autoredeem
+    aliases: ' kit autoredeem'
     defaultLevel: ADMIN
     usageString: ' /kit autoredeem <kit> <true|false>'
     oneLineDescription: Sets or unsets a kit to auto redeem on login.
@@ -3099,7 +3099,7 @@
     simpleUsage: ' /kit autoredeem <kit> <true|false>'
     context: kit autoredeem
 -   commandName: kit command
-    aliases: kit command, kit commands
+    aliases: ' kit command, kit commands'
     defaultLevel: ADMIN
     usageString: |4-
          /kit command <kit>
@@ -3123,7 +3123,7 @@
     simpleUsage: ' /kit command <kit>'
     context: kit command
 -   commandName: kit command add
-    aliases: kit command add, kit command +
+    aliases: ' kit command add, kit command +'
     defaultLevel: OWNER
     usageString: ' /kit command add <kit> <command…>'
     oneLineDescription: Adds a command to the specified kit.
@@ -3140,7 +3140,7 @@
     simpleUsage: ' /kit command add <kit> <command…>'
     context: kit command add
 -   commandName: kit command clear
-    aliases: kit command clear
+    aliases: ' kit command clear'
     defaultLevel: OWNER
     usageString: ' /kit command clear <kit>'
     oneLineDescription: Removes all commands from the specified kit.
@@ -3157,7 +3157,7 @@
     simpleUsage: ' /kit command clear <kit>'
     context: kit command clear
 -   commandName: kit command remove
-    aliases: kit command remove, kit command del, kit command -
+    aliases: ' kit command remove, kit command del, kit command -'
     defaultLevel: OWNER
     usageString: ' /kit command remove <kit> <index>|<command…>'
     oneLineDescription: Removes a command from the specified kit.
@@ -3181,7 +3181,7 @@
     simpleUsage: ' /kit command remove <kit> <index>|<command…>'
     context: kit command remove
 -   commandName: kit cooldown
-    aliases: kit cooldown, kit setcooldown, kit setinterval
+    aliases: ' kit cooldown, kit setcooldown, kit setinterval'
     defaultLevel: ADMIN
     usageString: ' /kit cooldown <kit> <duration>'
     oneLineDescription: Sets the cooldown on a kit.
@@ -3200,7 +3200,7 @@
     simpleUsage: ' /kit cooldown <kit> <duration>'
     context: kit cooldown
 -   commandName: kit cost
-    aliases: kit cost, kit setcost
+    aliases: ' kit cost, kit setcost'
     defaultLevel: ADMIN
     usageString: ' /kit cost <kit> <cost>'
     oneLineDescription: Sets the cost for a kit.
@@ -3217,7 +3217,7 @@
     simpleUsage: ' /kit cost <kit> <cost>'
     context: kit cost
 -   commandName: kit create
-    aliases: kit create, kit add
+    aliases: ' kit create, kit add'
     defaultLevel: ADMIN
     usageString: ' /kit create [-c|--clone <c>] <name>'
     oneLineDescription: Opens a chest window and lets you create a kit through the
@@ -3241,7 +3241,7 @@
     simpleUsage: ' /kit create [-c|--clone <c>] <name>'
     context: kit create
 -   commandName: kit edit
-    aliases: kit edit, kit ed
+    aliases: ' kit edit, kit ed'
     defaultLevel: ADMIN
     usageString: ' /kit edit <kit>'
     oneLineDescription: Opens a GUI for editing kit contents.
@@ -3262,7 +3262,7 @@
     simpleUsage: ' /kit edit <kit>'
     context: kit edit
 -   commandName: kit give
-    aliases: kit give
+    aliases: ' kit give'
     defaultLevel: ADMIN
     usageString: ' /kit give [-i|--ignore <i>] <player> <kit>'
     oneLineDescription: Redeems a kit on the specified player.
@@ -3288,7 +3288,7 @@
     simpleUsage: ' /kit give [-i|--ignore <i>] <player> <kit>'
     context: kit give
 -   commandName: kit hidden
-    aliases: kit hidden
+    aliases: ' kit hidden'
     defaultLevel: ADMIN
     usageString: ' /kit hidden <kit> <true|false>'
     oneLineDescription: Sets whether a kit is displayed in the kit list.
@@ -3305,7 +3305,7 @@
     simpleUsage: ' /kit hidden <kit> <true|false>'
     context: kit hidden
 -   commandName: kit info
-    aliases: kit info
+    aliases: ' kit info'
     defaultLevel: ADMIN
     usageString: ' /kit info <kit>'
     oneLineDescription: Lists information about the kit.
@@ -3322,7 +3322,7 @@
     simpleUsage: ' /kit info <kit>'
     context: kit info
 -   commandName: kit list
-    aliases: kit list, kit ls
+    aliases: ' kit list, kit ls'
     rootAliases: kits, nkits
     defaultLevel: USER
     usageString: ' /kit list '
@@ -3344,7 +3344,7 @@
     simpleUsage: ' /kit list '
     context: kit list
 -   commandName: kit onetime
-    aliases: kit onetime, kit setonetime
+    aliases: ' kit onetime, kit setonetime'
     defaultLevel: ADMIN
     usageString: ' /kit onetime <kit> <true|false>'
     oneLineDescription: Sets or unsets a kit as a one time use kit.
@@ -3364,7 +3364,7 @@
     simpleUsage: ' /kit onetime <kit> <true|false>'
     context: kit onetime
 -   commandName: kit permissionbypass
-    aliases: kit permissionbypass
+    aliases: ' kit permissionbypass'
     defaultLevel: ADMIN
     usageString: ' /kit permissionbypass <kit> <true|false>'
     oneLineDescription: Sets whether a separate permission is required to redeem a
@@ -3382,7 +3382,7 @@
     simpleUsage: ' /kit permissionbypass <kit> <true|false>'
     context: kit permissionbypass
 -   commandName: kit reload
-    aliases: kit reload
+    aliases: ' kit reload'
     defaultLevel: OWNER
     usageString: ' /kit reload '
     oneLineDescription: Discards cached kit information and reloads data from persistence.
@@ -3399,7 +3399,7 @@
     simpleUsage: ' /kit reload '
     context: kit reload
 -   commandName: kit remove
-    aliases: kit remove, kit del, kit delete
+    aliases: ' kit remove, kit del, kit delete'
     defaultLevel: ADMIN
     usageString: ' /kit remove <kit>'
     oneLineDescription: Deletes a kit.
@@ -3416,7 +3416,7 @@
     simpleUsage: ' /kit remove <kit>'
     context: kit remove
 -   commandName: kit rename
-    aliases: kit rename
+    aliases: ' kit rename'
     defaultLevel: ADMIN
     usageString: ' /kit rename <kit> <target name>'
     oneLineDescription: Renames a kit
@@ -3433,7 +3433,7 @@
     simpleUsage: ' /kit rename <kit> <target name>'
     context: kit rename
 -   commandName: kit resetusage
-    aliases: kit resetusage, kit reset
+    aliases: ' kit resetusage, kit reset'
     defaultLevel: ADMIN
     usageString: ' /kit resetusage <user> <kit>'
     oneLineDescription: Resets a player's usage of a kit, allowing them to redeem
@@ -3451,7 +3451,7 @@
     simpleUsage: ' /kit resetusage <user> <kit>'
     context: kit resetusage
 -   commandName: kit set
-    aliases: kit set, kit update, kit setFromInventory
+    aliases: ' kit set, kit update, kit setFromInventory'
     defaultLevel: ADMIN
     usageString: ' /kit set <kit>'
     oneLineDescription: Sets the items in a kit to your current inventory.
@@ -3472,7 +3472,7 @@
     simpleUsage: ' /kit set <kit>'
     context: kit set
 -   commandName: kit setfirstjoin
-    aliases: kit setfirstjoin, kit firstjoin
+    aliases: ' kit setfirstjoin, kit firstjoin'
     defaultLevel: ADMIN
     usageString: ' /kit setfirstjoin <kit> [<true|false>]'
     oneLineDescription: Sets up a kit so it gets redeemed for every new player that
@@ -3490,7 +3490,7 @@
     simpleUsage: ' /kit setfirstjoin <kit> [<true|false>]'
     context: kit setfirstjoin
 -   commandName: kit toggleredeemmessage
-    aliases: kit toggleredeemmessage, kit togglemessage
+    aliases: ' kit toggleredeemmessage, kit togglemessage'
     defaultLevel: ADMIN
     usageString: ' /kit toggleredeemmessage <kit> <true|false>'
     oneLineDescription: Sets or unsets whether redeeming a kit will notify the target
@@ -3508,7 +3508,7 @@
     simpleUsage: ' /kit toggleredeemmessage <kit> <true|false>'
     context: kit toggleredeemmessage
 -   commandName: kit view
-    aliases: kit view
+    aliases: ' kit view'
     defaultLevel: ADMIN
     usageString: ' /kit view <kit>'
     oneLineDescription: View the contents of a kit.
@@ -3525,7 +3525,7 @@
     simpleUsage: ' /kit view <kit>'
     context: kit view
 -   commandName: mail
-    aliases: mail, email
+    aliases: ' mail, email'
     defaultLevel: USER
     usageString: " /mail [<filters>*]\n /mail other <user> [<filters>*]\n /mail clear\
         \ \n /mail send <user> <message…>"
@@ -3548,7 +3548,7 @@
     simpleUsage: ' /mail [<filters>*]'
     context: mail
 -   commandName: mail clear
-    aliases: mail clear
+    aliases: ' mail clear'
     defaultLevel: USER
     usageString: ' /mail clear '
     oneLineDescription: Clears all mail in your inbox.
@@ -3565,7 +3565,7 @@
     simpleUsage: ' /mail clear '
     context: mail clear
 -   commandName: mail other
-    aliases: mail other, mail o
+    aliases: ' mail other, mail o'
     defaultLevel: ADMIN
     usageString: ' /mail other <user> [<filters>*]'
     oneLineDescription: Read others' mail.
@@ -3582,7 +3582,7 @@
     simpleUsage: ' /mail other <user> [<filters>*]'
     context: mail other
 -   commandName: mail send
-    aliases: mail send, mail s
+    aliases: ' mail send, mail s'
     rootAliases: sendmail, nsendmail
     defaultLevel: USER
     usageString: ' /mail send <user> <message…>'
@@ -3600,7 +3600,7 @@
     simpleUsage: ' /mail send <user> <message…>'
     context: mail send
 -   commandName: helpop
-    aliases: helpop
+    aliases: ' helpop'
     defaultLevel: USER
     usageString: ' /helpop <message…>'
     oneLineDescription: Send a message to all available staff
@@ -3639,7 +3639,7 @@
     simpleUsage: ' /helpop <message…>'
     context: helpop
 -   commandName: message
-    aliases: message, m, msg, whisper, w, t
+    aliases: ' message, m, msg, whisper, w, t'
     defaultLevel: USER
     usageString: ' /message <to>|<to> <message…>'
     oneLineDescription: Send a message to a player, or the console with "-".
@@ -3688,7 +3688,7 @@
     simpleUsage: ' /message <to>|<to> <message…>'
     context: message
 -   commandName: msgtoggle
-    aliases: msgtoggle, messagetoggle, mtoggle
+    aliases: ' msgtoggle, messagetoggle, mtoggle'
     defaultLevel: ADMIN
     usageString: ' /msgtoggle [<true|false>]'
     oneLineDescription: Prevent players from private messaging you.
@@ -3712,7 +3712,7 @@
     simpleUsage: ' /msgtoggle [<true|false>]'
     context: msgtoggle
 -   commandName: reply
-    aliases: reply, r
+    aliases: ' reply, r'
     defaultLevel: USER
     usageString: ' /reply <message…>'
     oneLineDescription: Send a message to the last player that sent you a message.
@@ -3746,7 +3746,7 @@
     simpleUsage: ' /reply <message…>'
     context: reply
 -   commandName: socialspy
-    aliases: socialspy
+    aliases: ' socialspy'
     defaultLevel: MOD
     usageString: ' /socialspy [<true|false>]'
     oneLineDescription: See all private messages sent to other players.
@@ -3772,7 +3772,7 @@
     simpleUsage: ' /socialspy [<true|false>]'
     context: socialspy
 -   commandName: blockinfo
-    aliases: blockinfo
+    aliases: ' blockinfo'
     defaultLevel: ADMIN
     usageString: ' /blockinfo [-e|--extended <e>] [<location>]'
     oneLineDescription: Get information about the block you are currently facing.
@@ -3793,7 +3793,7 @@
     simpleUsage: ' /blockinfo [-e|--extended <e>] [<location>]'
     context: blockinfo
 -   commandName: entityinfo
-    aliases: entityinfo
+    aliases: ' entityinfo'
     defaultLevel: ADMIN
     usageString: ' /entityinfo [-e|--extended <e>] '
     oneLineDescription: Get information about the entity you are currently facing.
@@ -3814,7 +3814,7 @@
     simpleUsage: ' /entityinfo [-e|--extended <e>] '
     context: entityinfo
 -   commandName: extinguish
-    aliases: extinguish, ext
+    aliases: ' extinguish, ext'
     defaultLevel: MOD
     usageString: ' /extinguish [<player>]'
     oneLineDescription: Extinguishes a player that is currently burning
@@ -3847,7 +3847,7 @@
     simpleUsage: ' /extinguish [<player>]'
     context: extinguish
 -   commandName: feed
-    aliases: feed, eat
+    aliases: ' feed, eat'
     defaultLevel: ADMIN
     usageString: ' /feed [<player>]'
     oneLineDescription: Set specified player's hunger to full.
@@ -3885,7 +3885,7 @@
     simpleUsage: ' /feed [<player>]'
     context: feed
 -   commandName: heal
-    aliases: heal
+    aliases: ' heal'
     defaultLevel: ADMIN
     usageString: ' /heal [<player>]'
     oneLineDescription: Fully heal the specified player.
@@ -3922,7 +3922,7 @@
     simpleUsage: ' /heal [<player>]'
     context: heal
 -   commandName: iteminfo
-    aliases: iteminfo, itemdb
+    aliases: ' iteminfo, itemdb'
     defaultLevel: ADMIN
     usageString: ' /iteminfo [-e|--extended <e>] [<key>]'
     oneLineDescription: Get information about the item you are currently holding.
@@ -3950,7 +3950,7 @@
     simpleUsage: ' /iteminfo [-e|--extended <e>] [<key>]'
     context: iteminfo
 -   commandName: ping
-    aliases: ping
+    aliases: ' ping'
     defaultLevel: ADMIN
     usageString: ' /ping [<player>]'
     oneLineDescription: Displays the current latency for the target player.
@@ -3977,7 +3977,7 @@
     simpleUsage: ' /ping [<player>]'
     context: ping
 -   commandName: serverstat
-    aliases: serverstat, uptime
+    aliases: ' serverstat, uptime'
     defaultLevel: ADMIN
     usageString: ' /serverstat [-c|-s|--compact|--summary <c>] '
     oneLineDescription: Displays server runtime statistics.
@@ -4006,7 +4006,7 @@
     simpleUsage: ' /serverstat [-c|-s|--compact|--summary <c>] '
     context: serverstat
 -   commandName: servertime
-    aliases: servertime, realtime
+    aliases: ' servertime, realtime'
     defaultLevel: ADMIN
     usageString: ' /servertime '
     oneLineDescription: Displays the current server time.
@@ -4023,7 +4023,7 @@
     simpleUsage: ' /servertime '
     context: servertime
 -   commandName: speed
-    aliases: speed
+    aliases: ' speed'
     defaultLevel: ADMIN
     usageString: ' /speed [<player>] [<fly|f|flying|w|walk>] [<speed>|reset]'
     oneLineDescription: Sets or gets the specified player's walking or flying speed.
@@ -4076,7 +4076,7 @@
     simpleUsage: ' /speed [<player>] [<fly|f|flying|w|walk>] [<speed>|reset]'
     context: speed
 -   commandName: suicide
-    aliases: suicide
+    aliases: ' suicide'
     defaultLevel: USER
     usageString: ' /suicide '
     oneLineDescription: Kill your player, displaying the Game Over screen.
@@ -4097,7 +4097,7 @@
     simpleUsage: ' /suicide '
     context: suicide
 -   commandName: spawnmob
-    aliases: spawnmob, spawnentity, mobspawn
+    aliases: ' spawnmob, spawnentity, mobspawn'
     defaultLevel: ADMIN
     usageString: ' /spawnmob [<player>] <mob> [<amount>]'
     oneLineDescription: Spawns in mobs at the specified player's location.
@@ -4135,7 +4135,7 @@
     simpleUsage: ' /spawnmob [<player>] <mob> [<amount>]'
     context: spawnmob
 -   commandName: checkmute
-    aliases: checkmute
+    aliases: ' checkmute'
     defaultLevel: MOD
     usageString: ' /checkmute <user/UUID>|<user/UUID>'
     oneLineDescription: Checks whether the specified player is muted.
@@ -4152,7 +4152,7 @@
     simpleUsage: ' /checkmute <user/UUID>|<user/UUID>'
     context: checkmute
 -   commandName: checkmuted
-    aliases: checkmuted
+    aliases: ' checkmuted'
     defaultLevel: ADMIN
     usageString: ' /checkmuted '
     oneLineDescription: Returns a list of currently muted players.
@@ -4169,7 +4169,7 @@
     simpleUsage: ' /checkmuted '
     context: checkmuted
 -   commandName: globalmute
-    aliases: globalmute
+    aliases: ' globalmute'
     defaultLevel: ADMIN
     usageString: ' /globalmute [<true|false>]'
     oneLineDescription: Enable or disable a server wide mute. Anyone that has the
@@ -4193,7 +4193,7 @@
     simpleUsage: ' /globalmute [<true|false>]'
     context: globalmute
 -   commandName: mute
-    aliases: mute
+    aliases: ' mute'
     defaultLevel: MOD
     usageString: ' /mute <user> [<duration>] [<reason…>]'
     oneLineDescription: Mutes the specified player.
@@ -4232,7 +4232,7 @@
     simpleUsage: ' /mute <user> [<duration>] [<reason…>]'
     context: mute
 -   commandName: unmute
-    aliases: unmute
+    aliases: ' unmute'
     defaultLevel: MOD
     usageString: ' /unmute <user>'
     oneLineDescription: Unmutes the specified player.
@@ -4249,7 +4249,7 @@
     simpleUsage: ' /unmute <user>'
     context: unmute
 -   commandName: voice
-    aliases: voice
+    aliases: ' voice'
     defaultLevel: ADMIN
     usageString: ' /voice <player> [<true|false>]'
     oneLineDescription: Allows a user to speak when a global mute is in effect.
@@ -4270,7 +4270,7 @@
     simpleUsage: ' /voice <player> [<true|false>]'
     context: voice
 -   commandName: nameban
-    aliases: nameban
+    aliases: ' nameban'
     defaultLevel: ADMIN
     usageString: ' /nameban <name> [<reason…>]'
     oneLineDescription: Bans a specific IGN (rather than specific player) from joining
@@ -4294,7 +4294,7 @@
     simpleUsage: ' /nameban <name> [<reason…>]'
     context: nameban
 -   commandName: nameunban
-    aliases: nameunban, namepardon
+    aliases: ' nameunban, namepardon'
     defaultLevel: ADMIN
     usageString: ' /nameunban <name>'
     oneLineDescription: Allows a specific IGN (rather than specific player) to join
@@ -4312,7 +4312,7 @@
     simpleUsage: ' /nameunban <name>'
     context: nameunban
 -   commandName: delnick
-    aliases: delnick, delnickname, deletenick
+    aliases: ' delnick, delnickname, deletenick'
     defaultLevel: ADMIN
     usageString: ' /delnick [<user>]'
     oneLineDescription: Deletes your current nickname
@@ -4329,7 +4329,7 @@
     simpleUsage: ' /delnick [<user>]'
     context: delnick
 -   commandName: nick
-    aliases: nick, nickname
+    aliases: ' nick, nickname'
     defaultLevel: ADMIN
     usageString: ' /nick [<user>] <nickname>'
     oneLineDescription: Sets your nickname/display name
@@ -4368,7 +4368,7 @@
     simpleUsage: ' /nick [<user>] <nickname>'
     context: nick
 -   commandName: realname
-    aliases: realname
+    aliases: ' realname'
     defaultLevel: USER
     usageString: ' /realname <name>'
     oneLineDescription: Gets the player's realname from the provided nickname.
@@ -4389,7 +4389,7 @@
     simpleUsage: ' /realname <name>'
     context: realname
 -   commandName: checknotes
-    aliases: checknotes, notes
+    aliases: ' checknotes, notes'
     defaultLevel: MOD
     usageString: ' /checknotes <user>'
     oneLineDescription: Allows the user to check a player's notes.
@@ -4406,7 +4406,7 @@
     simpleUsage: ' /checknotes <user>'
     context: checknotes
 -   commandName: clearnotes
-    aliases: clearnotes, removeallnotes
+    aliases: ' clearnotes, removeallnotes'
     defaultLevel: ADMIN
     usageString: ' /clearnotes <user>'
     oneLineDescription: Allows the user to clear a player's notes.
@@ -4423,7 +4423,7 @@
     simpleUsage: ' /clearnotes <user>'
     context: clearnotes
 -   commandName: note
-    aliases: note, addnote
+    aliases: ' note, addnote'
     defaultLevel: MOD
     usageString: ' /note <user> <message…>'
     oneLineDescription: Allows the user to add a note to a player.
@@ -4444,7 +4444,7 @@
     simpleUsage: ' /note <user> <message…>'
     context: note
 -   commandName: removenote
-    aliases: removenote, deletenote, delnote
+    aliases: ' removenote, deletenote, delnote'
     defaultLevel: ADMIN
     usageString: ' /removenote <user> <ID>'
     oneLineDescription: Allows the user to delete a specific note attached to a player.
@@ -4461,7 +4461,7 @@
     simpleUsage: ' /removenote <user> <ID>'
     context: removenote
 -   commandName: basicactionbar
-    aliases: basicactionbar
+    aliases: ' basicactionbar'
     defaultLevel: ADMIN
     usageString: ' /basicactionbar [-t <t>] [-i <i>] [-o <o>] [-p <p>] <message…>'
     oneLineDescription: Send an "Action Bar" message to players.
@@ -4485,7 +4485,7 @@
     simpleUsage: ' /basicactionbar [-t <t>] [-i <i>] [-o <o>] [-p <p>] <message…>'
     context: basicactionbar
 -   commandName: basicsubtitle
-    aliases: basicsubtitle
+    aliases: ' basicsubtitle'
     defaultLevel: ADMIN
     usageString: ' /basicsubtitle [-t <t>] [-i <i>] [-o <o>] [-p <p>] <message…>'
     oneLineDescription: Send a Subtitle message to players.
@@ -4513,7 +4513,7 @@
     simpleUsage: ' /basicsubtitle [-t <t>] [-i <i>] [-o <o>] [-p <p>] <message…>'
     context: basicsubtitle
 -   commandName: basictitle
-    aliases: basictitle
+    aliases: ' basictitle'
     defaultLevel: ADMIN
     usageString: ' /basictitle [-t <t>] [-i <i>] [-o <o>] [-p <p>] <message…>'
     oneLineDescription: Send a Title message to players.
@@ -4541,7 +4541,7 @@
     simpleUsage: ' /basictitle [-t <t>] [-i <i>] [-o <o>] [-p <p>] <message…>'
     context: basictitle
 -   commandName: broadcast
-    aliases: broadcast, bcast, bc
+    aliases: ' broadcast, bcast, bc'
     defaultLevel: ADMIN
     usageString: ' /broadcast <message…>'
     oneLineDescription: Broadcasts a message to the entire server.
@@ -4563,7 +4563,7 @@
     simpleUsage: ' /broadcast <message…>'
     context: broadcast
 -   commandName: plainbroadcast
-    aliases: plainbroadcast, pbcast, pbc
+    aliases: ' plainbroadcast, pbcast, pbc'
     defaultLevel: OWNER
     usageString: ' /plainbroadcast <message…>'
     oneLineDescription: Allows the user to send a broadcast without prefixes or suffixes.
@@ -4580,7 +4580,7 @@
     simpleUsage: ' /plainbroadcast <message…>'
     context: plainbroadcast
 -   commandName: getfromip
-    aliases: getfromip
+    aliases: ' getfromip'
     defaultLevel: ADMIN
     usageString: ' /getfromip <IP Address>'
     oneLineDescription: Gets all users last seen on the specified IP.
@@ -4597,7 +4597,7 @@
     simpleUsage: ' /getfromip <IP Address>'
     context: getfromip
 -   commandName: getpos
-    aliases: getpos, coords, position, whereami, getlocation, getloc
+    aliases: ' getpos, coords, position, whereami, getlocation, getloc'
     defaultLevel: USER
     usageString: ' /getpos [<user>]'
     oneLineDescription: Gets the location of the executing or target player.
@@ -4630,7 +4630,7 @@
     simpleUsage: ' /getpos [<user>]'
     context: getpos
 -   commandName: list
-    aliases: list, listplayers, ls
+    aliases: ' list, listplayers, ls'
     defaultLevel: USER
     usageString: ' /list '
     oneLineDescription: Lists the players on the server.
@@ -4671,7 +4671,7 @@
     simpleUsage: ' /list '
     context: list
 -   commandName: near
-    aliases: near
+    aliases: ' near'
     defaultLevel: USER
     usageString: ' /near [<user>] [<radius>]'
     oneLineDescription: List players nearby
@@ -4704,7 +4704,7 @@
     simpleUsage: ' /near [<user>] [<radius>]'
     context: near
 -   commandName: seen
-    aliases: seen, seenplayer, lookup
+    aliases: ' seen, seenplayer, lookup'
     defaultLevel: ADMIN
     usageString: ' /seen <user uuid>|<user>'
     oneLineDescription: Gets information about the specified player.
@@ -4766,7 +4766,7 @@
     simpleUsage: ' /seen <user uuid>|<user>'
     context: seen
 -   commandName: powertool
-    aliases: powertool, pt
+    aliases: ' powertool, pt'
     defaultLevel: ADMIN
     usageString: " /powertool [<command…>]\n /powertool list \n /powertool delete "
     oneLineDescription: Binds the item in hand to the specified command.
@@ -4788,7 +4788,7 @@
     simpleUsage: ' /powertool [<command…>]'
     context: powertool
 -   commandName: powertool delete
-    aliases: powertool delete, powertool del, powertool rm, powertool remove
+    aliases: ' powertool delete, powertool del, powertool rm, powertool remove'
     defaultLevel: ADMIN
     usageString: ' /powertool delete '
     oneLineDescription: Removes any powertool bindings to the item in hand.
@@ -4805,7 +4805,7 @@
     simpleUsage: ' /powertool delete '
     context: powertool delete
 -   commandName: powertool list
-    aliases: powertool list, powertool ls
+    aliases: ' powertool list, powertool ls'
     defaultLevel: ADMIN
     usageString: ' /powertool list '
     oneLineDescription: Lists all current powertools that the user has.
@@ -4822,7 +4822,7 @@
     simpleUsage: ' /powertool list '
     context: powertool list
 -   commandName: toggle
-    aliases: toggle
+    aliases: ' toggle'
     defaultLevel: ADMIN
     usageString: ' /toggle [<true|false>]'
     oneLineDescription: Toggles whether powertools activate.
@@ -4839,7 +4839,7 @@
     simpleUsage: ' /toggle [<true|false>]'
     context: toggle
 -   commandName: rtp
-    aliases: rtp, randomteleport, rteleport
+    aliases: ' rtp, randomteleport, rteleport'
     defaultLevel: ADMIN
     usageString: ' /rtp [<player>] [<world>]'
     oneLineDescription: Allows the user to teleport to a random destination within
@@ -4879,7 +4879,7 @@
     simpleUsage: ' /rtp [<player>] [<world>]'
     context: rtp
 -   commandName: rules
-    aliases: rules
+    aliases: ' rules'
     defaultLevel: USER
     usageString: ' /rules '
     oneLineDescription: Read the server rules.
@@ -4900,7 +4900,7 @@
     simpleUsage: ' /rules '
     context: rules
 -   commandName: serverlist
-    aliases: serverlist, sl
+    aliases: ' serverlist, sl'
     defaultLevel: ADMIN
     usageString: " /serverlist [-m|--messages <m>] [-w|--whitelist <w>] \n /serverlist\
         \ message [-r|--remove <r>] [-l|--line <l>] [-t|--time <t>] [<message…>]"
@@ -4918,7 +4918,7 @@
     simpleUsage: ' /serverlist [-m|--messages <m>] [-w|--whitelist <w>] '
     context: serverlist
 -   commandName: serverlist message
-    aliases: serverlist message, serverlist m
+    aliases: ' serverlist message, serverlist m'
     defaultLevel: ADMIN
     usageString: ' /serverlist message [-r|--remove <r>] [-l|--line <l>] [-t|--time
         <t>] [<message…>]'
@@ -4938,7 +4938,7 @@
         <t>] [<message…>]'
     context: serverlist message
 -   commandName: firstspawn
-    aliases: firstspawn
+    aliases: ' firstspawn'
     defaultLevel: USER
     usageString: ' /firstspawn '
     oneLineDescription: If set, warp to the new player spawn point.
@@ -4967,7 +4967,7 @@
     simpleUsage: ' /firstspawn '
     context: firstspawn
 -   commandName: setfirstspawn
-    aliases: setfirstspawn
+    aliases: ' setfirstspawn'
     defaultLevel: ADMIN
     usageString: " /setfirstspawn \n /setfirstspawn del "
     oneLineDescription: Sets the new player spawn point.
@@ -4984,7 +4984,7 @@
     simpleUsage: ' /setfirstspawn '
     context: setfirstspawn
 -   commandName: setfirstspawn del
-    aliases: setfirstspawn del, setfirstspawn rm
+    aliases: ' setfirstspawn del, setfirstspawn rm'
     defaultLevel: ADMIN
     usageString: ' /setfirstspawn del '
     oneLineDescription: Removes the new player spawn point.
@@ -5001,7 +5001,7 @@
     simpleUsage: ' /setfirstspawn del '
     context: setfirstspawn del
 -   commandName: setspawn
-    aliases: setspawn
+    aliases: ' setspawn'
     defaultLevel: ADMIN
     usageString: ' /setspawn '
     oneLineDescription: Sets the current world spawn point.
@@ -5022,7 +5022,7 @@
     simpleUsage: ' /setspawn '
     context: setspawn
 -   commandName: spawn
-    aliases: spawn
+    aliases: ' spawn'
     defaultLevel: USER
     usageString: |4-
          /spawn [-f|--force <f>] [<world>]
@@ -5069,7 +5069,7 @@
     simpleUsage: ' /spawn [-f|--force <f>] [<world>]'
     context: spawn
 -   commandName: spawn other
-    aliases: spawn other
+    aliases: ' spawn other'
     defaultLevel: ADMIN
     usageString: ' /spawn other <user> [<world>]'
     oneLineDescription: Warp another player to a world spawn point.
@@ -5094,7 +5094,7 @@
     simpleUsage: ' /spawn other <user> [<world>]'
     context: spawn other
 -   commandName: staffchat
-    aliases: staffchat, sc, a
+    aliases: ' staffchat, sc, a'
     defaultLevel: MOD
     usageString: ' /staffchat [<message…>]'
     oneLineDescription: Allows the user to chat in the staff chat channel.
@@ -5111,7 +5111,7 @@
     simpleUsage: ' /staffchat [<message…>]'
     context: staffchat
 -   commandName: toggleviewstaffchat
-    aliases: toggleviewstaffchat, vsc, togglevsc
+    aliases: ' toggleviewstaffchat, vsc, togglevsc'
     defaultLevel: MOD
     usageString: ' /toggleviewstaffchat [<true|false>]'
     oneLineDescription: Toggles whether the user is receiving staff chat messages.
@@ -5128,7 +5128,7 @@
     simpleUsage: ' /toggleviewstaffchat [<true|false>]'
     context: toggleviewstaffchat
 -   commandName: teleport
-    aliases: teleport, tele, $tp
+    aliases: ' teleport, tele, $tp'
     defaultLevel: MOD
     usageString: ' /teleport [-q <q>] [-f <f>]  <player to warp to>|<player to warp>
         <player to warp to>|<offline player to warp to>'
@@ -5186,7 +5186,7 @@
         <player to warp to>|<offline player to warp to>'
     context: teleport
 -   commandName: tpa
-    aliases: tpa, teleportask, call, tpask
+    aliases: ' tpa, teleportask, call, tpask'
     defaultLevel: USER
     usageString: ' /tpa [-f <f>] <player>'
     oneLineDescription: Send a request to a player to ask for you to teleport to them.
@@ -5231,7 +5231,7 @@
     simpleUsage: ' /tpa [-f <f>] <player>'
     context: tpa
 -   commandName: tpaall
-    aliases: tpaall, tpaskall
+    aliases: ' tpaall, tpaskall'
     defaultLevel: ADMIN
     usageString: ' /tpaall [-f <f>] '
     oneLineDescription: Request all players on the server to teleport to your location.
@@ -5252,7 +5252,7 @@
     simpleUsage: ' /tpaall [-f <f>] '
     context: tpaall
 -   commandName: tpaccept
-    aliases: tpaccept, teleportaccept, tpyes
+    aliases: ' tpaccept, teleportaccept, tpyes'
     defaultLevel: USER
     usageString: ' /tpaccept '
     oneLineDescription: Accept a pending teleport request.
@@ -5274,7 +5274,7 @@
     simpleUsage: ' /tpaccept '
     context: tpaccept
 -   commandName: tpahere
-    aliases: tpahere, tpaskhere, teleportaskhere
+    aliases: ' tpahere, tpaskhere, teleportaskhere'
     defaultLevel: MOD
     usageString: ' /tpahere [-f <f>] <player>'
     oneLineDescription: Send a request to a player to ask them to teleport to you.
@@ -5317,7 +5317,7 @@
     simpleUsage: ' /tpahere [-f <f>] <player>'
     context: tpahere
 -   commandName: tpall
-    aliases: tpall, tpallhere
+    aliases: ' tpall, tpallhere'
     defaultLevel: ADMIN
     usageString: ' /tpall [-f <f>] '
     oneLineDescription: Forcefully teleport all players on the server to your location.
@@ -5338,7 +5338,7 @@
     simpleUsage: ' /tpall [-f <f>] '
     context: tpall
 -   commandName: tpdeny
-    aliases: tpdeny, teleportdeny, tpno
+    aliases: ' tpdeny, teleportdeny, tpno'
     defaultLevel: USER
     usageString: ' /tpdeny '
     oneLineDescription: Deny a pending teleport request.
@@ -5360,7 +5360,7 @@
     simpleUsage: ' /tpdeny '
     context: tpdeny
 -   commandName: tphere
-    aliases: tphere, tph
+    aliases: ' tphere, tph'
     defaultLevel: ADMIN
     usageString: ' /tphere [-q|--quiet <q>] <player>'
     oneLineDescription: Teleports a player to your location.
@@ -5393,7 +5393,7 @@
     simpleUsage: ' /tphere [-q|--quiet <q>] <player>'
     context: tphere
 -   commandName: tppos
-    aliases: tppos
+    aliases: ' tppos'
     defaultLevel: ADMIN
     usageString: ' /tppos [-f|--force <f>] [-b|--border <b>] [-c|--chunk <c>] [<player>]
         [<world>] <x y z>'
@@ -5430,7 +5430,7 @@
         [<world>] <x y z>'
     context: tppos
 -   commandName: tptoggle
-    aliases: tptoggle
+    aliases: ' tptoggle'
     defaultLevel: USER
     usageString: ' /tptoggle [<true|false>]'
     oneLineDescription: Toggle whether teleport requests are received.
@@ -5456,7 +5456,7 @@
     simpleUsage: ' /tptoggle [<true|false>]'
     context: tptoggle
 -   commandName: vanish
-    aliases: vanish, v
+    aliases: ' vanish, v'
     defaultLevel: ADMIN
     usageString: ' /vanish [<user>] [<toggle>]'
     oneLineDescription: Toggles whether you are invisible on the server.
@@ -5488,7 +5488,7 @@
     simpleUsage: ' /vanish [<user>] [<toggle>]'
     context: vanish
 -   commandName: vanishonlogin
-    aliases: vanishonlogin, vonlogin
+    aliases: ' vanishonlogin, vonlogin'
     defaultLevel: NONE
     usageString: ' /vanishonlogin [<true|false>]'
     oneLineDescription: Toggles whether you log in to the server vanished.
@@ -5505,7 +5505,7 @@
     simpleUsage: ' /vanishonlogin [<true|false>]'
     context: vanishonlogin
 -   commandName: warp
-    aliases: warp
+    aliases: ' warp'
     defaultLevel: USER
     usageString: " /warp [[-y|-a|--accept <y>] [-f|--force <f>] ] [[<player>]] <warp>\n\
         \ /warp set [-o <o>] <warp>\n /warp cost <warp> <cost>\n /warp setcategory\
@@ -5543,7 +5543,7 @@
     simpleUsage: ' /warp [[-y|-a|--accept <y>] [-f|--force <f>] ] [[<player>]] <warp>'
     context: warp
 -   commandName: warp category
-    aliases: warp category
+    aliases: ' warp category'
     defaultLevel: ADMIN
     usageString: " /warp category \n /warp category removedescription <warp category>\n\
         \ /warp category removedisplayname <warp category>\n /warp category setdisplayname\
@@ -5563,7 +5563,7 @@
     simpleUsage: ' /warp category '
     context: warp category
 -   commandName: warp category list
-    aliases: warp category list
+    aliases: ' warp category list'
     defaultLevel: ADMIN
     usageString: ' /warp category list '
     oneLineDescription: Lists all the warp categories in use on the server.
@@ -5580,7 +5580,7 @@
     simpleUsage: ' /warp category list '
     context: warp category list
 -   commandName: warp category removedescription
-    aliases: warp category removedescription
+    aliases: ' warp category removedescription'
     defaultLevel: ADMIN
     usageString: ' /warp category removedescription <warp category>'
     oneLineDescription: Removes the description for a category.
@@ -5597,7 +5597,7 @@
     simpleUsage: ' /warp category removedescription <warp category>'
     context: warp category removedescription
 -   commandName: warp category removedisplayname
-    aliases: warp category removedisplayname
+    aliases: ' warp category removedisplayname'
     defaultLevel: ADMIN
     usageString: ' /warp category removedisplayname <warp category>'
     oneLineDescription: Removes the display name for a category.
@@ -5614,7 +5614,7 @@
     simpleUsage: ' /warp category removedisplayname <warp category>'
     context: warp category removedisplayname
 -   commandName: warp category setdescription
-    aliases: warp category setdescription
+    aliases: ' warp category setdescription'
     defaultLevel: ADMIN
     usageString: ' /warp category setdescription <warp category> <description…>'
     oneLineDescription: Sets the description for a category.
@@ -5631,7 +5631,7 @@
     simpleUsage: ' /warp category setdescription <warp category> <description…>'
     context: warp category setdescription
 -   commandName: warp category setdisplayname
-    aliases: warp category setdisplayname
+    aliases: ' warp category setdisplayname'
     defaultLevel: ADMIN
     usageString: ' /warp category setdisplayname <warp category> <display name>'
     oneLineDescription: Sets a display name for a category.
@@ -5648,7 +5648,7 @@
     simpleUsage: ' /warp category setdisplayname <warp category> <display name>'
     context: warp category setdisplayname
 -   commandName: warp cost
-    aliases: warp cost, warp setcost
+    aliases: ' warp cost, warp setcost'
     defaultLevel: ADMIN
     usageString: ' /warp cost <warp> <cost>'
     oneLineDescription: Set the cost of the specified warp.
@@ -5665,7 +5665,7 @@
     simpleUsage: ' /warp cost <warp> <cost>'
     context: warp cost
 -   commandName: warp delete
-    aliases: warp delete, warp del
+    aliases: ' warp delete, warp del'
     rootAliases: delwarp, ndelwarp, remwarp, nremwarp, rmwarp, nrmwarp
     defaultLevel: ADMIN
     usageString: ' /warp delete <warp>'
@@ -5689,7 +5689,7 @@
     simpleUsage: ' /warp delete <warp>'
     context: warp delete
 -   commandName: warp list
-    aliases: warp list
+    aliases: ' warp list'
     rootAliases: warps, nwarps
     defaultLevel: USER
     usageString: ' /warp list [-u <u>] '
@@ -5707,7 +5707,7 @@
     simpleUsage: ' /warp list [-u <u>] '
     context: warp list
 -   commandName: warp set
-    aliases: warp set
+    aliases: ' warp set'
     rootAliases: setwarp, nsetwarp, warpset, nwarpset
     defaultLevel: ADMIN
     usageString: ' /warp set [-o <o>] <warp>'
@@ -5744,7 +5744,7 @@
     simpleUsage: ' /warp set [-o <o>] <warp>'
     context: warp set
 -   commandName: warp setcategory
-    aliases: warp setcategory
+    aliases: ' warp setcategory'
     defaultLevel: ADMIN
     usageString: ' /warp setcategory [-n|--new <n>] [-r|--remove|--delete <r>] <warp>
         [<warp category>]'
@@ -5769,7 +5769,7 @@
         [<warp category>]'
     context: warp setcategory
 -   commandName: warp setdescription
-    aliases: warp setdescription
+    aliases: ' warp setdescription'
     defaultLevel: ADMIN
     usageString: ' /warp setdescription [-r|--remove|--delete <r>] <warp> [<description…>]'
     oneLineDescription: Sets or removes (with -r) the description for the warp.
@@ -5786,7 +5786,7 @@
     simpleUsage: ' /warp setdescription [-r|--remove|--delete <r>] <warp> [<description…>]'
     context: warp setdescription
 -   commandName: world
-    aliases: world, nworld, nucleusworld
+    aliases: ' world, nworld, nucleusworld'
     defaultLevel: ADMIN
     usageString: " /world \n /world border [<world>]\n /world setdifficulty <difficulty>\
         \ [<world>]\n /world setloadonstartup [<world>] <true|false>\n /world setkeepspawnloaded\
@@ -5817,7 +5817,7 @@
     simpleUsage: ' /world '
     context: world
 -   commandName: world border
-    aliases: world border
+    aliases: ' world border'
     defaultLevel: ADMIN
     usageString: |4-
          /world border [<world>]
@@ -5839,7 +5839,7 @@
     simpleUsage: ' /world border [<world>]'
     context: world border
 -   commandName: world border cancelgen
-    aliases: world border cancelgen
+    aliases: ' world border cancelgen'
     defaultLevel: ADMIN
     usageString: ' /world border cancelgen [<world>]'
     oneLineDescription: Cancels any current world border generation.
@@ -5856,8 +5856,8 @@
     simpleUsage: ' /world border cancelgen [<world>]'
     context: world border cancelgen
 -   commandName: world border gen
-    aliases: world border gen, world border genchunks, world border generatechunks,
-        world border chunkgen
+    aliases: ' world border gen, world border genchunks, world border generatechunks,
+        world border chunkgen'
     defaultLevel: ADMIN
     usageString: ' /world border gen [-r|--restart <r>] [-f|--frequency <f>] [-u|--ultra-aggressive
         <u>] [-t|--tickpercent <t>] [--save <save>] [-a|--aggressive <a>] [<world>]'
@@ -5872,7 +5872,7 @@
         * -r - restart pre-generation if the server is restarted (use with caution, does not disable if the pre-gen causes the crash)
         * -t [1-100] - the percentage of a tick to use when generating, defaults to 80% (90% with aggressive mode, 95% with ultra aggressive mode)
         * -f [1-100] - the number of ticks to wait after a generation to perform the next generation - defaults to Sponge default (3 in aggressive mode, 1 in ultra aggressive mode)
-        * --save [timespan] - frequency to peform a save at, defaults to 20 seconds (30 seconds with aggressive mode, 120 for ultra aggressive)
+        * --save [timespan] - frequency to perform a save at, defaults to 20 seconds (30 seconds with aggressive mode, 120 for ultra aggressive)
 
         If you want to maximise generation, run "/world border gen -u -t 100 -f 1", but be prepared for lag!
     module: world
@@ -5894,7 +5894,7 @@
         <u>] [-t|--tickpercent <t>] [--save <save>] [-a|--aggressive <a>] [<world>]'
     context: world border gen
 -   commandName: world border reset
-    aliases: world border reset
+    aliases: ' world border reset'
     defaultLevel: ADMIN
     usageString: ' /world border reset [<world>]'
     oneLineDescription: Resets the world border to the default width.
@@ -5911,7 +5911,7 @@
     simpleUsage: ' /world border reset [<world>]'
     context: world border reset
 -   commandName: world border set
-    aliases: world border set
+    aliases: ' world border set'
     defaultLevel: ADMIN
     usageString: ' /world border set [<world>] <x> <z> <diameter> [<delay>]|<diameter>
         [<delay>]'
@@ -5930,7 +5930,7 @@
         [<delay>]'
     context: world border set
 -   commandName: world clone
-    aliases: world clone, world copy
+    aliases: ' world clone, world copy'
     defaultLevel: OWNER
     usageString: ' /world clone <world> <new name>'
     oneLineDescription: Clones an existing world and registers it
@@ -5947,35 +5947,32 @@
     simpleUsage: ' /world clone <world> <new name>'
     context: world clone
 -   commandName: world create
-    aliases: world create
+    aliases: ' world create'
     defaultLevel: ADMIN
     usageString: ' /world create [-p|--preset <p>] [-b|--bonuschest <b>] [-i <i>]
         [--gm|--gamemode <gm>] [-s|--seed <s>] [-k|--keepspawnloaded <k>] [-n|--nostructures
         <n>] [-l|--loadonstartup <l>] [-g|--generator <g>] [-d|--dimension <d>] [--di|--difficulty
         <di>] [-m|--modifier <m>] [-c|--allowcommands <c>] <name>'
     oneLineDescription: Creates a world with the specified name and options.
-    extendedDescription: "Creates a game world with the provided name, required. All\
-        \ other options in this command are optional, and are specified by flags.\
-        \ Each flag requires an argument after their names. These flags are:\n\n*\
-        \ -d/--dimension <dimension>: the dimension to use as a base world type. Defaults\
-        \ to the overworld.\n* -g/--generator <generator>: the world generator to\
-        \ use. Defaults to the default generator.\n* -m/--modifier <modifier>: a world\
-        \ generator modifier to use. Can be specified multiple times for multiple\
-        \ modifiers.\n* --di/--difficulty <difficulty>: the initial world difficulty.\
-        \ Defaults to normal.\n* --gm/--gamemode <gamemode>: the default game mode\
-        \ for players in the world. Defaults to survival.\n* -s/--seed <seed>: The\
-        \ seed to use to generate the world. If not specified, a random seed will\
-        \ be used.\n* -i: Indicates that this world might exist and can be imported.\n\
-        * -n/--nostructures: If specified, will not generate structures in the world\
-        \ \n* -l/--loadonstartup <true|false>: If false, the world will not be loaded\
-        \ on startup. Defaults to true. \n* -k/--keepspawnloaded <true|false>: If\
-        \ false, the spawn will not be kept loaded. Defaults to true.\n* -c/--allowcommands\
-        \ <true|false>: If false, commands will not be allowed on the world. Defaults\
-        \ to true.\n* -b/--bonuschest <true|false>: If false, the bonus chests will\
-        \ not be generated. Defaults to true.\n\nYou can also use a preset, using\
-        \ the flag \"-p <preset>\". Available presets can be found by running \"/world\
-        \ presets\"\n\nThe difficulty, the game mode, load on startup and keep spawn\
-        \ loaded properties can be changed after the world is generated."
+    extendedDescription: |-
+        Creates a game world with the provided name, required. All other options in this command are optional, and are specified by flags. Each flag requires an argument after their names. These flags are:
+
+        * -d/--dimension <dimension>: the dimension to use as a base world type. Defaults to the overworld.
+        * -g/--generator <generator>: the world generator to use. Defaults to the default generator.
+        * -m/--modifier <modifier>: a world generator modifier to use. Can be specified multiple times for multiple modifiers.
+        * --di/--difficulty <difficulty>: the initial world difficulty. Defaults to normal.
+        * --gm/--gamemode <gamemode>: the default game mode for players in the world. Defaults to survival.
+        * -s/--seed <seed>: The seed to use to generate the world. If not specified, a random seed will be used.
+        * -i: Indicates that this world might exist and can be imported.
+        * -n/--nostructures: If specified, will not generate structures in the world
+        * -l/--loadonstartup <true|false>: If false, the world will not be loaded on startup. Defaults to true.
+        * -k/--keepspawnloaded <true|false>: If false, the spawn will not be kept loaded. Defaults to true.
+        * -c/--allowcommands <true|false>: If false, commands will not be allowed on the world. Defaults to true.
+        * -b/--bonuschest <true|false>: If false, the bonus chests will not be generated. Defaults to true.
+
+        You can also use a preset, using the flag "-p <preset>". Available presets can be found by running "/world presets"
+
+        The difficulty, the game mode, load on startup and keep spawn loaded properties can be changed after the world is generated.
     module: world
     permissionbase: nucleus.world.create
     warmup: false
@@ -5992,7 +5989,7 @@
         <di>] [-m|--modifier <m>] [-c|--allowcommands <c>] <name>'
     context: world create
 -   commandName: world delete
-    aliases: world delete, world del
+    aliases: ' world delete, world del'
     defaultLevel: OWNER
     usageString: ' /world delete <world>'
     oneLineDescription: Deletes a world from the disc.
@@ -6012,7 +6009,7 @@
     simpleUsage: ' /world delete <world>'
     context: world delete
 -   commandName: world disable
-    aliases: world disable, world dis
+    aliases: ' world disable, world dis'
     defaultLevel: ADMIN
     usageString: ' /world disable <world>'
     oneLineDescription: Disables a world that is unloaded, preventing it from being
@@ -6033,7 +6030,7 @@
     simpleUsage: ' /world disable <world>'
     context: world disable
 -   commandName: world enable
-    aliases: world enable, world en
+    aliases: ' world enable, world en'
     defaultLevel: ADMIN
     usageString: ' /world enable <world>'
     oneLineDescription: Enables a world, allowing it to be loaded on demand.
@@ -6050,7 +6047,7 @@
     simpleUsage: ' /world enable <world>'
     context: world enable
 -   commandName: world gamerule
-    aliases: world gamerule
+    aliases: ' world gamerule'
     defaultLevel: ADMIN
     usageString: |4-
          /world gamerule [<world>]
@@ -6069,7 +6066,7 @@
     simpleUsage: ' /world gamerule [<world>]'
     context: world gamerule
 -   commandName: world gamerule set
-    aliases: world gamerule set
+    aliases: ' world gamerule set'
     defaultLevel: ADMIN
     usageString: ' /world gamerule set [<world>] <gamerule> <value>'
     oneLineDescription: Sets the specified world's game rule.
@@ -6086,7 +6083,7 @@
     simpleUsage: ' /world gamerule set [<world>] <gamerule> <value>'
     context: world gamerule set
 -   commandName: world generators
-    aliases: world generators, world listgenerators
+    aliases: ' world generators, world listgenerators'
     defaultLevel: ADMIN
     usageString: ' /world generators '
     oneLineDescription: Shows available generators for use when creating a world.
@@ -6103,7 +6100,7 @@
     simpleUsage: ' /world generators '
     context: world generators
 -   commandName: world info
-    aliases: world info
+    aliases: ' world info'
     defaultLevel: ADMIN
     usageString: ' /world info <world>'
     oneLineDescription: Displays information about one world.
@@ -6121,7 +6118,7 @@
     simpleUsage: ' /world info <world>'
     context: world info
 -   commandName: world list
-    aliases: world list, world ls
+    aliases: ' world list, world ls'
     rootAliases: worlds, nworlds
     defaultLevel: ADMIN
     usageString: ' /world list '
@@ -6145,7 +6142,7 @@
     simpleUsage: ' /world list '
     context: world list
 -   commandName: world load
-    aliases: world load
+    aliases: ' world load'
     defaultLevel: ADMIN
     usageString: ' /world load [-e|--enable <e>] <world>'
     oneLineDescription: Loads a world that is currently unloaded.
@@ -6165,7 +6162,7 @@
     simpleUsage: ' /world load [-e|--enable <e>] <world>'
     context: world load
 -   commandName: world modifiers
-    aliases: world modifiers, world listmodifiers
+    aliases: ' world modifiers, world listmodifiers'
     defaultLevel: ADMIN
     usageString: ' /world modifiers '
     oneLineDescription: Shows available modifiers for use when creating a world.
@@ -6182,7 +6179,7 @@
     simpleUsage: ' /world modifiers '
     context: world modifiers
 -   commandName: world presets
-    aliases: world presets, world listpresets
+    aliases: ' world presets, world listpresets'
     defaultLevel: ADMIN
     usageString: ' /world presets '
     oneLineDescription: Shows available presets for use when creating a world.
@@ -6199,7 +6196,7 @@
     simpleUsage: ' /world presets '
     context: world presets
 -   commandName: world rename
-    aliases: world rename
+    aliases: ' world rename'
     defaultLevel: OWNER
     usageString: ' /world rename <world> <new name>'
     oneLineDescription: Allows you to rename and unloaded world.
@@ -6219,7 +6216,7 @@
     simpleUsage: ' /world rename <world> <new name>'
     context: world rename
 -   commandName: world setdifficulty
-    aliases: world setdifficulty, world difficulty
+    aliases: ' world setdifficulty, world difficulty'
     defaultLevel: ADMIN
     usageString: ' /world setdifficulty <difficulty> [<world>]'
     oneLineDescription: Sets the difficulty of a world.
@@ -6236,7 +6233,7 @@
     simpleUsage: ' /world setdifficulty <difficulty> [<world>]'
     context: world setdifficulty
 -   commandName: world setgamemode
-    aliases: world setgamemode, world setgm, world gamemode, world gm
+    aliases: ' world setgamemode, world setgm, world gamemode, world gm'
     defaultLevel: ADMIN
     usageString: ' /world setgamemode game mode [<world>]'
     oneLineDescription: Sets the gamemode of a world.
@@ -6258,7 +6255,7 @@
     simpleUsage: ' /world setgamemode game mode [<world>]'
     context: world setgamemode
 -   commandName: world sethardcore
-    aliases: world sethardcore
+    aliases: ' world sethardcore'
     defaultLevel: ADMIN
     usageString: ' /world sethardcore [<world>] <true|false>'
     oneLineDescription: Sets whether a world has hardcore mode enabled.
@@ -6275,7 +6272,7 @@
     simpleUsage: ' /world sethardcore [<world>] <true|false>'
     context: world sethardcore
 -   commandName: world setkeepspawnloaded
-    aliases: world setkeepspawnloaded
+    aliases: ' world setkeepspawnloaded'
     defaultLevel: ADMIN
     usageString: ' /world setkeepspawnloaded [<world>] <true|false>'
     oneLineDescription: Sets whether a world will keep the chunks around it's spawn
@@ -6293,7 +6290,7 @@
     simpleUsage: ' /world setkeepspawnloaded [<world>] <true|false>'
     context: world setkeepspawnloaded
 -   commandName: world setloadonstartup
-    aliases: world setloadonstartup
+    aliases: ' world setloadonstartup'
     defaultLevel: ADMIN
     usageString: ' /world setloadonstartup [<world>] <true|false>'
     oneLineDescription: Sets whether a world will load on startup.
@@ -6310,7 +6307,7 @@
     simpleUsage: ' /world setloadonstartup [<world>] <true|false>'
     context: world setloadonstartup
 -   commandName: world setpvpenabled
-    aliases: world setpvpenabled, world setpvp
+    aliases: ' world setpvpenabled, world setpvp'
     defaultLevel: ADMIN
     usageString: ' /world setpvpenabled [<world>] <true|false>'
     oneLineDescription: Sets whether a world has PVP enabled.
@@ -6327,7 +6324,7 @@
     simpleUsage: ' /world setpvpenabled [<world>] <true|false>'
     context: world setpvpenabled
 -   commandName: world setspawn
-    aliases: world setspawn
+    aliases: ' world setspawn'
     defaultLevel: ADMIN
     usageString: ' /world setspawn [<world> <x> <y> <z>]'
     oneLineDescription: Sets the spawn point of a world.
@@ -6344,7 +6341,7 @@
     simpleUsage: ' /world setspawn [<world> <x> <y> <z>]'
     context: world setspawn
 -   commandName: world spawn
-    aliases: world spawn
+    aliases: ' world spawn'
     defaultLevel: ADMIN
     usageString: ' /world spawn '
     oneLineDescription: Teleports to world spawn.
@@ -6373,7 +6370,7 @@
     simpleUsage: ' /world spawn '
     context: world spawn
 -   commandName: world teleport
-    aliases: world teleport, world tp
+    aliases: ' world teleport, world tp'
     defaultLevel: ADMIN
     usageString: ' /world teleport <world> [<player>]'
     oneLineDescription: Teleports you, or another player, to the specified world.
@@ -6412,7 +6409,7 @@
     simpleUsage: ' /world teleport <world> [<player>]'
     context: world teleport
 -   commandName: world unload
-    aliases: world unload
+    aliases: ' world unload'
     defaultLevel: ADMIN
     usageString: ' /world unload [-t|--transfer <t>] [-d|--disable <d>] <world>'
     oneLineDescription: Unloads a world that is currently loaded.

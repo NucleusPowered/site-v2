@@ -9,8 +9,9 @@
 </p>
 {% endif %}
 {% for cmds in com %}
+{% assign extSearch = cmds.extendedDescription | replace: '"', '' | downcase %}
 <div class="command" data-command="{{ cmds.commandName | downcase }}" data-module="{{ cmds.module | downcase }}"
-     data-description="{{ cmds.oneLineDescription | downcase }}" data-extdescription="{{ cmds.extendedDescription | downcase }}"
+     data-description="{{ cmds.oneLineDescription | downcase }}" data-extdescription="{{ extSearch }}"
      data-aliases="{{ cmds.aliases | downcase | replace: ',', '' }}">
     <a class="anchor" id="{{ cmds.commandName | replace: ' ', '-' }}"></a>
     <div class="command-head">
@@ -32,14 +33,14 @@
         {% endif %}
     </div>
     <div class="command-usage">
-        {% assign al = (cmds.aliases | split: ', ') %}
+        {% assign al = (cmds.aliases | strip | split: ', ') %}
         {% if al | size > 1 %}
         <p>
             <strong>Aliases: </strong>
             {% for a in al %} <code>/{{ a }}</code>{% unless forloop.last %},{% endunless %}{% endfor %}
         </p>
         {% endif %}
-        {% assign rootal = (cmds.rootAliases | split: ', ') %}
+        {% assign rootal = (cmds.rootAliases | strip | split: ', ') %}
         {% assign rsize = (rootal | size) %}
         {% if rsize > 0 %}
         <p>
