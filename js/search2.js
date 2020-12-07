@@ -208,6 +208,7 @@ const nucleusSearch = (function () {
             })
         };
         clearSearch();
+        $('#search-box').trigger("focus");
         $('#search-result-container > ul.nav-tabs').tab();
     };
 
@@ -253,7 +254,7 @@ $(document).on("keydown", function(e) {
     }
 });
 
-$("a[data-search-activate]").on("click", function(event) {
+$("[data-search-activate]").on("click", function(event) {
     event.preventDefault();
     nucleusSearch.open();
 });
