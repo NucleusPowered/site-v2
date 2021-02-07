@@ -104,3 +104,6 @@ There are a few reasons why Nucleus chat formatting may not be showing.
 * Unexpected prefixes and suffixes may be removing by setting the `overwrite-` configuration options. 
 * The Nucleus Chat formatting may be overwritten by other mods or plugins. [Check the compatibility tab on the chat module](../modules/chat.html#compatibility) any for known plugin incompatibilities.
 
+## More information
+
+[More information can be found at the chat module pages.](https://v2.nucleuspowered.org/docs/modules/chat.html)

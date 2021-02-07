@@ -43,8 +43,12 @@ If you want to change the colour of a player's name in general, don't add a colo
 ## Group Templates
 
 Different groups can have different chat templates to the default defined in `template.default`. To give a group a different template,
- simply add the name of the group and the template like so. Note that the name of the group is case sensitive, so the "Admin" group
- must have an entry for "Admin". Multiple entries can be added like so:
+ simply add the name of the group and the template like so. The target user (or permission group) then needs to have the name of the desired
+ group set to the `nucleus.chat.group` permission option/meta like so:
+
+{% include permissionblock.html cmdtype="groupOption" user="admin" option="nucleus.chat.group" value="Admin" %}
+
+Note that the option must be case sensitive. Multiple entries can be added to the config file like this:
 
 {% raw %}
 ```
