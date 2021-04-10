@@ -5,7 +5,7 @@ header: What Nucleus Isn't
 type: general
 ---
 
-Nucleus is a big beast. It contains most of the utilities that you could want so you can concentrate on making your server unique!
+Nucleus is a big plugin. It contains most of the utilities that you could want so you can concentrate on making your server unique!
 That being said, Nucleus doesn't have everything in it. In particular:
 
 * Nucleus **is not** a permissions management plugin, and does not do permission checks.
