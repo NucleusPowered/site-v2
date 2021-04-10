@@ -71,8 +71,6 @@ You must, however, set `kit.process-tokens-in-lore` to `true` in `main.conf`, as
 
 ## Commands in Kits
 
-Nucleus 0.25.0 introduced adding commands to kits. This does not apply to first join kits.
-
 It's _very_ important to note that any command will be run by the console, _so only give the ability to add commands to kits to **highly** trusted players._ As a result, the kit command add permission, `kit.command.add.base` is in the `NONE` group for permissions to try to protect against rogue admins.
 
 ### Viewing the commands in a kit
