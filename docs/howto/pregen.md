@@ -125,7 +125,7 @@ has finished starting and worlds are loaded, Nucleus will start the pre-generati
 
 ## Stopping pre-generation
 
-Pre-generation can be stopped using the `/world border gen cancel` command. This will cause the world to save its state and
+Pre-generation can be stopped using the `/world border cancelgen` command. This will cause the world to save its state and
 cease pre-generation.
 
 If you later choose to restart pre-generation, it will again start from the centre, but will skip all generated chunks until
