@@ -150,6 +150,15 @@ Consult your permission plugin on how to set this option, but for reference, com
 ## Common Issues
 {:.firsth2nomargin}
 
+### Kit/home/other command cooldowns are not working!
+
+Check your permissions. Because of the way permissions work in Sponge, the permission `a.b` is the same as `a.b.*` in Bukkit. So, if
+you've granted `nucleus.kit` to a player, they have access to redeem kits, bypass warmups and cooldowns, limits, can create kits and
+create command kits, **which allow them to run commands as the server**. This is **bad**.
+
+When setting up your server, please don't be lazy and guess what the permissions are - check them using these docs, or use our 
+[role permissions to get started](howto/roleperms.html)
+
 ### Are there any known plugin or mod incompatibilities with Nucleus?
 
 Unfortunately so. [See our list of compatibility issues on our compatibility page](compatibility.html). 
