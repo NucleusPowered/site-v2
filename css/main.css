@@ -413,9 +413,19 @@ hr.black {
     background: #87f8b8;
 }
 
+.eol {
+    min-height: 30px;
+    background: #ff6f6f;
+}
+
 .beta .container div {
     padding-left: 20px;
     background: url("../img/chat-bubble.svg") left center no-repeat;
+}
+
+.eol .container div {
+    padding-left: 20px;
+    background: url("../img/exclamation-triangle-fill.svg") left center no-repeat;
 }
 
 .additionalcontainerclass h3 {

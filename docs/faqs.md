@@ -7,13 +7,17 @@ additionalcontainerclass: faq
 type: general
 ---
 
+## Nucleus is no longer updated
+
+Nucleus is no longer receiving updates, and real-time support is no longer available. Developers are free to fork Nucleus, however if you do so, please use a differernt (enough) name.
+
+The following FAQs may be slightly out of date, especially if they refer to potential features in the future.
+
 ## About Nucleus
 
 Nucleus is, quite simply, the Ultimate Essentials Plugin for Sponge! Nucleus was born to bring a modern, modular and feature-rich Essentials style plugin that makes Sponge a viable choice for all server owners to cover the basics, whether they be vanilla servers or modded servers. It lets you get on with making your server unique with a solid base you can trust!
 
 If you want more information on Sponge, see their [website](https://spongepowered.org) and [documentation](https://docs.spongepowered.org).
-
-Come visit us on Discord - [click here and you’ll be with us in no time](https://discord.gg/A9QHG5H)!
  
 Please, take the time to read the rest of this FAQ too.
 
@@ -239,7 +243,6 @@ Some configurations are:
 If you get an error that states "An error occurred while running this command", or Nucleus does something weird when you perform an action, 
 please do the following (make sure you have console and filesystem access):
 
-* Before you do all this, [you can join the Nucleus Discord channel](https://discord.gg/MC2mAuS) and ask if anyone else has seen the problem.
 * Make sure you are running the **latest** version of Nucleus. If you are not, try again with the latest.
 * Turn on Debug Mode: in `main.conf`, set `core.debug-mode` to `true` and run `/nucleus reload`.
 * [Load up the Nucleus issue tracker](http://github.com/NucleusPowered/Nucleus/issues), and search the issues to make sure
